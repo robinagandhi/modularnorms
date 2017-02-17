@@ -1,0 +1,121 @@
+{
+  "model": [
+    {
+     "table": {
+       "id": "HIPAA164502a",
+       "sentence": "(a)Standard. A covered entity or business associate may not use or disclose protected health information, except as permitted or required by this subpart or by subpart C of part 160 of this subchapter.",
+       "actor": "Covered entity or business associate",
+       "modal": "may not",
+       "negative": "yes",
+       "verb": "disclose",
+       "action": "not disclose protected health information",
+       "preconditions": [
+		  "not (((((P1 or P2) or P3) or P4) or P5) or P6)",
+		  "P1: $HIPAA164502a1",
+		  "P2: (2)Covered entities: Required disclosures",
+		  "P3: (3)Business associates: Permitted uses and disclosures",
+		  "P4: (4)Business associates: Required uses and disclosures",
+		  "P5: (5)Prohibited uses and disclosures",
+		  "P6: permitted by subpart C of part 160 of this subchapter"
+	   ]
+     }
+    }, 
+
+    {
+     "table": {
+       "id": "HIPAA164502a1",
+       "sentence": "(1)Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "disclose",
+       "action": "disclose protected health information",
+       "preconditions": [
+		  "((((P1 or P2) or P3) or P4) or P5) or P6",
+		  "P1: (i) To the individual",
+		  "P2: (ii) For treatment, payment, or health care operations, as permitted by and in compliance with S 164.506",
+		  "P3: (iii) Incident to a use or disclosure otherwise permitted or required by this subpart, provided that the covered entity has complied with the applicable requirements of SS 164.502(b), 164.514(d), and 164.530(c) with respect to such otherwise permitted or required use or disclosure",
+		  "P4: (iv) Except for uses and disclosures prohibited under S 164.502(a)(5)(i), pursuant to and in compliance with a valid authorization under S 164.508",
+		  "P5: $HIPAA164502a1v",
+		  "P6: (vi) As permitted by and in compliance with this section, S 164.512, S 164.514(e), (f), or (g)"
+	   ]
+     }
+    }, 
+  
+    {
+     "table": {
+       "id": "HIPAA164502a1v",
+       "sentence": "(v) Pursuant to an agreement under, or as otherwise permitted by, S 164.510",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "disclose",
+       "action": "disclose protected health information",
+       "preconditions": "$HIPAA164510"
+     }
+    }, 
+
+    {
+     "table": {
+       "id": "HIPAA164510",
+       "sentence": "164.510 Uses and disclosures requiring an opportunity for the individual to agree or to object. A covered entity may use or disclose protected health information, provided that the individual is informed in advance of the use or disclosure and has the opportunity to agree to or prohibit or restrict the use or disclosure, in accordance with the applicable requirements of this section. The covered entity may orally inform the individual of and obtain the individual's oral agreement or objection to a use or disclosure permitted by this section.",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "disclose",
+       "action": "disclose protected health information",
+       "preconditions": [
+		  "(P1 and P2) and (P3 or P4)",
+		  "P1: individual is informed in advance of the use or disclosure",
+		  "P2: individual has the opportunity to agree to or prohibit or restrict the use or disclosure",
+		  "P3: (a)Standard: Use and disclosure for facility directories",
+		  "P4: $HIPAA164510b"
+	   ]
+     }
+    }, 
+
+    {
+     "table": {
+       "id": "HIPAA164510b",
+       "sentence": "(b)Standard: Uses and disclosures for involvement in the individual's care and notification purposes-",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "disclose",
+       "action": "disclose protected health information",
+       "preconditions": [
+		  "(((P1 or P2) or P3) or P4) or P5",
+		  "P1: (1)Permitted uses and disclosures",
+		  "P2: (2)Uses and disclosures with the individual present",
+		  "P3: (3)Limited uses and disclosures when the individual is not present",
+		  "P4: (4)Uses and disclosures for disaster relief purposes",
+		  "P5: $HIPAA164510b5"
+	   ]
+     }
+    }, 
+
+	
+    {
+     "table": {
+       "id": "HIPAA164510b5",
+       "sentence": "(5)Uses and disclosures when the individual is deceased. If the individual is deceased, a covered entity may disclose to a family member, or other persons identified in paragraph (b)(1) of this section who were involved in the individual's care or payment for health care prior to the individual's death, protected health information of the individual that is relevant to such person's involvement, unless doing so is inconsistent with any prior expressed preference of the individual that is known to the covered entity.",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "disclose",
+       "action": "disclose ... protected health information",
+       "preconditions": [
+		  "P1 and (P2 and (P3 and not P4))",
+		  "P1: individual is deceased",
+		  "P2: disclosure is to family member, or other persons who were involved in the individual's care or payment for health care prior to the individual's death",
+		  "P3: protected health information of the individual is relevant to family member, or other persons who were involved in the individual's care or payment",
+		  "P4: disclosing is inconsistent with any prior expressed preference of the individual that is known to the covered entity",
+		  "P5: $HIPAA164510b1"
+	   ]
+     }
+    } 
+
+	
+	
+  ]	
+}
