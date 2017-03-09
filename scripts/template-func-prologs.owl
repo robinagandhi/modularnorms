@@ -1,0 +1,74 @@
+Prefix(:=<http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos>
+
+Declaration(Class(:AND))
+Declaration(Class(:LNOT))
+Declaration(Class(:Norm))
+Declaration(Class(:OR))
+Declaration(Class(:Operator))
+Declaration(Class(:Proposition))
+Declaration(Class(:Situation))
+Declaration(ObjectProperty(:_contains))
+Declaration(ObjectProperty(:activate))
+Declaration(ObjectProperty(:and_))
+Declaration(ObjectProperty(:not_))
+Declaration(ObjectProperty(:or_))
+Declaration(ObjectProperty(:satisfy))
+Declaration(DataProperty(:Com))
+Declaration(DataProperty(:Inc))
+Declaration(DataProperty(:Tol))
+Declaration(DataProperty(:Vio))
+Declaration(DataProperty(:applicable))
+Declaration(DataProperty(:hasAF))
+Declaration(DataProperty(:hasAT))
+Declaration(DataProperty(:hasAU))
+Declaration(DataProperty(:hasID))
+Declaration(DataProperty(:hasSF))
+Declaration(DataProperty(:hasST))
+Declaration(DataProperty(:hasSU))
+Declaration(DataProperty(:hohfeldType))
+Declaration(DataProperty(:satisfied))
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :AND (:AND)
+
+SubClassOf(:AND :Operator)
+
+# Class: :LNOT (:LNOT)
+
+SubClassOf(:LNOT :Operator)
+
+# Class: :Norm (:Norm)
+
+SubClassOf(:Norm :Proposition)
+
+# Class: :OR (:OR)
+
+SubClassOf(:OR :Operator)
+
+# Class: :Operator (:Operator)
+
+SubClassOf(:Operator :Proposition)
+
+# Class: :Situation (:Situation)
+
+SubClassOf(:Situation :Proposition)
+
+
+############################
+#   Named Individuals
+############################
+
+
