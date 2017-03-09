@@ -3,6 +3,8 @@ import fileinput
 from myutils import *
 
 SSLinks = []
+Individuals = []
+
 ######################
 
 # Declaration(NamedIndividual(<URI+AND>))
@@ -37,12 +39,14 @@ Prefix = ':'
 
 def genClassAssert(classname, indivname):
 	global Prefix
+	global Individuals
 	# print 'Declaration(NamedIndividual(<' + Prefix + indivname + '>))'
 	# print '# Individual: <' + Prefix + indivname + '> (<' + Prefix + indivname + '>)'
 	# print 'ClassAssertion(<' + Prefix + classname + '> <' + Prefix + indivname + '>)'
 	print 'Declaration(NamedIndividual(' + Prefix + indivname + '))'
 	print '# Individual: ' + Prefix + indivname + ' (' + Prefix + indivname + ')'
 	print 'ClassAssertion(' + Prefix + classname + ' ' + Prefix + indivname + ')'
+	Individuals.append(Prefix + indivname)
 
 def genObjectProp(rel, src, dest):
 	global Prefix
@@ -66,6 +70,9 @@ def genepilogs():
 	# for l in SSLinks:
 		# print l
 
+	global Individuals
+	print 'DifferentIndividuals( ' + ' '.join(Individuals) + ')'
+	
 	file = open('template-func-epilogs.owl', 'r')
 	for line in file:
 		print line,
@@ -84,30 +91,32 @@ def drawSS_end():
 # # Individual: <URI+N1> (<URI+N1>)
 # ClassAssertion(<URI+Norm> <URI+N1>)
 # DataPropertyAssertion(<URI+hasID> <URI+N1> "N1"^^xsd:string)
-def drawNorm(id, sentence):
-	genClassAssert('Norm', id)
+def drawNorm(id, sentence, norm):
+	genClassAssert(norm, id)
 	genDataProp('hasID', id, '"' + id + '"^^xsd:string')
 	genDataProp('hasDesc', id, '"' + sentence + '"^^xsd:string')
 
 def drawDuty(id, sentence):
-	drawNorm(id, sentence)
+	drawNorm(id, sentence, 'Duty')
 
 def drawRight(id, sentence):
-	drawNorm(id, sentence)
+	drawNorm(id, sentence, 'Right')
 
 def genSituationVals(id, val):
-	if val == 'ST':
-		genDataProp('hasST', id, '"true"^^xsd:boolean')
-		genDataProp('hasSF', id, '"false"^^xsd:boolean')
-		genDataProp('hasSU', id, '"false"^^xsd:boolean')
-	elif val == 'SF':
-		genDataProp('hasST', id, '"false"^^xsd:boolean')
-		genDataProp('hasSF', id, '"true"^^xsd:boolean')
-		genDataProp('hasSU', id, '"false"^^xsd:boolean')
-	else: # val == 'SU' or is unspecified
-		genDataProp('hasST', id, '"false"^^xsd:boolean')
-		genDataProp('hasSF', id, '"false"^^xsd:boolean')
-		genDataProp('hasSU', id, '"true"^^xsd:boolean')
+	# if val == 'ST':
+		# genDataProp('hasST', id, '"true"^^xsd:boolean')
+		# genDataProp('hasSF', id, '"false"^^xsd:boolean')
+		# genDataProp('hasSU', id, '"false"^^xsd:boolean')
+	# elif val == 'SF':
+		# genDataProp('hasST', id, '"false"^^xsd:boolean')
+		# genDataProp('hasSF', id, '"true"^^xsd:boolean')
+		# genDataProp('hasSU', id, '"false"^^xsd:boolean')
+	# else: # val == 'SU' or is unspecified
+		# genDataProp('hasST', id, '"false"^^xsd:boolean')
+		# genDataProp('hasSF', id, '"false"^^xsd:boolean')
+		# genDataProp('hasSU', id, '"true"^^xsd:boolean')
+	genDataProp('satisfied', id, '"' + val + '"^^xsd:string')
+
 
 # # Individual: <URI+S1> (<URI+S1>)
 
@@ -138,8 +147,10 @@ def drawSituation(slabel, id, type, suggestsid=''):
 		classtype = slabel.upper()
 	elif slabel == 'not': # logical not situation
 		classtype = 'LNOT'  # 'NOT' is apparently a reserved word?
-	else: # atomic or super situation
-		classtype = 'Situation'
+	elif slabel.startswith('SS_'): # super situations have SS prefix
+		classtype = 'SuperSituation'
+	else: # atomic 
+		classtype = 'AtomicSituation'
 	
 	# extract atomic situation values
 	isatomic = False

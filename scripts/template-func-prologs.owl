@@ -9,12 +9,15 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Ontology(<http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos>
 
 Declaration(Class(:AND))
+Declaration(Class(:AtomicSituation))
+Declaration(Class(:Duty))
 Declaration(Class(:LNOT))
+Declaration(Class(:LogicalSituation))
 Declaration(Class(:Norm))
 Declaration(Class(:OR))
-Declaration(Class(:Operator))
-Declaration(Class(:Proposition))
+Declaration(Class(:Right))
 Declaration(Class(:Situation))
+Declaration(Class(:SuperSituation))
 Declaration(ObjectProperty(:_contains))
 Declaration(ObjectProperty(:activate))
 Declaration(ObjectProperty(:and_))
@@ -38,33 +41,42 @@ Declaration(DataProperty(:satisfied))
 
 
 
+
 ############################
 #   Classes
 ############################
 
 # Class: :AND (:AND)
 
-SubClassOf(:AND :Operator)
+SubClassOf(:AND :LogicalSituation)
+
+# Class: :AtomicSituation (:AtomicSituation)
+
+SubClassOf(:AtomicSituation :Situation)
+
+# Class: :Duty (:Duty)
+
+SubClassOf(:Duty :Norm)
 
 # Class: :LNOT (:LNOT)
 
-SubClassOf(:LNOT :Operator)
+SubClassOf(:LNOT :LogicalSituation)
 
-# Class: :Norm (:Norm)
+# Class: :LogicalSituation (:LogicalSituation)
 
-SubClassOf(:Norm :Proposition)
+SubClassOf(:LogicalSituation :Situation)
 
 # Class: :OR (:OR)
 
-SubClassOf(:OR :Operator)
+SubClassOf(:OR :LogicalSituation)
 
-# Class: :Operator (:Operator)
+# Class: :Right (:Right)
 
-SubClassOf(:Operator :Proposition)
+SubClassOf(:Right :Norm)
 
-# Class: :Situation (:Situation)
+# Class: :SuperSituation (:SuperSituation)
 
-SubClassOf(:Situation :Proposition)
+SubClassOf(:SuperSituation :Situation)
 
 
 ############################
