@@ -146,8 +146,8 @@ def drawSituation(slabel, id, type, suggestsid=''):
 	atomicval = ''
 	if not (slabel in ['and', 'or', 'not'] or slabel.startswith('SS_')): 
 		isatomic = True
-		if slabel[:2] in ['ST|', 'SF|', 'SU|']:
-			atomicval = slabel[:1]
+		if slabel[:3] in ['ST|', 'SF|', 'SU|']:
+			atomicval = slabel[:2]
 			slabel = slabel[3:]
 		else:
 			atomicval = 'SU'
