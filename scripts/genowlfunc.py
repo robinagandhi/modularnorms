@@ -33,20 +33,26 @@ SSLinks = []
 # DataPropertyAssertion(<URI+hasID> <URI+S1> "S1"^^xsd:string)
 
 URI = 'http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#'
+Prefix = ':'
 
 def genClassAssert(classname, indivname):
-	global URI
-	print 'Declaration(NamedIndividual(<' + URI + indivname + '>))'
-	print '# Individual: <' + URI + indivname + '> (<' + URI + indivname + '>)'
-	print 'ClassAssertion(<' + URI + classname + '> <' + URI + indivname + '>)'
+	global Prefix
+	# print 'Declaration(NamedIndividual(<' + Prefix + indivname + '>))'
+	# print '# Individual: <' + Prefix + indivname + '> (<' + Prefix + indivname + '>)'
+	# print 'ClassAssertion(<' + Prefix + classname + '> <' + Prefix + indivname + '>)'
+	print 'Declaration(NamedIndividual(' + Prefix + indivname + '))'
+	print '# Individual: ' + Prefix + indivname + ' (' + Prefix + indivname + ')'
+	print 'ClassAssertion(' + Prefix + classname + ' ' + Prefix + indivname + ')'
 
 def genObjectProp(rel, src, dest):
-	global URI
-	print 'ObjectPropertyAssertion(<' + URI + rel + '> <' + URI + src + '> <' + URI + dest + '>)'
+	global Prefix
+	# print 'ObjectPropertyAssertion(<' + Prefix + rel + '> <' + Prefix + src + '> <' + Prefix + dest + '>)'
+	print 'ObjectPropertyAssertion(' + Prefix + rel + ' ' + Prefix + src + ' ' + Prefix + dest + ')'
 
 def genDataProp(rel, src, value):
-	global URI
-	print 'DataPropertyAssertion(<' + URI + rel + '> <' + URI + src + '> ' + value + ')'
+	global Prefix
+	# print 'DataPropertyAssertion(<' + Prefix + rel + '> <' + Prefix + src + '> ' + value + ')'
+	print 'DataPropertyAssertion(' + Prefix + rel + ' ' + Prefix + src + ' ' + value + ')'
 
 
 def genprologs():
@@ -89,6 +95,20 @@ def drawDuty(id, sentence):
 def drawRight(id, sentence):
 	drawNorm(id, sentence)
 
+def genSituationVals(id, val):
+	if val == 'ST':
+		genDataProp('hasST', id, '"true"^^xsd:boolean')
+		genDataProp('hasSF', id, '"false"^^xsd:boolean')
+		genDataProp('hasSU', id, '"false"^^xsd:boolean')
+	elif val == 'SF':
+		genDataProp('hasST', id, '"false"^^xsd:boolean')
+		genDataProp('hasSF', id, '"true"^^xsd:boolean')
+		genDataProp('hasSU', id, '"false"^^xsd:boolean')
+	else: # val == 'SU' or is unspecified
+		genDataProp('hasST', id, '"false"^^xsd:boolean')
+		genDataProp('hasSF', id, '"false"^^xsd:boolean')
+		genDataProp('hasSU', id, '"true"^^xsd:boolean')
+
 # # Individual: <URI+S1> (<URI+S1>)
 
 # ClassAssertion(<URI+Situation> <URI+S1>)
@@ -100,7 +120,8 @@ OntoMap = {
 	'satisfies': 'satisfy',
 	'or': 'or_',
 	'and': 'and_',
-	'not': 'not_'
+	'not': 'not_',
+	'contains': '_contains'
 }
 	
 def drawSituation(slabel, id, type, suggestsid=''):
@@ -108,18 +129,35 @@ def drawSituation(slabel, id, type, suggestsid=''):
 	global OntoMap
 	sid = getsid(id, suggestsid)
 	#slabel = linebreak(slabel)
-	if (slabel.startswith('$')):
+	if (slabel.startswith('$')): # super situation
 		snorm = slabel[1:]
 		slabel = 'SS_' + slabel[1:]
-		# SSLinks.append(sid + ' -> ' + snorm + '[color=grey, style=dashed, lhead=cluster' + slabel + '];')
-	if slabel in ['and', 'or', 'not']:
+		genObjectProp(OntoMap['contains'], sid, snorm)
+	
+	if slabel in ['and', 'or']: # logical and/or situation
 		classtype = slabel.upper()
-	else:
+	elif slabel == 'not': # logical not situation
+		classtype = 'LNOT'  # 'NOT' is apparently a reserved word?
+	else: # atomic or super situation
 		classtype = 'Situation'
+	
+	# extract atomic situation values
+	isatomic = False
+	atomicval = ''
+	if not (slabel in ['and', 'or', 'not'] or slabel.startswith('SS_')): 
+		isatomic = True
+		if slabel[:2] in ['ST|', 'SF|', 'SU|']:
+			atomicval = slabel[:1]
+			slabel = slabel[3:]
+		else:
+			atomicval = 'SU'
+			
 	genClassAssert(classtype, sid)
 	genObjectProp(OntoMap[type], sid, id)
 	genDataProp('hasID', sid, '"' + sid + '"^^xsd:string')
 	genDataProp('hasDesc', sid, '"' + slabel + '"^^xsd:string')
+	if isatomic:
+		genSituationVals(sid, atomicval)
 	return sid
 
 
