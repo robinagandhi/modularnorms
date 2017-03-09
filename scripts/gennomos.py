@@ -1,8 +1,16 @@
+import sys
 import json
 from pyparsing import *
 
-from gendot import *
-#from genowlfunc import *
+if len(sys.argv) < 2:
+	print 'Usage: ' + sys.argv[0] + ' <JSON file> [dot|owl]'
+	sys.exit()
+
+JSONFileName = sys.argv[1]
+if len(sys.argv) > 2 and sys.argv[2] == 'owl':	
+	from genowlfunc import *
+else:
+	from gendot import *
 
 ident = Word(alphas, alphanums + "_").setName("identifier")
 boolExpr = operatorPrecedence( ident,
@@ -72,4 +80,5 @@ def gennomos(modelfile):
 
 	genepilogs()
 
-gennomos('apache2.json')
+
+gennomos(JSONFileName)
