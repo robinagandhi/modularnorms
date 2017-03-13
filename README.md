@@ -6,16 +6,16 @@ See the examples folder for SVG files produced for AGPLv1.0, Apache2 and HIPAA M
 
 # Usage
 
-
+Use/install Python 2.7 interpreter for running the scripts
 
 ```
 # General usage format: 
-python gennomos.py <JSON file> [dot|owl]
+python2.7 gennomos.py <JSON file> [dot|owl]
 
 # Example DOT file generation (use in graphviz)
-python gennomos.py ../examples/agpl.json dot > ./agpl.dot
+python2.7 gennomos.py ../examples/agpl.json dot > ./agpl.dot
 
 # Example OWL file generation (use in Protege)
-python gennomos.py ../examples/agpl.json owl > ./agpl.owl
+python2.7 gennomos.py ../examples/agpl.json owl > ./agpl.owl
 
 ```
