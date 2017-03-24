@@ -44,7 +44,7 @@
             <g id="node3" class="node">
                <title>AGPL2_1</title>
                <polygon fill="#FFFFFF" stroke="black" points="278,-1251.5 88,-1251.5 88,-1168.5 278,-1168.5 278,-1251.5"/>
-               <!--<rect id="rectAGPL2_1" style="fill:#D3D3D3" x="270"  y="-1265.5" width="20" height="20"/>-->
+               <!--<rect id="rectAGPL2_1" style="fill:#57BC90" x="270"  y="-1265.5" width="20" height="20"/>-->
                <text text-anchor="middle" x="183" y="-1236.3" font-family="Times New Roman,serif" font-size="14.00">modify your copy or copies of</text>
                <text text-anchor="middle" x="183" y="-1221.3" font-family="Times New Roman,serif" font-size="14.00"> the Program or any portion</text>
                <text text-anchor="middle" x="183" y="-1206.3" font-family="Times New Roman,serif" font-size="14.00"> of it, ... and copy and</text>
@@ -529,32 +529,31 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script>
+
+var data
 $(document).ready(function(){       
-	$.getJSON("https://robinagandhi.github.io/modularnorms/examples/agpl-val-fixed.json", function(result){
-            $.each(result.model, function(key, val){
+	$.getJSON("https://robinagandhi.github.io/modularnorms/examples/agpl-val-fixed.json", function(data){
+            $.each(data.model, function(key, val){
        			$.each(val.table, function(key, val){
        				if (key == "preconditions"){
        					$.each(val, function(key, val){
-       						$("#test").append("preconditions" + " : " + val + "<br>");
+       						$("#test").append("<b>preconditions</b>" + " : " + val + "<br>");
        					});
        					
        				} else if (key == "action"){
        					$.each(val, function(key, val){
-       						$("#test").append("action" + " : " + val + "<br>");
+       						$("#test").append("<b>action</b>" + " : " + val + "<br>");
        					});
        					
        				} else{
-       					$("#test").append(key + " : " + val + "<br>");
+       					$("#test").append("<b>"+key+"</b>" + " : " + val + "<br>");
        				}
                 });
             });
         });
 });
-</script>
 
-<script>
 
-      var _currentFil = "fill:#D3D3D3";
       var _test = "testing";
       $("#mainsvg").click(
         function (event) {
@@ -566,23 +565,24 @@ $(document).ready(function(){
 				_test = $(event.target).parent().parent().children("title").first().text();
 			}
 
-      	  alert(_test);
-      
+      	  //alert(_test);
+      	  
+      	  // Don't color anything that is not polygon with points. Also don't color graphs
           if (($(event.target).attr('points') != null) & ($(event.target).parent().children("title").first().text() != "G")) {
-            if($(event.target).attr('style') == "fill:#D3D3D3"){
-              $(event.target).attr('style', "fill:#00FF00");
+            if($(event.target).attr('style') == "fill:#57BC90"){
+              $(event.target).attr('style', "fill:#CD5360");    //red
             } 
             else {
-              if( $(event.target).attr('style') == "fill:#00FF00"){
-                $(event.target).attr('style', "fill:#FF0000");
+              if( $(event.target).attr('style') == "fill:#CD5360"){
+                $(event.target).attr('style', "fill:#E5E338");  //Yellow
               }
               else {
-                $(event.target).attr('style', "fill:#D3D3D3");
+                $(event.target).attr('style', "fill:#57BC90");  //Green
               }
             }
           }
         }
-      )
+      );
    </script>
 <script>
   $( function() {
