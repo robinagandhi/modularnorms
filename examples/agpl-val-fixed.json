@@ -30,7 +30,9 @@
        "modal": "must",
        "negative": "no",
        "verb": "carry prominent notices",
-       "action": "cause the modified files to carry prominent notices stating that you changed the files and the date of any change",
+       "action": [
+        "cause the modified files to carry prominent notices stating that you changed the files and the date of any change"
+      ],
        "preconditions": [
         "ST|intent to modify, copy and distribute"
       ]
