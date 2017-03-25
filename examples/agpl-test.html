@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
+  <title>AGPL Demo</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
 <body>
+
+   <button id="opener" class="button">Submit</button>
+   <div id="dialog"></div>
+
    <div id="main">
+
       <svg id="mainsvg" width="2062pt" height="1374pt"
          viewBox="0.00 0.00 2062.00 1374.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
          <g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 1370)">
@@ -524,66 +536,115 @@
          </g>
       </svg>
    </div>
-   <div id="test"></div>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
 <script>
 
-var data
+var jsonData = [];
+
 $(document).ready(function(){       
-	$.getJSON("https://robinagandhi.github.io/modularnorms/examples/agpl-val-fixed.json", function(data){
-            $.each(data.model, function(key, val){
-       			$.each(val.table, function(key, val){
-       				if (key == "preconditions"){
-       					$.each(val, function(key, val){
-       						$("#test").append("<b>preconditions</b>" + " : " + val + "<br>");
-       					});
-       					
-       				} else if (key == "action"){
-       					$.each(val, function(key, val){
-       						$("#test").append("<b>action</b>" + " : " + val + "<br>");
-       					});
-       					
-       				} else{
-       					$("#test").append("<b>"+key+"</b>" + " : " + val + "<br>");
-       				}
-                });
-            });
-        });
+	//$.getJSON("https://robinagandhi.github.io/modularnorms/examples/agpl-val-fixed.json", function(data){
+            
+           	//printJSON(data);
+            //var testobj = getObjects(data, 'id', 'AGPL2');
+            //jsonData = data
+        //});
+
+	//console.log(JSON.stringify(jsonData));
+		
 });
 
+function updateJSON(id, status) {
 
-      var _test = "testing";
-      $("#mainsvg").click(
-        function (event) {
-      
-			if ($(event.target).parent().children("title").first().text() != ""){
-				_test = $(event.target).parent().children("title").first().text();
-			}
-			else{
-				_test = $(event.target).parent().parent().children("title").first().text();
-			}
+	var exist = false;
+	$.each(jsonData, function(key, val){
+    		if (val.id == id){
+    			val.status = status;
+    			exist = true;
+    			console.log(JSON.stringify(jsonData));
+    		} 
+    });
+	if (exist == false){
+		item = {};
+    	item ["id"] = id;
+    	item ["status"] = status;
+    	jsonData.push(item);
+    	console.log(JSON.stringify(jsonData));
+	} 
+	$( "#dialog" ).text(JSON.stringify(jsonData));  	
 
-      	  //alert(_test);
-      	  
-      	  // Don't color anything that is not polygon with points. Also don't color graphs
-          if (($(event.target).attr('points') != null) & ($(event.target).parent().children("title").first().text() != "G")) {
-            if($(event.target).attr('style') == "fill:#57BC90"){
-              $(event.target).attr('style', "fill:#CD5360");    //red
-            } 
-            else {
-              if( $(event.target).attr('style') == "fill:#CD5360"){
-                $(event.target).attr('style', "fill:#E5E338");  //Yellow
-              }
-              else {
-                $(event.target).attr('style', "fill:#57BC90");  //Green
-              }
-            }
-          }
+}
+
+function printJSON(data){
+    $.each(data.model, function(key, val){
+			$.each(val.table, function(key, val){
+				if (key == "preconditions"){
+					$.each(val, function(key, val){
+						$("#test").append("<b>preconditions</b>" + " : " + val + "<br>");
+					});
+					
+				} else if (key == "action"){
+					$.each(val, function(key, val){
+						$("#test").append("<b>action</b>" + " : " + val + "<br>");
+					});
+					
+				} else{
+					$("#test").append("<b>"+key+"</b>" + " : " + val + "<br>");
+				}
+        });
+    });
+    //var testobj = getObjects(data, 'id', 'AGPL2');
+}
+
+$( "#opener" ).click(function() {
+  	alert(JSON.stringify(jsonData));
+  	//$("<div/>",{JSON.stringify(jsonData)).appendTo("body");
+    //$("div").dialog();
+});
+
+function getObjects(obj, key, val) {
+    var objects = [];
+    for (var i in obj) {
+        if (!obj.hasOwnProperty(i)) continue;
+        if (typeof obj[i] == 'object') {
+            objects = objects.concat(getObjects(obj[i], key, val));
+        } else if (i == key && obj[key] == val) {
+            objects.push(obj);
         }
-      );
-   </script>
+    }
+    return objects;
+}
+
+var _id = "";
+$("#mainsvg").click(
+	function (event) {
+
+		if ($(event.target).parent().children("title").first().text() != ""){
+			_id = $(event.target).parent().children("title").first().text();
+		}
+		else{
+			_id = $(event.target).parent().parent().children("title").first().text();
+		}
+
+	  // Don't color anything that is not polygon with points. Also don't color graphs
+	  if (($(event.target).attr('points') != null) & ($(event.target).parent().children("title").first().text() != "G")) {
+	    if($(event.target).attr('style') == "fill:#57BC90"){
+	      $(event.target).attr('style', "fill:#CD5360");    //red
+	      updateJSON(_id, "SF");
+	    } 
+	    else {
+	      if( $(event.target).attr('style') == "fill:#CD5360"){
+	        $(event.target).attr('style', "fill:#E5E338");  //Yellow
+	        updateJSON(_id, "SU");
+	      }
+	      else {
+	        $(event.target).attr('style', "fill:#57BC90");  //Green
+	        updateJSON(_id, "ST");
+	      }
+	    }
+	  }
+	}
+);
+
+</script>
 <script>
   $( function() {
     $( document ).tooltip({
@@ -609,6 +670,17 @@ $(document).ready(function(){
     border-radius: 20px;
     box-shadow: 0 0 7px black;
   }
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+   }
   </style>
 </body>
 </html>
