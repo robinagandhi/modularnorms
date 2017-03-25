@@ -48,7 +48,8 @@
             <g id="node2" class="node">
                <title>AGPL2</title>
                <a title="2. You may modify your copy or copies of the Program or any portion of it, thus forming a work based on the Program, and copy and distribute such modifications or work under the terms of Section 1 above, provided that you also meet all of these conditions.">
-                  <polygon fill="#FFFFFF" stroke="black" points="207.986,-1327 91.0069,-1350 91.0069,-1304 207.986,-1327"/>
+                  <polygon id="satisfied" fill="#FFFFFF" stroke="black" points="207.986,-1327 149.493,-1339.5 149.493,-1315.5 207.986,-1327"/>
+                  <polygon id="applicable" fill="#FFFFFF" stroke="black" points="149.493,-1339.5 91.0069,-1350 91.0069,-1304 149.493,-1315.5  149.493,-1339.5"/>
                   <text text-anchor="middle" x="130" y="-1323.3" font-family="Times New Roman,serif" font-size="14.00">AGPL2</text>
                </a>
             </g>
@@ -540,16 +541,16 @@
 
 var jsonData = [];
 
-$(document).ready(function(){       
+$(document).ready(function(){
 	//$.getJSON("https://robinagandhi.github.io/modularnorms/examples/agpl-val-fixed.json", function(data){
-            
+
            	//printJSON(data);
             //var testobj = getObjects(data, 'id', 'AGPL2');
             //jsonData = data
         //});
 
 	//console.log(JSON.stringify(jsonData));
-		
+
 });
 
 function updateJSON(id, status) {
@@ -557,19 +558,29 @@ function updateJSON(id, status) {
 	var exist = false;
 	$.each(jsonData, function(key, val){
     		if (val.id == id){
-    			val.status = status;
+          if((status == "AT") | (status == "AF") | (status == "AU")){
+              val.applicable = status;
+          } else{
+            val.satisfied = status;
+          }
     			exist = true;
-    			console.log(JSON.stringify(jsonData));
-    		} 
+    			//console.log(JSON.stringify(jsonData));
+    		}
     });
 	if (exist == false){
 		item = {};
     	item ["id"] = id;
-    	item ["status"] = status;
+      if((status == "AT") | (status == "AF") | (status == "AU")){
+          item ["applicable"] = status;
+          item ["satisfied"] = "";
+      } else{
+        item ["satisfied"] = status;
+        item ["applicable"] = "";
+      }
     	jsonData.push(item);
-    	console.log(JSON.stringify(jsonData));
-	} 
-	$( "#dialog" ).text(JSON.stringify(jsonData));  	
+    	//console.log(JSON.stringify(jsonData));
+	}
+	$( "#dialog" ).text(JSON.stringify(jsonData));
 
 }
 
@@ -580,12 +591,12 @@ function printJSON(data){
 					$.each(val, function(key, val){
 						$("#test").append("<b>preconditions</b>" + " : " + val + "<br>");
 					});
-					
+
 				} else if (key == "action"){
 					$.each(val, function(key, val){
 						$("#test").append("<b>action</b>" + " : " + val + "<br>");
 					});
-					
+
 				} else{
 					$("#test").append("<b>"+key+"</b>" + " : " + val + "<br>");
 				}
@@ -628,16 +639,34 @@ $("#mainsvg").click(
 	  if (($(event.target).attr('points') != null) & ($(event.target).parent().children("title").first().text() != "G")) {
 	    if($(event.target).attr('style') == "fill:#57BC90"){
 	      $(event.target).attr('style', "fill:#CD5360");    //red
-	      updateJSON(_id, "SF");
-	    } 
+        if (($(event.target).attr('id') == "satisfied")|| ($(event.target).attr('id') == null) ) {
+          updateJSON(_id, "SF");
+        }
+        if ($(event.target).attr('id') == "applicable"){
+          updateJSON(_id, "AF");
+        }
+	    }
 	    else {
 	      if( $(event.target).attr('style') == "fill:#CD5360"){
 	        $(event.target).attr('style', "fill:#E5E338");  //Yellow
-	        updateJSON(_id, "SU");
+
+          if (($(event.target).attr('id') == "satisfied")| ($(event.target).attr('id') == null) ) {
+            updateJSON(_id, "SU");
+          }
+          if ($(event.target).attr('id') == "applicable"){
+            updateJSON(_id, "AU");
+          }
+
 	      }
 	      else {
 	        $(event.target).attr('style', "fill:#57BC90");  //Green
-	        updateJSON(_id, "ST");
+          if (($(event.target).attr('id') == "satisfied")| ($(event.target).attr('id') == null) ) {
+            updateJSON(_id, "ST");
+          }
+          if ($(event.target).attr('id') == "applicable"){
+            updateJSON(_id, "AT");
+          }
+
 	      }
 	    }
 	  }
