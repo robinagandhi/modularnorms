@@ -606,9 +606,18 @@ function printJSON(data){
 }
 
 $( "#opener" ).click(function() {
-  	alert(JSON.stringify(jsonData));
+  	//alert(JSON.stringify(jsonData));
   	//$("<div/>",{JSON.stringify(jsonData)).appendTo("body");
     //$("div").dialog();
+
+    $.ajax('http://jsonplaceholder.typicode.com/posts/1', {
+      method: 'PUT',
+      data: JSON.stringify(jsonData)
+    }).then(function(data) {
+      console.log(data);
+      alert("Response from http://jsonplaceholder.typicode.com/posts/1" + JSON.stringify(data));
+    });
+
 });
 
 function getObjects(obj, key, val) {
