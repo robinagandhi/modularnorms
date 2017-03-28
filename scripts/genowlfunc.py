@@ -115,7 +115,8 @@ def genSituationVals(id, val):
 		# genDataProp('hasST', id, '"false"^^xsd:boolean')
 		# genDataProp('hasSF', id, '"false"^^xsd:boolean')
 		# genDataProp('hasSU', id, '"true"^^xsd:boolean')
-	genDataProp('satisfied', id, '"' + val + '"^^xsd:string')
+	if val != '':
+		genDataProp('satisfied', id, '"' + val + '"^^xsd:string')
 
 
 # # Individual: <URI+S1> (<URI+S1>)
@@ -161,7 +162,8 @@ def drawSituation(slabel, id, type, suggestsid=''):
 			atomicval = slabel[:2]
 			slabel = slabel[3:]
 		else:
-			atomicval = 'SU'
+			atomicval = '' # leave atomicval blank to prevent generating value assertions
+			# atomicval = 'SU' 
 			
 	genClassAssert(classtype, sid)
 	genObjectProp(OntoMap[type], sid, id)
