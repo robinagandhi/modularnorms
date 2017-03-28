@@ -2,7 +2,7 @@
   "model": [
     {
      "table": {
-       "id": "n1",
+       "id": "AGPL2",
        "sentence": "2. You may modify your copy or copies of the Program or any portion of it, thus forming a work based on the Program, and copy and distribute such modifications or work under the terms of Section 1 above, provided that you also meet all of these conditions.",
        "actor": "You",
        "modal": "may",
@@ -12,17 +12,17 @@
        "preconditions": [
 		  "P1 and (P2 and (P3 and (P4 and P5)))",
 		  "P1: under the terms of Section 1",
-		  "P2: $n2",
-		  "P3: $n3",
-		  "P4: $n4",
-		  "P5: $n5"
+		  "P2: $AGPL2a",
+		  "P3: $AGPL2b",
+		  "P4: $AGPL2c",
+		  "P5: $AGPL2d"
 	   ]
      }
     }, 
 
     {
      "table": {
-       "id": "n2",
+       "id": "AGPL2a",
        "sentence": "2.a) You must cause the modified files to carry prominent notices stating that you changed the files and the date of any change.",
        "actor": "You",
        "modal": "must",
@@ -35,7 +35,7 @@
 
     {
      "table": {
-       "id": "n3",
+       "id": "AGPL2b",
        "sentence": "2.b) You must cause any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License.",
        "actor": "You",
        "modal": "must",
@@ -48,7 +48,7 @@
 
     {
      "table": {
-       "id": "n4",
+       "id": "AGPL2c",
        "sentence": "2.c) If the modified program normally reads commands interactively when run, you must cause it, when started running for such interactive use in the most ordinary way, to print or display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty) and that users may redistribute the program under these conditions, and telling the user how to view a copy of this License. (Exception: if the Program itself is interactive but does not normally print such an announcement, your work based on the Program is not required to print an announcement.)",
        "actor": "You",
        "modal": "must",
@@ -66,7 +66,7 @@
 
     {
      "table": {
-       "id": "n5",
+       "id": "AGPL2d",
        "sentence": "2.d) If the Program as you received it is intended to interact with users through a computer network and if, in the version you received, any user interacting with the Program was given the opportunity to request transmission to that user of the Program's complete source code, you must not remove that facility from your modified version of the Program or work based on the Program, and must offer an equivalent opportunity for all users interacting with your Program through a computer network to request immediate transmission by HTTP of the complete source code of your modified version or other derivative work.",
        "actor": "You",
        "modal": "must not",
