@@ -2,7 +2,9 @@
 This is a repository for code and data to produce modular norm models from legal text.
 
 # Example
-See the examples folder for SVG files produced for AGPLv1.0, Apache2 and HIPAA Models. These models have been generated from corresponding JSON objects in the directory.
+See the examples folder for SVG files produced for AGPLv1.0, Apache2 and HIPAA Models. These models have been generated from corresponding JSON objects in the directory.   
+
+You can explore [AGPL](https://robinagandhi.github.io/modularnorms/examples/agpl-test.html) and [HIPAA](https://robinagandhi.github.io/modularnorms/examples/hipaa-test.html) model that have been augmented for interactive analysis in a browser.
 
 # Usage
 
