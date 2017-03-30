@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    <meta charset="utf-8">
+    <title>HIPAA Demo</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+
+    <button id="opener" class="button">Submit</button>
+    <div id="textarea"></div>
+
+    <div id="main">
+      <!-- ADD your SVG file here as shown below.
+      IMPORTANT: THEN ADD id="mainsvg" to your SVG element as shown below.
+      Thats it!
+
+      <svg id="mainsvg" width="2453pt" height="1910pt"
+
+      </svg>
+
+
+      -->
+    </div>
+    <script>
+        var jsonData = [];
+
+        // This function will execute on load
+        $(document).ready(function() {
+
+        });
+
+        // Builds the JSON data object
+        function updateJSON(id, status) {
+
+            //check if norm
+            var delimited = id.split('_');
+            var isNorm = false;
+            if (delimited[1] == null) {
+                isNorm = true; // Is a norm
+            } else {
+                isNorm = false; // not a norm
+            }
+
+            if (!isNorm) {
+                var exist = false;
+                $.each(jsonData, function(key, val) {
+                    if (val.id == id) {
+                        val.satisfied = status;
+                        exist = true;
+                        //console.log(JSON.stringify(jsonData));
+                    }
+                });
+                if (exist == false) {
+                    item = {};
+                    item["id"] = id;
+                    item["satisfied"] = status;
+                    jsonData.push(item);
+                    //console.log(JSON.stringify(jsonData));
+                }
+
+            } else { // this is a norm
+                var exist = false;
+                $.each(jsonData, function(key, val) {
+                    if (val.id == id) {
+                        val.compliance = status;
+                        exist = true;
+                        //console.log(JSON.stringify(jsonData));
+                    }
+                });
+                if (exist == false) {
+                    item = {};
+                    item["id"] = id;
+                    item["compliance"] = status;
+                    jsonData.push(item);
+                    //console.log(JSON.stringify(jsonData));
+                }
+            }
+
+            $("#textarea").text(JSON.stringify(jsonData));
+
+        }
+
+        //Respponds to the button press event
+        $("#opener").click(function() {
+            $.ajax('http://jsonplaceholder.typicode.com/posts/1', {
+                method: 'PUT',
+                data: JSON.stringify(jsonData)
+            }).then(function(data) {
+                console.log(data);
+                alert("Response from http://jsonplaceholder.typicode.com/posts/1" + JSON.stringify(data));
+            });
+        });
+
+        //SVG click event response function
+
+        $("#mainsvg").click(
+            function(event) {
+
+                var _id = "";
+                // Get the ID from the title of the clicked element
+                if ($(event.target).parent().children("title").first().text() != "") {
+                    _id = $(event.target).parent().children("title").first().text();
+                } else {
+                    _id = $(event.target).parent().parent().children("title").first().text();
+                }
+
+                //Allow clicking on text to select the sibling polygon
+                if ($(event.target).attr('points') == null) {
+                    polygon = $(event.target).parent().children("polygon").first();
+                } else {
+                    polygon = $(event.target);
+                }
+
+                //check if norm
+                var delimited = polygon.parent().children("title").last().text().split('_');
+                var isNorm = false;
+                if (delimited[1] == null) {
+                    isNorm = true; // Is a norm
+                } else {
+                    isNorm = false; // not a norm
+                }
+
+                // Don't color anything that is not polygon with points. Also don't color graphs and Norms
+                if ((polygon.attr('points') != null) & (polygon.parent().children("title").first().text() != "G") & !(isNorm)) {
+                    if (polygon.attr('style') == "fill:#57BC90") { // if green then turn red
+                        polygon.attr('style', "fill:#CD5360"); //red
+                        var delimited = polygon.parent().children("text").last().text().split('|');
+                        if (delimited[1] == null) {
+                            polygon.parent().children("text").last().text(delimited[0] + " | SF");
+                        } else {
+                            polygon.parent().children("text").last().text(delimited[0] + " | SF");
+                        }
+                        updateJSON(_id, "SF");
+                    } else {
+                        if (polygon.attr('style') == "fill:#CD5360") { //if red then turn yellow
+                            polygon.attr('style', "fill:#E5E338"); //Yellow
+
+                            var delimited = polygon.parent().children("text").last().text().split('|');
+                            if (delimited[1] == null) {
+                                polygon.parent().children("text").last().text(delimited[0] + " | SU");
+                            } else {
+                                polygon.parent().children("text").last().text(delimited[0] + " | SU");
+                            }
+
+                            updateJSON(_id, "SU");
+
+                        } else {
+                            if (polygon.attr('style') == "fill:#E5E338") { //if yellow then turn white
+                                polygon.attr('style', "fill:#FFFFFF"); //white
+                                updateJSON(_id, "");
+                                var delimited = polygon.parent().children("text").last().text().split('|');
+                                if (delimited[1] == null) {
+                                    polygon.parent().children("text").last().text(delimited[0]);
+                                } else {
+                                    polygon.parent().children("text").last().text(delimited[0]);
+                                }
+                            } else { //turn green
+                                polygon.attr('style', "fill:#57BC90"); //Green
+                                var delimited = polygon.parent().children("text").last().text().split('|');
+                                if (delimited[1] == null) {
+                                    polygon.parent().children("text").last().text(delimited[0] + " | ST");
+                                } else {
+                                    polygon.parent().children("text").last().text(delimited[0] + " | ST");
+                                }
+                                updateJSON(_id, "ST");
+                            }
+                        }
+                    }
+                }
+                //If this is a norm and not a graph, we set its compliance values
+                if (isNorm & (polygon.parent().children("title").first().text() != "G")) {
+                    var delimited = polygon.parent().children("text").last().text().split('|');
+                    if (delimited[1] == null) {
+                        polygon.parent().children("text").last().text(delimited[0] + " | COM");
+                        updateJSON(_id, "COM");
+                    } else {
+                        if (delimited[1].trim() == "COM") {
+                            polygon.parent().children("text").last().text(delimited[0] + " | TOL");
+                            updateJSON(_id, "TOL");
+                        } else {
+                            if (delimited[1].trim() == "TOL") {
+                                polygon.parent().children("text").last().text(delimited[0] + " | VIO");
+                                updateJSON(_id, "VIO");
+                            } else {
+                                if (delimited[1].trim() == "VIO") {
+                                    polygon.parent().children("text").last().text(delimited[0] + " | INC");
+                                    updateJSON(_id, "INC");
+                                } else {
+                                    polygon.parent().children("text").last().text(delimited[0].trim());
+                                    updateJSON(_id, "");
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        );
+    </script>
+    <script>
+        $(function() {
+            $(document).tooltip({
+                track: true,
+                position: {
+                    my: "center bottom-20",
+                    at: "center top",
+                    using: function(position, feedback) {
+                        $(this).css(position);
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        .ui-tooltip {
+            width: 300px;
+            background: yellow;
+            border: 2px solid red;
+            padding: 10px 20px;
+            font: bold 14px "Helvetica Neue", Sans-Serif;
+            color: black;
+            border-radius: 20px;
+            box-shadow: 0 0 7px black;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+        }
+
+        textarea {
+            height: 28px;
+            width: 400px;
+        }
+
+        #textarea {
+            -moz-appearance: textfield-multiline;
+            -webkit-appearance: textarea;
+            border: 1px solid gray;
+            font: medium -moz-fixed;
+            font: -webkit-small-control;
+            height: 100px;
+            overflow: auto;
+            padding: 2px;
+            resize: both;
+            width: 800px;
+        }
+    </style>
+</body>
+
+</html>
