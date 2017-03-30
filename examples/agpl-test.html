@@ -48,8 +48,8 @@
             <g id="node2" class="node">
                <title>AGPL2</title>
                <a title="2. You may modify your copy or copies of the Program or any portion of it, thus forming a work based on the Program, and copy and distribute such modifications or work under the terms of Section 1 above, provided that you also meet all of these conditions.">
-                  <polygon id="satisfied" fill="#FFFFFF" stroke="black" points="207.986,-1327 149.493,-1339.5 149.493,-1315.5 207.986,-1327"/>
                   <polygon id="applicable" fill="#FFFFFF" stroke="black" points="149.493,-1339.5 91.0069,-1350 91.0069,-1304 149.493,-1315.5  149.493,-1339.5"/>
+                  <polygon id="satisfied" fill="#FFFFFF" stroke="black" points="207.986,-1327 149.493,-1339.5 149.493,-1315.5 207.986,-1327"/>
                   <text text-anchor="middle" x="130" y="-1323.3" font-family="Times New Roman,serif" font-size="14.00">AGPL2</text>
                </a>
             </g>
@@ -563,6 +563,10 @@ function updateJSON(id, status) {
           } else{
             val.satisfied = status;
           }
+          if((status == "")){
+            val.applicable = status;
+            val.satisfied = status;
+          }
     			exist = true;
     			//console.log(JSON.stringify(jsonData));
     		}
@@ -644,39 +648,53 @@ $("#mainsvg").click(
 			_id = $(event.target).parent().parent().children("title").first().text();
 		}
 
+    if ($(event.target).attr('points') == null){
+      polygon = $(event.target).parent().children("polygon").first();
+    } else{
+      polygon = $(event.target);
+    }
+
+    console.log(polygon.attr('points'));
+
 	  // Don't color anything that is not polygon with points. Also don't color graphs
-	  if (($(event.target).attr('points') != null) & ($(event.target).parent().children("title").first().text() != "G")) {
-	    if($(event.target).attr('style') == "fill:#57BC90"){
-	      $(event.target).attr('style', "fill:#CD5360");    //red
-        if (($(event.target).attr('id') == "satisfied")|| ($(event.target).attr('id') == null) ) {
+	  if ((polygon.attr('points') != null) & (polygon.parent().children("title").first().text() != "G")) {
+	    if(polygon.attr('style') == "fill:#57BC90"){ // if green then turn red
+	      polygon.attr('style', "fill:#CD5360");    //red
+        if ((polygon.attr('id') == "satisfied")|| (polygon.attr('id') == null) ) {
           updateJSON(_id, "SF");
         }
-        if ($(event.target).attr('id') == "applicable"){
+        if (polygon.attr('id') == "applicable"){
           updateJSON(_id, "AF");
         }
 	    }
 	    else {
-	      if( $(event.target).attr('style') == "fill:#CD5360"){
-	        $(event.target).attr('style', "fill:#E5E338");  //Yellow
+	      if( polygon.attr('style') == "fill:#CD5360"){ //if red then turn yellow
+	        polygon.attr('style', "fill:#E5E338");  //Yellow
 
-          if (($(event.target).attr('id') == "satisfied")| ($(event.target).attr('id') == null) ) {
+          if ((polygon.attr('id') == "satisfied")| (polygon.attr('id') == null) ) {
             updateJSON(_id, "SU");
           }
-          if ($(event.target).attr('id') == "applicable"){
+          if (polygon.attr('id') == "applicable"){
             updateJSON(_id, "AU");
           }
 
 	      }
-	      else {
-	        $(event.target).attr('style', "fill:#57BC90");  //Green
-          if (($(event.target).attr('id') == "satisfied")| ($(event.target).attr('id') == null) ) {
-            updateJSON(_id, "ST");
+        else {
+          if( polygon.attr('style') == "fill:#E5E338"){ //if yellow then turn white
+            polygon.attr('style', "fill:#FFFFFF");  //white
+            updateJSON(_id, "");
           }
-          if ($(event.target).attr('id') == "applicable"){
-            updateJSON(_id, "AT");
-          }
+  	      else { //turn green
+  	        polygon.attr('style', "fill:#57BC90");  //Green
+            if ((polygon.attr('id') == "satisfied")| (polygon.attr('id') == null) ) {
+              updateJSON(_id, "ST");
+            }
+            if (polygon.attr('id') == "applicable"){
+              updateJSON(_id, "AT");
+            }
 
-	      }
+  	      }
+        }
 	    }
 	  }
 	}
