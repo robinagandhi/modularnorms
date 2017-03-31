@@ -89,12 +89,13 @@
 
         //Respponds to the button press event
         $("#opener").click(function() {
-            $.ajax('http://jsonplaceholder.typicode.com/posts/1', {
+            $.ajax('https://jsonplaceholder.typicode.com/posts/1', {
                 method: 'PUT',
-                data: JSON.stringify(jsonData)
+                data: JSON.stringify(jsonData),
+                crossDomain: true
             }).then(function(data) {
                 console.log(data);
-                alert("Response from http://jsonplaceholder.typicode.com/posts/1" + JSON.stringify(data));
+                alert("Response from https://jsonplaceholder.typicode.com/posts/1" + JSON.stringify(data));
             });
         });
 
