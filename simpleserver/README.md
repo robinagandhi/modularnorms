@@ -19,6 +19,9 @@ I've tested with the following Jars:
 4. Jetty 9.3.6 - Web container used by Spark - seems more lightweight than embedded Tomcat
     - http://disq.us/url?url=http%3A%2F%2Fsearch.maven.org%2Fremotecontent%3Ffilepath%3Dorg%2Feclipse%2Fjetty%2Faggregate%2Fjetty-all%2F9.3.6.v20151106%2Fjetty-all-9.3.6.v20151106-uber.jar%3AofKBCpdZUuvS_7R2u4aEGQtFbpM&cuid=3631811
 
+5. Gson 2.8.0 - convert between JSON and Java objects
+   - https://maven-badges.herokuapp.com/maven-central/com.google.code.gson/gson
+
 Copy all jar files to lib folder (move Pellet directory inside lib folder).
 
 ## Compile
