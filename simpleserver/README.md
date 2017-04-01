@@ -4,7 +4,7 @@ Here's a simple web server that enables a user to make assertions
 on the graphical norm model 
 indicating whether situations are satisfied or not.
 
-# Installation notes
+## Installation notes
 
 I've tested with the following Jars:
 
@@ -21,13 +21,13 @@ I've tested with the following Jars:
 
 Copy all jar files to lib folder (move Pellet directory inside lib folder).
 
-# Compile
+## Compile
 
-javac -cp "lib/*:lib/pellet-2.3.1/lib/*" NormServer.java
+javac -cp "lib/\*:lib/pellet-2.3.1/lib/\*" NormServer.java
 
-# Running
+## Running
 
-java -cp ".:lib/*:lib/pellet-2.3.1/lib/*" NormServer
+java -cp ".:lib/\*:lib/pellet-2.3.1/lib/\*" NormServer
 
 Open up the test html file and give it a try.
 
