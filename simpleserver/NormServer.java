@@ -56,14 +56,14 @@ public class NormServer {
 			if (accessControlRequestHeaders != null) {
 				response.header("Access-Control-Allow-Headers", accessControlRequestHeaders);
 			}
-			
+
 			String accessControlRequestMethod = request.headers("Access-Control-Request-Method");
 			if (accessControlRequestMethod != null) {
 				response.header("Access-Control-Allow-Methods", accessControlRequestMethod);
 			}
 			return "OK";
 		});
-		
+
 		before((request, response) -> {
 			response.header("Access-Control-Allow-Origin", origin);
 			//response.header("Access-Control-Request-Method", methods);
@@ -72,12 +72,12 @@ public class NormServer {
 			response.type("application/json");
 		});
 	}
-	
+
 	public static void main(String[] args) {
 		NormServer nr = new NormServer();
-		
+
 		enableCORS("*");
-		
+
         post("/assert", (req, res) -> {
 
 			// http://spark.screenisland.com/spark/Request.html for more info on the Request structure
@@ -93,18 +93,18 @@ public class NormServer {
 			Gson gson = new Gson();
 			List<SetRequest> setreqs = gson.fromJson(reqstr, new TypeToken<List<SetRequest>>(){}.getType());
 			// setreqs.forEach(x -> System.out.println(x));
-			
+
 			// http://stackoverflow.com/questions/18857884/how-to-convert-arraylist-of-custom-class-to-jsonarray-in-java
 			List<SetRequest> newvals = nr.run(setreqs);
 			JsonElement element   = gson.toJsonTree(newvals, new TypeToken<List<SetRequest>>(){}.getType());
 			JsonArray jsonArray = element.getAsJsonArray();
-			
+
 			return jsonArray;
 		});
 	}
 
 	/**
-	 * Assert the indicated situations and run the Pellet reasoner 
+	 * Assert the indicated situations and run the Pellet reasoner
 	 * @param - list of situations asserted by the user
 	 * @return - value of "satisfied" property for all atomic situations and norms
 	 */
@@ -126,7 +126,7 @@ public class NormServer {
 			Individual iAtomic = (Individual) instanceList.next();
 			allatomic.add(iAtomic.getLocalName());
 		}
-	
+
 		// for each r in setreqs:
 		//	 if r.id in AtomicSituation and r.satisfied != "":
 		//		changeSatisfied(model, ont, r.id, r.satisfied)
@@ -135,7 +135,7 @@ public class NormServer {
 			Individual cand_situation = model.getIndividual( ont + r.id );
 			// hasOntClass call appears to be running the reasoner everytime
 			// if (r.satisfied.length() > 0 && cand_situation != null && cand_situation.hasOntClass(AtomicSituation, true)) {
-			if (r.satisfied.length() > 0 && cand_situation != null && allatomic.contains(cand_situation.getLocalName())) {
+			if (r.satisfied != null && r.satisfied.length() > 0 && cand_situation != null && allatomic.contains(cand_situation.getLocalName())) {
 				changeSatisfied(model, ont, r.id, r.satisfied);
 				atomicset.add(r.id);
 			}
@@ -154,7 +154,7 @@ public class NormServer {
 		model.prepare();
 
 		List<SetRequest> returnvals = new ArrayList<SetRequest>();
-		
+
 		// can't do the following with ExtendedIterator??
 		// for (Individual i : ) {
 			// System.out.print(i.getLocalName() + ".satisfied: ");
@@ -165,7 +165,7 @@ public class NormServer {
 			Individual iAtomic = (Individual) instanceList.next();
 			System.out.print(iAtomic.getLocalName() + ".satisfied: ");
 			printIterator( iAtomic.listPropertyValues( satisfied ) );
-			
+
 			SetRequest r = new SetRequest();
 			r.id = iAtomic.getLocalName();
 			r.satisfied = ((Literal) iAtomic.getPropertyValue(satisfied)).getString();
@@ -196,7 +196,7 @@ public class NormServer {
 			r.compliance = compval;
 			returnvals.add(r);
 		}
-		
+
 		Individual AGPL2 = model.getIndividual( ont + "AGPL2" );
 		printDataProperty( AGPL2, Com);
 		printDataProperty( AGPL2, Tol);
@@ -247,7 +247,7 @@ public class NormServer {
 		}
 		System.out.println();
 	}
-	
+
 	/**
 	 * Display one values for a given individual and property.
 	 * If there are more than one, Jena will arbitrarily pick one
