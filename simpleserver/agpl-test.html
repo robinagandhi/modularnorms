@@ -10,9 +10,14 @@
 </head>
 
 <body>
-
-    <button id="opener" class="button">Submit</button>
+    <label>   Subject ID:  </label>
+    <div>
+      <textarea id="studentid" class="textarea"></textarea>
+    </div>
+    <label> Selection: </label>
     <div id="textarea"></div>
+    <div></div>
+    <button id="opener" class="button">Solve</button>
 
     <div id="main">
 
@@ -599,6 +604,7 @@
 
         //Respponds to the button press event
         $("#opener").click(function() {
+          if ($("#studentid").val() != ""){
             $.ajax('http://137.48.191.120:4567/assert', {
                 method: 'POST',
                 data: JSON.stringify(jsonData),
@@ -607,8 +613,12 @@
                 console.log(data);
                 updateSVG(data);
                 //alert("Response from http://localhost:4567/assert " + JSON.stringify(data));
+                alert("Done! Review results")
 
             });
+          } else{
+            alert("Please enter a valid Experiment Subject ID");
+          }
         });
 
         function updateSVG (data){
