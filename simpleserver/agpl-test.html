@@ -539,6 +539,7 @@
     </div>
     <script>
         var jsonData = [];
+        var jsonResult = [];
 
         // This function will execute on load
         $(document).ready(function() {
@@ -604,9 +605,53 @@
 				        crossDomain: true
             }).then(function(data) {
                 console.log(data);
-                alert("Response from http://localhost:4567/assert " + JSON.stringify(data));
+                updateSVG(data);
+                //alert("Response from http://localhost:4567/assert " + JSON.stringify(data));
+
             });
         });
+
+        function updateSVG (data){
+          $.each(data, function(key, val) {
+              if (val.id != null) {
+                  $("title").each(function(index, element) {
+                    if ($(this).text() == val.id){
+                       polygon = $(this).parent().children("polygon").first();
+                       if (val.satisfied != null) {
+                         textNode = $(this).parent().children("text").last();
+                         delimited = textNode.text().split('|');
+                         if (delimited[1] == null) {
+                             textNode.text(delimited[0] + " | " + val.satisfied);
+                         } else {
+                             textNode.text(delimited[0] + " | " + val.satisfied);
+                         }
+                         if (val.satisfied == "SF"){
+                           polygon.attr('style', "fill:#CD5360"); //red
+                         } else {
+                           if (val.satisfied == "ST"){
+                             polygon.attr('style', "fill:#57BC90"); //green
+                           } else {
+                             if (val.satisfied == "SU"){
+                               polygon.attr('style', "fill:#E5E338"); //yellow
+                             }
+                           }
+                         }
+                       } else {
+                         if (val.compliance != null){
+                           textNode = $(this).parent().children("a").first().children("text").first();
+                           var delimited = textNode.text().split('|');
+                           if (delimited[1] == null) {
+                               textNode.text(delimited[0] + " | " + val.compliance);
+                           } else {
+                               textNode.text(delimited[0] + " | " + val.compliance);
+                           }
+                         }
+                       }
+                    }
+                  });
+              }
+          });
+        }
 
         //SVG click event response function
 
