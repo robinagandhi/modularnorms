@@ -598,10 +598,10 @@
 
         //Respponds to the button press event
         $("#opener").click(function() {
-            $.ajax('http://localhost:4567/assert', {
+            $.ajax('http://137.48.191.120:4567/assert', {
                 method: 'POST',
                 data: JSON.stringify(jsonData),
-				crossDomain: true
+				        crossDomain: true
             }).then(function(data) {
                 console.log(data);
                 alert("Response from http://localhost:4567/assert " + JSON.stringify(data));
