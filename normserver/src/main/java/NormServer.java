@@ -44,6 +44,8 @@ import com.google.gson.reflect.*;
  */
 public class NormServer {
 
+	static final Logger logger = LoggerFactory.getLogger(NormServer.class);
+
 	public class SetRequest {
 		private String id;
 		private String satisfied;
@@ -108,7 +110,6 @@ public class NormServer {
 		port(getHerokuAssignedPort());
 		enableCORS("*");
 
-		Logger logger = LoggerFactory.getLogger(NormServer.class);
 		before ((req, res) -> {
 			logger.info(requestInfoToString(req));
 		});
@@ -144,12 +145,12 @@ public class NormServer {
 
 	public JsonArray processRequests(String modelname, Request req) {
 			// http://spark.screenisland.com/spark/Request.html for more info on the Request structure
-			System.out.println(req.queryParams());
+			logger.debug(req.queryParams().toString());
 			String reqstr = "";
 			Iterator<String> iterator = req.queryParams().iterator();
 			while (iterator.hasNext()) {
 				reqstr = iterator.next();
-				System.out.println(reqstr);
+				logger.debug(reqstr);
 			}
 
 			// https://www.mkyong.com/java/how-do-convert-java-object-to-from-json-format-gson-api/ for more info on Gson
@@ -178,7 +179,7 @@ public class NormServer {
 
 		OntModel model = ModelFactory.createOntologyModel( PelletReasonerFactory.THE_SPEC, null );
 		
-		System.out.println("About the load the OWL file: " + ontfile);
+		logger.debug("About the load the OWL file: " + ontfile);
 		// model.read( ontfile ); // this does not work in maven build
 		// https://www.mkyong.com/java/java-read-a-file-from-resources-folder/
 		// http://www.baeldung.com/convert-file-to-input-stream
@@ -186,9 +187,12 @@ public class NormServer {
 		// File file = new File(classLoader.getResource(ontfile).getFile());
 		// InputStream modelfile = new FileInputStream(file); // does not work because resource is in jar file! http://stackoverflow.com/questions/9530549/why-contextclassloader-returns-path-with-exclamation-character
 		InputStream modelfile = classLoader.getResourceAsStream(ontfile);
-		System.out.println(modelfile);
+		if (modelfile == null) {
+			return null;
+		}
+		logger.debug(modelfile.toString());
 		model.read( modelfile, null );
-		System.out.println("Loaded the OWL file");
+		logger.debug("Loaded the OWL file");
 
 		OntClass Norm = model.getOntClass( ont + "Norm" );
 		OntClass Situation = model.getOntClass( ont + "Situation" );
