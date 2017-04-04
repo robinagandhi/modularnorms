@@ -605,7 +605,9 @@
         //Respponds to the button press event
         $("#opener").click(function() {
           if ($("#studentid").val() != ""){
-            $.ajax('http://137.48.191.120:4567/assert', {
+            accessURL = "http://137.48.191.24:4567/assert/1/{" + $("#studentid").val() + "}"
+            console.log(accessURL);
+            $.ajax(accessURL, {
                 method: 'POST',
                 data: JSON.stringify(jsonData),
 				        crossDomain: true
@@ -614,7 +616,6 @@
                 updateSVG(data);
                 //alert("Response from http://localhost:4567/assert " + JSON.stringify(data));
                 alert("Done! Review results")
-
             });
           } else{
             alert("Please enter a valid Experiment Subject ID");
@@ -645,6 +646,34 @@
                                polygon.attr('style', "fill:#E5E338"); //yellow
                              }
                            }
+                         }
+                         // Check if this is a super situation. Then color the related container also
+                         ssCheck = textNode.text().split('_');
+                         if (ssCheck[0] == "SS") {
+                           $("title").each(function(index, element){
+                             ssNode = "cluster" + textNode.text().split('|')[0].trim();
+                             if ($(this).text() == ssNode) {
+                               polygonSS = $(this).parent().children("polygon").first();
+                               textNodeSS = $(this).parent().children("text").last();
+                               delimited = textNodeSS.text().split('|');
+                               if (delimited[1] == null) {
+                                   textNodeSS.text(delimited[0] + " | " + val.satisfied);
+                               } else {
+                                   textNodeSS.text(delimited[0] + " | " + val.satisfied);
+                               }
+                               if (val.satisfied == "SF"){
+                                 polygonSS.attr('style', "fill:#CD5360"); //red
+                               } else {
+                                 if (val.satisfied == "ST"){
+                                   polygonSS.attr('style', "fill:#57BC90"); //green
+                                 } else {
+                                   if (val.satisfied == "SU"){
+                                     polygonSS.attr('style', "fill:#E5E338"); //yellow
+                                   }
+                                 }
+                               }
+                             }
+                           });
                          }
                        } else {
                          if (val.compliance != null){
