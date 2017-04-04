@@ -198,10 +198,38 @@ public class NormServer {
 		OntClass Situation = model.getOntClass( ont + "Situation" );
 		OntClass AtomicSituation = model.getOntClass( ont + "AtomicSituation" );
 		DatatypeProperty satisfied = model.getDatatypeProperty(ont + "satisfied");
+		OntClass SuperSituation = model.getOntClass( ont + "SuperSituation" );
+		ObjectProperty containsProp = model.getObjectProperty(ont + "_contains");
+		DatatypeProperty idProp = model.getDatatypeProperty(ont + "hasID");
+		ExtendedIterator instanceList;
+
+		// add object assertion to put root norm in a containing supersituation:
+		//   collect norms contained in supersituations
+		//   for each norm:
+		// 	  if norm n is not contained
+		// 		create supersituation clusterSS_n
+		// 		add property clusterSS_n contains n
+		instanceList = SuperSituation.listInstances();
+		List<String> containedNorms = new ArrayList<String>();
+		while( instanceList.hasNext() ) {
+			Individual iSit = (Individual) instanceList.next();
+			containedNorms.add(((Resource) iSit.getPropertyValue(containsProp)).getLocalName());
+		}
+		instanceList = Norm.listInstances();
+		while( instanceList.hasNext() ) {
+			Individual iNorm = (Individual) instanceList.next();
+			if (!containedNorms.contains(iNorm.getLocalName())) {
+				Individual superroot = model.createIndividual(ont + "clusterSS_" + iNorm.getLocalName(), SuperSituation);
+				// model.add(superroot, idProp, "clusterSS_" + iNorm.getLocalName());
+				superroot.addProperty(containsProp, iNorm);
+				superroot.addDifferentFrom(iNorm);
+				printPropertyValues(superroot, containsProp);
+			}
+		}
 
 		// collect list of all atomic situations
  		List<String> allatomic = new ArrayList<String>();
-		ExtendedIterator instanceList = AtomicSituation.listInstances();
+		instanceList = AtomicSituation.listInstances();
 		while( instanceList.hasNext() ) {
 			Individual iAtomic = (Individual) instanceList.next();
 			allatomic.add(iAtomic.getLocalName());
@@ -249,7 +277,8 @@ public class NormServer {
 			
 			SetRequest r = new SetRequest();
 			r.id = iSit.getLocalName();
-			r.satisfied = ((Literal) iSit.getPropertyValue(satisfied)).getString();
+			Literal val = (Literal) iSit.getPropertyValue(satisfied);
+			r.satisfied = (val != null)? val.getString() : "";
 			returnvals.add(r);
 		}
 
@@ -284,6 +313,13 @@ public class NormServer {
 		printDataProperty( AGPL2, Vio);
 		printDataProperty( AGPL2, Inc);
  */
+ 
+/*		try {
+			model.write(new FileWriter("output.owl"), "RDF/XML");
+		} catch (IOException e) {
+			logger.error("Model write failed");
+		}
+*/
 		return returnvals;
 	}
 
