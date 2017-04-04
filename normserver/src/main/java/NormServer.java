@@ -14,6 +14,7 @@ import java.util.*;
 import java.io.*;
 
 import static spark.Spark.*;
+import spark.Request;
 
 import org.mindswap.pellet.jena.PelletReasonerFactory;
 
@@ -84,7 +85,6 @@ public class NormServer {
         return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
     }
 
-	
 	public static void main(String[] args) {
 		NormServer nr = new NormServer();
 		
@@ -92,9 +92,35 @@ public class NormServer {
 		enableCORS("*");
 		
 		get("/hello", (req, res) -> "Hello Heroku World");
-		
-        post("/assert", (req, res) -> {
 
+        post("/assert", (req, res) -> {
+			// eventually this service will go away and be replaced by the parameterized version /assert/:id 
+			return nr.processRequests("agpl", req);
+		});
+		
+        post("/assert/:modelId", (req, res) -> {
+			return nr.findModelAndProcessRequests(req.params(":modelId"), req);
+		});
+		
+        post("/assert/:modelId/:userId", (req, res) -> {
+			return nr.findModelAndProcessRequests(req.params(":modelId"), req);
+		});
+	}
+
+	public JsonArray findModelAndProcessRequests(String modelId, Request req) {
+		String modelname;
+		if (modelId.equals("1")) {
+			modelname = "agpl";
+		} else if (modelId.equals("2")) {
+			modelname = "hipaa";
+		} else {
+			return null;
+		}
+
+		return processRequests(modelname, req);
+	}
+
+	public JsonArray processRequests(String modelname, Request req) {
 			// http://spark.screenisland.com/spark/Request.html for more info on the Request structure
 			System.out.println(req.queryParams());
 			String reqstr = "";
@@ -110,27 +136,27 @@ public class NormServer {
 			// setreqs.forEach(x -> System.out.println(x));
 			
 			// http://stackoverflow.com/questions/18857884/how-to-convert-arraylist-of-custom-class-to-jsonarray-in-java
-			List<SetRequest> newvals = nr.run(setreqs);
+			List<SetRequest> newvals = run(modelname, setreqs);
 			JsonElement element   = gson.toJsonTree(newvals, new TypeToken<List<SetRequest>>(){}.getType());
 			JsonArray jsonArray = element.getAsJsonArray();
 			
 			return jsonArray;
-		});
 	}
-
+	
+	
 	/**
 	 * Assert the indicated situations and run the Pellet reasoner 
 	 * @param - list of situations asserted by the user
 	 * @return - value of "satisfied" property for all atomic situations and norms
 	 */
-	public List<SetRequest> run(List<SetRequest> setreqs) {
+	public List<SetRequest> run(String modelname, List<SetRequest> setreqs) {
 		// String ontfile = "http://loki.ist.unomaha.edu/~hsiy/normserver/agpl-rdfxml.owl";
-		String ontfile = "agpl-rdfxml.owl";
+		String ontfile = modelname + "-rdfxml.owl";
 		String ont = "http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#";
 
 		OntModel model = ModelFactory.createOntologyModel( PelletReasonerFactory.THE_SPEC, null );
 		
-		System.out.println("About the load the OWL file");
+		System.out.println("About the load the OWL file: " + ontfile);
 		// model.read( ontfile ); // this does not work in maven build
 		// https://www.mkyong.com/java/java-read-a-file-from-resources-folder/
 		// http://www.baeldung.com/convert-file-to-input-stream
@@ -143,6 +169,7 @@ public class NormServer {
 		System.out.println("Loaded the OWL file");
 
 		OntClass Norm = model.getOntClass( ont + "Norm" );
+		OntClass Situation = model.getOntClass( ont + "Situation" );
 		OntClass AtomicSituation = model.getOntClass( ont + "AtomicSituation" );
 		DatatypeProperty satisfied = model.getDatatypeProperty(ont + "satisfied");
 
@@ -180,6 +207,7 @@ public class NormServer {
 		// run the reasoner
 		model.prepare();
 
+		// collect all situations and norm values
 		List<SetRequest> returnvals = new ArrayList<SetRequest>();
 		
 		// can't do the following with ExtendedIterator??
@@ -187,15 +215,15 @@ public class NormServer {
 			// System.out.print(i.getLocalName() + ".satisfied: ");
 			// printIterator( i.listPropertyValues( satisfied ) );
 		// }
-		instanceList = AtomicSituation.listInstances();
+		instanceList = Situation.listInstances();
 		while( instanceList.hasNext() ) {
-			Individual iAtomic = (Individual) instanceList.next();
-			System.out.print(iAtomic.getLocalName() + ".satisfied: ");
-			printIterator( iAtomic.listPropertyValues( satisfied ) );
+			Individual iSit = (Individual) instanceList.next();
+			System.out.print(iSit.getLocalName() + ".satisfied: ");
+			printIterator( iSit.listPropertyValues( satisfied ) );
 			
 			SetRequest r = new SetRequest();
-			r.id = iAtomic.getLocalName();
-			r.satisfied = ((Literal) iAtomic.getPropertyValue(satisfied)).getString();
+			r.id = iSit.getLocalName();
+			r.satisfied = ((Literal) iSit.getPropertyValue(satisfied)).getString();
 			returnvals.add(r);
 		}
 
@@ -224,12 +252,12 @@ public class NormServer {
 			returnvals.add(r);
 		}
 		
-		Individual AGPL2 = model.getIndividual( ont + "AGPL2" );
+/* 		Individual AGPL2 = model.getIndividual( ont + "AGPL2" );
 		printDataProperty( AGPL2, Com);
 		printDataProperty( AGPL2, Tol);
 		printDataProperty( AGPL2, Vio);
 		printDataProperty( AGPL2, Inc);
-
+ */
 		return returnvals;
 	}
 
