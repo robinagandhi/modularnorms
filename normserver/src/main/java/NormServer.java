@@ -16,6 +16,9 @@ import java.io.*;
 import static spark.Spark.*;
 import spark.Request;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.mindswap.pellet.jena.PelletReasonerFactory;
 
 import com.hp.hpl.jena.ontology.Individual;
@@ -47,6 +50,19 @@ public class NormServer {
 		private String compliance;
 	}
 
+	// http://stackoverflow.com/questions/30039568/spark-web-framework-logging-requests-and-responses
+	// http://stackoverflow.com/questions/21881846/where-does-the-slf4j-log-file-get-saved
+	private static String requestInfoToString(Request request) {
+		StringBuilder sb = new StringBuilder();
+		sb.append(request.ip());
+		sb.append(" " + request.requestMethod());
+		sb.append(" " + request.url());
+		sb.append(" " + request.queryParams());
+		sb.append(" " + request.body());
+		return sb.toString();
+	}
+
+
 	// https://sparktutorials.github.io/2016/05/01/cors.html
 	// Enables CORS on requests. This method is an initialization method and should be called once.
 	// This is potentially insecure, and may not be needed if both html and service are on the same server
@@ -67,6 +83,7 @@ public class NormServer {
 		});
 		
 		before((request, response) -> {
+			// log.info(requestInfoToString(request));
 			response.header("Access-Control-Allow-Origin", origin);
 			//response.header("Access-Control-Request-Method", methods);
 			//response.header("Access-Control-Allow-Headers", headers);
@@ -76,20 +93,25 @@ public class NormServer {
 	}
 
 	// https://sparktutorials.github.io/2015/08/24/spark-heroku.html
-    static int getHerokuAssignedPort() {
-        ProcessBuilder processBuilder = new ProcessBuilder();
-        if (processBuilder.environment().get("PORT") != null) {
+	static int getHerokuAssignedPort() {
+		ProcessBuilder processBuilder = new ProcessBuilder();
+		if (processBuilder.environment().get("PORT") != null) {
 			System.out.println("Heroku port: " + processBuilder.environment().get("PORT"));
-            return Integer.parseInt(processBuilder.environment().get("PORT"));
-        }
-        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
-    }
+			return Integer.parseInt(processBuilder.environment().get("PORT"));
+		}
+		return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+	}
 
 	public static void main(String[] args) {
 		NormServer nr = new NormServer();
 		
 		port(getHerokuAssignedPort());
 		enableCORS("*");
+
+		Logger logger = LoggerFactory.getLogger(NormServer.class);
+		before ((req, res) -> {
+			logger.info(requestInfoToString(req));
+		});
 		
 		get("/hello", (req, res) -> "Hello Heroku World");
 
