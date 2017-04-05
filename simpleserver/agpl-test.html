@@ -605,7 +605,7 @@
         //Respponds to the button press event
         $("#opener").click(function() {
           if ($("#studentid").val() != ""){
-            accessURL = "http://137.48.191.24:4567/assert/1/" + $("#studentid").val() + ""
+            accessURL = "https://norm-server-test.herokuapp.com/assert/1/" + $("#studentid").val() + ""
             console.log(accessURL);
             $.ajax(accessURL, {
                 method: 'POST',
