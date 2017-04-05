@@ -872,12 +872,13 @@
                          }
                        } else {
                          if (val.compliance != null){
-                           textNode = $(this).parent().children("a").first().children("text").first();
-                           var delimited = textNode.text().split('|');
+                           textNodeNorm = $(this).parent().children("g").first().children("a").first().children("text").first();
+                           var delimited = textNodeNorm.text().split('|');
+                           console.log(textNodeNorm);
                            if (delimited[1] == null) {
-                               textNode.text(delimited[0] + " | " + val.compliance);
+                               textNodeNorm.text(delimited[0] + " | " + val.compliance);
                            } else {
-                               textNode.text(delimited[0] + " | " + val.compliance);
+                               textNodeNorm.text(delimited[0] + " | " + val.compliance);
                            }
                          }
                        }
