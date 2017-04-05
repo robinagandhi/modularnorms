@@ -33,3 +33,9 @@ Note: rename your service to something other than "norm-server-test" because tha
 
 In the agpl-test.html file, change http://137.48.191.120:4567/assert to https://norm-server-test.herokuapp.com/assert to try the server. Again replace "norm-server-test" with the name of your service.
 
+Other useful heroku commands:
+
+```
+heroku run bash --app norm-server-test # log in to heroku to inspect the uploaded files
+heroku logs --app norm-server-test # display logging and other stdout outputs
+```
