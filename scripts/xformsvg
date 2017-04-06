@@ -1,0 +1,12 @@
+cat $1.svg | \
+    tail -n +4 | \
+    sed "s/<svg /<svg id=\"mainsvg\" /" | \
+    sed "s/polygon fill=\"black\" /polygon fillblack /g" | \
+    sed "s/polygon fill=\"grey\" stroke=\"grey\" /polygon fillgrey /g" | \
+    sed "s/polygon fill=\"white\" stroke=\"none\" /polygon fillwhite /g" | \
+    sed "s/polygon fill=\".*\" /polygon fill=\"#FFFFFF\" stroke=\"black\" /g" | \
+    sed "s/fillblack/fill=\"black\"/g " | \
+    sed "s/fillgrey/fill=\"grey\" stroke=\"grey\"/g" | \
+    sed "s/fillwhite/fill=\"white\" stroke=\"none\"/g" | \
+    sed "s/xlink:title/title/g" | \
+    python inserttemplate.py $1 
