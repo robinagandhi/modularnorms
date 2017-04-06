@@ -106,7 +106,8 @@
           if ($("#studentid").val() != ""){
             $("#opener").css('background-color','grey');
             $("#opener").prop('disabled', true);
-            //accessURL = "https://137.47.191.24/assert/2/" + $("#studentid").val() + ""
+            //accessURL = "http://localhost:4567/assert/2/" + $("#studentid").val() + ""
+            //accessURL = "http://137.48.191.24:4567/assert/2/" + $("#studentid").val() + ""
             accessURL = "https://norm-server-test.herokuapp.com/assert/2/" + $("#studentid").val() + ""
             console.log(accessURL);
             $.ajax(accessURL, {
