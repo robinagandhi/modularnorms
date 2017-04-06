@@ -26,7 +26,8 @@ def drawSS_end():
 	print '}'
 
 def drawNorm(id, sentence, color, orientation=0):
-	print id + ' [shape=triangle, orientation=' + str(orientation) + ', style=filled, fillcolor=' + color + ', label="' + id + '", tooltip="' + sentence + '"];'
+	# print id + ' [shape=triangle, orientation=' + str(orientation) + ', style=filled, fillcolor=' + color + ', label="' + id + '", tooltip="' + sentence + '"];'
+	print id + ' [shape=triangle, orientation=' + str(orientation) + ', style=filled, fillcolor=' + 'white' + ', label="' + id + '", tooltip="' + sentence + '"];' # make everything white
 
 def drawDuty(id, sentence):
 	drawNorm(id, sentence, 'lightblue')
@@ -43,7 +44,8 @@ def drawSituation(slabel, id, type, suggestsid=''):
 	if (slabel.startswith('$')):
 		snorm = slabel[1:]
 		slabel = 'SS_' + slabel[1:]
-		SSLinks.append(sid + ' -> ' + snorm + '[color=grey, style=dashed, lhead=cluster' + slabel + '];')
+		# SSLinks.append(sid + ' -> ' + snorm + '[color=grey, style=dashed, lhead=cluster' + slabel + '];')
+		SSLinks.append(sid + ' -> ' + snorm + '[color=grey, fillcolor=white, style=dashed,filled, lhead=cluster' + slabel + '];')
 		boxcolor = 'orange'
 
 	if slabel in ['and', 'or', 'not']:
@@ -59,10 +61,11 @@ def drawSituation(slabel, id, type, suggestsid=''):
 	if not (slabel in ['and', 'or', 'not'] or slabel.startswith('SS_') or sid == slabel): # not a special label
 		slabel = sid + ': ' + slabel
 
-	if boxcolor == 'white':
-		print sid + ' [shape=box, label="' + slabel + '"];'
-	else:
-		print sid + ' [shape=box, label="' + slabel + '", style=filled, fillcolor=' + boxcolor + '];'
+	# if boxcolor == 'white':
+		# print sid + ' [shape=box, label="' + slabel + '"];'
+	# else:
+		# print sid + ' [shape=box, label="' + slabel + '", style=filled, fillcolor=' + boxcolor + '];'
+	print sid + ' [shape=box, label="' + slabel + '", style=filled, fillcolor=' + 'white' + '];'  # make everything white
 	if type not in ['and', 'or', 'not']:
 		print sid + ' -> ' + id + '[label="' + type + '"];'
 	else:
