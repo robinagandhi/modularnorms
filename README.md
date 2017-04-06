@@ -21,3 +21,15 @@ python2.7 gennomos.py ../examples/agpl.json dot > ./agpl.dot
 python2.7 gennomos.py ../examples/agpl.json owl > ./agpl.owl
 
 ```
+
+To generate an html file that displays the model and let a user interactively change satisfiability values
+```
+# Generate the SVG file from Graphviz (need Graphviz 2.36 or above)
+dot -Tsvg -o agpl.svg agpl.dot
+
+# Make sure template.html is in the scripts directory (can copy from examples directory)
+./xformsvg agpl > agpl-test.html
+```
+The result is an html file that calls an online reasoning service.
+
+
