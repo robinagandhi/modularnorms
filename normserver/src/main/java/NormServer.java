@@ -136,6 +136,8 @@ public class NormServer {
 			modelname = "agpl";
 		} else if (modelId.equals("2")) {
 			modelname = "hipaa";
+		} else if (modelId.equals("3")) {
+			modelname = "apache2";
 		} else {
 			return null;
 		}
