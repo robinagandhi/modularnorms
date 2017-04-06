@@ -3,33 +3,51 @@
 
 <head>
     <meta charset="utf-8">
-    <title>HIPAA Demo</title>
+    <title>Modular Norms</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script   src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+    </script>
+    <script   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+              integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+              crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
 
-    <button id="opener" class="button">Submit</button>
-    <div id="textarea"></div>
+  <label>   Subject ID:  </label>
+  <div>
+    <textarea id="studentid" class="textarea"></textarea>
+  </div>
+  <label> Selection: </label>
+  <div id="textarea"></div>
+  <div></div>
+  <button id="opener" class="button">Solve</button>
 
     <div id="main">
       <!-- ADD your SVG file here as shown below.
-      IMPORTANT: THEN ADD id="mainsvg" to your SVG element as shown below.
+
+      IMPORTANT: ADD id="mainsvg" to your SVG element as shown below.
       All polygon fill values should be #FFFFFF
       relplace all xlink:title with title only. this is for tooltips
+      Change the title of the HTML to reflect the legal text your are working with.
+
+      Update the URL for the server for the norm model that you are working with.
       Thats it!
 
+      SAMPLE:
       <svg id="mainsvg" width="2453pt" height="1910pt"
 
       </svg>
-
-
       -->
+
+
     </div>
     <script>
         var jsonData = [];
+        var jsonResult = [];
 
         // This function will execute on load
         $(document).ready(function() {
@@ -54,7 +72,6 @@
                     if (val.id == id) {
                         val.satisfied = status;
                         exist = true;
-                        //console.log(JSON.stringify(jsonData));
                     }
                 });
                 if (exist == false) {
@@ -62,7 +79,6 @@
                     item["id"] = id;
                     item["satisfied"] = status;
                     jsonData.push(item);
-                    //console.log(JSON.stringify(jsonData));
                 }
 
             } else { // this is a norm
@@ -71,7 +87,6 @@
                     if (val.id == id) {
                         val.compliance = status;
                         exist = true;
-                        //console.log(JSON.stringify(jsonData));
                     }
                 });
                 if (exist == false) {
@@ -79,7 +94,6 @@
                     item["id"] = id;
                     item["compliance"] = status;
                     jsonData.push(item);
-                    //console.log(JSON.stringify(jsonData));
                 }
             }
 
@@ -89,18 +103,99 @@
 
         //Respponds to the button press event
         $("#opener").click(function() {
-            $.ajax('https://jsonplaceholder.typicode.com/posts/1', {
-                method: 'PUT',
+          if ($("#studentid").val() != ""){
+            $("#opener").css('background-color','grey');
+            $("#opener").prop('disabled', true);
+            //accessURL = "https://137.47.191.24/assert/2/" + $("#studentid").val() + ""
+            accessURL = "https://norm-server-test.herokuapp.com/assert/2/" + $("#studentid").val() + ""
+            console.log(accessURL);
+            $.ajax(accessURL, {
+                method: 'POST',
                 data: JSON.stringify(jsonData),
                 crossDomain: true
             }).then(function(data) {
                 console.log(data);
-                alert("Response from https://jsonplaceholder.typicode.com/posts/1" + JSON.stringify(data));
+                updateSVG(data);
+                $("#opener").prop('disabled', false);
+                $("#opener").css('background-color','#4CAF50');
+                //alert("Done! Review results")
             });
+          } else{
+            alert("Please enter a valid Experiment Subject ID");
+          }
         });
 
-        //SVG click event response function
+        function updateSVG (data){
+          $.each(data, function(key, val) {
+              if (val.id != null) {
+                  $("title").each(function(index, element) {
+                    if ($(this).text() == val.id){
+                       polygon = $(this).parent().children("polygon").first();
+                       if (val.satisfied != null) {
+                         textNode = $(this).parent().children("text").last();
+                         delimited = textNode.text().split('|');
+                         if (delimited[1] == null) {
+                             textNode.text(delimited[0] + " | " + val.satisfied);
+                         } else {
+                             textNode.text(delimited[0] + " | " + val.satisfied);
+                         }
+                         if (val.satisfied == "SF"){
+                           polygon.attr('style', "fill:#CD5360"); //red
+                         } else {
+                           if (val.satisfied == "ST"){
+                             polygon.attr('style', "fill:#57BC90"); //green
+                           } else {
+                             if (val.satisfied == "SU"){
+                               polygon.attr('style', "fill:#E5E338"); //yellow
+                             }
+                           }
+                         }
+                         // Check if this is a super situation. Then color the related container also
+                         ssCheck = textNode.text().split('_');
+                         if (ssCheck[0] == "SS") {
+                           $("title").each(function(index, element){
+                             ssNode = "cluster" + textNode.text().split('|')[0].trim();
+                             if ($(this).text() == ssNode) {
+                               polygonSS = $(this).parent().children("polygon").first();
+                               textNodeSS = $(this).parent().children("text").last();
+                               delimited = textNodeSS.text().split('|');
+                               if (delimited[1] == null) {
+                                   textNodeSS.text(delimited[0] + " | " + val.satisfied);
+                               } else {
+                                   textNodeSS.text(delimited[0] + " | " + val.satisfied);
+                               }
+                               if (val.satisfied == "SF"){
+                                 polygonSS.attr('style', "fill:#CD5360"); //red
+                               } else {
+                                 if (val.satisfied == "ST"){
+                                   polygonSS.attr('style', "fill:#57BC90"); //green
+                                 } else {
+                                   if (val.satisfied == "SU"){
+                                     polygonSS.attr('style', "fill:#E5E338"); //yellow
+                                   }
+                                 }
+                               }
+                             }
+                           });
+                         }
+                       } else {  // Handle the Norm Comliance value and related display text
+                         if (val.compliance != null){
+                           textNodeNorm = $(this).parent().children("g").first().children("a").first().children("text").first();
+                           var delimited = textNodeNorm.text().split('|');
+                           if (delimited[1] == null) {
+                               textNodeNorm.text(delimited[0] + " | " + val.compliance);
+                           } else {
+                               textNodeNorm.text(delimited[0] + " | " + val.compliance);
+                           }
+                         }
+                       }
+                    }
+                  });
+              }
+          });
+        }
 
+        //SVG click event response function
         $("#mainsvg").click(
             function(event) {
 
@@ -263,6 +358,6 @@
             width: 800px;
         }
     </style>
-</body>
+    </body>
 
 </html>
