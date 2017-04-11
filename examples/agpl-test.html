@@ -222,14 +222,12 @@
 </g>
 <!-- AGPL2a_11 -->
 <g id="node13" class="node"><title>AGPL2a_11</title>
-    <a title="<b>subject:</b> Licensee, <br>  <b>artifact</b>: Modified program and related things">
 <polygon fill="#FFFFFF" stroke="black" points="648.5,-1031.5 485.5,-1031.5 485.5,-948.5 648.5,-948.5 648.5,-1031.5"/>
 <text text-anchor="middle" x="567" y="-1016.3" font-family="Times New Roman,serif" font-size="14.00">cause the modified files to</text>
 <text text-anchor="middle" x="567" y="-1001.3" font-family="Times New Roman,serif" font-size="14.00"> carry prominent notices</text>
 <text text-anchor="middle" x="567" y="-986.3" font-family="Times New Roman,serif" font-size="14.00"> stating that you changed</text>
 <text text-anchor="middle" x="567" y="-971.3" font-family="Times New Roman,serif" font-size="14.00"> the files and the date of</text>
 <text text-anchor="middle" x="567" y="-956.3" font-family="Times New Roman,serif" font-size="14.00"> any change</text>
-    </a>
 </g>
 <!-- AGPL2a_11&#45;&gt;AGPL2a -->
 <g id="edge11" class="edge"><title>AGPL2a_11&#45;&gt;AGPL2a</title>
@@ -239,11 +237,9 @@
 </g>
 <!-- AGPL2a_12 -->
 <g id="node14" class="node"><title>AGPL2a_12</title>
-    <a title="subject: Licensee, artifact: Original program or any portion of it">
 <polygon fill="#FFFFFF" stroke="black" points="467.5,-1009 302.5,-1009 302.5,-971 467.5,-971 467.5,-1009"/>
 <text text-anchor="middle" x="385" y="-993.8" font-family="Times New Roman,serif" font-size="14.00">intent to modify, copy and</text>
 <text text-anchor="middle" x="385" y="-978.8" font-family="Times New Roman,serif" font-size="14.00"> distribute</text>
-    </a>
 </g>
 <!-- AGPL2a_12&#45;&gt;AGPL2a -->
 <g id="edge12" class="edge"><title>AGPL2a_12&#45;&gt;AGPL2a</title>
@@ -574,13 +570,13 @@
                     if ($(this).text() == val.id){
                        polygon = $(this).parent().children("polygon").first();
                        if (val.satisfied != null) {
-                         textNode = $(this).parent().children("text").last();
-                         delimited = textNode.text().split('|');
-                         if (delimited[1] == null) {
-                             textNode.text(delimited[0] + " | " + val.satisfied);
-                         } else {
-                             textNode.text(delimited[0] + " | " + val.satisfied);
-                         }
+                          textNode = $(this).parent().children("text").last();
+                        //  delimited = textNode.text().split('|');
+                        //  if (delimited[1] == null) {
+                        //      textNode.text(delimited[0] + " | " + val.satisfied);
+                        //  } else {
+                        //      textNode.text(delimited[0] + " | " + val.satisfied);
+                        //  }
                          if (val.satisfied == "SF"){
                            polygon.attr('style', "fill:#CD5360"); //red
                          } else {
@@ -599,13 +595,13 @@
                              ssNode = "cluster" + textNode.text().split('|')[0].trim();
                              if ($(this).text() == ssNode) {
                                polygonSS = $(this).parent().children("polygon").first();
-                               textNodeSS = $(this).parent().children("text").last();
-                               delimited = textNodeSS.text().split('|');
-                               if (delimited[1] == null) {
-                                   textNodeSS.text(delimited[0] + " | " + val.satisfied);
-                               } else {
-                                   textNodeSS.text(delimited[0] + " | " + val.satisfied);
-                               }
+                              //  textNodeSS = $(this).parent().children("text").last();
+                              //  delimited = textNodeSS.text().split('|');
+                              //  if (delimited[1] == null) {
+                              //      textNodeSS.text(delimited[0] + " | " + val.satisfied);
+                              //  } else {
+                              //      textNodeSS.text(delimited[0] + " | " + val.satisfied);
+                              //  }
                                if (val.satisfied == "SF"){
                                  polygonSS.attr('style', "fill:#CD5360"); //red
                                } else {
@@ -669,23 +665,23 @@
                 if ((polygon.attr('points') != null) & (polygon.parent().children("title").first().text() != "G") & !(isNorm)) {
                     if (polygon.attr('style') == "fill:#57BC90") { // if green then turn red
                         polygon.attr('style', "fill:#CD5360"); //red
-                        var delimited = polygon.parent().children("text").last().text().split('|');
-                        if (delimited[1] == null) {
-                            polygon.parent().children("text").last().text(delimited[0] + " | SF");
-                        } else {
-                            polygon.parent().children("text").last().text(delimited[0] + " | SF");
-                        }
+                        // var delimited = polygon.parent().children("text").last().text().split('|');
+                        // if (delimited[1] == null) {
+                        //     polygon.parent().children("text").last().text(delimited[0] + " | SF");
+                        // } else {
+                        //     polygon.parent().children("text").last().text(delimited[0] + " | SF");
+                        // }
                         updateJSON(_id, "SF");
                     } else {
                         if (polygon.attr('style') == "fill:#CD5360") { //if red then turn yellow
                             polygon.attr('style', "fill:#E5E338"); //Yellow
 
-                            var delimited = polygon.parent().children("text").last().text().split('|');
-                            if (delimited[1] == null) {
-                                polygon.parent().children("text").last().text(delimited[0] + " | SU");
-                            } else {
-                                polygon.parent().children("text").last().text(delimited[0] + " | SU");
-                            }
+                            // var delimited = polygon.parent().children("text").last().text().split('|');
+                            // if (delimited[1] == null) {
+                            //     polygon.parent().children("text").last().text(delimited[0] + " | SU");
+                            // } else {
+                            //     polygon.parent().children("text").last().text(delimited[0] + " | SU");
+                            // }
 
                             updateJSON(_id, "SU");
 
@@ -693,20 +689,20 @@
                             if (polygon.attr('style') == "fill:#E5E338") { //if yellow then turn white
                                 polygon.attr('style', "fill:#FFFFFF"); //white
                                 updateJSON(_id, "");
-                                var delimited = polygon.parent().children("text").last().text().split('|');
-                                if (delimited[1] == null) {
-                                    polygon.parent().children("text").last().text(delimited[0]);
-                                } else {
-                                    polygon.parent().children("text").last().text(delimited[0]);
-                                }
+                                // var delimited = polygon.parent().children("text").last().text().split('|');
+                                // if (delimited[1] == null) {
+                                //     polygon.parent().children("text").last().text(delimited[0]);
+                                // } else {
+                                //     polygon.parent().children("text").last().text(delimited[0]);
+                                // }
                             } else { //turn green
                                 polygon.attr('style', "fill:#57BC90"); //Green
-                                var delimited = polygon.parent().children("text").last().text().split('|');
-                                if (delimited[1] == null) {
-                                    polygon.parent().children("text").last().text(delimited[0] + " | ST");
-                                } else {
-                                    polygon.parent().children("text").last().text(delimited[0] + " | ST");
-                                }
+                                // var delimited = polygon.parent().children("text").last().text().split('|');
+                                // if (delimited[1] == null) {
+                                //     polygon.parent().children("text").last().text(delimited[0] + " | ST");
+                                // } else {
+                                //     polygon.parent().children("text").last().text(delimited[0] + " | ST");
+                                // }
                                 updateJSON(_id, "ST");
                             }
                         }
