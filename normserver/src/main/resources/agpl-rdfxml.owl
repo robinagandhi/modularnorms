@@ -258,11 +258,252 @@
     
 
 
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Right"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1. You may copy and distribute verbatim copies of the [original] Program&apos;s source code as you receive it, in any medium, provided that you conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty; keep intact all the notices that refer to this License and to the absence of any warranty; and give any other recipients of the Program a copy of this License along with the Program.</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_35 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_35">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You copied and distributed] verbatim copies of the [original] Program&apos;s source code</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1_35</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_36 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_36">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+        <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1_36</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_37 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_37">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
+        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_36"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL1a</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1_37</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_38 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_38">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_36"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1_38</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_39 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_39">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
+        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_38"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL1b</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1_39</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_40 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_40">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
+        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_38"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL1c</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1_40</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Duty"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">you conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1a</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_41 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_41">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you conspicuously and appropriately published] on each copy an appropriate copyright notice and disclaimer of warranty</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1a_41</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_42 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_42">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#OR"/>
+        <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">or</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1a_42</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_43 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_43">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_42"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to copy and distribute verbatim copies of the original Program&apos;s source code]</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1a_43</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_44 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_44">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_42"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1a_44</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Duty"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">keep intact all the notices that refer to this License and to the absence of any warranty</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1b</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_45 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_45">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you kept intact] all the notices that refer to this License and to the absence of any warranty</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1b_45</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_46 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_46">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#OR"/>
+        <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">or</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1b_46</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_47 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_47">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_46"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to copy and distribute verbatim copies of the original Program&apos;s source code]</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1b_47</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_48 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_48">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_46"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1b_48</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Duty"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">give any other recipients of the Program a copy of this License along with the Program</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1c</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_49 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_49">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you gave] any other recipients of the Program a copy of this License along with the Program</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1c_49</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_50 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_50">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#OR"/>
+        <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">or</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1c_50</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_51 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_51">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_50"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to copy and distribute verbatim copies of the original Program&apos;s source code]</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1c_51</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_52 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_52">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_50"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1c_52</hasID>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Right"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2. You may modify your copy or copies of the Program or any portion of it, thus forming a work based on the Program, and copy and distribute such modifications or work under the terms of Section 1 above, provided that you also meet all of these conditions.</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2. You may modify your copy or copies of the Program or any portion of it, thus forming a work based on the Program, and copy and distribute such modifications or work under the terms of Section 1 above, provided that you also meet all of these conditions. a) You must cause the modified files to carry prominent notices stating that you changed the files and the date of any change. b) You must cause any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License. c) If the modified program normally reads commands interactively when run, you must cause it, when started running for such interactive use in the most ordinary way, to print or display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty) and that users may redistribute the program under these conditions, and telling the user how to view a copy of this License. (Exception: if the Program itself is interactive but does not normally print such an announcement, your work based on the Program is not required to print an announcement.) d) If the Program as you received it is intended to interact with users through a computer network and if, in the version you received, any user interacting with the Program was given the opportunity to request transmission to that user of the Program&apos;s complete source code, you must not remove that facility from your modified version of the Program or work based on the Program, and must offer an equivalent opportunity for all users interacting with your Program through a computer network to request immediate transmission by HTTP of the complete source code of your modified version or other derivative work. These requirements apply to the modified work as a whole. If identifiable sections of that work are not derived from the Program, and can be reasonably considered independent and separate works in themselves, then this License, and its terms, do not apply to those sections when you distribute them as separate works. But when you distribute the same sections as part of a whole which is a work based on the Program, the distribution of the whole must be on the terms of this License, whose permissions for other licensees extend to the entire whole, and thus to each and every part regardless of who wrote it. Thus, it is not the intent of this section to claim rights or contest your rights to work written entirely by you; rather, the intent is to exercise the right to control the distribution of derivative or collective works based on the Program. In addition, mere aggregation of another work not based on the Program with the Program (or with a work based on the Program) on a volume of a storage or distribution medium does not bring the other work under the scope of this License.</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2</hasID>
     </owl:NamedIndividual>
     
@@ -273,7 +514,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_1">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">modify your copy or copies of the Program or any portion of it, ... and copy and distribute such modifications or work</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You modified] your copy or copies of the Program or any portion of it, ... and [copied and distributed] such modifications or work</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_1</hasID>
     </owl:NamedIndividual>
     
@@ -282,11 +523,57 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_10 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_8"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_10</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_11">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
+        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_10"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL2b</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_11</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_12">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_10"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_12</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_13 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_13">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
+        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_12"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL2c</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_13</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_14 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_14">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
         <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_8"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_12"/>
         <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL2d</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_10</hasID>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_14</hasID>
     </owl:NamedIndividual>
     
 
@@ -305,9 +592,9 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_3 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_3">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
         <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_2"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">under the terms of Section 1</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_3</hasID>
     </owl:NamedIndividual>
     
@@ -316,9 +603,10 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_4 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_4">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_2"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
+        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_3"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL1a</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_4</hasID>
     </owl:NamedIndividual>
     
@@ -327,10 +615,9 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_5 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_5">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
-        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_4"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL2a</hasDesc>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_3"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_5</hasID>
     </owl:NamedIndividual>
     
@@ -339,9 +626,10 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_6 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_6">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_4"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
+        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_5"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL1b</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_6</hasID>
     </owl:NamedIndividual>
     
@@ -351,9 +639,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_7">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
-        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_6"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL2b</hasDesc>
+        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_5"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL1c</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_7</hasID>
     </owl:NamedIndividual>
     
@@ -363,7 +651,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_8">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_6"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_2"/>
         <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_8</hasID>
     </owl:NamedIndividual>
@@ -374,9 +662,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_9">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
-        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c"/>
+        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a"/>
         <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_8"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL2c</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_AGPL2a</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_9</hasID>
     </owl:NamedIndividual>
     
@@ -392,24 +680,24 @@
     
 
 
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_11 -->
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_15 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_11">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_15">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cause the modified files to carry prominent notices stating that you changed the files and the date of any change</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2a_11</hasID>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You caused] the modified files to carry prominent notices stating that you changed the files and the date of any change</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2a_15</hasID>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_12 -->
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_16 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_12">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_16">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intent to modify, copy and distribute</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2a_12</hasID>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2a_16</hasID>
     </owl:NamedIndividual>
     
 
@@ -424,24 +712,24 @@
     
 
 
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_13 -->
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_17 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_13">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_17">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cause any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2b_13</hasID>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You caused] any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2b_17</hasID>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_14 -->
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_18 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_14">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_18">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intent to modify, copy and distribute</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2b_14</hasID>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2b_18</hasID>
     </owl:NamedIndividual>
     
 
@@ -456,56 +744,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_15 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_15">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cause it ... to print or display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty) and that users may redistribute the program under these conditions, and telling the user how to view a copy of this License</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2c_15</hasID>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_16 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_16">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
-        <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2c_16</hasID>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_17 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_17">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_16"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intent to modify, copy and distribute</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2c_17</hasID>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_18 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_18">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#OR"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_16"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">or</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2c_18</hasID>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_19 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_19">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_18"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the modified program normally reads commands interactively when run</hasDesc>
+        <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you caused the modified program] ... to print or display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty) and that users may redistribute the program under these conditions, and telling the user how to view a copy of this License</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2c_19</hasID>
     </owl:NamedIndividual>
     
@@ -514,9 +758,9 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_20 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_20">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#LNOT"/>
-        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_18"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not</hasDesc>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+        <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2c_20</hasID>
     </owl:NamedIndividual>
     
@@ -526,9 +770,53 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_21">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <not_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_20"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Program itself is interactive but does not normally print such an announcement</hasDesc>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_20"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2c_21</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_22 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_22">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#OR"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_20"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">or</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2c_22</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_23 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_23">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_22"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the modified program normally reads commands interactively when run</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2c_23</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_24 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_24">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#LNOT"/>
+        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_22"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2c_24</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_25 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_25">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <not_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_24"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[original] Program itself is interactive but does not normally print such an announcement</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2c_25</hasID>
     </owl:NamedIndividual>
     
 
@@ -543,55 +831,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_22 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_22">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
-        <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_22</hasID>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_23 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_23">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#LNOT"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_22"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_23</hasID>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_24 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_24">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <not_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_23"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">remove that facility from your modified version of the Program or work based on the Program</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_24</hasID>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_25 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_25">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_22"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">offer an equivalent opportunity for all users interacting with your Program through a computer network to request immediate transmission by HTTP of the complete source code of your modified version or other derivative work</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_25</hasID>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_26 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_26">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
-        <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d"/>
+        <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d"/>
         <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_26</hasID>
     </owl:NamedIndividual>
@@ -601,9 +845,9 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_27 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_27">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#LNOT"/>
         <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_26"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intent to modify, copy and distribute</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_27</hasID>
     </owl:NamedIndividual>
     
@@ -612,9 +856,9 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_28 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_28">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_26"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <not_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_27"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you removed] that facility [to request transmission of source code] from your modified version of the Program or work based on the Program</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_28</hasID>
     </owl:NamedIndividual>
     
@@ -624,8 +868,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_29">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_28"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Program as you received it is intended to interact with users through a computer network</hasDesc>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_26"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you offered] an equivalent opportunity for all users interacting with your Program through a computer network to request immediate transmission by HTTP of the complete source code of your modified version or other derivative work</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_29</hasID>
     </owl:NamedIndividual>
     
@@ -634,10 +878,54 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_30 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_30">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_28"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in the version you received, any user interacting with the Program was given the opportunity to request transmission to that user of the Program&apos;s complete source code</hasDesc>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+        <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_30</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_31 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_31">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_30"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_31</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_32 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_32">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_30"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_32</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_33 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_33">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_32"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Program as you received it is intended to interact with users through a computer network</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_33</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_34 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_34">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_32"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in the version you received, any user interacting with the Program was given the opportunity to request transmission to that user of the Program&apos;s complete source code</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_34</hasID>
     </owl:NamedIndividual>
     
 
@@ -653,9 +941,35 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_35"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_36"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_37"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_38"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_39"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_40"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_41"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_42"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_43"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_44"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_45"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_46"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_47"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_48"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_49"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_50"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_51"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_52"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_1"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_10"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_11"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_12"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_13"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_14"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_2"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_3"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_4"/>
@@ -665,29 +979,29 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_8"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_9"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_11"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_12"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_15"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_16"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_13"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_14"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_17"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_18"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_15"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_16"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_17"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_18"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_19"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_20"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_21"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_22"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_23"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_24"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_25"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_22"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_23"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_24"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_25"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_26"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_27"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_28"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_29"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_30"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_31"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_32"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_33"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_34"/>
         </owl:distinctMembers>
     </rdf:Description>
     
@@ -709,6 +1023,242 @@
     </rdf:Description>
     <rdf:Description rdf:about="urn:swrl#z">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#and_"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#o"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Situation"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                        <swrl:argument2>ST</swrl:argument2>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#o"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#and_"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl#z"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl#o"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                                                <swrl:argument2 rdf:resource="urn:swrl#z"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
+                                                                        <swrl:argument1 rdf:resource="urn:swrl#z"/>
+                                                                        <swrl:argument2>ST</swrl:argument2>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Situation"/>
+                                                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#o"/>
+                        <swrl:argument2>ST</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#and_"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#o"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Situation"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                        <swrl:argument2>ST</swrl:argument2>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#o"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#and_"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl#z"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl#o"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                                                <swrl:argument2 rdf:resource="urn:swrl#z"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
+                                                                        <swrl:argument1 rdf:resource="urn:swrl#z"/>
+                                                                        <swrl:argument2>SU</swrl:argument2>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Situation"/>
+                                                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#o"/>
+                        <swrl:argument2>SU</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
@@ -1999,7 +2549,7 @@
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
                         <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
                         <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument2>SU</swrl:argument2>
+                        <swrl:argument2>ST</swrl:argument2>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -2828,7 +3378,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Tol"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Inc"/>
                         <swrl:argument1 rdf:resource="urn:swrl#z"/>
                         <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
                     </rdf:Description>
@@ -3396,242 +3946,6 @@
                         <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
                         <swrl:argument1 rdf:resource="urn:swrl#o"/>
                         <swrl:argument2>SF</swrl:argument2>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#and_"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#o"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Situation"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                                        <swrl:argument2>ST</swrl:argument2>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#o"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#and_"/>
-                                                        <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                                                        <swrl:argument2 rdf:resource="urn:swrl#o"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                        <rdf:first>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
-                                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                                                                <swrl:argument2 rdf:resource="urn:swrl#z"/>
-                                                            </rdf:Description>
-                                                        </rdf:first>
-                                                        <rdf:rest>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                <rdf:first>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
-                                                                        <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                                                                        <swrl:argument2>ST</swrl:argument2>
-                                                                    </rdf:Description>
-                                                                </rdf:first>
-                                                                <rdf:rest>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                        <rdf:first>
-                                                                            <rdf:Description>
-                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Situation"/>
-                                                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                                                                            </rdf:Description>
-                                                                        </rdf:first>
-                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                                    </rdf:Description>
-                                                                </rdf:rest>
-                                                            </rdf:Description>
-                                                        </rdf:rest>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#o"/>
-                        <swrl:argument2>ST</swrl:argument2>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#and_"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#o"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Situation"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                                        <swrl:argument2>ST</swrl:argument2>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
-                                                <swrl:argument1 rdf:resource="urn:swrl#o"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#and_"/>
-                                                        <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                                                        <swrl:argument2 rdf:resource="urn:swrl#o"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                        <rdf:first>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
-                                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                                                                <swrl:argument2 rdf:resource="urn:swrl#z"/>
-                                                            </rdf:Description>
-                                                        </rdf:first>
-                                                        <rdf:rest>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                <rdf:first>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
-                                                                        <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                                                                        <swrl:argument2>SU</swrl:argument2>
-                                                                    </rdf:Description>
-                                                                </rdf:first>
-                                                                <rdf:rest>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                        <rdf:first>
-                                                                            <rdf:Description>
-                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Situation"/>
-                                                                                <swrl:argument1 rdf:resource="urn:swrl#a"/>
-                                                                            </rdf:Description>
-                                                                        </rdf:first>
-                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                                    </rdf:Description>
-                                                                </rdf:rest>
-                                                            </rdf:Description>
-                                                        </rdf:rest>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#satisfied"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#o"/>
-                        <swrl:argument2>SU</swrl:argument2>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
