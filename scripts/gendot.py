@@ -57,8 +57,8 @@ def drawSituation(slabel, id, type, suggestsid=''):
 			boxcolor = 'red'
 		slabel = slabel[3:]
 
-	if not (slabel in ['and', 'or', 'not'] or slabel.startswith('SS_') or sid == slabel): # not a special label
-		slabel = sid + ': ' + slabel
+	#if not (slabel in ['and', 'or', 'not'] or slabel.startswith('SS_') or sid == slabel): # not a special label
+	#	slabel = sid + ': ' + slabel # add internal labels to the description
 
 	if boxcolor == 'white':
 		print sid + ' [shape=box, label="' + slabel + '"];'
