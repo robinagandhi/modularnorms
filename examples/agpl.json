@@ -82,8 +82,8 @@
 	   "preconditions": [
 	      "P1 and (P2 and P3)",
 		  "P1: [you intend to modify the Program, and copy and distribute such modifications]",
-		  "P2: the Program as you received it is intended to interact with users through a computer network",
-		  "P3: in the version you received, any user interacting with the Program was given the opportunity to request transmission to that user of the Program's complete source code"
+		  "P2: the [original] Program as you received it is intended to interact with users through a computer network",
+		  "P3: in the version you received, any user interacting with the [original] Program was given the opportunity to request transmission to that user of the Program's complete source code"
 	   ] 
      }
     },

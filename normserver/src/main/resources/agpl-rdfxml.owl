@@ -913,7 +913,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_33">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_32"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Program as you received it is intended to interact with users through a computer network</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the [original] Program as you received it is intended to interact with users through a computer network</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_33</hasID>
     </owl:NamedIndividual>
     
@@ -924,7 +924,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_34">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_32"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in the version you received, any user interacting with the Program was given the opportunity to request transmission to that user of the Program&apos;s complete source code</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in the version you received, any user interacting with the [original] Program was given the opportunity to request transmission to that user of the Program&apos;s complete source code</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_34</hasID>
     </owl:NamedIndividual>
     
