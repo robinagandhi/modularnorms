@@ -273,7 +273,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1_35">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You copied and distributed] verbatim copies of the [original] Program&apos;s source code</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you copied and distributed] verbatim copies of the [original] Program&apos;s source code</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1_35</hasID>
     </owl:NamedIndividual>
     
@@ -341,7 +341,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Duty"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">you conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">you [must] conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1a</hasID>
     </owl:NamedIndividual>
     
@@ -374,7 +374,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_43">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_42"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to copy and distribute verbatim copies of the original Program&apos;s source code]</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you intend to copy and distribute verbatim copies of the original Program&apos;s source code]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1a_43</hasID>
     </owl:NamedIndividual>
     
@@ -385,7 +385,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_44">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1a_42"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you intend to modify the Program, and copy and distribute such modifications]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1a_44</hasID>
     </owl:NamedIndividual>
     
@@ -395,7 +395,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Duty"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">keep intact all the notices that refer to this License and to the absence of any warranty</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you must] keep intact all the notices that refer to this License and to the absence of any warranty</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1b</hasID>
     </owl:NamedIndividual>
     
@@ -428,7 +428,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_47">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_46"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to copy and distribute verbatim copies of the original Program&apos;s source code]</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you intend to copy and distribute verbatim copies of the original Program&apos;s source code]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1b_47</hasID>
     </owl:NamedIndividual>
     
@@ -439,7 +439,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_48">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1b_46"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you intend to modify the Program, and copy and distribute such modifications]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1b_48</hasID>
     </owl:NamedIndividual>
     
@@ -449,7 +449,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Duty"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">give any other recipients of the Program a copy of this License along with the Program</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you must] give any other recipients of the Program a copy of this License along with the Program</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1c</hasID>
     </owl:NamedIndividual>
     
@@ -482,7 +482,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_51">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_50"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to copy and distribute verbatim copies of the original Program&apos;s source code]</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you intend to copy and distribute verbatim copies of the original Program&apos;s source code]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1c_51</hasID>
     </owl:NamedIndividual>
     
@@ -493,7 +493,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_52">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL1c_50"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you intend to modify the Program, and copy and distribute such modifications]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL1c_52</hasID>
     </owl:NamedIndividual>
     
@@ -514,7 +514,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2_1">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You modified] your copy or copies of the Program or any portion of it, ... and [copied and distributed] such modifications or work</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you modified] your copy or copies of the Program or any portion of it, ... and [copied and distributed] such modifications or work</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2_1</hasID>
     </owl:NamedIndividual>
     
@@ -685,7 +685,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_15">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You caused] the modified files to carry prominent notices stating that you changed the files and the date of any change</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you caused] the modified files to carry prominent notices stating that you changed the files and the date of any change</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2a_15</hasID>
     </owl:NamedIndividual>
     
@@ -696,7 +696,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a_16">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2a"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you intend to modify the Program, and copy and distribute such modifications]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2a_16</hasID>
     </owl:NamedIndividual>
     
@@ -717,7 +717,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_17">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You caused] any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you caused] any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2b_17</hasID>
     </owl:NamedIndividual>
     
@@ -728,7 +728,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b_18">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2b"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you intend to modify the Program, and copy and distribute such modifications]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2b_18</hasID>
     </owl:NamedIndividual>
     
@@ -771,7 +771,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_21">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2c_20"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you intend to modify the Program, and copy and distribute such modifications]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2c_21</hasID>
     </owl:NamedIndividual>
     
@@ -891,7 +891,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_31">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AGPL2d_30"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to modify the Program, and copy and distribute such modifications]</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[you intend to modify the Program, and copy and distribute such modifications]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AGPL2d_31</hasID>
     </owl:NamedIndividual>
     

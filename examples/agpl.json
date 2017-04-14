@@ -8,7 +8,7 @@
        "modal": "may",
        "negative": "no",
        "verb": "copy",
-       "action": "[You modified] your copy or copies of the Program or any portion of it, ... and [copied and distributed] such modifications or work",
+       "action": "[you modified] your copy or copies of the Program or any portion of it, ... and [copied and distributed] such modifications or work",
        "preconditions": [
 		  "(P6 and (P7 and P8)) and (P2 and (P3 and (P4 and P5)))",
 		  "P2: $AGPL2a",
@@ -30,8 +30,8 @@
        "modal": "must",
        "negative": "no",
        "verb": "carry prominent notices",
-       "action": "[You caused] the modified files to carry prominent notices stating that you changed the files and the date of any change",
-       "preconditions": "[You intend to modify the Program, and copy and distribute such modifications]"
+       "action": "[you caused] the modified files to carry prominent notices stating that you changed the files and the date of any change",
+       "preconditions": "[you intend to modify the Program, and copy and distribute such modifications]"
      }
     },
 
@@ -43,8 +43,8 @@
        "modal": "must",
        "negative": "no",
        "verb": "be licensed as a whole",
-       "action": "[You caused] any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License",
-       "preconditions": "[You intend to modify the Program, and copy and distribute such modifications]"
+       "action": "[you caused] any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License",
+       "preconditions": "[you intend to modify the Program, and copy and distribute such modifications]"
      }
     },
 
@@ -59,7 +59,7 @@
        "action": "[you caused the modified program] ... to print or display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty) and that users may redistribute the program under these conditions, and telling the user how to view a copy of this License",
        "preconditions": [
 	      "P1 and (P2 or not P3)",
-		  "P1: [You intend to modify the Program, and copy and distribute such modifications]",
+		  "P1: [you intend to modify the Program, and copy and distribute such modifications]",
 		  "P2: the modified program normally reads commands interactively when run",
 		  "P3: [original] Program itself is interactive but does not normally print such an announcement"
 	   ]
@@ -81,7 +81,7 @@
 	   ], 
 	   "preconditions": [
 	      "P1 and (P2 and P3)",
-		  "P1: [You intend to modify the Program, and copy and distribute such modifications]",
+		  "P1: [you intend to modify the Program, and copy and distribute such modifications]",
 		  "P2: the Program as you received it is intended to interact with users through a computer network",
 		  "P3: in the version you received, any user interacting with the Program was given the opportunity to request transmission to that user of the Program's complete source code"
 	   ] 
@@ -96,7 +96,7 @@
        "modal": "may",
        "negative": "no",
        "verb": "copy",
-       "action": "[You copied and distributed] verbatim copies of the [original] Program's source code",
+       "action": "[you copied and distributed] verbatim copies of the [original] Program's source code",
        "preconditions": [
 		  "P1 and (P2 and P3)",
 		  "P1: $AGPL1a",
@@ -109,7 +109,7 @@
 	{
      "table": {
        "id": "AGPL1a",
-       "sentence": "you conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty",
+       "sentence": "you [must] conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty",
        "actor": "You",
        "modal": "must",
        "negative": "no",
@@ -117,8 +117,8 @@
        "action": "[you conspicuously and appropriately published] on each copy an appropriate copyright notice and disclaimer of warranty",
        "preconditions": [
 	      "P1 or P2",
-	      "P1: [You intend to copy and distribute verbatim copies of the original Program's source code]",
-		  "P2: [You intend to modify the Program, and copy and distribute such modifications]"
+	      "P1: [you intend to copy and distribute verbatim copies of the original Program's source code]",
+		  "P2: [you intend to modify the Program, and copy and distribute such modifications]"
 	   ]
      }
     },
@@ -126,7 +126,7 @@
 	{
      "table": {
        "id": "AGPL1b",
-       "sentence": "keep intact all the notices that refer to this License and to the absence of any warranty",
+       "sentence": "[you must] keep intact all the notices that refer to this License and to the absence of any warranty",
        "actor": "You",
        "modal": "must",
        "negative": "no",
@@ -134,8 +134,8 @@
        "action": "[you kept intact] all the notices that refer to this License and to the absence of any warranty",
        "preconditions": [
 	      "P1 or P2",
-	      "P1: [You intend to copy and distribute verbatim copies of the original Program's source code]",
-		  "P2: [You intend to modify the Program, and copy and distribute such modifications]"
+	      "P1: [you intend to copy and distribute verbatim copies of the original Program's source code]",
+		  "P2: [you intend to modify the Program, and copy and distribute such modifications]"
 	   ]
      }
     },
@@ -143,7 +143,7 @@
 	{
      "table": {
        "id": "AGPL1c",
-       "sentence": "give any other recipients of the Program a copy of this License along with the Program",
+       "sentence": "[you must] give any other recipients of the Program a copy of this License along with the Program",
        "actor": "You",
        "modal": "must",
        "negative": "no",
@@ -151,8 +151,8 @@
        "action": "[you gave] any other recipients of the Program a copy of this License along with the Program",
        "preconditions": [
 	      "P1 or P2",
-	      "P1: [You intend to copy and distribute verbatim copies of the original Program's source code]",
-		  "P2: [You intend to modify the Program, and copy and distribute such modifications]"
+	      "P1: [you intend to copy and distribute verbatim copies of the original Program's source code]",
+		  "P2: [you intend to modify the Program, and copy and distribute such modifications]"
 	   ]
      }
     }
