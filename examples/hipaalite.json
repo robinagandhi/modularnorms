@@ -159,8 +159,8 @@
        "preconditions": [
 	      "P2 and (P3 or P4)",
 		  "P2: individual is or is suspected to be a victim of a crime",
-		  "P3: individual agrees to the disclosure of protected health information",
-		  "P4: covered entity is unable to obtain the individual's agreement because of incapacity or other emergency circumstance"
+		  "P3: [3(a)(ii)(1)] individual agrees to the disclosure of protected health information",
+		  "P4: [3(a)(ii)(2)] covered entity is unable to obtain the individual's agreement because of incapacity or other emergency circumstance"
 	   ]
      }
     }
