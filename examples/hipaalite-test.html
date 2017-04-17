@@ -1104,9 +1104,9 @@
           if ($("#studentid").val() != ""){
             $("#opener").css('background-color','grey');
             $("#opener").prop('disabled', true);
-            //accessURL = "http://localhost:4567/assert/2/" + $("#studentid").val() + ""
-            //accessURL = "http://137.48.191.24:4567/assert/2/" + $("#studentid").val() + ""
-            accessURL = "https://norm-server-test.herokuapp.com/assert/2/" + $("#studentid").val() + ""
+            //accessURL = "http://localhost:4567/assert/4/" + $("#studentid").val() + ""
+            //accessURL = "http://137.48.191.24:4567/assert/4/" + $("#studentid").val() + ""
+            accessURL = "https://norm-server-test.herokuapp.com/assert/4/" + $("#studentid").val() + ""
             console.log(accessURL);
             $.ajax(accessURL, {
                 method: 'POST',
@@ -1131,7 +1131,7 @@
                     if ($(this).text() == val.id){
                        polygon = $(this).parent().children("polygon").first();
                        if (val.satisfied != null) {
-                         textNode = $(this).parent().children("text").last();
+                          textNode = $(this).parent().children("text").last();
                         //  delimited = textNode.text().split('|');
                         //  if (delimited[1] == null) {
                         //      textNode.text(delimited[0] + " | " + val.satisfied);
@@ -1156,7 +1156,7 @@
                              ssNode = "cluster" + textNode.text().split('|')[0].trim();
                              if ($(this).text() == ssNode) {
                                polygonSS = $(this).parent().children("polygon").first();
-                               textNodeSS = $(this).parent().children("text").last();
+                              //  textNodeSS = $(this).parent().children("text").last();
                               //  delimited = textNodeSS.text().split('|');
                               //  if (delimited[1] == null) {
                               //      textNodeSS.text(delimited[0] + " | " + val.satisfied);
@@ -1199,11 +1199,15 @@
             function(event) {
 
                 var _id = "";
+                var _text = "";
                 // Get the ID from the title of the clicked element
                 if ($(event.target).parent().children("title").first().text() != "") {
                     _id = $(event.target).parent().children("title").first().text();
+                    _text = $(event.target).parent().children("text").first().text();
+
                 } else {
                     _id = $(event.target).parent().parent().children("title").first().text();
+                    _text = $(event.target).parent().parent().children("text").first().text();
                 }
 
                 //Allow clicking on text to select the sibling polygon
@@ -1233,6 +1237,18 @@
                         //     polygon.parent().children("text").last().text(delimited[0] + " | SF");
                         // }
                         updateJSON(_id, "SF");
+                        $("text").each(function(index, element) {
+                          if (($( this ).text() != "and") && ($( this ).text() != "or") && ($( this ).text() != "not")){
+                            if ($( this ).text() == _text){
+                              _twinpolygon = $( this ).parent().children("polygon").first();
+                              _twinpolygon.attr('style', "fill:#CD5360");
+                              _twinid = $( this ).parent().children("title").first().text();
+                              updateJSON(_twinid, "SF");
+                            }
+                          }
+                        });
+
+
                     } else {
                         if (polygon.attr('style') == "fill:#CD5360") { //if red then turn yellow
                             polygon.attr('style', "fill:#E5E338"); //Yellow
@@ -1246,10 +1262,35 @@
 
                             updateJSON(_id, "SU");
 
+                            $("text").each(function(index, element) {
+                              if (($( this ).text() != "and") && ($( this ).text() != "or") && ($( this ).text() != "not")){
+                                if ($( this ).text() == _text){
+                                  _twinpolygon = $( this ).parent().children("polygon").first();
+                                  _twinpolygon.attr('style', "fill:#E5E338");
+                                  _twinid = $( this ).parent().children("title").first().text();
+                                  updateJSON(_twinid, "SU");
+                                }
+                              }
+
+                            });
+
+
                         } else {
                             if (polygon.attr('style') == "fill:#E5E338") { //if yellow then turn white
                                 polygon.attr('style', "fill:#FFFFFF"); //white
                                 updateJSON(_id, "");
+                                $("text").each(function(index, element) {
+                                  if (($( this ).text() != "and") && ($( this ).text() != "or") && ($( this ).text() != "not")){
+                                    if ($( this ).text() == _text){
+                                      _twinpolygon = $( this ).parent().children("polygon").first();
+                                      _twinpolygon.attr('style', "fill:#FFFFFF");
+                                      _twinid = $( this ).parent().children("title").first().text();
+                                      updateJSON(_twinid, "");
+                                    }
+                                  }
+
+
+                                });
                                 // var delimited = polygon.parent().children("text").last().text().split('|');
                                 // if (delimited[1] == null) {
                                 //     polygon.parent().children("text").last().text(delimited[0]);
@@ -1265,6 +1306,16 @@
                                 //     polygon.parent().children("text").last().text(delimited[0] + " | ST");
                                 // }
                                 updateJSON(_id, "ST");
+                                $("text").each(function(index, element) {
+                                  if (($( this ).text() != "and") && ($( this ).text() != "or") && ($( this ).text() != "not")){
+                                    if ($( this ).text() == _text){
+                                      _twinpolygon = $( this ).parent().children("polygon").first();
+                                      _twinpolygon.attr('style', "fill:#57BC90");
+                                      _twinid = $( this ).parent().children("title").first().text();
+                                      updateJSON(_twinid, "ST");
+                                    }
+                                  }
+                                });
                             }
                         }
                     }
@@ -1357,6 +1408,6 @@
             width: 800px;
         }
     </style>
-    </body>
+</body>
 
 </html>
