@@ -49,7 +49,7 @@
 		  "P2: [covered entity provided] the individual with the opportunity to restrict or prohibit some or all of the disclosures"
 	   ],
        "preconditions": [
-		  "P1 and (P2 and not P3)",
+		  "P1 and (P2 or P3)",
 		  "P1: [covered entity intends to disclose protected health information]",
 		  "P2: $HIPAA2b",
 		  "P3: $HIPAA2c"
@@ -67,9 +67,10 @@
        "verb": "inform",
        "action": "covered entity [disclosed] protected health information",
        "preconditions": [
-		  "P1 and P2",
+		  "P3 and (P1 and P2)",
 		  "P1: [covered entity discloses protected health information] to a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual",
-		  "P2: [protected health information to disclose is] directly relevant to such person's involvement with the individual's health care or payment related to the individual's health care."
+		  "P2: [protected health information to disclose is] directly relevant to such person's involvement with the individual's health care or payment related to the individual's health care.",
+		  "P3: [individual is not deceased]"
 	   ]
      }
     }, 
