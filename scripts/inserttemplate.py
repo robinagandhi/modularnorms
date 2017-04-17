@@ -23,6 +23,8 @@ def insert(modelname):
 						print line.replace('assert/2','assert/1')
 					elif modelname == 'apache2':
 						print line.replace('assert/2','assert/3')
+					elif modelname == 'hipaalite':
+						print line.replace('assert/2','assert/4')
 					else: # default to hipaa
 						print line
 				elif '<title>Modular Norms</title>' in line:

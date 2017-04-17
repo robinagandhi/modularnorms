@@ -1,0 +1,197 @@
+{
+  "model": [
+    {
+     "table": {
+       "id": "HIPAA1",
+       "sentence": "Section 1: Disclosures of protected health information: A covered entity may not disclose protected health information, except as permitted or required by sections 2 and 3 in this document.",
+       "actor": "Covered entity",
+       "modal": "may not",
+       "negative": "yes",
+       "verb": "disclose",
+       "action": "covered entity [did not disclose] protected health information",
+       "preconditions": [
+		  "not (P1 or P2)",
+		  "P1: $HIPAA2",
+		  "P2: $HIPAA3"
+	   ]
+     }
+    }, 
+
+    {
+     "table": {
+       "id": "HIPAA2",
+       "sentence": "Section 2: Disclosures requiring an opportunity for the individual to agree or to object: A covered entity may disclose protected health information, provided that the individual is informed in advance of the disclosure and has the opportunity to agree to or prohibit or restrict the disclosure, in accordance with the applicable requirements of this section.",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "disclose",
+       "action": "covered entity [disclosed] protected health information",
+       "preconditions": [
+		  "(P1 and P2) and P3",
+		  "P1: individual is informed in advance of the disclosure",
+		  "P2: [individual] has the opportunity to agree to or prohibit or restrict the disclosure",
+		  "P3: $HIPAA2a"
+	   ]
+     }
+    }, 
+
+    {
+     "table": {
+       "id": "HIPAA2a",
+       "sentence": "Section 2(a): Opportunity to object: A covered health care provider must inform an individual of the persons to whom it may disclose such protected health information  (including disclosures to clergy of information regarding religious affiliation) and provide the individual with the opportunity to restrict or prohibit some or all of the disclosures permitted by [Section 2(b) and (c)].",
+       "actor": "Covered entity",
+       "modal": "must",
+       "negative": "no",
+       "verb": "inform",
+       "action": [
+	      "P1 and P2",
+		  "P1: covered entity [informed] an individual of the persons to whom it may disclose such protected health information  (including disclosures to clergy of information regarding religious affiliation)",
+		  "P2: [covered entity provided] the individual with the opportunity to restrict or prohibit some or all of the disclosures"
+	   ],
+       "preconditions": [
+		  "P1 and (P2 and not P3)",
+		  "P1: [covered entity intends to disclose protected health information]",
+		  "P2: $HIPAA2b",
+		  "P3: $HIPAA2c"
+	   ]
+     }
+    }, 
+	
+    {
+     "table": {
+       "id": "HIPAA2b",
+       "sentence": "Section 2(b): Disclosures for involvement in the individual's care: A covered entity may disclose to a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual, the protected health information directly relevant to such person's involvement with the individual's health care or payment related to the individual's health care.",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "inform",
+       "action": "covered entity [disclosed] protected health information",
+       "preconditions": [
+		  "P1 and P2",
+		  "P1: [covered entity discloses protected health information] to a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual",
+		  "P2: [protected health information to disclose is] directly relevant to such person's involvement with the individual's health care or payment related to the individual's health care."
+	   ]
+     }
+    }, 
+
+    {
+     "table": {
+       "id": "HIPAA2c",
+       "sentence": "Section 2(c): Disclosures when the individual is deceased: If the individual is deceased, a covered entity may disclose to a family member, or other persons identified in [Section 2(b)] who were involved in the individual's care or payment for health care prior to the individual's death, protected health information of the individual that is relevant to such person's involvement, unless doing so is inconsistent with any prior expressed preference of the individual that is known to the covered entity.",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "inform",
+       "action": "covered entity [disclosed] protected health information",
+       "preconditions": [
+		  "P2 and ((P3 and P4) and not P5)",
+		  "P2: individual is deceased",
+		  "P3: [covered entity discloses protected health information] to a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual",
+		  "P4: [protected health information to disclose is] directly relevant to such person's involvement with the individual's health care or payment related to the individual's health care.",
+		  "P5: [disclosing protected health information] is inconsistent with any prior expressed preference of the individual that is known to the covered entity"
+	   ]
+     }
+    }, 
+
+    {
+     "table": {
+       "id": "HIPAA3",
+       "sentence": "Section 3: Disclosures for which an opportunity to agree or object is not required. A covered entity may disclose protected health information without the opportunity for the individual to agree or object as described in section 2, in the situations covered by this section.",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "disclose",
+       "action": "covered entity [disclosed] protected health information",
+       "preconditions": "$HIPAA3a"
+     }
+    }, 
+
+    {
+     "table": {
+       "id": "HIPAA3a",
+       "sentence": "Section 3(a): Uses and disclosures required for a law enforcement purpose: A covered entity may disclose protected health information to the extent that such disclosure is required for law enforcement purpose if the following conditions are met, as applicable.",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "disclose",
+       "action": "covered entity [disclosed] protected health information",
+       "preconditions": [
+	      "P1 or P2",
+		  "P1: $HIPAA3ai",
+		  "P2: $HIPAA3aii"
+	   ]
+     }
+    }, 
+
+    {
+     "table": {
+       "id": "HIPAA3ai",
+       "sentence": "Section 3(a)(i): Disclosures required for law enforcement purpose: A covered entity may disclose protected health information [as required by law or in compliance with and as limited by relevant legal requirements]",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "disclose",
+       "action": "covered entity [disclosed] protected health information",
+       "preconditions": [
+	      "P1 or P2",
+		  "P1: $HIPAA3ai1",
+		  "P2: $HIPAA3ai2"
+	   ]
+     }
+    }, 
+	
+    {
+     "table": {
+       "id": "HIPAA3ai1",
+       "sentence": "Section 3(a)(i)(1): [A covered entity may disclose protected health information] as required by law including laws that require the reporting of certain types of wounds (gunshot, stabbing) or other physical injuries.",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "disclose",
+       "action": "covered entity [disclosed] protected health information",
+       "preconditions": "[covered entity is] required by law [to disclose protected health information] including laws that require the reporting of certain types of wounds (gunshot, stabbing) or other physical injuries"
+     }
+    }, 
+
+    {
+     "table": {
+       "id": "HIPAA3ai2",
+       "sentence": "Section 3(a)(i)(2): [A covered entity may disclose protected health information] in compliance with and as limited by the relevant requirements of: [A court order or court-ordered warrant, or a subpoena or summons issued by a judicial officer; a grand jury subpoena; or an administrative request, including an administrative subpoena or summons, a civil or an authorized investigative demand, or similar process authorized under law]",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "disclose",
+       "action": "covered entity [disclosed] protected health information",
+       "preconditions": [
+	       "(P1 or P2) or (P3 and (P4 and (P5 and P6)))",
+	       "P1: [disclosure of protected health information is in compliance with and as limited by the relevant requirements of] a court order or court-ordered warrant, or a subpoena or summons issued by a judicial officer",
+		   "P2: [disclosure of protected health information is in compliance with and as limited by the relevant requirements of] a grand jury subpoena",
+		   "P3: [disclosure of protected health information is in compliance with and as limited by the relevant requirements of] an administrative request, including an administrative subpoena or summons, a civil or an authorized investigative demand, or similar process authorized under law",
+		   "P4: [disclosure of protected health information is in compliance with and as limited by the relevant requirements of an administrative request ... provided that] the information sought is relevant and material to a legitimate law enforcement inquiry",
+		   "P5: [disclosure of protected health information is in compliance with and as limited by the relevant requirements of an administrative request ... provided that] the request is specific and limited in scope to the extent reasonably practicable in light of the purpose for which the information is sought",
+		   "P6: [disclosure of protected health information is in compliance with and as limited by the relevant requirements of an administrative request ... provided that] de-identified information could not reasonably be used [to identify the individual]"
+	   ]
+     }
+    }, 
+
+    {
+     "table": {
+       "id": "HIPAA3aii",
+       "sentence": "Section 3(a)(ii): Victims of a crime. Except for disclosures required for law enforcement purpose as permitted by [section 3(a)(i)], a covered entity may disclose protected health information in response to a law enforcement official's request for such information about an individual who is or is suspected to be a victim of a crime [if the following conditions are met: The individual agrees to the disclosure; or The covered entity is unable to obtain the individual's agreement because of incapacity or other emergency circumstance].",
+       "actor": "Covered entity",
+       "modal": "may",
+       "negative": "no",
+       "verb": "disclose",
+       "action": "covered entity [disclosed] protected health information",
+       "preconditions": [
+	      "(not P1) and (P2 and (P3 or P4))",
+		  "P1: $HIPAA3ai",
+		  "P2: individual is or is suspected to be a victim of a crime",
+		  "P3: individual agrees to the disclosure of protected health information",
+		  "P4: covered entity is unable to obtain the individual's agreement because of incapacity or other emergency circumstance"
+	   ]
+     }
+    }
+  ]
+}
+ 
