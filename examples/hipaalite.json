@@ -69,8 +69,8 @@
        "preconditions": [
 		  "P3 and (P1 and P2)",
 		  "P1: [covered entity discloses protected health information] to a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual",
-		  "P2: [protected health information to disclose is] directly relevant to such person's involvement with the individual's health care or payment related to the individual's health care.",
-		  "P3: [individual is not deceased]"
+		  "P2: [protected health information to disclose is] directly relevant to such person's [(family member, other relative, etc.)] involvement with the individual's health care or payment related to the individual's health care.",
+		  "P3: [individual is alive]"
 	   ]
      }
     }, 
@@ -85,11 +85,11 @@
        "verb": "inform",
        "action": "covered entity [disclosed] protected health information",
        "preconditions": [
-		  "P2 and ((P3 and P4) and not P5)",
+		  "P2 and ((P3 and P4) and P5)",
 		  "P2: individual is deceased",
 		  "P3: [covered entity discloses protected health information] to a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual",
-		  "P4: [protected health information to disclose is] directly relevant to such person's involvement with the individual's health care or payment related to the individual's health care.",
-		  "P5: [disclosing protected health information] is inconsistent with any prior expressed preference of the individual that is known to the covered entity"
+		  "P4: [protected health information to disclose is] directly relevant to such person's [(family member, other relative, etc.)] involvement with the individual's health care or payment related to the individual's health care.",
+		  "P5: [disclosing protected health information] is [consistent] with any prior expressed preference of the individual that is known to the covered entity"
 	   ]
      }
     }, 
@@ -134,46 +134,18 @@
        "verb": "disclose",
        "action": "covered entity [disclosed] protected health information",
        "preconditions": [
-	      "P1 or P2",
-		  "P1: $HIPAA3ai1",
-		  "P2: $HIPAA3ai2"
+	      "P1 or ((P2 or P3) or (P4 and (P5 and (P6 and P7))))",
+		  "P1: [3(a)(i)(1) covered entity is] required by law [to disclose protected health information] including laws that require the reporting of certain types of wounds (gunshot, stabbing) or other physical injuries",
+	      "P2: [3(a)(i)(2)(a) disclosure of protected health information is in compliance with and as limited by the relevant requirements of] a court order or court-ordered warrant, or a subpoena or summons issued by a judicial officer",
+		  "P3: [3(a)(i)(2)(b) disclosure of protected health information is in compliance with and as limited by the relevant requirements of] a grand jury subpoena",
+		  "P4: [3(a)(i)(2)(c) disclosure of protected health information is in compliance with and as limited by the relevant requirements of] an administrative request, including an administrative subpoena or summons, a civil or an authorized investigative demand, or similar process authorized under law",
+		  "P5: [3(a)(i)(2)(c)(i) disclosure of protected health information is in compliance with and as limited by the relevant requirements of an administrative request ... provided that] the information sought is relevant and material to a legitimate law enforcement inquiry",
+		  "P6: [3(a)(i)(2)(c)(ii) disclosure of protected health information is in compliance with and as limited by the relevant requirements of an administrative request ... provided that] the request is specific and limited in scope to the extent reasonably practicable in light of the purpose for which the information is sought",
+		  "P7: [3(a)(i)(2)(c)(iii) disclosure of protected health information is in compliance with and as limited by the relevant requirements of an administrative request ... provided that] de-identified information could not reasonably be used [to identify the individual]"
 	   ]
      }
     }, 
 	
-    {
-     "table": {
-       "id": "HIPAA3ai1",
-       "sentence": "Section 3(a)(i)(1): [A covered entity may disclose protected health information] as required by law including laws that require the reporting of certain types of wounds (gunshot, stabbing) or other physical injuries.",
-       "actor": "Covered entity",
-       "modal": "may",
-       "negative": "no",
-       "verb": "disclose",
-       "action": "covered entity [disclosed] protected health information",
-       "preconditions": "[covered entity is] required by law [to disclose protected health information] including laws that require the reporting of certain types of wounds (gunshot, stabbing) or other physical injuries"
-     }
-    }, 
-
-    {
-     "table": {
-       "id": "HIPAA3ai2",
-       "sentence": "Section 3(a)(i)(2): [A covered entity may disclose protected health information] in compliance with and as limited by the relevant requirements of: [A court order or court-ordered warrant, or a subpoena or summons issued by a judicial officer; a grand jury subpoena; or an administrative request, including an administrative subpoena or summons, a civil or an authorized investigative demand, or similar process authorized under law]",
-       "actor": "Covered entity",
-       "modal": "may",
-       "negative": "no",
-       "verb": "disclose",
-       "action": "covered entity [disclosed] protected health information",
-       "preconditions": [
-	       "(P1 or P2) or (P3 and (P4 and (P5 and P6)))",
-	       "P1: [disclosure of protected health information is in compliance with and as limited by the relevant requirements of] a court order or court-ordered warrant, or a subpoena or summons issued by a judicial officer",
-		   "P2: [disclosure of protected health information is in compliance with and as limited by the relevant requirements of] a grand jury subpoena",
-		   "P3: [disclosure of protected health information is in compliance with and as limited by the relevant requirements of] an administrative request, including an administrative subpoena or summons, a civil or an authorized investigative demand, or similar process authorized under law",
-		   "P4: [disclosure of protected health information is in compliance with and as limited by the relevant requirements of an administrative request ... provided that] the information sought is relevant and material to a legitimate law enforcement inquiry",
-		   "P5: [disclosure of protected health information is in compliance with and as limited by the relevant requirements of an administrative request ... provided that] the request is specific and limited in scope to the extent reasonably practicable in light of the purpose for which the information is sought",
-		   "P6: [disclosure of protected health information is in compliance with and as limited by the relevant requirements of an administrative request ... provided that] de-identified information could not reasonably be used [to identify the individual]"
-	   ]
-     }
-    }, 
 
     {
      "table": {
@@ -185,8 +157,7 @@
        "verb": "disclose",
        "action": "covered entity [disclosed] protected health information",
        "preconditions": [
-	      "(not P1) and (P2 and (P3 or P4))",
-		  "P1: $HIPAA3ai",
+	      "P2 and (P3 or P4)",
 		  "P2: individual is or is suspected to be a victim of a crime",
 		  "P3: individual agrees to the disclosure of protected health information",
 		  "P4: covered entity is unable to obtain the individual's agreement because of incapacity or other emergency circumstance"
