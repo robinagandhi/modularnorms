@@ -268,25 +268,25 @@
     
 
 
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4_1 -->
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4_3 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4_1">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4_3">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4"/>
         <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You reproduced and distributed] copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YPL4_1</hasID>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YPL4_3</hasID>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4_2 -->
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4_4 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4_2">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4_4">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
         <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a"/>
         <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4"/>
         <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_YPL4a</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YPL4_2</hasID>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YPL4_4</hasID>
     </owl:NamedIndividual>
     
 
@@ -301,24 +301,24 @@
     
 
 
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a_3 -->
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a_3">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a_1">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a"/>
         <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You retained] in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YPL4a_3</hasID>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YPL4a_1</hasID>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a_4 -->
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a_2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a_4">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a_2">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a"/>
         <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to reproduce and distribute copies of the Work or Derivative Works]</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YPL4a_4</hasID>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YPL4a_2</hasID>
     </owl:NamedIndividual>
     
 
@@ -335,11 +335,11 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4_1"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4_2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4_3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4_4"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a_3"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a_4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a_1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#YPL4a_2"/>
         </owl:distinctMembers>
     </rdf:Description>
     

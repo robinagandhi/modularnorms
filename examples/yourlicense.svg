@@ -9,91 +9,91 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 271)">
 <title>G</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-271 718,-271 718,4 -4,4"/>
-<g id="clust1" class="cluster"><title>clusterSS_YPL4</title>
-<polygon fill="none" stroke="black" points="8,-16 8,-259 308,-259 308,-16 8,-16"/>
-<text text-anchor="middle" x="158" y="-23.8" font-family="Times New Roman,serif" font-size="14.00">SS_YPL4</text>
+<g id="clust1" class="cluster"><title>clusterSS_YPL4a</title>
+<polygon fill="none" stroke="black" points="8,-8 8,-259 398,-259 398,-8 8,-8"/>
+<text text-anchor="middle" x="203" y="-15.8" font-family="Times New Roman,serif" font-size="14.00">SS_YPL4a</text>
 </g>
-<g id="clust2" class="cluster"><title>clusterSS_YPL4a</title>
-<polygon fill="none" stroke="black" points="316,-8 316,-259 706,-259 706,-8 316,-8"/>
-<text text-anchor="middle" x="511" y="-15.8" font-family="Times New Roman,serif" font-size="14.00">SS_YPL4a</text>
-</g>
-<!-- YPL4 -->
-<g id="node1" class="node"><title>YPL4</title>
-<g id="a_node1"><a xlink:title="4. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following condition:">
-<polygon fill="lightblue" stroke="black" points="237.988,-228 140.506,-251 140.506,-205 237.988,-228"/>
-<text text-anchor="middle" x="173" y="-224.3" font-family="Times New Roman,serif" font-size="14.00">YPL4</text>
-</a>
-</g>
-</g>
-<!-- YPL4_1 -->
-<g id="node2" class="node"><title>YPL4_1</title>
-<polygon fill="none" stroke="black" points="201.5,-145 16.5,-145 16.5,-47 201.5,-47 201.5,-145"/>
-<text text-anchor="middle" x="109" y="-129.8" font-family="Times New Roman,serif" font-size="14.00">[You reproduced and</text>
-<text text-anchor="middle" x="109" y="-114.8" font-family="Times New Roman,serif" font-size="14.00"> distributed] copies of the</text>
-<text text-anchor="middle" x="109" y="-99.8" font-family="Times New Roman,serif" font-size="14.00"> Work or Derivative Works</text>
-<text text-anchor="middle" x="109" y="-84.8" font-family="Times New Roman,serif" font-size="14.00"> thereof in any medium, with</text>
-<text text-anchor="middle" x="109" y="-69.8" font-family="Times New Roman,serif" font-size="14.00"> or without modifications,</text>
-<text text-anchor="middle" x="109" y="-54.8" font-family="Times New Roman,serif" font-size="14.00"> and in Source or Object form</text>
-</g>
-<!-- YPL4_1&#45;&gt;YPL4 -->
-<g id="edge1" class="edge"><title>YPL4_1&#45;&gt;YPL4</title>
-<path fill="none" stroke="black" d="M131.652,-145.272C138.122,-158.823 145.25,-173.531 152,-187 154.356,-191.7 156.917,-196.681 159.416,-201.474"/>
-<polygon fill="black" stroke="black" points="156.322,-203.111 164.072,-210.335 162.519,-199.855 156.322,-203.111"/>
-<text text-anchor="middle" x="174.5" y="-175.3" font-family="Times New Roman,serif" font-size="14.00">satisfies</text>
-</g>
-<!-- YPL4_2 -->
-<g id="node3" class="node"><title>YPL4_2</title>
-<polygon fill="orange" stroke="black" points="300,-114 220,-114 220,-78 300,-78 300,-114"/>
-<text text-anchor="middle" x="260" y="-92.3" font-family="Times New Roman,serif" font-size="14.00">SS_YPL4a</text>
-</g>
-<!-- YPL4_2&#45;&gt;YPL4 -->
-<g id="edge2" class="edge"><title>YPL4_2&#45;&gt;YPL4</title>
-<path fill="none" stroke="black" d="M248.447,-114.263C232.639,-137.884 204.286,-180.25 187.201,-205.78"/>
-<polygon fill="black" stroke="black" points="184.114,-204.1 181.461,-214.358 189.931,-207.994 184.114,-204.1"/>
-<text text-anchor="middle" x="233.5" y="-175.3" font-family="Times New Roman,serif" font-size="14.00">activates</text>
+<g id="clust2" class="cluster"><title>clusterSS_YPL4</title>
+<polygon fill="none" stroke="black" points="406,-16 406,-259 706,-259 706,-16 406,-16"/>
+<text text-anchor="middle" x="556" y="-23.8" font-family="Times New Roman,serif" font-size="14.00">SS_YPL4</text>
 </g>
 <!-- YPL4a -->
-<g id="node4" class="node"><title>YPL4a</title>
-<g id="a_node4"><a xlink:title="4(a) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work.">
-<polygon fill="lightblue" stroke="black" points="415,-251 342.412,-216.5 487.588,-216.5 415,-251"/>
-<text text-anchor="middle" x="415" y="-224.3" font-family="Times New Roman,serif" font-size="14.00">YPL4a</text>
+<g id="node1" class="node"><title>YPL4a</title>
+<g id="a_node1"><a xlink:title="4(a) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work.">
+<polygon fill="lightblue" stroke="black" points="303,-251 230.412,-216.5 375.588,-216.5 303,-251"/>
+<text text-anchor="middle" x="303" y="-224.3" font-family="Times New Roman,serif" font-size="14.00">YPL4a</text>
 </a>
 </g>
 </g>
-<!-- YPL4_2&#45;&gt;YPL4a -->
-<g id="edge5" class="edge"><title>YPL4_2&#45;&gt;YPL4a</title>
-<path fill="none" stroke="grey" stroke-dasharray="5,2" d="M274.207,-114.007C282.742,-123.848 294.189,-136.423 308.431,-149.636"/>
-<polygon fill="grey" stroke="grey" points="306.365,-152.487 316.132,-156.593 311.057,-147.293 306.365,-152.487"/>
+<!-- YPL4a_1 -->
+<g id="node2" class="node"><title>YPL4a_1</title>
+<polygon fill="none" stroke="black" points="390,-152.5 216,-152.5 216,-39.5 390,-39.5 390,-152.5"/>
+<text text-anchor="middle" x="303" y="-137.3" font-family="Times New Roman,serif" font-size="14.00">[You retained] in the Source</text>
+<text text-anchor="middle" x="303" y="-122.3" font-family="Times New Roman,serif" font-size="14.00"> form of any Derivative</text>
+<text text-anchor="middle" x="303" y="-107.3" font-family="Times New Roman,serif" font-size="14.00"> Works that You distribute,</text>
+<text text-anchor="middle" x="303" y="-92.3" font-family="Times New Roman,serif" font-size="14.00"> all copyright, patent,</text>
+<text text-anchor="middle" x="303" y="-77.3" font-family="Times New Roman,serif" font-size="14.00"> trademark, and attribution</text>
+<text text-anchor="middle" x="303" y="-62.3" font-family="Times New Roman,serif" font-size="14.00"> notices from the Source</text>
+<text text-anchor="middle" x="303" y="-47.3" font-family="Times New Roman,serif" font-size="14.00"> form of the Work</text>
 </g>
-<!-- YPL4a_3 -->
-<g id="node5" class="node"><title>YPL4a_3</title>
-<polygon fill="none" stroke="black" points="698,-152.5 524,-152.5 524,-39.5 698,-39.5 698,-152.5"/>
-<text text-anchor="middle" x="611" y="-137.3" font-family="Times New Roman,serif" font-size="14.00">[You retained] in the Source</text>
-<text text-anchor="middle" x="611" y="-122.3" font-family="Times New Roman,serif" font-size="14.00"> form of any Derivative</text>
-<text text-anchor="middle" x="611" y="-107.3" font-family="Times New Roman,serif" font-size="14.00"> Works that You distribute,</text>
-<text text-anchor="middle" x="611" y="-92.3" font-family="Times New Roman,serif" font-size="14.00"> all copyright, patent,</text>
-<text text-anchor="middle" x="611" y="-77.3" font-family="Times New Roman,serif" font-size="14.00"> trademark, and attribution</text>
-<text text-anchor="middle" x="611" y="-62.3" font-family="Times New Roman,serif" font-size="14.00"> notices from the Source</text>
-<text text-anchor="middle" x="611" y="-47.3" font-family="Times New Roman,serif" font-size="14.00"> form of the Work</text>
+<!-- YPL4a_1&#45;&gt;YPL4a -->
+<g id="edge1" class="edge"><title>YPL4a_1&#45;&gt;YPL4a</title>
+<path fill="none" stroke="black" d="M303,-152.509C303,-171.459 303,-191.509 303,-206.028"/>
+<polygon fill="black" stroke="black" points="299.5,-206.36 303,-216.36 306.5,-206.36 299.5,-206.36"/>
+<text text-anchor="middle" x="325.5" y="-175.3" font-family="Times New Roman,serif" font-size="14.00">satisfies</text>
 </g>
-<!-- YPL4a_3&#45;&gt;YPL4a -->
-<g id="edge3" class="edge"><title>YPL4a_3&#45;&gt;YPL4a</title>
-<path fill="none" stroke="black" d="M527.31,-152.509C495.486,-173.616 461.605,-196.089 439.481,-210.763"/>
-<polygon fill="black" stroke="black" points="437.441,-207.916 431.042,-216.36 441.31,-213.749 437.441,-207.916"/>
-<text text-anchor="middle" x="517.5" y="-175.3" font-family="Times New Roman,serif" font-size="14.00">satisfies</text>
+<!-- YPL4a_2 -->
+<g id="node3" class="node"><title>YPL4a_2</title>
+<polygon fill="none" stroke="black" points="198,-122.5 16,-122.5 16,-69.5 198,-69.5 198,-122.5"/>
+<text text-anchor="middle" x="107" y="-107.3" font-family="Times New Roman,serif" font-size="14.00">[You intend to reproduce and</text>
+<text text-anchor="middle" x="107" y="-92.3" font-family="Times New Roman,serif" font-size="14.00"> distribute copies of the</text>
+<text text-anchor="middle" x="107" y="-77.3" font-family="Times New Roman,serif" font-size="14.00"> Work or Derivative Works]</text>
 </g>
-<!-- YPL4a_4 -->
-<g id="node6" class="node"><title>YPL4a_4</title>
-<polygon fill="none" stroke="black" points="506,-122.5 324,-122.5 324,-69.5 506,-69.5 506,-122.5"/>
-<text text-anchor="middle" x="415" y="-107.3" font-family="Times New Roman,serif" font-size="14.00">[You intend to reproduce and</text>
-<text text-anchor="middle" x="415" y="-92.3" font-family="Times New Roman,serif" font-size="14.00"> distribute copies of the</text>
-<text text-anchor="middle" x="415" y="-77.3" font-family="Times New Roman,serif" font-size="14.00"> Work or Derivative Works]</text>
+<!-- YPL4a_2&#45;&gt;YPL4a -->
+<g id="edge2" class="edge"><title>YPL4a_2&#45;&gt;YPL4a</title>
+<path fill="none" stroke="black" d="M145.723,-122.684C185.086,-148.792 244.886,-188.455 278.263,-210.593"/>
+<polygon fill="black" stroke="black" points="276.669,-213.735 286.937,-216.346 280.538,-207.902 276.669,-213.735"/>
+<text text-anchor="middle" x="264.5" y="-175.3" font-family="Times New Roman,serif" font-size="14.00">activates</text>
 </g>
-<!-- YPL4a_4&#45;&gt;YPL4a -->
-<g id="edge4" class="edge"><title>YPL4a_4&#45;&gt;YPL4a</title>
-<path fill="none" stroke="black" d="M415,-122.684C415,-147.118 415,-183.425 415,-206.127"/>
-<polygon fill="black" stroke="black" points="411.5,-206.346 415,-216.346 418.5,-206.346 411.5,-206.346"/>
-<text text-anchor="middle" x="439.5" y="-175.3" font-family="Times New Roman,serif" font-size="14.00">activates</text>
+<!-- YPL4 -->
+<g id="node4" class="node"><title>YPL4</title>
+<g id="a_node4"><a xlink:title="4. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following condition:">
+<polygon fill="lightblue" stroke="black" points="592.988,-228 495.506,-251 495.506,-205 592.988,-228"/>
+<text text-anchor="middle" x="528" y="-224.3" font-family="Times New Roman,serif" font-size="14.00">YPL4</text>
+</a>
+</g>
+</g>
+<!-- YPL4_3 -->
+<g id="node5" class="node"><title>YPL4_3</title>
+<polygon fill="none" stroke="black" points="697.5,-145 512.5,-145 512.5,-47 697.5,-47 697.5,-145"/>
+<text text-anchor="middle" x="605" y="-129.8" font-family="Times New Roman,serif" font-size="14.00">[You reproduced and</text>
+<text text-anchor="middle" x="605" y="-114.8" font-family="Times New Roman,serif" font-size="14.00"> distributed] copies of the</text>
+<text text-anchor="middle" x="605" y="-99.8" font-family="Times New Roman,serif" font-size="14.00"> Work or Derivative Works</text>
+<text text-anchor="middle" x="605" y="-84.8" font-family="Times New Roman,serif" font-size="14.00"> thereof in any medium, with</text>
+<text text-anchor="middle" x="605" y="-69.8" font-family="Times New Roman,serif" font-size="14.00"> or without modifications,</text>
+<text text-anchor="middle" x="605" y="-54.8" font-family="Times New Roman,serif" font-size="14.00"> and in Source or Object form</text>
+</g>
+<!-- YPL4_3&#45;&gt;YPL4 -->
+<g id="edge3" class="edge"><title>YPL4_3&#45;&gt;YPL4</title>
+<path fill="none" stroke="black" d="M579.292,-145.086C571.706,-158.77 563.227,-173.594 555,-187 551.113,-193.333 546.679,-200.079 542.543,-206.191"/>
+<polygon fill="black" stroke="black" points="539.565,-204.345 536.796,-214.572 545.338,-208.305 539.565,-204.345"/>
+<text text-anchor="middle" x="585.5" y="-175.3" font-family="Times New Roman,serif" font-size="14.00">satisfies</text>
+</g>
+<!-- YPL4_4 -->
+<g id="node6" class="node"><title>YPL4_4</title>
+<polygon fill="orange" stroke="black" points="494,-114 414,-114 414,-78 494,-78 494,-114"/>
+<text text-anchor="middle" x="454" y="-92.3" font-family="Times New Roman,serif" font-size="14.00">SS_YPL4a</text>
+</g>
+<!-- YPL4_4&#45;&gt;YPL4a -->
+<g id="edge5" class="edge"><title>YPL4_4&#45;&gt;YPL4a</title>
+<path fill="none" stroke="grey" stroke-dasharray="5,2" d="M439.28,-114.428C430.745,-124.186 419.444,-136.549 405.358,-149.786"/>
+<polygon fill="grey" stroke="grey" points="402.74,-147.438 397.739,-156.778 407.473,-152.596 402.74,-147.438"/>
+</g>
+<!-- YPL4_4&#45;&gt;YPL4 -->
+<g id="edge4" class="edge"><title>YPL4_4&#45;&gt;YPL4</title>
+<path fill="none" stroke="black" d="M463.827,-114.263C476.502,-136.531 498.66,-175.457 513.332,-201.233"/>
+<polygon fill="black" stroke="black" points="510.379,-203.12 518.368,-210.079 516.463,-199.657 510.379,-203.12"/>
+<text text-anchor="middle" x="528.5" y="-175.3" font-family="Times New Roman,serif" font-size="14.00">activates</text>
 </g>
 </g>
 </svg>
