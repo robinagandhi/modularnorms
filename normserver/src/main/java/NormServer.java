@@ -142,6 +142,8 @@ public class NormServer {
 			modelname = "hipaalite";
 		} else if (modelId.equals("5")) {
 			modelname = "apache2sub4";
+		} else if (modelId.equals("6")) {
+			modelname = "yourlicense";
 		} else {
 			return null;
 		}

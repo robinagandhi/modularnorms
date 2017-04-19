@@ -1,0 +1,33 @@
+{
+  "model": [
+    {
+     "table": {
+       "id": "YPL4",
+       "sentence": "4. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following condition:",
+       "actor": "You",
+       "modal": "may",
+       "negative": "no",
+       "verb": "reproduce and distribute",
+       "action": "[You reproduced and distributed] copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form",
+       "preconditions": "$YPL4a"
+     }
+    }, 
+
+
+    {
+     "table": {
+       "id": "YPL4a",
+       "sentence": "4(a) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work.",
+       "actor": "You",
+       "modal": "must",
+       "negative": "no",
+       "verb": "retain",
+       "action": "[You retained] in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work",
+       "preconditions": "[You intend to reproduce and distribute copies of the Work or Derivative Works]"
+     }
+    } 
+
+	
+	
+  ]
+}
