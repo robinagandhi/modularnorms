@@ -509,12 +509,35 @@
     
 
 
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_36 -->
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_34 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_36">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_34">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib"/>
         <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You added] Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddAttrib_34</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_35 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_35">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+        <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddAttrib_35</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_36 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_36">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
+        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_35"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_Apache4d</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddAttrib_36</hasID>
     </owl:NamedIndividual>
     
@@ -523,33 +546,10 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_37 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_37">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
-        <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddAttrib_37</hasID>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_38 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_38">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
-        <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_37"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_Apache4d</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddAttrib_38</hasID>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_39 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_39">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_37"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_35"/>
         <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[Your own] additional attribution notices cannot be construed as modifying the License</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddAttrib_39</hasID>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddAttrib_37</hasID>
     </owl:NamedIndividual>
     
 
@@ -564,12 +564,34 @@
     
 
 
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_40 -->
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_38 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_40">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_38">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#OR"/>
         <satisfy rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright"/>
         <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">or</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddCopyright_38</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_39 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_39">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_38"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You added] Your own copyright statement to Your modifications</hasDesc>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddCopyright_39</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_40 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_40">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_38"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You provided] additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddCopyright_40</hasID>
     </owl:NamedIndividual>
     
@@ -578,33 +600,11 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_41 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_41">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_40"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You added] Your own copyright statement to Your modifications</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddCopyright_41</hasID>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_42 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_42">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_40"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You provided] additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddCopyright_42</hasID>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_43 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_43">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#SuperSituation"/>
         <_contains rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4"/>
         <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright"/>
         <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS_Apache4</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddCopyright_43</hasID>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4dAddCopyright_41</hasID>
     </owl:NamedIndividual>
     
 
@@ -658,7 +658,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_22">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_21"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You included the attribution notices] within a NOTICE text file distributed as part of the Derivative Works</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[(in notice file) You included the attribution notices] within a NOTICE text file distributed as part of the Derivative Works</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_22</hasID>
     </owl:NamedIndividual>
     
@@ -678,9 +678,9 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_24 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_24">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#OR"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
         <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_23"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">or</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_24</hasID>
     </owl:NamedIndividual>
     
@@ -690,8 +690,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_25">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_24"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You included the attribution notices] within the Source form or documentation</hasDesc>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_24"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[(in source) in You included the attribution notices] within the Source form or documentation</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_25</hasID>
     </owl:NamedIndividual>
     
@@ -700,9 +700,9 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_26 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_26">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#LNOT"/>
-        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_24"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not</hasDesc>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_24"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">source [is] provided along with the Derivative Works</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_26</hasID>
     </owl:NamedIndividual>
     
@@ -711,9 +711,9 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_27 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_27">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <not_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_26"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">source [is] provided along with the Derivative Works</hasDesc>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_23"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_27</hasID>
     </owl:NamedIndividual>
     
@@ -722,9 +722,9 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_28 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_28">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#OR"/>
-        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_23"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">or</hasDesc>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_27"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[(in display) You included the attribution notices] within a display generated by the Derivative Works ... wherever such third-party notices normally appear</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_28</hasID>
     </owl:NamedIndividual>
     
@@ -734,8 +734,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_29">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_28"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You included the attribution notices] within a display generated by the Derivative Works ... wherever such third-party notices normally appear</hasDesc>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_27"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">third-party [attribution] notices normally appear [in display]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_29</hasID>
     </owl:NamedIndividual>
     
@@ -744,9 +744,9 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_30 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_30">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#LNOT"/>
-        <or_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_28"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not</hasDesc>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_18"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You excluded] those notices that do not pertain to any part of the Derivative Works</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_30</hasID>
     </owl:NamedIndividual>
     
@@ -755,9 +755,9 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_31 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_31">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <not_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_30"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">third-party [attribution] notices normally appear [in display]</hasDesc>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
+        <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_31</hasID>
     </owl:NamedIndividual>
     
@@ -767,8 +767,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_32">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_18"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You excluded] those notices that do not pertain to any part of the Derivative Works</hasDesc>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_31"/>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to reproduce and distribute copies of the Work or Derivative Works]</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_32</hasID>
     </owl:NamedIndividual>
     
@@ -777,32 +777,10 @@
     <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_33 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_33">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AND"/>
-        <activate rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_33</hasID>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_34 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_34">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_33"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[You intend to reproduce and distribute copies of the Work or Derivative Works]</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_34</hasID>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_35 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_35">
-        <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
-        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_33"/>
+        <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_31"/>
         <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the Work includes a &apos;NOTICE&apos; text file as part of its distribution</hasDesc>
-        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_35</hasID>
+        <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apache4d_33</hasID>
     </owl:NamedIndividual>
     
 
@@ -841,15 +819,15 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4c_17"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_34"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_35"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_36"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_37"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_38"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddAttrib_39"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_38"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_39"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_40"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_41"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_42"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4dAddCopyright_43"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_18"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_19"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_20"/>
@@ -866,8 +844,6 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_31"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_32"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_33"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_34"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#Apache4d_35"/>
         </owl:distinctMembers>
     </rdf:Description>
     
