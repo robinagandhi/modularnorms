@@ -140,6 +140,8 @@ public class NormServer {
 			modelname = "apache2";
 		} else if (modelId.equals("4")) {
 			modelname = "hipaalite";
+		} else if (modelId.equals("5")) {
+			modelname = "apache2sub4";
 		} else {
 			return null;
 		}
