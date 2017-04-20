@@ -571,7 +571,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#HIPAA2b_25">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#HIPAA2b_24"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[covered entity discloses protected health information] to a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[person requesting protected health information is] a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HIPAA2b_25</hasID>
     </owl:NamedIndividual>
     
@@ -692,7 +692,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#HIPAA2c_35">
         <rdf:type rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#AtomicSituation"/>
         <and_ rdf:resource="http://www.semanticweb.org/hsiy/ontologies/2017/2/supernomos#HIPAA2c_34"/>
-        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[covered entity discloses protected health information] to a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual</hasDesc>
+        <hasDesc rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[person requesting protected health information is] a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual</hasDesc>
         <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HIPAA2c_35</hasID>
     </owl:NamedIndividual>
     

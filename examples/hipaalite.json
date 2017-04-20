@@ -64,7 +64,7 @@
        "action": "covered entity [disclosed] protected health information",
        "preconditions": [
 		  "P3 and (P4 and (P1 and P2))",
-		  "P1: [covered entity discloses protected health information] to a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual",
+		  "P1: [person requesting protected health information is] a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual",
 		  "P2: [protected health information to disclose is] directly relevant to such person's [(family member, other relative, etc.)] involvement with the individual's health care or payment related to the individual's health care.",
 		  "P3: [individual is alive]",
 		  "P4: $HIPAA2a"
@@ -84,7 +84,7 @@
        "preconditions": [
 		  "P2 and ((P5 or P6) and (P3 and P4))",
 		  "P2: individual is deceased",
-		  "P3: [covered entity discloses protected health information] to a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual",
+		  "P3: [person requesting protected health information is] a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual",
 		  "P4: [protected health information to disclose is] directly relevant to such person's [(family member, other relative, etc.)] involvement with the individual's health care or payment related to the individual's health care.",
 		  "P5: [disclosing protected health information] is [consistent] with any prior expressed preference of the individual that is known to the covered entity",
 		  "P6: $HIPAA2a"
