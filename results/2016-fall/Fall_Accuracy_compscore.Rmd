@@ -1,0 +1,306 @@
+---
+title: "Fall_Accuracy_compscore"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Read data and compute response variables
+
+Read the data and initialize accuracy and confidence response variables
+```{r, echo=TRUE}
+data <- read.csv("All_Time_Analysis_Everything.csv")
+summary(data)
+compositescore <- ifelse(data$Sentence == "Correct", ifelse(data$Answer == "Correct", 4, ifelse(data$Answer == "Wrong", -2, 2)), ifelse(data$Sentence == "Wrong", ifelse(data$Answer == "Correct", 2, ifelse(data$Answer == "Wrong", -4, -2)), NA))
+confcompscore <- ifelse(data$Confidence == "Very", compositescore, ifelse(data$Confidence == "Semi", compositescore/2, compositescore/4))
+confscore <- ifelse(data$Confidence == "Very", 2, ifelse(data$Confidence == "Semi", 1, 0)) # no answer is also 0
+
+dgdata <- read.csv("Demographics_Everything.csv")
+summary(dgdata)
+```
+## To analyze composite score without confidence, just comment out the next block (percentage-based score).
+
+# Analyze aggregate response (total correct by individual)
+
+## Aggregate responses keyed by individual
+
+### Sum up response variables by individual for each session
+
+*Note: accuracy uses composite score without confidence*
+
+```{r, echo=TRUE}
+session1totalIDCorrect <-sapply(split(compositescore[data$Session == 1], data$ID[data$Session == 1]), sum, na.rm=T)
+session2totalIDCorrect <-sapply(split(compositescore[data$Session == 2], data$ID[data$Session == 2]), sum, na.rm=T)
+session1totalIDTime <-sapply(split(data$Time[data$Session == 1], data$ID[data$Session == 1]), sum, na.rm=T)
+session2totalIDTime <-sapply(split(data$Time[data$Session == 2], data$ID[data$Session == 2]), sum, na.rm=T)
+session1totalIDConf <-sapply(split(confscore[data$Session == 1], data$ID[data$Session == 1]), sum, na.rm=T)
+session2totalIDConf <-sapply(split(confscore[data$Session == 2], data$ID[data$Session == 2]), sum, na.rm=T)
+session1IDGroup <-sapply(split(data$Group[data$Session == 1], data$ID[data$Session == 1]), unique)
+session2IDGroup <-sapply(split(data$Group[data$Session == 2], data$ID[data$Session == 2]), unique)
+```
+
+### Redo the statistical tests with new correctness measures
+
+```{r, echo=TRUE}
+t.test(session1totalIDCorrect[session1IDGroup == 1], session2totalIDCorrect[session2IDGroup == 1], paired=T)
+t.test(session1totalIDCorrect[session1IDGroup == 1], session2totalIDCorrect[session2IDGroup == 1])
+wilcox.test(session1totalIDCorrect[session1IDGroup == 1], session2totalIDCorrect[session2IDGroup == 1], paired=T)
+wilcox.test(session1totalIDCorrect[session1IDGroup == 1], session2totalIDCorrect[session2IDGroup == 1])
+
+t.test(session1totalIDCorrect[session1IDGroup == 2], session2totalIDCorrect[session2IDGroup == 2], paired=T)
+t.test(session1totalIDCorrect[session1IDGroup == 2], session2totalIDCorrect[session2IDGroup == 2])
+wilcox.test(session1totalIDCorrect[session1IDGroup == 2], session2totalIDCorrect[session2IDGroup == 2], paired=T)
+wilcox.test(session1totalIDCorrect[session1IDGroup == 2], session2totalIDCorrect[session2IDGroup == 2])
+```
+Group 1 is not significantly different on both t and wilcoxon tests (paired and unpaired). However, Wilcoxon signed rank sum test, p-value=0.375
+Group 2 got better (p<0.1 on both t and wilcoxon tests, paired and unpaired) in Session 2 
+
+
+### Integrate with demographics data.
+Since the summed up response variables are ordered differently from the demographics data frame, we first need to match up the rows.
+dgndx is the row in dgdata whose ID corresponds with session1IDGroup's ID
+```{r, echo=TRUE}
+dgndx <- match(names(session1IDGroup), dgdata$ID)
+OSSExp <- dgdata$Open_Source_Experience[dgndx]
+ProExp <- dgdata$Professional_Software_Experience[dgndx]
+ModelExp <- dgdata$Model_Experience[dgndx]
+CSBg <- dgdata$CS_Background[dgndx]
+LawBg <- dgdata$Law_Background[dgndx]
+DStructExp <- dgdata$Data_Structure_Experience[dgndx]
+EnglProf <- dgdata$English_Proficiency[dgndx]
+```
+
+### Create data frame for analysis of variance (1 row per ID)
+
+```{r, echo=TRUE}
+Group <- as.factor(session1IDGroup)
+IDdata <- data.frame(Group, session1totalIDCorrect, session2totalIDCorrect, session1totalIDTime, session2totalIDTime, session1totalIDConf, session2totalIDConf, OSSExp, ProExp, ModelExp, CSBg, LawBg, DStructExp, EnglProf)
+```
+
+### Check normality of accuracy response variables
+
+```{r, echo=TRUE}
+qqnorm(session1totalIDCorrect)
+shapiro.test(session1totalIDCorrect)
+qqnorm(session2totalIDCorrect)
+shapiro.test(session2totalIDCorrect)
+```
+Shapiro-Wilk test indicates that the distributions are different from normal (p<0.1 for both sessions) - this is different from the same tests in Demographics_Analysis_HS.
+
+
+
+### ANOVA for accuracy for each session
+
+
+Initial fitting model for accuracy (try linear model since accuracy distribution appears normal)
+```{r, echo=TRUE}
+S1accuracyLModel <- lm(session1totalIDCorrect ~ Group + session1totalIDTime + session1totalIDConf + OSSExp + ProExp + ModelExp + CSBg + LawBg + DStructExp + EnglProf, data=IDdata)
+S2accuracyLModel <- lm(session2totalIDCorrect ~ Group + session2totalIDTime + session2totalIDConf + OSSExp + ProExp + ModelExp + CSBg + LawBg + DStructExp + EnglProf, data=IDdata)
+```
+
+Run the analysis
+
+* summary() shows strength of contribution during fitting
+* anova() takes each factor in sequence 
+* drop1() accounts for other factors first
+
+```{r, echo=TRUE}
+summary(S1accuracyLModel)
+anova(S1accuracyLModel)
+drop1(S1accuracyLModel, ~., test="F")
+```
+For session 1, English proficiency is significant (p<0.01).
+
+```{r, echo=TRUE}
+summary(S2accuracyLModel)
+anova(S2accuracyLModel)
+drop1(S2accuracyLModel, ~., test="F")
+```
+For session 2, there are no significant factors. English proficiency is no longer significant, though it was significant (p<0.1) when accuracy was composite score with confidence.  
+Group is significant (p<0.05) when not accounting for other factors.
+
+We can also exclude the insigificant factors which are unbalanced: LawBg, CSBg, ModelExp, DStructExp
+```{r, echo=TRUE}
+S1accuracyLModel <- lm(session1totalIDCorrect ~ Group + session1totalIDTime + session1totalIDConf + OSSExp + ProExp + EnglProf, data=IDdata)
+S2accuracyLModel <- lm(session2totalIDCorrect ~ Group + session2totalIDTime + session2totalIDConf + OSSExp + ProExp + EnglProf, data=IDdata)
+```
+
+```{r, echo=TRUE}
+summary(S1accuracyLModel)
+anova(S1accuracyLModel)
+drop1(S1accuracyLModel, ~., test="F")
+```
+English proficiency still significant (p<0.05).
+
+```{r, echo=TRUE}
+summary(S2accuracyLModel)
+anova(S2accuracyLModel)
+drop1(S2accuracyLModel, ~., test="F")
+```
+Group is significant in session 2
+
+## Aggregate responses keyed by individual and session
+
+### Create the data frame (two rows per ID - 1 per session)
+```{r, echo=TRUE}
+totalIDCorrect <- append(session1totalIDCorrect, session2totalIDCorrect)
+totalIDTime <- append(session1totalIDTime, session2totalIDTime)
+totalIDConf <- append(session1totalIDConf, session2totalIDConf)
+IDGroup <- append(session1IDGroup, session2IDGroup)
+IDSession <- append(rep(1,length(session1IDGroup)), rep(2,length(session2IDGroup)))
+boxplot(split(totalIDCorrect, paste(IDSession, IDGroup)))
+
+dgndx <- match(names(IDGroup), dgdata$ID)
+OSSExp <- dgdata$Open_Source_Experience[dgndx]
+ProExp <- dgdata$Professional_Software_Experience[dgndx]
+ModelExp <- dgdata$Model_Experience[dgndx]
+CSBg <- dgdata$CS_Background[dgndx]
+LawBg <- dgdata$Law_Background[dgndx]
+DStructExp <- dgdata$Data_Structure_Experience[dgndx]
+EnglProf <- dgdata$English_Proficiency[dgndx]
+
+Group <- as.factor(IDGroup)
+Session <- as.factor(IDSession)
+IDSessiondata <- data.frame(Session, Group, totalIDCorrect, totalIDTime, totalIDConf, OSSExp, ProExp, ModelExp, CSBg, LawBg, DStructExp, EnglProf)
+```
+
+### ANOVA for accuracy
+
+Check normality of accuracy response variable
+```{r, echo=TRUE}
+qqnorm(totalIDCorrect)
+```
+
+Initial fitting model for accuracy (try linear model since accuracy distribution appears normal)
+```{r, echo=TRUE}
+accuracyLModel <- lm(totalIDCorrect ~ Session + Group + totalIDTime + totalIDConf + OSSExp + ProExp + ModelExp + CSBg + LawBg + DStructExp + EnglProf + Session:Group, data=IDSessiondata)
+```
+
+Run analysis.
+```{r, echo=TRUE}
+summary(accuracyLModel)
+anova(accuracyLModel)
+drop1(accuracyLModel, ~., test="F")
+```
+
+
+Drop the uninteresting variables: ModelExp + CSBg + LawBg + DStructExp
+```{r, echo=TRUE}
+accuracyLModel <- lm(totalIDCorrect ~ Session + Group + totalIDTime + totalIDConf + OSSExp + ProExp + EnglProf + Session:Group, data=IDSessiondata)
+```
+
+Run analysis.
+```{r, echo=TRUE}
+summary(accuracyLModel)
+anova(accuracyLModel)
+drop1(accuracyLModel, ~., test="F")
+```
+
+Drop all demographics variables except EnglProf: 
+```{r, echo=TRUE}
+accuracyLModel <- lm(totalIDCorrect ~ Session + Group + totalIDTime + totalIDConf + EnglProf + Session:Group, data=IDSessiondata)
+```
+
+Run analysis.
+```{r, echo=TRUE}
+summary(accuracyLModel)
+anova(accuracyLModel)
+drop1(accuracyLModel, ~., test="F")
+```
+Consistently, English proficiency is significant (p<0.05) as well as the interaction of Session and Group (p<0.05)
+
+### Account for individual ID
+
+```{r, echo=TRUE}
+subjectID <- as.factor(names(IDGroup))
+accuracyLModel <- lm(totalIDCorrect ~ subjectID + Session + Group + totalIDTime + totalIDConf + EnglProf + Session:Group, data=IDSessiondata)
+```
+
+Run analysis.
+```{r, echo=TRUE}
+summary(accuracyLModel)
+anova(accuracyLModel)
+drop1(accuracyLModel, ~., test="F")
+```
+Keep an eye on subjects: 1941406804 and 4332519644 (negative and p<0.01), 1382305484 and 2408108620 (negative and p<0.1), and 6700887819 (positive and p<0.1)
+
+
+# Analyze responses for each individual question
+
+## ANOVA for accuracy
+
+Use logistic regression (glm with family=binomial()) to fit a binary response variable: the likelihood that compositescore > 0
+
+```{r, echo=TRUE}
+domain <- as.character(data$QType)
+domain[data$QType != "HIPAA"] <- "Copyright"
+dtype <- as.factor(domain)
+sessfactor <- as.factor(data$Session)
+grpfactor <- as.factor(data$Group)
+
+accuracyBModel <- glm(I(compositescore > 0) ~ sessfactor + grpfactor + dtype + log(Time + 1) + Confidence + sessfactor:grpfactor + sessfactor:dtype, family=binomial(), data=data)
+```
+
+More info on glm() here: http://www.statmethods.net/advstats/glm.html
+
+```{r, echo=TRUE}
+summary(accuracyBModel)
+anova(accuracyBModel, test="Chisq")
+drop1(accuracyBModel, ~., test="Chisq")
+```
+
+* Interaction of Session and Group is significant (p<0.1)
+* Interaction of Session and Type (HIPAA vs License) is significant (p<0.01)
+* Confidence is significant (p<0.1)
+* QType by itself is significant (p<0.1)
+* Time does not contribute to the variance significantly (p<0.05) when log-transformed and interactions are not accounted for
+
+### Account for individual ID
+
+```{r, echo=TRUE}
+subjectID <- as.factor(data$ID)
+accuracyBModel <- glm(I(compositescore > 0) ~ subjectID + sessfactor + grpfactor + dtype + log(Time + 1) + Confidence + sessfactor:grpfactor + sessfactor:dtype, family=binomial(), data=data)
+```
+
+```{r, echo=TRUE}
+summary(accuracyBModel)
+anova(accuracyBModel, test="Chisq")
+drop1(accuracyBModel, ~., test="Chisq")
+```
+
+Not a single person appears to be significant contributor, though subjectID as a whole is significant (p<0.5) along with the previously identified signficant factors.
+
+### Account for individual questions
+
+Are there questions that are more likely to be correct?
+```{r, echo=TRUE}
+qID <- as.factor(data$QID)
+accuracyBModel <- glm(I(compositescore > 0) ~ sessfactor + grpfactor + dtype + log(Time + 1) + Confidence + sessfactor:grpfactor + sessfactor:dtype + sessfactor:dtype:qID, family=binomial(), data=data)
+```
+
+```{r, echo=TRUE}
+summary(accuracyBModel)
+anova(accuracyBModel, test="Chisq")
+drop1(accuracyBModel, ~., test="Chisq")
+```
+
+* The questions are significant (p<0.001) in addition to the previously identified factors
+* Session 2 AGPL Q2 likely to be correct (p<0.1)
+* Session 2 HIPAA Q3 likely to be wrong (p<0.001)
+
+
+
+Are there questions that a group is more likely to get right?
+```{r, echo=TRUE}
+qID <- as.factor(data$QID)
+accuracyBModel <- glm(I(compositescore > 0) ~ sessfactor + grpfactor + dtype + log(Time + 1) + Confidence + sessfactor:grpfactor + sessfactor:dtype + sessfactor:dtype:qID + sessfactor:grpfactor:dtype:qID, family=binomial(), data=data)
+```
+
+```{r, echo=TRUE}
+summary(accuracyBModel)
+anova(accuracyBModel, test="Chisq")
+drop1(accuracyBModel, ~., test="Chisq")
+```
+Not really.
