@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Read the data and initialize accuracy and confidence response variables
 ```{r, echo=TRUE}
-data <- read.csv("All_Time_Analysis_Everything.csv")
+data <- read.csv("Fall_All_Analysis.csv")
 summary(data)
 compositescore <- ifelse(data$Sentence == "Correct", ifelse(data$Answer == "Correct", 4, ifelse(data$Answer == "Wrong", -2, 2)), ifelse(data$Sentence == "Wrong", ifelse(data$Answer == "Correct", 2, ifelse(data$Answer == "Wrong", -4, -2)), NA))
 confcompscore <- ifelse(data$Confidence == "Very", compositescore, ifelse(data$Confidence == "Semi", compositescore/2, compositescore/4))
@@ -27,7 +27,7 @@ confscore <- ifelse(data$Confidence == "Very", 2, ifelse(data$Confidence == "Sem
 # confcompscore[data$Group==1 & data$Session==2]
 # confcompscore[data$Group==2 & data$Session==2]
 
-dgdata <- read.csv("Demographics_Everything.csv")
+dgdata <- read.csv("Fall_Demographics_Everything.csv")
 summary(dgdata)
 ```
 ## Overwriting notes
