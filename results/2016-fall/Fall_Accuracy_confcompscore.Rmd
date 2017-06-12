@@ -56,6 +56,10 @@ t.test(session1totalIDCorrect[session1IDGroup == 2], session2totalIDCorrect[sess
 t.test(session1totalIDCorrect[session1IDGroup == 2], session2totalIDCorrect[session2IDGroup == 2])
 wilcox.test(session1totalIDCorrect[session1IDGroup == 2], session2totalIDCorrect[session2IDGroup == 2], paired=T)
 wilcox.test(session1totalIDCorrect[session1IDGroup == 2], session2totalIDCorrect[session2IDGroup == 2])
+
+group1totaldiff <- session2totalIDCorrect[session2IDGroup == 1] - session1totalIDCorrect[session1IDGroup == 1]
+group2totaldiff <- session2totalIDCorrect[session2IDGroup == 2] - session1totalIDCorrect[session1IDGroup == 2]
+boxplot(group1totaldiff, group2totaldiff, names=c("Group 1", "Group 2"), ylab="TOTAL SCORE IMPROVEMENTS")
 ```
 Group 1 is not significantly different on both t and wilcoxon tests (paired and unpaired)
 Group 2 got better (p<0.1 on both t and wilcoxon tests, paired and unpaired) in Session 2 
