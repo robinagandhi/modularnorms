@@ -90,7 +90,7 @@ shapiro.test(session1totalIDCorrect)
 qqnorm(session2totalIDCorrect)
 shapiro.test(session2totalIDCorrect)
 ```
-Shapiro-Wilk test indicates that the distributions are different from normal (p<0.5 for both sessions) 
+Shapiro-Wilk test indicates that the distributions are not different from normal (p<0.5 for both sessions) 
 
 
 
