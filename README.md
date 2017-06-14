@@ -8,7 +8,7 @@ You can explore [AGPL](https://robinagandhi.github.io/modularnorms/examples/agpl
 
 # Usage
 
-Use/install Python 2.7 interpreter for running the scripts
+Use/install Python 2.7 interpreter for running the following scripts to generate DOT and OWL files from a JSON description of modular norms.
 
 ```
 # General usage format:
@@ -22,7 +22,7 @@ python2.7 gennomos.py ../examples/agpl.json owl > ./agpl.owl
 
 ```
 
-To generate an html file that displays the model and let a user interactively change satisfiability values
+To generate an html file that displays the model and let a user interactively change satisfiability values, run the following scripts
 ```
 # Generate the SVG file from Graphviz (need Graphviz 2.36 or above)
 dot -Tsvg -o agpl.svg agpl.dot
@@ -30,6 +30,6 @@ dot -Tsvg -o agpl.svg agpl.dot
 # Make sure template.html is in the scripts directory (can copy from examples directory)
 ./xformsvg agpl > agpl-test.html
 ```
-The result is an html file that calls an online reasoning service.
+The result is an html file that calls an online reasoning service. For instructions on running your own server see instructions in the [normserver](https://github.com/robinagandhi/modularnorms/tree/master/normserver) directory
 
 
