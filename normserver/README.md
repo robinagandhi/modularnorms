@@ -13,7 +13,8 @@ The instructions are based on https://github.com/arekgofi/Setting-up-Spark-with-
 ```
 cd normserver
 mvn compile assembly:single
-java -cp target\my-app-1.0-jar-with-dependencies.jar NormServer
+cd target
+java -cp my-app-1.0-jar-with-dependencies.jar NormServer
 ```
 
 In the agpl-test.html file, change http://137.48.191.120:4567/assert to http://localhost:4567/assert to try the server.
