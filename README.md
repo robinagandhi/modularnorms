@@ -1,10 +1,13 @@
 # Modular Norms
 This is a repository for code and data to produce modular norm models from legal text.
 
-# Example
-See the examples folder for SVG files produced for AGPLv1.0, Apache2 and HIPAA Models. These models have been generated from corresponding JSON objects in the directory.   
+# Examples
 
-You can explore [AGPL](https://robinagandhi.github.io/modularnorms/examples/agpl-test.html), [Apache](https://robinagandhi.github.io/modularnorms/examples/apache-test.html) and [HIPAA](https://robinagandhi.github.io/modularnorms/examples/hipaalite-test.html) model that have been augmented for interactive analysis in a browser.
+[Your Public License 1.0](https://robinagandhi.github.io/modularnorms/examples/yourlicense-test.html) is a toy example with instructions on its usage and interpretation.
+
+For additional examples using legal statements "in the wild" explore the following: [AGPL](https://robinagandhi.github.io/modularnorms/examples/agpl-test.html), [Apache](https://robinagandhi.github.io/modularnorms/examples/apache-test.html) and [HIPAA](https://robinagandhi.github.io/modularnorms/examples/hipaalite-test.html) Models.
+
+These models have been generated from corresponding JSON objects in the examples directory as shown below.   
 
 # Usage
 
@@ -31,5 +34,3 @@ dot -Tsvg -o agpl.svg agpl.dot
 ./xformsvg agpl > agpl-test.html
 ```
 The result is an html file that calls an online reasoning service. For instructions on running your own server see instructions in the [normserver](https://github.com/robinagandhi/modularnorms/tree/master/normserver) directory
-
-
