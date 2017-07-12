@@ -3,7 +3,7 @@ This is a repository for code and data to produce modular norm models from legal
 
 # Examples
 
-[Your Public License 1.0](https://robinagandhi.github.io/modularnorms/examples/yourlicense-test.html) is a toy example with instructions on its usage and interpretation. Here are the [accompanying slides](./examples/tutorial-slides.ppsx).
+[Your Public License 1.0](https://robinagandhi.github.io/modularnorms/examples/yourlicense-test.html) is a toy example with instructions on its usage and interpretation. Here are the [accompanying slides](./examples/tutorial-slides.pptx).
 
 For additional examples using legal statements "in the wild" explore the following: [AGPL](https://robinagandhi.github.io/modularnorms/examples/agpl-test.html), [Apache](https://robinagandhi.github.io/modularnorms/examples/apache-test.html) and [HIPAA](https://robinagandhi.github.io/modularnorms/examples/hipaalite-test.html) Models.
 
