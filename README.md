@@ -36,3 +36,8 @@ dot -Tsvg -o agpl.svg agpl.dot
 ./xformsvg agpl > agpl-test.html
 ```
 The result is an html file that calls an online reasoning service. For instructions on running your own server see instructions in the [normserver](https://github.com/robinagandhi/modularnorms/tree/master/normserver) directory
+
+# Project Team
+[Dr. Robin Gandhi](http://faculty.ist.unomaha.edu/rgandhi/)  
+[Dr. Harvey Siy](http://cs2.ist.unomaha.edu/~hsiy/)  
+[Sayonnha Mandal](https://www.unomaha.edu/college-of-information-science-and-technology/phd-it/directory/phd-students/sayonnha-mandal.php)  
