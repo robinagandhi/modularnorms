@@ -1,5 +1,7 @@
 # Modular Norms
-This is a repository for code and data to produce modular norm models from legal text.
+The goal of this project is to develop a lightweight approach for modeling and reasoning about legal compliance. This is a repository for code and data to produce such modular norm models from legal text. 
+
+Complying with legal regulatory requirements in privacy and security is necessary for critical software systems. Analysis of complex and voluminous legal text can benefit from the automation and traceability of logic-based models. We propose such a model based on norms. Norms are legal rights and associated duties expressed in regulatory documents. Such norm models help reason about available rights and required duties based on the satisfiability of situations, a state-of-affair, in a given scenario. Our method enables modular norm model extraction and reasoning. For extraction, using the theory of frame-semantics we construct two foundational norm templates that cover Hohfeld’s concepts of claim-right and its jural correlative, duty. Template instantiations from legal text result in a repeatable method for extraction of modular norm models. For reasoning, we introduce the notion of a super-situation. Super-situations contain other norm models. Compliance results from a modular norm are propagated to its containing super-situation, which in turn participates in other modular norms. This modularity allows on-demand incremental modeling and reasoning using simpler model primitives than previous approaches. 
 
 # Examples
 
