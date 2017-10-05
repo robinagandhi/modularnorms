@@ -3,12 +3,14 @@ import json
 from pyparsing import *
 
 if len(sys.argv) < 2:
-	print 'Usage: ' + sys.argv[0] + ' <JSON file> [dot|owl]'
+	print 'Usage: ' + sys.argv[0] + ' <JSON file> [dot|owl|nr]'
 	sys.exit()
 
 JSONFileName = sys.argv[1]
 if len(sys.argv) > 2 and sys.argv[2] == 'owl':	
 	from genowlfunc import *
+elif len(sys.argv) > 2 and sys.argv[2] == 'nr':	
+	from gennr import *
 else:
 	from gendot import *
 
@@ -58,7 +60,7 @@ def drawSituationExpr(tokens, prestmts, id, type):
 			toptype = tokens[opndx]
 			opndx += 2
 		childid = drawSituationExpr(tokens[opndx-1], prestmts, sid, tokens[opndx-2])
-		
+
 	elif tokens[0] == 'not':
 		sid = drawSituation(tokens[0], id, type)
 		childid = drawSituationExpr(tokens[1], prestmts, sid, tokens[0])
