@@ -29,9 +29,36 @@ def drawSituationExpr(tokens, prestmts, id, type):
 	if isinstance(tokens, basestring):
 		sid = drawSituation(prestmts[tokens], id, type)
 	elif tokens[1] in ['and', 'or']:
-		sid = drawSituation(tokens[1], id, type)
-		childid = drawSituationExpr(tokens[0], prestmts, sid, tokens[1])
-		childid = drawSituationExpr(tokens[2], prestmts, sid, tokens[1])
+		#sid = drawSituation(tokens[1], id, type)
+		#childid = drawSituationExpr(tokens[0], prestmts, sid, tokens[1])
+		#childid = drawSituationExpr(tokens[2], prestmts, sid, tokens[1])
+
+		# # process sequence of and's or or's right to left
+		# opndx = len(tokens) - 2
+		# topid = id
+		# toptype = type
+		# while opndx > 0:
+			# sid = drawSituation(tokens[opndx], topid, toptype)
+			# # process right side operand
+			# childid = drawSituationExpr(tokens[opndx+1], prestmts, sid, tokens[opndx])
+			# topid = sid
+			# toptype = tokens[opndx]
+			# opndx -= 2
+		# childid = drawSituationExpr(tokens[0], prestmts, sid, tokens[1])
+
+		# process sequence of and's or or's left to right
+		opndx = 1
+		topid = id
+		toptype = type
+		while opndx+2 <= len(tokens):
+			sid = drawSituation(tokens[opndx], topid, toptype)
+			# process left side operand
+			childid = drawSituationExpr(tokens[opndx-1], prestmts, sid, tokens[opndx])
+			topid = sid
+			toptype = tokens[opndx]
+			opndx += 2
+		childid = drawSituationExpr(tokens[opndx-1], prestmts, sid, tokens[opndx-2])
+		
 	elif tokens[0] == 'not':
 		sid = drawSituation(tokens[0], id, type)
 		childid = drawSituationExpr(tokens[1], prestmts, sid, tokens[0])
