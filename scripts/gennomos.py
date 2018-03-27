@@ -95,10 +95,16 @@ def gennomos(modelfile):
 	for t in normtable["model"]:
 		tbl = t["table"]
 		drawSS_start(tbl["id"])
-		if (tbl["modal"] not in ["may", "can"]):
-			isduty = True
+		if ("type" in tbl):
+			if (tbl["type"] == "duty"):
+				isduty = True
+			else:
+				isduty = False
 		else:
-			isduty = False
+			if (tbl["modal"] not in ["may", "can"]):
+				isduty = True
+			else:
+				isduty = False
 		if isduty:
 			drawDuty(tbl["id"], tbl["sentence"])
 		else:
