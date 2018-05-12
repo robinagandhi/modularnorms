@@ -1,0 +1,17 @@
+{
+  "name": "d3normviz",
+  "version": "1.0.0",
+  "description": "experiment with d3-graphviz and dot file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "me",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^5.0.0",
+    "d3-graphviz": "^1.6.1",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
+  }
+}

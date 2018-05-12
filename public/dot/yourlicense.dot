@@ -1,0 +1,23 @@
+digraph G {
+rankdir=BT
+overlap=false
+compound=true
+ranksep=0.5
+subgraph clusterSS_YPL4a {
+label = "SS_YPL4a"
+YPL4a [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="YPL4a", tooltip="4(a) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work."];
+YPL4a_1 [shape=box, label="[You retained] in the Source\n form of any Derivative\n Works that You distribute,\n all copyright, patent,\n trademark, and attribution\n notices from the Source\n form of the Work"];
+YPL4a_1 -> YPL4a[label="satisfies"];
+YPL4a_2 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
+YPL4a_2 -> YPL4a[label="activates"];
+}
+subgraph clusterSS_YPL4 {
+label = "SS_YPL4"
+YPL4 [shape=triangle, orientation=270, style=filled, fillcolor=lightblue, label="YPL4", tooltip="4. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following condition:"];
+YPL4_3 [shape=box, label="[You reproduced and\n distributed] copies of the\n Work or Derivative Works\n thereof in any medium, with\n or without modifications,\n and in Source or Object form"];
+YPL4_3 -> YPL4[label="satisfies"];
+YPL4_4 [shape=box, label="SS_YPL4a", style=filled, fillcolor=orange];
+YPL4_4 -> YPL4[label="activates"];
+}
+YPL4_4 -> YPL4a[color=grey, style=dashed, lhead=clusterSS_YPL4a];
+}

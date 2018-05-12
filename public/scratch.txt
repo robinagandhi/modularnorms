@@ -1,0 +1,331 @@
+'digraph clusterSS_YPL4 {',
+        ' label = "SS_YPL4 ',
+        ' YPL4 [shape=triangle, orientation=270, style=filled, fillcolor=lightblue, label="YPL4", tooltip="4. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following condition:"]',
+        ' YPL4_3 [shape=box, label="[You reproduced and distributed] copies of the Work or Derivative Works\n thereof in any medium, with\n or without modifications,\n and in Source or Object form"]',
+        ' YPL4_3 -> YPL4[label="satisfies"]',
+        'YPL4_4 [shape=box, label="SS_YPL4a", style=filled, fillcolor=orange] ',
+        ' YPL4_4 -> YPL4[label="activates"] }'
+
+
+ 'digraph clusterSS_YPL4a {',
+        ' label = "SS_YPL4a',
+        ' YPL4a [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="YPL4a", tooltip="4(a) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work."]',
+        ' YPL4a_1 [shape=box, label="[You retained] in the Source\n form of any Derivative\n Works that You distribute,\n all copyright, patent,\n trademark, and attribution\n notices from the Source\n form of the Work"]',
+        ' YPL4a_1 -> YPL4a[label="satisfies"]',
+        ' YPL4a_2 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works"]',
+        ' YPL4a_2 -> YPL4a[label="activates"] }'
+
+
+/*
+*
+*/
+
+</div>
+    <script>
+        var jsonData = [];
+        var jsonResult = [];
+
+        // This function will execute on load
+        $(document).ready(function() {
+
+        });
+
+        // Builds the JSON data object
+        function updateJSON(id, status) {
+
+            //check if norm
+            var delimited = id.split('_');
+            var isNorm = false;
+            if (delimited[1] == null) {
+                isNorm = true; // Is a norm
+            } else {
+                isNorm = false; // not a norm
+            }
+
+            if (!isNorm) {
+                var exist = false;
+                $.each(jsonData, function(key, val) {
+                    if (val.id == id) {
+                        val.satisfied = status;
+                        exist = true;
+                    }
+                });
+                if (exist == false) {
+                    item = {};
+                    item["id"] = id;
+                    item["satisfied"] = status;
+                    jsonData.push(item);
+                }
+
+            } else { // this is a norm
+                var exist = false;
+                $.each(jsonData, function(key, val) {
+                    if (val.id == id) {
+                        val.compliance = status;
+                        exist = true;
+                    }
+                });
+                if (exist == false) {
+                    item = {};
+                    item["id"] = id;
+                    item["compliance"] = status;
+                    jsonData.push(item);
+                }
+            }
+
+            $("#textarea").text(JSON.stringify(jsonData));
+
+        }
+
+        //Respponds to the button press event
+        $("#opener").click(function() {
+          if ($("#studentid").val() != ""){
+            $("#opener").css('background-color','grey');
+            $("#opener").prop('disabled', true);
+            accessURL = "http://localhost:4567/assert/2/" + $("#studentid").val() + ""
+            //accessURL = "http://137.48.191.24:4567/assert/2/" + $("#studentid").val() + ""
+            //accessURL = "https://norm-server-test.herokuapp.com/assert/2/" + $("#studentid").val() + ""
+            console.log(accessURL);
+            $.ajax(accessURL, {
+                method: 'POST',
+                data: JSON.stringify(jsonData),
+                crossDomain: true
+            }).then(function(data) {
+                console.log(data);
+                updateSVG(data);
+                $("#opener").prop('disabled', false);
+                $("#opener").css('background-color','#4CAF50');
+                //alert("Done! Review results")
+            });
+          } else{
+            alert("Please enter a valid Experiment Subject ID");
+          }
+        });
+
+        function updateSVG (data){
+          $.each(data, function(key, val) {
+              if (val.id != null) {
+                  $("title").each(function(index, element) {
+                    if ($(this).text() == val.id){
+                       polygon = $(this).parent().children("polygon").first();
+                       if (val.satisfied != null) {
+                          textNode = $(this).parent().children("text").last();
+                        //  delimited = textNode.text().split('|');
+                        //  if (delimited[1] == null) {
+                        //      textNode.text(delimited[0] + " | " + val.satisfied);
+                        //  } else {
+                        //      textNode.text(delimited[0] + " | " + val.satisfied);
+                        //  }
+                         if (val.satisfied == "SF"){
+                           polygon.attr('style', "fill:#CD5360"); //red
+                         } else {
+                           if (val.satisfied == "ST"){
+                             polygon.attr('style', "fill:#57BC90"); //green
+                           } else {
+                             if (val.satisfied == "SU"){
+                               polygon.attr('style', "fill:#E5E338"); //yellow
+                             }
+                           }
+                         }
+                         // Check if this is a super situation. Then color the related container also
+                         ssCheck = textNode.text().split('_');
+                         if (ssCheck[0] == "SS") {
+                           $("title").each(function(index, element){
+                             ssNode = "cluster" + textNode.text().split('|')[0].trim();
+                             if ($(this).text() == ssNode) {
+                               polygonSS = $(this).parent().children("polygon").first();
+                              //  textNodeSS = $(this).parent().children("text").last();
+                              //  delimited = textNodeSS.text().split('|');
+                              //  if (delimited[1] == null) {
+                              //      textNodeSS.text(delimited[0] + " | " + val.satisfied);
+                              //  } else {
+                              //      textNodeSS.text(delimited[0] + " | " + val.satisfied);
+                              //  }
+                               if (val.satisfied == "SF"){
+                                 polygonSS.attr('style', "fill:#CD5360"); //red
+                               } else {
+                                 if (val.satisfied == "ST"){
+                                   polygonSS.attr('style', "fill:#57BC90"); //green
+                                 } else {
+                                   if (val.satisfied == "SU"){
+                                     polygonSS.attr('style', "fill:#E5E338"); //yellow
+                                   }
+                                 }
+                               }
+                             }
+                           });
+                         }
+                       } else {  // Handle the Norm Comliance value and related display text
+                         if (val.compliance != null){
+                           textNodeNorm = $(this).parent().children("g").first().children("a").first().children("text").first();
+                           var delimited = textNodeNorm.text().split('|');
+                           if (delimited[1] == null) {
+                               textNodeNorm.text(delimited[0] + " | " + val.compliance);
+                           } else {
+                               textNodeNorm.text(delimited[0] + " | " + val.compliance);
+                           }
+                         }
+                       }
+                    }
+                  });
+              }
+          });
+        }
+
+        //SVG click event response function
+        $("#mainsvg").click(
+            function(event) {
+
+                var _id = "";
+                var _text = "";
+                // Get the ID from the title of the clicked element
+                if ($(event.target).parent().children("title").first().text() != "") {
+                    _id = $(event.target).parent().children("title").first().text();
+                    _text = $(event.target).parent().children("text").first().text();
+
+                } else {
+                    _id = $(event.target).parent().parent().children("title").first().text();
+                    _text = $(event.target).parent().parent().children("text").first().text();
+                }
+
+                //Allow clicking on text to select the sibling polygon
+                if ($(event.target).attr('points') == null) {
+                    polygon = $(event.target).parent().children("polygon").first();
+                } else {
+                    polygon = $(event.target);
+                }
+
+                //check if norm
+                var delimited = polygon.parent().children("title").last().text().split('_');
+                var isNorm = false;
+                if (delimited[1] == null) {
+                    isNorm = true; // Is a norm
+                } else {
+                    isNorm = false; // not a norm
+                }
+
+                // Don't color anything that is not polygon with points. Also don't color graphs and Norms
+                if ((polygon.attr('points') != null) & (polygon.parent().children("title").first().text() != "G") & !(isNorm)) {
+                    if (polygon.attr('style') == "fill:#57BC90") { // if green then turn red
+                        polygon.attr('style', "fill:#CD5360"); //red
+                        // var delimited = polygon.parent().children("text").last().text().split('|');
+                        // if (delimited[1] == null) {
+                        //     polygon.parent().children("text").last().text(delimited[0] + " | SF");
+                        // } else {
+                        //     polygon.parent().children("text").last().text(delimited[0] + " | SF");
+                        // }
+                        updateJSON(_id, "SF");
+                        $("text").each(function(index, element) {
+                          if (($( this ).text() != "and") && ($( this ).text() != "or") && ($( this ).text() != "not")){
+                            if ($( this ).text() == _text){
+                              _twinpolygon = $( this ).parent().children("polygon").first();
+                              _twinpolygon.attr('style', "fill:#CD5360");
+                              _twinid = $( this ).parent().children("title").first().text();
+                              updateJSON(_twinid, "SF");
+                            }
+                          }
+                        });
+
+
+                    } else {
+                        if (polygon.attr('style') == "fill:#CD5360") { //if red then turn yellow
+                            polygon.attr('style', "fill:#E5E338"); //Yellow
+
+                            // var delimited = polygon.parent().children("text").last().text().split('|');
+                            // if (delimited[1] == null) {
+                            //     polygon.parent().children("text").last().text(delimited[0] + " | SU");
+                            // } else {
+                            //     polygon.parent().children("text").last().text(delimited[0] + " | SU");
+                            // }
+
+                            updateJSON(_id, "SU");
+
+                            $("text").each(function(index, element) {
+                              if (($( this ).text() != "and") && ($( this ).text() != "or") && ($( this ).text() != "not")){
+                                if ($( this ).text() == _text){
+                                  _twinpolygon = $( this ).parent().children("polygon").first();
+                                  _twinpolygon.attr('style', "fill:#E5E338");
+                                  _twinid = $( this ).parent().children("title").first().text();
+                                  updateJSON(_twinid, "SU");
+                                }
+                              }
+
+                            });
+
+
+                        } else {
+                            if (polygon.attr('style') == "fill:#E5E338") { //if yellow then turn white
+                                polygon.attr('style', "fill:#FFFFFF"); //white
+                                updateJSON(_id, "");
+                                $("text").each(function(index, element) {
+                                  if (($( this ).text() != "and") && ($( this ).text() != "or") && ($( this ).text() != "not")){
+                                    if ($( this ).text() == _text){
+                                      _twinpolygon = $( this ).parent().children("polygon").first();
+                                      _twinpolygon.attr('style', "fill:#FFFFFF");
+                                      _twinid = $( this ).parent().children("title").first().text();
+                                      updateJSON(_twinid, "");
+                                    }
+                                  }
+
+
+                                });
+                                // var delimited = polygon.parent().children("text").last().text().split('|');
+                                // if (delimited[1] == null) {
+                                //     polygon.parent().children("text").last().text(delimited[0]);
+                                // } else {
+                                //     polygon.parent().children("text").last().text(delimited[0]);
+                                // }
+                            } else { //turn green
+                                polygon.attr('style', "fill:#57BC90"); //Green
+                                // var delimited = polygon.parent().children("text").last().text().split('|');
+                                // if (delimited[1] == null) {
+                                //     polygon.parent().children("text").last().text(delimited[0] + " | ST");
+                                // } else {
+                                //     polygon.parent().children("text").last().text(delimited[0] + " | ST");
+                                // }
+                                updateJSON(_id, "ST");
+                                $("text").each(function(index, element) {
+                                  if (($( this ).text() != "and") && ($( this ).text() != "or") && ($( this ).text() != "not")){
+                                    if ($( this ).text() == _text){
+                                      _twinpolygon = $( this ).parent().children("polygon").first();
+                                      _twinpolygon.attr('style', "fill:#57BC90");
+                                      _twinid = $( this ).parent().children("title").first().text();
+                                      updateJSON(_twinid, "ST");
+                                    }
+                                  }
+                                });
+                            }
+                        }
+                    }
+                }
+                //If this is a norm and not a graph, we set its compliance values
+                if (isNorm & (polygon.parent().children("title").first().text() != "G")) {
+                    var delimited = polygon.parent().children("text").last().text().split('|');
+                    if (delimited[1] == null) {
+                        polygon.parent().children("text").last().text(delimited[0] + " | COM");
+                        updateJSON(_id, "COM");
+                    } else {
+                        if (delimited[1].trim() == "COM") {
+                            polygon.parent().children("text").last().text(delimited[0] + " | TOL");
+                            updateJSON(_id, "TOL");
+                        } else {
+                            if (delimited[1].trim() == "TOL") {
+                                polygon.parent().children("text").last().text(delimited[0] + " | VIO");
+                                updateJSON(_id, "VIO");
+                            } else {
+                                if (delimited[1].trim() == "VIO") {
+                                    polygon.parent().children("text").last().text(delimited[0] + " | INC");
+                                    updateJSON(_id, "INC");
+                                } else {
+                                    polygon.parent().children("text").last().text(delimited[0].trim());
+                                    updateJSON(_id, "");
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        );
+    </script>
