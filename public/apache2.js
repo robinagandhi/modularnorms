@@ -3,6 +3,7 @@ Note check why click event register more than once when a SS_ is clicked
 maybe add click event to SS_ in column 1 box-3
 
 */
+//hold dot description of the models in the same order as in the license text
 var apache2 = [
     `digraph G_Right {
         rankdir=BT
@@ -388,20 +389,19 @@ var apache2 = [
     `
 ]
 
-var zoom = d3.zoom()
-    .on("zoom",function(){
-        group.attr("transform",d3.event.transform);
-    })
-var t = d3.transition().duration(1000);
+
 var graph = null,
  graphObj = null;
 
- var resultJSON = [];
+var resultJSON = [];
 
  
- var duties = []; //hold the duties in a right super situation
+var duties = []; //hold the duties in a right super situation
+
+//Attach id to each question so we can colr the corresponding situation on the graph and also build resultJSON file
  //duty atomic situation questions pool
- var dutyQuestionPool = {
+var dutyQuestionPool = {
+
  "SS_Apache4a":["Did you give other recipients of the Work or Derivative Works a copy of this License?"],
  "SS_Apache4b":["Did you cause any modified files to carry prominent notices stating that you changed the files?"],
  "SS_Apache4c":["Did you retained in the source form of any Derivative Works that You distribute .....form of the Work?","Did you retained those notices that do not pertain to any part of the Derivative Works?"],
@@ -409,15 +409,19 @@ var graph = null,
  "SS_Apache5":["Did you explicitely stated terms and conditions","Question2","Question3","Question4"],
  "SS_Apache6":["Did you used trade names, trademarks, service marks...Licensor?","Question2","Question3"],
  "SS_Apache7":["Did you assumed any risks associated with your exercice...license?","did you determine appropriateness of using or ...Work?"],
- "SS_Apache8":["Did you hold any contributor liable....losses?","Question2","Question3"]};
- //right atomic situations questions pool
- var rightQuestionPool = {
- "SS_Apache2":["Did you distributed the Work and such Derivative Works in source or object form?","Question2","Question3","Question4","Question5","Question6"],
- "SS_Apache3":["Did you instituted patent litigation against any entity (including cross claim or counter clam in a lawsuit alleging that the work...infringement?","Question2","Question3","Question4"],
- "SS_Apache4":["Did you reproduced and distributed copies of the work or derivative works thereof in any medium, with or without...Object form?"],
- "SS_Apache4dAddAttrib":["Do your own additional attribution notices constructed as modifying the license?","Question2"],
- "SS_Apache4dAddCopyright":["Did you provide additional or different license terms and conditions for use...as a whole?","Question2","Question3"],
- "SS_Apache9":["Did you agreed to indemnify, defend....additional liability?","Question2","Question3"]};
+ "SS_Apache8":["Did you hold any contributor liable....losses?","Question2","Question3"]
+};
+ //right atomic situations questions pool 
+var rightQuestionPool = {
+    "SS_Apache2":["Did you distributed the Work and such Derivative Works in source or object form?","Question2","Question3","Question4","Question5","Question6"],
+    "SS_Apache3":["Did you instituted patent litigation against any entity (including cross claim or counter clam in a lawsuit alleging that the work...infringement?","Question2","Question3","Question4"],
+    "SS_Apache4":["Did you reproduced and distributed copies of the work or derivative works thereof in any medium, with or without...Object form?"],
+    "SS_Apache4dAddAttrib":["Do your own additional attribution notices constructed as modifying the license?","Question2"],
+    "SS_Apache4dAddCopyright":["Did you provide additional or different license terms and conditions for use...as a whole?","Question2","Question3"],
+    "SS_Apache9":["Did you agreed to indemnify, defend....additional liability?","Question2","Question3"]
+};
+
+var  questionPool = [];
 
 
 
@@ -425,26 +429,33 @@ var graphviz = d3.select("#graph")
                 .graphviz()
                 .attributer(attributer);
 
+//statement represent an html class that all license clause have. Each statement also have a position 
+//and the corresponding model name as class
 $(".statement").click(function () {
-    //duties =[];
+    $("#nextButton").off("click");
+    questionPool = [];
+    //index reprensent each class name eg. index[0] = statement, index [1] = position, index[2] = model name
     index = $(this).attr("class").split(' ')
+
     console.log("statement index: "+index[1])
-    console.log("statement name: "+index[2])
     
+    console.log("statement name: "+index[2])
+    //generate the graph using the position
     graphviz
         .dot(apache2[index[1]])
         .zoom(false)
         .render(function (){
             graph = $("svg")
-            //console.log(graph)
-            //TODO : create function registering click event on svg graph, will build jsonData on click
+            
+            
             // graph.click(function (event){
             //     console.log("svg clicked...Element--->"+event.target, event.type)
             // });
+
             //SVG_Interaction()
             SS_handler()
-            InteractionGenModel()
-            //console.log(graphviz);
+            //InteractionGenModel()
+            
             //TODO: fit rendered graphiz to div container and enable zooming using maybe an svg nav library
         });
     
@@ -454,6 +465,9 @@ $(".statement").click(function () {
 
 var margin = 10 //to avoid scrollbars
 
+/** 
+ * This function allow graph to fit in div element
+*/
 function attributer(datum,index,nodes) {
     var  selection = d3.select(this);
     if(datum.tag == "svg"){
@@ -470,12 +484,19 @@ function attributer(datum,index,nodes) {
 
 }
 
+/**
+ * This function enable interaction with graph and respond to click event on super situation and generate them. 
+ * Is not really nessecary and cause the click event to register more than one sometime
+ */
+
 function InteractionGenModel(){
    
     //TODO add pop up when user click on action and generate corresponding model when user clik on super situation. Make sure link get highlighted
-    duties = [];
+   
+    //duties = [];//clear right super situation duty array
+
     graph.click(function (event){
-        //duties = [];
+        duties = []; //clear super situation duty array
         var _text = "";
         if ($(event.target).parent().children("title").first().text() != "") {
             _text = $(event.target).parent().children("text").first().text();
@@ -491,18 +512,17 @@ function InteractionGenModel(){
             .zoom(false)
             .render(function (){
                 graph = $("svg")
-                //console.log(graph)
                 
                 // SVG_Interaction()
                 SS_handler()
-               // InteractionGenModel()
+                //InteractionGenModel()
                 
                 //console.log(graphviz);
                 //TODO: fit rendered graphiz to div container and enable zooming using maybe an svg nav library
             });
             
         }else if(_text[0]=="[") {
-            //show pop up
+            //TODO show popup on text click or hover with full text 
         }
 
         
@@ -510,7 +530,9 @@ function InteractionGenModel(){
 }
 
 
-
+/**
+ * This function is just to enable coloring of graph element on click
+ */
 
 function SVG_Interaction() {
     
@@ -580,17 +602,23 @@ function updateJSON(params) {
 }
 
         
-  
+/**
+ * This function distinguish between a duty or rigt super situation, and display the appropriate questions and populate the duties array in case the 
+ * super situation is a right
+ */
 
 function SS_handler() {
 
-    //clear box-3
+    //clear box-3, which is the wizard box
     $("#question").text("")
     $("#duty_list").empty();
+    //hold the SS_name
     var SS_name = null;
-    var questionPool = [];
+    //hold the specific questionPool for the given super situation
+    questionPool = [];
     duties = [] //empty duties array
-    var arrayIndex = 0;
+    
+    var arrayIndex = 0; //index to loop through question pool
     //console.log(graphObj);
     if (graph.children().children("title").html() == "G_Duty"){
         questionPool = [];
@@ -598,7 +626,7 @@ function SS_handler() {
         //get name of super situation then compare to dutyQuestion array (object) and then display the corresponding question in box 3
         SS_name = graph.children().children("g#clust1").children("text").html();
         console.log("duty name: "+SS_name);
-        //save the user answer and color the satisfying box
+        //TODO save the user answer and color the satisfying box here
         //Ask assessement question related to SS_duty and save answer
         //get corresponding duty questionPool
        for (const key of Object.keys(dutyQuestionPool)){
@@ -608,13 +636,14 @@ function SS_handler() {
                 //$("#question").text(dutyQuestionPool[key]);
             }
        }
-       console.log(questionPool);
+       console.log(questionPool); //display the question pool
        $("#question").text(questionPool[arrayIndex]);
+       //clicking the next button display the next question
        $("#nextButton").click(function () {
         
            arrayIndex++;
           $("#question").text(questionPool[arrayIndex]);
-           index = (index + 1) % questionPool.length;
+           //arrayIndex = (arrayIndex + 1) % questionPool.length; //this will start back at the begenig of array
 
        });
 
@@ -625,11 +654,12 @@ function SS_handler() {
         SS_name = graph.children().children("g#clust1").children("text").html();
         
         graphObj = graph.children().children();
-        //console.log("Display right stuff");
+        console.log("Display right stuff");
         
-        //start by node with index 4
+        //start by node with index 4 to skip unnecessary nodes
+
         for (var i = 4; i < graphObj.length; i++){
-            //dont iterate all the nodes (dont vist the edges)
+            //only visit nodes not edges
             if(graphObj[i].id.includes('node')){
 
                 var children = graphObj[i].children;
@@ -642,9 +672,8 @@ function SS_handler() {
                     if (children[j].nodeName == "text"  ) {
     
                         if(children[j].innerHTML[0] == "S" && children[j].innerHTML[1] == "S"){
-    
                             // console.log("Duty: "+children[j].innerHTML)
-                            duties.push(children[j].innerHTML);
+                            duties.push(children[j].innerHTML); //populate the duties array
 
                         }
                     }
@@ -652,7 +681,7 @@ function SS_handler() {
             }
             
         }
-        console.log("This right duties: "+ duties)
+        console.log("This right duties: "+ duties) //display the activating duties for this right
 
         //get corresponding right questionPool
         for (const key of Object.keys(rightQuestionPool)){
@@ -667,37 +696,33 @@ function SS_handler() {
        console.log(questionPool);
        
 
-       //make it a function
+      
        $("#question").text(questionPool[arrayIndex]);
-       arrayIndex++;
-       $("#nextButton").click(function () {   //bug: when using click event on svg, questionPool does not update correctly.
+      
+       $("#nextButton").click(function () {   //bug: when using click event on svg, questionPool does not update correctly. 
         
-        //    arrayIndex++;
+            arrayIndex++;
+
           $("#question").text(questionPool[arrayIndex]); //previous question pool sticks there
-           arrayIndex = (arrayIndex + 1) % questionPool.length;
+           //arrayIndex = (arrayIndex + 1) % questionPool.length;
 
-        //    if (questionPool.length == arrayIndex){ //problem??
 
-        //        console.log("displaying duties that need to be visited");
-        //        $("#question").text("");
-        //        $("#duty_list").empty();
-        //        $("#question").text("The following SS need to be visited to get "+SS_name+" right");
-        //        console.log(duties)
-        //        duties.forEach(element => {
-                   
-        //            $("#duty_list").append("<li> <a class = 'supersit' >" + element +"</a></li>")
-        
-        
-        //        });
-        //    }
+        if (questionPool.length == arrayIndex){ //problem??
+
+            console.log("displaying duties that need to be visited");
+            $("#question").text("");
+            $("#duty_list").empty();
+            $("#question").text("The following SS need to be visited to get "+SS_name+" right");
+            console.log(duties)
+            duties.forEach(element => {
+                
+                $("#duty_list").append("<li> <a class = 'supersit' >" + element +"</a></li>")
+    
+    
+            });
+        }
        });
 
-
-
-        
-
-        
-        
     }
 
     
