@@ -402,23 +402,58 @@ var duties = []; //hold the duties in a right super situation
  //duty atomic situation questions pool
 var dutyQuestionPool = {
 
- "SS_Apache4a":["Did you give other recipients of the Work or Derivative Works a copy of this License?"],
- "SS_Apache4b":["Did you cause any modified files to carry prominent notices stating that you changed the files?"],
- "SS_Apache4c":["Did you retained in the source form of any Derivative Works that You distribute .....form of the Work?","Did you retained those notices that do not pertain to any part of the Derivative Works?"],
- "SS_Apache4d":["Do you intend to reproduce...Works?","Did the Work includes a NOTICE text file as part of its distribution?","Question3","Question4"],
- "SS_Apache5":["Did you explicitely stated terms and conditions","Question2","Question3","Question4"],
- "SS_Apache6":["Did you used trade names, trademarks, service marks...Licensor?","Question2","Question3"],
- "SS_Apache7":["Did you assumed any risks associated with your exercice...license?","did you determine appropriateness of using or ...Work?"],
- "SS_Apache8":["Did you hold any contributor liable....losses?","Question2","Question3"]
+ "SS_Apache4a":
+     {"Apache4a_10":"Do you intend to reproduce or distribute copy of the Work or Derivative Works?",
+     "Apache4a_9":"Did you give other recipients of the Work or Derivative Work a copy of this License? "}
+,
+
+ "SS_Apache4b":
+     {"Apache4b_12":"Do you intend to reproduce or distribute copy of the Work or Derivative Works?",
+     "Apache4b_11":"Did you cause any modified file to carry prominent notices stating that You changed the File? "}
+ ,
+
+ "SS_Apache4c":
+     {"Apache4c_17":"Do you intend to reproduce or distribute copy of the Work or Derivative Works?",
+     "Apache4c_14":"Did you retained in  the Source form of any Derivative Works that You distribute all copyright, patent,trademark, and attribution notices from the Source form of the Work?",
+    "Apache4c_16":"Did you retained those notices that do not pertain to any part of the Derivative Works?"}
+ 
+    ,
+
+ "SS_Apache4d":
+    {"Apache4d_33":"Do you intend to reproduce or distribute copy of the Work or Derivative Works?", "Apache4d_32":"Does the Work include a NOTICEtext file as part of its distribution? ",
+     "Apache4d_30":"Did you exclude those notices that do not pertain to any part of the Derivatove Works?","Apache4d_20":"Did you include a readable copy of the attribution notices contained within such NOTICE file?","Apache4d_22":"test1","Apache4d_29":"test2","Apache4d_28":"test3","Apache4d_26":"test4","Apache4d_25":"test5"}
+ ,
+
+ "SS_Apache5":
+     {"Apache5_92":"Question1 goes here",
+     "Apache5_91":"Question 2 goes here ","Apache5_90":"Question 3 goes here","Apache5_89":"Jebrewing blah blah"}
+ ,
+
+ "SS_Apache6":
+     {"Apache6_97":"activating question 1 goes here",
+     "Apache6_96":"satisfying question 1 goes here ","Apache6_95":"satisfying question 2 goes here"}
+ ,
+
+ "SS_Apache7":
+     {"Apache7_103":"activating question 1 goes here",
+     "Apache7_99":"satisfying question 1 goes here","Apache7_102":"satusfying question 2 goes here","Apache7_101":"satisfying question 3 goes here"}
+ ,
+
+ "SS_Apache8":
+     {"Apache8_108":"activating question goes here",
+     "Apache8_105":"satisfying question1 goes here","Apache8_107":"satisfying question 2 goes here"}
+ ,
 };
+
  //right atomic situations questions pool 
 var rightQuestionPool = {
-    "SS_Apache2":["Did you distributed the Work and such Derivative Works in source or object form?","Question2","Question3","Question4","Question5","Question6"],
-    "SS_Apache3":["Did you instituted patent litigation against any entity (including cross claim or counter clam in a lawsuit alleging that the work...infringement?","Question2","Question3","Question4"],
-    "SS_Apache4":["Did you reproduced and distributed copies of the work or derivative works thereof in any medium, with or without...Object form?"],
-    "SS_Apache4dAddAttrib":["Do your own additional attribution notices constructed as modifying the license?","Question2"],
-    "SS_Apache4dAddCopyright":["Did you provide additional or different license terms and conditions for use...as a whole?","Question2","Question3"],
-    "SS_Apache9":["Did you agreed to indemnify, defend....additional liability?","Question2","Question3"]
+    "SS_Apache2":{"Apache2_47":"Did you distributed the Work and such Derivative Works in source or object form?","Apache2_48":"Question2","Apache2_49":"Question3","Apache2_50":"Question4","Apache2_51":"Question5","Apache2_52":"Question6"},
+
+    "SS_Apache3":{"Apache3_69":"Did you instituted patent litigation against any entity (including cross claim or counter clam in a lawsuit alleging that the work...infringement?","Apache3_70":"Question2","Apache2_71":"Question3","Apache3_72":"Question4","Apache3_73":"Did you transfered the Work?","Apache3_75":"Did you institute patent litigation against any entity ....infringement"},
+    "SS_Apache4":{"Apache4_1":"Did you reproduced and distributed copies of the work or derivative works thereof in any medium, with or without...Object form?"},
+    "SS_Apache4dAddAttrib":{"Apache4dAddAttrib_37":"Do your own additional attribution notices constructed as modifying the license?","Apache4dAddAttr_34":"Did you add your own attribution...text form of the Work?"},
+    "SS_Apache4dAddCopyright":{"Apache4dAddCopyright_40":"Did you provide additional or different license terms and conditions for use...as a whole?","Apache4dAddCopyright_39":"Did you added your own copyright statement to your modification?"},
+    "SS_Apache9":{"Apache9_111":"Did you offered and charged a fee for acceptance of support...with this License?","Apache9_112":"Did you acted only on your own behalf and ...not on behalf of any other Contributor?","Apache9_113":"Did you agreed to indemnify, defend and hold each contributor harmless for any ....warranty or additional liability?"}
 };
 
 var  questionPool = [];
@@ -489,117 +524,117 @@ function attributer(datum,index,nodes) {
  * Is not really nessecary and cause the click event to register more than one sometime
  */
 
-function InteractionGenModel(){
+// function InteractionGenModel(){
    
-    //TODO add pop up when user click on action and generate corresponding model when user clik on super situation. Make sure link get highlighted
+//     //TODO add pop up when user click on action and generate corresponding model when user clik on super situation. Make sure link get highlighted
    
-    //duties = [];//clear right super situation duty array
+//     //duties = [];//clear right super situation duty array
 
-    graph.click(function (event){
-        duties = []; //clear super situation duty array
-        var _text = "";
-        if ($(event.target).parent().children("title").first().text() != "") {
-            _text = $(event.target).parent().children("text").first().text();
-        }
-        if(_text[0] == "S" && _text[1] == "S" && _text[2] == "_"){
-            console.log("generate corresponding super situation");
-            //get index of corresponding super situation
-            //focus on the <a> </a> element
-            $("."+_text.slice(3)).focus()
-            var index = $("."+_text.slice(3)).attr("class").split(" ")[1];
-            graphviz
-            .dot(apache2[index])
-            .zoom(false)
-            .render(function (){
-                graph = $("svg")
+//     graph.click(function (event){
+//         duties = []; //clear super situation duty array
+//         var _text = "";
+//         if ($(event.target).parent().children("title").first().text() != "") {
+//             _text = $(event.target).parent().children("text").first().text();
+//         }
+//         if(_text[0] == "S" && _text[1] == "S" && _text[2] == "_"){
+//             console.log("generate corresponding super situation");
+//             //get index of corresponding super situation
+//             //focus on the <a> </a> element
+//             $("."+_text.slice(3)).focus()
+//             var index = $("."+_text.slice(3)).attr("class").split(" ")[1];
+//             graphviz
+//             .dot(apache2[index])
+//             .zoom(false)
+//             .render(function (){
+//                 graph = $("svg")
                 
-                // SVG_Interaction()
-                SS_handler()
-                //InteractionGenModel()
+//                 // SVG_Interaction()
+//                 SS_handler()
+//                 //InteractionGenModel()
                 
-                //console.log(graphviz);
-                //TODO: fit rendered graphiz to div container and enable zooming using maybe an svg nav library
-            });
+//                 //console.log(graphviz);
+//                 //TODO: fit rendered graphiz to div container and enable zooming using maybe an svg nav library
+//             });
             
-        }else if(_text[0]=="[") {
-            //TODO show popup on text click or hover with full text 
-        }
+//         }else if(_text[0]=="[") {
+//             //TODO show popup on text click or hover with full text 
+//         }
 
         
-    });
-}
+//     });
+// }
 
 
 /**
  * This function is just to enable coloring of graph element on click
  */
 
-function SVG_Interaction() {
+// function SVG_Interaction() {
     
-    var jsonData = [];
+//     var jsonData = [];
     
-    graph.click(function (event){
+//     graph.click(function (event){
         
-        console.log("svg clicked...Element--->"+event.target, event.type)
-        var _id = "";
-        var _text = "";
+//         console.log("svg clicked...Element--->"+event.target, event.type)
+//         var _id = "";
+//         var _text = "";
         
-        //notes:event.target.parent is g#graph0 sometimes but should be the g#node_. This cause polygon not to change color when polygon is clicked on
+//         //notes:event.target.parent is g#graph0 sometimes but should be the g#node_. This cause polygon not to change color when polygon is clicked on
         
-        if ($(event.target).parent().children("title").first().text() != "") {
-            _id = $(event.target).parent().children("title").first().text();
-            _text = $(event.target).parent().children("text").first().text();
-        }else {
-            _id = $(event.target).parent().parent().children("title").first().text();
-            _text = $(event.target).parent().parent().children("text").first().text();
-        }
+//         if ($(event.target).parent().children("title").first().text() != "") {
+//             _id = $(event.target).parent().children("title").first().text();
+//             _text = $(event.target).parent().children("text").first().text();
+//         }else {
+//             _id = $(event.target).parent().parent().children("title").first().text();
+//             _text = $(event.target).parent().parent().children("text").first().text();
+//         }
         
-        //Allow clicking on text to select the sibling polygon
-        if ($(event.target).attr('points') == null) {
-            polygon = $(event.target).parent().children("polygon").first();
-        } else {
-            polygon = $(event.target);
-        }
+//         //Allow clicking on text to select the sibling polygon
+//         if ($(event.target).attr('points') == null) {
+//             polygon = $(event.target).parent().children("polygon").first();
+//         } else {
+//             polygon = $(event.target);
+//         }
         
-        //check if norm
-        var delimited = polygon.parent().children("title").last().text().split('_');
-        var isNorm = false;
-        if (delimited[1] == null) {
-            isNorm = true; // Is a norm
-        } else {
-            isNorm = false; // not a norm
-        }
+//         //check if norm
+//         var delimited = polygon.parent().children("title").last().text().split('_');
+//         var isNorm = false;
+//         if (delimited[1] == null) {
+//             isNorm = true; // Is a norm
+//         } else {
+//             isNorm = false; // not a norm
+//         }
         
-        // Don't color anything that is not polygon with points. Also don't color graphs and Norms
-        if ((polygon.attr('points') != null) & (polygon.parent().children("title").first().text() != "G") & !(isNorm)) {
+//         // Don't color anything that is not polygon with points. Also don't color graphs and Norms
+//         if ((polygon.attr('points') != null) & (polygon.parent().children("title").first().text() != "G") & !(isNorm)) {
             
             
-            if (polygon.attr('style') == "fill:#57BC90") { //if green turn red
-                polygon.attr('style', "fill:#CD5360")
-                //updateJSONData
-            } else if (polygon.attr('style') == "fill:#CD5360") { //if red turn yellow
-                polygon.attr('style', "fill:#E5E338")
-                //updateJSONData
-            }else if (polygon.attr('style') == "fill:#E5E338") //if yellow turn white
-            {
-                polygon.attr('style', "fill:#FFFFFF")
-                //update JSONData
-            }else{ //turn green
-                polygon.attr('style', "fill:#57BC90")
-                //updateJSONdata
-            }
+//             if (polygon.attr('style') == "fill:#57BC90") { //if green turn red
+//                 polygon.attr('style', "fill:#CD5360")
+//                 //updateJSONData
+//             } else if (polygon.attr('style') == "fill:#CD5360") { //if red turn yellow
+//                 polygon.attr('style', "fill:#E5E338")
+//                 //updateJSONData
+//             }else if (polygon.attr('style') == "fill:#E5E338") //if yellow turn white
+//             {
+//                 polygon.attr('style', "fill:#FFFFFF")
+//                 //update JSONData
+//             }else{ //turn green
+//                 polygon.attr('style', "fill:#57BC90")
+//                 //updateJSONdata
+//             }
             
-        }
+//         }
         
         
-    });
-}
-/*
-This function will update json data to perform request on server
-*/
-function updateJSON(params) {
+//     });
+// }
+// /*
+// This function will update json data to perform request on server
+// */
+// function updateJSON(params) {
     
-}
+// }
 
         
 /**
@@ -629,24 +664,30 @@ function SS_handler() {
         //TODO save the user answer and color the satisfying box here
         //Ask assessement question related to SS_duty and save answer
         //get corresponding duty questionPool
-       for (const key of Object.keys(dutyQuestionPool)){
-            if(SS_name == key){
-                //iterate through question pool when a user click next
-                questionPool = dutyQuestionPool[key];
-                //$("#question").text(dutyQuestionPool[key]);
+       for (const ss_name_key of Object.keys(dutyQuestionPool)){
+          
+            if(SS_name == ss_name_key){
+               questionPool = Object.entries(dutyQuestionPool[ss_name_key])
             }
        }
+
+       
+
+       
        console.log(questionPool); //display the question pool
-       $("#question").text(questionPool[arrayIndex]);
+       
+       $("#question").text(questionPool[arrayIndex][1]);
+       console.log("Question id: "+questionPool[arrayIndex][0])
        //clicking the next button display the next question
+   
        $("#nextButton").click(function () {
-        
+            
            arrayIndex++;
-          $("#question").text(questionPool[arrayIndex]);
+          $("#question").text(questionPool[arrayIndex][1]);
+          console.log("Question id: "+questionPool[arrayIndex][0])
            //arrayIndex = (arrayIndex + 1) % questionPool.length; //this will start back at the begenig of array
 
        });
-
 
 
     }else if(graph.children().children("title").html() == "G_Right"){
@@ -684,32 +725,26 @@ function SS_handler() {
         console.log("This right duties: "+ duties) //display the activating duties for this right
 
         //get corresponding right questionPool
-        for (const key of Object.keys(rightQuestionPool)){
-            if(SS_name == key){
-                //iterate through question pool when a user click next
-                questionPool = rightQuestionPool[key];
-                //$("#question").text(rightQuestionPool[key]);
+        for (const ss_name_key of Object.keys(rightQuestionPool)){
+          
+            if(SS_name == ss_name_key){
+               questionPool = Object.entries(rightQuestionPool[ss_name_key])
             }
        }
        //loop thru questionPool
        console.log("right name: "+ SS_name)
        console.log(questionPool);
        
-
+       
       
-       $("#question").text(questionPool[arrayIndex]);
+       $("#question").text(questionPool[arrayIndex][1]);
+       console.log("Question id:"+questionPool[arrayIndex][0])
       
        $("#nextButton").click(function () {   //bug: when using click event on svg, questionPool does not update correctly. 
-        
-            arrayIndex++;
-
-          $("#question").text(questionPool[arrayIndex]); //previous question pool sticks there
-           //arrayIndex = (arrayIndex + 1) % questionPool.length;
-
-
         if (questionPool.length == arrayIndex){ //problem??
 
             console.log("displaying duties that need to be visited");
+           
             $("#question").text("");
             $("#duty_list").empty();
             $("#question").text("The following SS need to be visited to get "+SS_name+" right");
@@ -721,11 +756,17 @@ function SS_handler() {
     
             });
         }
+        
+            arrayIndex++;
+            console.log("Question id:"+questionPool[arrayIndex][0])
+          $("#question").text(questionPool[arrayIndex][1]); //previous question pool sticks there
+           //arrayIndex = (arrayIndex + 1) % questionPool.length;
+
+
+        
        });
 
     }
-
-    
 
 }
 
