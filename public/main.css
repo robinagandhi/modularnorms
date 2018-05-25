@@ -80,6 +80,17 @@ a.supersit:hover {
     background-color: cornflowerblue;
 }
 
+#duty_list {
+    text-align: justify;
+}
+
+/* #nextButton {
+    position: relative;
+    top: 90px;
+    left: 260px;
+    cursor: pointer; 
+} */
+
 /* .node:{
 
 } */

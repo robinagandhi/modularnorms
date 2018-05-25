@@ -17,6 +17,11 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous">
     </script>
 
+    <div id="menu">
+        <a href="./apache2.html">Apache2 Norm Model</a>
+        <a href="./agpl.html">AGPL Norm Model</a>
+    </div>
+
 <div class="row">
 
         <!-- First colum containing license text and assessement question -->
@@ -308,18 +313,31 @@
                 </div>
      
                 <div class="box-3">
-                        <p id="question"></p>
-                        <select  id="choice">
-                                <option value="value1"> Yes</option>
-                                <option value="value2">No</option>
-                                <option value="value3">Dont'know</option>
-                        </select>
+                        <div id="wizard_box">
+                                <div id="wizard-box-question">
 
+                                        <p id="question"></p>
+                                        <select  id="choice">
+                                                <option value="Yes"> Yes</option>
+                                                <option value="No" selected>No</option>
+                                                <option value="Don't know">Dont'know</option>
+                                        </select>
 
-                       <ul id="duty_list">
-                               
-                       </ul>
-                        <button id="nextButton" > NEXT </button>
+                                        <button id="previousQuestionButton" > PREVIOUS </button>
+                                        <button id="nextQuestionButton" > NEXT </button>
+                                </div>
+
+                                <div id="wizard-box-list">
+                                        <p id="prompt"> </p>
+                                        <ul id="duty_list">    
+                                        </ul>
+
+                                        <button id="nextButtonList"> NEXT </button>
+                                </div>
+                                
+
+                        </div>
+
                 </div> 
                 
         </div>
