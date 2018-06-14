@@ -9,32 +9,43 @@ body {
 
 }
 
+.display {
+    height: 100%;
+
+}
+
 .row {
     display: flex;
-    height: 100%;
+    height: 80%;
     padding: 0 4px;
-    /* flex-wrap: wrap; */
 }
 
 .column-1 {
-    display: flex;
     align-items: stretch;
     justify-content: center;
     font-size: small;
-    flex-direction: column;
+    /* flex-direction: column; */
     width:50%;
     height: 100%;
-    margin: auto;
+    /* margin: auto; */
     /* position: absolute; */
     
 }
+.box-1 {
+    background-color: whitesmoke;
+    border: 1px solid;
+    overflow: scroll;
+    text-align: inherit;
+    height: 100%;
+
+}
 
 .column-2 {
-    display: flex;
     width: 50%;
     height: 100%;
     margin-left: 10px;
-    /* flex-direction: column; */
+    margin-right: 4px;
+    
 }
 
 
@@ -48,23 +59,18 @@ body {
     border: 1px solid;
 }
 
-.box-1 {
-    background-color: whitesmoke;
-    border: 1px solid;
-    overflow: scroll;
-    text-align: inherit;
-    height: 80%;
 
-    
-} 
 
 .box-3 {
+    display: flex;
     background-color: whitesmoke;
     border: 1px solid;
     margin-top: 5px;
     text-align: inherit;
     text-align: center;
     height: 20%;
+    margin-left: 4px;
+    margin-right: 4px;
     overflow:scroll
 }
 
@@ -84,6 +90,19 @@ a.supersit:hover {
     text-align: justify;
 }
 
+ /* .node {
+    transition: transform .2s;
+}
+
+.node:hover {
+    -ms-transform: scale(1.5); 
+    -webkit-transform: scale(1.5);  
+    transform: scale(1.5);
+}   */
+
+
+
+
 /* #nextButton {
     position: relative;
     top: 90px;
@@ -94,3 +113,62 @@ a.supersit:hover {
 /* .node:{
 
 } */
+
+
+
+/* Popup container - can be anything you want */
+.node {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.node .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.node .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.node .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
