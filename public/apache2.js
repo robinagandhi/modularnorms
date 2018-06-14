@@ -154,7 +154,7 @@ var apache2 = [
             Apache4a [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="Apache4a", tooltip="4(a) You must give any other recipients of the Work or Derivative Works a copy of this License;"];
             Apache4a_9 [shape=box, label="[You gave] other recipients of\n the Work or Derivative\n Works a copy of this License"];
             Apache4a_9 -> Apache4a[label="satisfies"];
-            Apache4a_10 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
+            Apache4a_10 [shape=box, label="[You reproduced and\n distributed copies of the\n Work or Derivative Works]"];
             Apache4a_10 -> Apache4a[label="activates"];
             }
         }
@@ -169,7 +169,7 @@ var apache2 = [
             Apache4b [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="Apache4b", tooltip="4(b) You must cause any modified files to carry prominent notices stating that You changed the files;"];
             Apache4b_11 [shape=box, label="[You caused] any modified\n files to carry prominent\n notices stating that You\n changed the files"];
             Apache4b_11 -> Apache4b[label="satisfies"];
-            Apache4b_12 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
+            Apache4b_12 [shape=box, label="[You reproduced and\n distributed copies of the\n Work or Derivative Works]"];
             Apache4b_12 -> Apache4b[label="activates"];
             }
         }
@@ -190,7 +190,7 @@ var apache2 = [
             Apache4c_15 -> Apache4c_13;
             Apache4c_16 [shape=box, label="[You retained] those notices\n that do not pertain to any\n part of the Derivative Works"];
             Apache4c_16 -> Apache4c_15;
-            Apache4c_17 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
+            Apache4c_17 [shape=box, label="[You reproduced and\n distribute copies of the\n Work or Derivative Works]"];
             Apache4c_17 -> Apache4c[label="activates"];
             }
         }
@@ -231,7 +231,7 @@ var apache2 = [
             Apache4d_30 -> Apache4d_18;
             Apache4d_31 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache4d_31 -> Apache4d[label="activates"];
-            Apache4d_32 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
+            Apache4d_32 [shape=box, label="[You reproduced and\n distributed copies of the\n Work or Derivative Works]"];
             Apache4d_32 -> Apache4d_31;
             Apache4d_33 [shape=box, label="the Work includes a 'NOTICE'\n text file as part of its\n distribution"];
             Apache4d_33 -> Apache4d_31;
@@ -315,7 +315,7 @@ var apache2 = [
             Apache6_95 -> Apache6_94;
             Apache6_96 [shape=box, label="[As required ]for reasonable\n and customary use in\n describing the origin of\n the Work and reproducing\n the content of the NOTICE\n file [You used] trade\n names, trademarks, service\n marks, or product names of the Licensor"];
             Apache6_96 -> Apache6_93;
-            Apache6_97 [shape=box, label="[You exercice permission\n granted by this License ]"];
+            Apache6_97 [shape=box, label="[You exerciced permission\n granted by this License ]"];
             Apache6_97 -> Apache6[label="activates"];
             }
         }
@@ -338,7 +338,7 @@ var apache2 = [
             Apache7_101 -> Apache7_100;
             Apache7_102 [shape=box, label="[You assumed] any risks\n associated with Your\n exercice of permissions\n under this license"];
             Apache7_102 -> Apache7_100;
-            Apache7_103 [shape=box, label="You exercice permission\n granted by this License"];
+            Apache7_103 [shape=box, label="You exerciced permission\n granted by this License"];
             Apache7_103 -> Apache7[label="activates"];
             }
         }
@@ -359,7 +359,7 @@ var apache2 = [
             Apache8_106 -> Apache8_104;
             Apache8_107 [shape=box, label="[You holded] Contributor\n liable to You for damages,\n including any direct,\n indirect, special,\n incidental, or\n consequential damages of\n any character arising as a\n result of this License or\n out of the use or inability\n to use the Work (including\n but not limited to damages\n for loss of goodwill, work\n stoppage, computer failure\n or malfunction, or any and\n all other commercial damages or losses)"];
             Apache8_107 -> Apache8_106;
-            Apache8_108 [shape=box, label="You exercice permissions\n granted by this License"];
+            Apache8_108 [shape=box, label="You exerciced permissions\n granted by this License"];
             Apache8_108 -> Apache8[label="activates"];
             }
         }
@@ -389,151 +389,165 @@ var apache2 = [
     `
 ]
 
+//var test = [];
+
 var margin = 10 //to avoid scrollbars
 var graph = null,
- graphObj = null;
+    graphObj = null;
 
-var resultJSON = [];
-var dutyIndex = 0;
+var resultJSON = []; //hold the json value corresponding to the answer the user select
+var polygon = [];
+var nodeName = "";
+var dutyIndex = 0, visitedRightIndex = 0;
 
 
- 
+
 var duties = []; //hold the duties in a right super situation
 var dutiesToBeVisited = []; //hold duties to be visited
+var visitedRight = []; //hold right already visited
 var SS_name = null;
 
 //Attach id to each question so we can colr the corresponding situation on the graph and also build resultJSON file
- //duty atomic situation questions pool
+//duty atomic situation questions pool
 var dutyQuestionPool = {
 
- "SS_Apache4a":
-     {
-    "Do you intend to reproduce or distribute copy of the Work or Derivative Works?":["Apache4a_10"],
-    "Did you give other recipients of the Work or Derivative Work a copy of this License? ":["Apache4a_9"]
-    },
-
-
- "SS_Apache4b":
-     {
-         "Do you intend to reproduce or distribute copy of the Work or Derivative Works?":["Apache4b_12"],
-     "Did you cause any modified file to carry prominent notices stating that You changed the File?":["Apache4b_11"]
-    },
- 
-
- "SS_Apache4c":
+    "SS_Apache4a":
     {
-    "Do you intend to reproduce or distribute copy of the Work or Derivative Works?":["Apache4c_17"],
-    "Did you retained in  the Source form of any Derivative Works that You distribute all copyright, patent,trademark, and attribution notices from the Source form of the Work?":["Apache4c_14"],
-    "Did you retained those notices that do not pertain to any part of the Derivative Works?":["Apache4c_16"]
+        
+        "Did you reproduce or distribute copy of the Work or Derivative Works?": ["Apache4a_10"],
+        "Did you give other recipients of the Work or Derivative Work a copy of this License? ": ["Apache4a_9"]
     },
- 
 
- "SS_Apache4d":
+
+    "SS_Apache4b":
     {
-    "Do you intend to reproduce or distribute copy of the Work or Derivative Works?":["Apache4d_33"], 
-    "Does the Work include a NOTICEtext file as part of its distribution? ":["Apache4d_32"],
-     "Did you exclude those notices that do not pertain to any part of the Derivatove Works?":["Apache4d_30"],
-     "Did you include a readable copy of the attribution notices contained within such NOTICE file?":["Apache4d_20"],
-     "Question with multiple situation ID":["Apache4d_22","Apache4d_29","Apache4d_28","Apache4d_26","Apache4d_25"],
-     
+        "Do you intend to reproduce or distribute copy of the Work or Derivative Works?": ["Apache4b_12"],
+        "Did you cause any modified file to carry prominent notices stating that You changed the File?": ["Apache4b_11"]
     },
 
- "SS_Apache5":
+
+    "SS_Apache4c":
     {
-    "Question1 goes here":["Apache5_92"],
-    "Question 2 goes here ":["Apache5_91"],
-    "Question 3 goes here":["Apache5_90"],
-    "Jebrewing blah blah":["Apache5_89"]
+        "Do you intend to reproduce or distribute copy of the Work or Derivative Works?": ["Apache4c_17"],
+        "Did you retained in  the Source form of any Derivative Works that You distribute all copyright, patent,trademark, and attribution notices from the Source form of the Work?": ["Apache4c_14"],
+        "Did you retained those notices that do not pertain to any part of the Derivative Works?": ["Apache4c_16"]
     },
 
- "SS_Apache6":
-     {
-    "activating question 1 goes here":["Apache6_97"],
-     "satisfying question 1 goes here ":["Apache6_96"],
-     "satisfying question 2 goes here":["Apache6_95"]
+
+    "SS_Apache4d":
+    {
+        "Do you intend to reproduce or distribute copy of the Work or Derivative Works?": ["Apache4d_32"],
+        "Does the Work include a NOTICEtext file as part of its distribution? ": ["Apache4d_33"],
+        "Did you exclude those notices that do not pertain to any part of the Derivatove Works?": ["Apache4d_30"],
+        "Did you include a readable copy of the attribution notices contained within such NOTICE file?": ["Apache4d_20"],
+        "Question with multiple situation ID": ["Apache4d_22", "Apache4d_29", "Apache4d_28", "Apache4d_26", "Apache4d_25"],
+
     },
 
- "SS_Apache7":
-     {
-    "activating question 1 goes here":["Apache7_103"],
-     "satisfying question 1 goes here":["Apache7_99"],
-     "satusfying question 2 goes here":["Apache7_102"],
-     "satisfying question 3 goes here":["Apache7_101"]
+    "SS_Apache5":
+    {
+        "Question1 goes here": ["Apache5_92"],
+        "Question 2 goes here ": ["Apache5_91"],
+        "Question 3 goes here": ["Apache5_90"],
+        "Jebrewing blah blah": ["Apache5_89"]
     },
 
- "SS_Apache8":
-     {
-    "activating question goes here":["Apache8_108"],
-     "satisfying question1 goes here":["Apache8_105"],
-     "satisfying question 2 goes here":["Apache8_107"]
+    "SS_Apache6":
+    {
+        "activating question 1 goes here": ["Apache6_97"],
+        "satisfying question 1 goes here ": ["Apache6_96"],
+        "satisfying question 2 goes here": ["Apache6_95"]
+    },
+
+    "SS_Apache7":
+    {
+        "activating question 1 goes here": ["Apache7_103"],
+        "satisfying question 1 goes here": ["Apache7_99"],
+        "satusfying question 2 goes here": ["Apache7_102"],
+        "satisfying question 3 goes here": ["Apache7_101"]
+    },
+
+    "SS_Apache8":
+    {
+        "activating question goes here": ["Apache8_108"],
+        "satisfying question1 goes here": ["Apache8_105"],
+        "satisfying question 2 goes here": ["Apache8_107"]
     },
 };
 
- //right atomic situations questions pool 
+//right atomic situations questions pool 
 var rightQuestionPool = {
-    "SS_Apache2":{
-        "Did you distributed the Work and such Derivative Works in source or object form?":["Apache2_47"],
-        "Question2":["Apache2_48"],
-        "Question3":["Apache2_49"],
-        "Question4":["Apache2_50"],
-        "Question5":["Apache2_51"],
-        "Question6":["Apache2_52"]
+    "SS_Apache2": {
+        "Did you distributed the Work and such Derivative Works in source or object form?": ["Apache2_47"],
+        "Question2": ["Apache2_48"],
+        "Question3": ["Apache2_49"],
+        "Question4": ["Apache2_50"],
+        "Question5": ["Apache2_51"],
+        "Question6": ["Apache2_52"]
     },
 
-    "SS_Apache3":{
-        "Did you instituted patent litigation against any entity (including cross claim or counter clam in a lawsuit alleging that the work...infringement?":["Apache3_69"],
-        "Question2":["Apache3_70"],
-        "Question3":["Apache2_71"],
-        "Question4":["Apache3_72"],
-        "Did you transfered the Work?":["Apache3_73"],
-        "Did you institute patent litigation against any entity ....infringement":["Apache3_75"]
+    "SS_Apache3": {
+        "Did you instituted patent litigation against any entity (including cross claim or counter clam in a lawsuit alleging that the work...infringement?": ["Apache3_69"],
+        "Question2": ["Apache3_70"],
+        "Question3": ["Apache2_71"],
+        "Question4": ["Apache3_72"],
+        "Did you transfered the Work?": ["Apache3_73"],
+        "Did you institute patent litigation against any entity ....infringement": ["Apache3_75"]
     },
-    "SS_Apache4":{
-        "Did you reproduced and distributed copies of the work or derivative works thereof in any medium, with or without...Object form?":["Apache4_1"]
+    "SS_Apache4": {
+        "Did you reproduced and distributed copies of the work or derivative works thereof in any medium, with or without...Object form?": ["Apache4_1"]
     },
-    "SS_Apache4dAddAttrib":{
-        "Do your own additional attribution notices constructed as modifying the license?":["Apache4dAddAttrib_37"],
-        "Did you add your own attribution...text form of the Work?":["Apache4dAddAttr_34"]
+    "SS_Apache4dAddAttrib": {
+        "Do your own additional attribution notices constructed as modifying the license?": ["Apache4dAddAttrib_37"],
+        "Did you add your own attribution...text form of the Work?": ["Apache4dAddAttr_34"]
     },
-    "SS_Apache4dAddCopyright":{
-        "Did you provide additional or different license terms and conditions for use...as a whole?":["Apache4dAddCopyright_40"],
-        "Did you added your own copyright statement to your modification?":["Apache4dAddCopyright_39"]
+    "SS_Apache4dAddCopyright": {
+        "Did you provide additional or different license terms and conditions for use...as a whole?": ["Apache4dAddCopyright_40"],
+        "Did you added your own copyright statement to your modification?": ["Apache4dAddCopyright_39"]
     },
-    "SS_Apache9":{
-        "Did you offered and charged a fee for acceptance of support...with this License?":["Apache9_111"],
-        "Did you acted only on your own behalf and ...not on behalf of any other Contributor?":["Apache9_112"],
-        "Did you agreed to indemnify, defend and hold each contributor harmless for any ....warranty or additional liability?":["Apache9_113"]}
+    "SS_Apache9": {
+        "Did you offered and charged a fee for acceptance of support...with this License?": ["Apache9_111"],
+        "Did you acted only on your own behalf and ...not on behalf of any other Contributor?": ["Apache9_112"],
+        "Did you agreed to indemnify, defend and hold each contributor harmless for any ....warranty or additional liability?": ["Apache9_113"]
+    }
 };
 
-var  questionPool = [];
+var questionPool = [];
 
 var graphviz = d3.select("#graph")
-                .graphviz()
-                .attributer(attributer);
+    .graphviz()
+    .attributer(attributer);
+
+$( function() {
+    $( document ).tooltip();
+    } );
 
 //statement represent an html class that all license clause have. Each statement also have a position 
 //and the corresponding model name as class
 $(".statement").click(function () {
+    visitedRight = [];
+    dutiesToBeVisited = [];
+    visitedRightIndex = 0;
     dutyIndex = 0;
+    polygon = [];
     $("#nextButton").off("click");
     questionPool = [];
+
     //index reprensent each class name eg. index[0] = statement, index [1] = position, index[2] = model name
     index = $(this).attr("class").split(' ')
 
-    console.log("statement index: "+index[1])
-    
-    console.log("statement name: "+index[2])
+    console.log("statement index: " + index[1])
+
+    console.log("statement name: " + index[2])
     //generate the graph using the position
     graphviz
         .dot(apache2[index[1]])
         .zoom(false)
-        .render(function (){
+        .render(function () {
             graph = $("svg")
-            //SVG_Interaction()
-            //InteractionGenModel()
             SS_handler()
         });
-    
+
 });
 
 
@@ -541,139 +555,24 @@ $(".statement").click(function () {
 /** 
  * This function allow graph to fit in div element
 */
-function attributer(datum,index,nodes) {
-    var  selection = d3.select(this);
-    if(datum.tag == "svg"){
+function attributer(datum, index, nodes) {
+    var selection = d3.select(this);
+    if (datum.tag == "svg") {
         var width = document.getElementById("box-2").offsetWidth;
         //console.log(width);
         var height = document.getElementById("box-2").offsetHeight;
         //console.log(height);
-        selection   
-            .attr("width",width)
-            .attr("height",height)
+        selection
+            .attr("width", width)
+            .attr("height", height)
         datum.attributes.width = width - margin;
         datum.attributes.height = height - margin;
     }
 
 }
 
-/**
- * This function enable interaction with graph and respond to click event on super situation and generate them. 
- * Is not really nessecary and cause the click event to register more than one sometime
- */
 
-/* function InteractionGenModel(){
-   
-    //TODO add pop up when user click on action and generate corresponding model when user clik on super situation. Make sure link get highlighted
-   
-    //duties = [];//clear right super situation duty array
 
-    graph.click(function (event){
-        duties = []; //clear super situation duty array
-        var _text = "";
-        if ($(event.target).parent().children("title").first().text() != "") {
-            _text = $(event.target).parent().children("text").first().text();
-        }
-        if(_text[0] == "S" && _text[1] == "S" && _text[2] == "_"){
-            console.log("generate corresponding super situation");
-            //get index of corresponding super situation
-            //focus on the <a> </a> element
-            $("."+_text.slice(3)).focus()
-            var index = $("."+_text.slice(3)).attr("class").split(" ")[1];
-            graphviz
-            .dot(apache2[index])
-            .zoom(false)
-            .render(function (){
-                graph = $("svg")
-                
-                // SVG_Interaction()
-                SS_handler()
-                //InteractionGenModel()
-                
-                //console.log(graphviz);
-                //TODO: fit rendered graphiz to div container and enable zooming using maybe an svg nav library
-            });
-            
-        }else if(_text[0]=="[") {
-            //TODO show popup on text click or hover with full text 
-        }
-
-        
-    });
-} */
-
-/**
- * This function is just to enable coloring of graph element on click
- */
-
-/* function SVG_Interaction() {
-    
-    var jsonData = [];
-    
-    graph.click(function (event){
-        
-        console.log("svg clicked...Element--->"+event.target, event.type)
-        var _id = "";
-        var _text = "";
-        
-        //notes:event.target.parent is g#graph0 sometimes but should be the g#node_. This cause polygon not to change color when polygon is clicked on
-        
-        if ($(event.target).parent().children("title").first().text() != "") {
-            _id = $(event.target).parent().children("title").first().text();
-            _text = $(event.target).parent().children("text").first().text();
-        }else {
-            _id = $(event.target).parent().parent().children("title").first().text();
-            _text = $(event.target).parent().parent().children("text").first().text();
-        }
-        
-        //Allow clicking on text to select the sibling polygon
-        if ($(event.target).attr('points') == null) {
-            polygon = $(event.target).parent().children("polygon").first();
-        } else {
-            polygon = $(event.target);
-        }
-        
-        //check if norm
-        var delimited = polygon.parent().children("title").last().text().split('_');
-        var isNorm = false;
-        if (delimited[1] == null) {
-            isNorm = true; // Is a norm
-        } else {
-            isNorm = false; // not a norm
-        }
-        
-        // Don't color anything that is not polygon with points. Also don't color graphs and Norms
-        if ((polygon.attr('points') != null) & (polygon.parent().children("title").first().text() != "G") & !(isNorm)) {
-            
-            
-            if (polygon.attr('style') == "fill:#57BC90") { //if green turn red
-                polygon.attr('style', "fill:#CD5360")
-                //updateJSONData
-            } else if (polygon.attr('style') == "fill:#CD5360") { //if red turn yellow
-                polygon.attr('style', "fill:#E5E338")
-                //updateJSONData
-            }else if (polygon.attr('style') == "fill:#E5E338") //if yellow turn white
-            {
-                polygon.attr('style', "fill:#FFFFFF")
-                //update JSONData
-            }else{ //turn green
-                polygon.attr('style', "fill:#57BC90")
-                //updateJSONdata
-            }
-            
-        }
-        
-        
-    });
-} */
-/*
-This function will update json data to perform request on server
-*/
-
-/* function updateJSON(params) {  
-} */
-
-        
 /**
  * This function distinguish between a duty or rigt super situation, and display the appropriate questions and populate the duties array in case the 
  * super situation is a right
@@ -684,161 +583,167 @@ function SS_handler() {
     //clear box-3, which is the wizard box
     $("#question").text("")
     $("#duty_list").empty();
+    //reset dropdown or check box here
+    $("#choice").val("Don't know")
     //hold the SS_name
     SS_name = null;
     //hold the specific questionPool for the given super situation
     questionPool = [];
-    
-    
     var arrayIndex = 0; //index to loop through question pool
-  
 
-    if (graph.children().children("title").html() == "G_Duty"){
+    //enable tooltip
+    enableTooltip(graph);
 
-        
+
+   
+
+
+    if (graph.children().children("title").html() == "G_Duty") {
+
+
         $("#wizard-box-question").show();
         $("#wizard-box-list").hide()
         questionPool = [];
         console.log("Display duty stuff");
         //get name of super situation then compare to dutyQuestion array (object) and then display the corresponding question in box 3
         SS_name = graph.children().children("g#clust1").children("text").html();
-        console.log("duty name: "+SS_name);
+        console.log("duty name: " + SS_name);
         //TODO save the user answer and color the satisfying box here
         //Ask assessement question related to SS_duty and save answer
         //get corresponding duty questionPool
 
-       for (const ss_name_key of Object.keys(dutyQuestionPool)){
-          
-            if(SS_name == ss_name_key){
-               questionPool = Object.entries(dutyQuestionPool[ss_name_key])
+        for (const ss_name_key of Object.keys(dutyQuestionPool)) {
+
+            if (SS_name == ss_name_key) {
+                questionPool = Object.entries(dutyQuestionPool[ss_name_key])
             }
-       }
+        }
+      
+        
+        console.log(questionPool); //display the question pool
+        $("#question").text(questionPool[arrayIndex][0]);
+        console.log("Question id: " + questionPool[arrayIndex][1]) 
+        //save corresponding polygon in a variable
+        polygon = getPolygon(questionPool[arrayIndex][1]);
 
-       console.log(questionPool); //display the question pool
-       
-       $("#question").text(questionPool[arrayIndex][0]);
-       console.log("Question id: "+questionPool[arrayIndex][1])
-
-       //clicking the next button display the next question
-   
+        //clicking the next button display the next question
         $("#nextQuestionButton").off('click');
-       $("#nextQuestionButton").click(function () { //register click event on next button
-            
-           
-           if(arrayIndex < (questionPool.length - 1)){
+        $("#nextQuestionButton").click(function () { //register click event on next button
+
+            //reset dropdown or check box here
+            $("#choice").val("Don't know")
+            if (arrayIndex < (questionPool.length - 1)) {
                 arrayIndex++;
-               $("#question").text(questionPool[arrayIndex][0]);
-               console.log("Question id: "+questionPool[arrayIndex][1])   //questionPool[arrayIndex[1]] is an array create function to color situation
-
-               //colorSituation(questionPool[arrayIndex][1],user_input)
-                
-           }else{
-               console.log("No more question")
-              
-
-               if(dutiesToBeVisited != [] && dutyIndex < (dutiesToBeVisited.length -1)){
-                   dutyIndex++;
-                   visitDuty(dutiesToBeVisited,dutyIndex);
-
-               }else{
-                   console.log("done traversing")
-                    
-                    if (dutyIndex < (dutiesToBeVisited.length - 1) && dutiesToBeVisited != []) {
-                        visitDuty(dutiesToBeVisited,dutyIndex)
-                    }
-
-
-               }
-           }
-
-       });
-       $("#previousQuestionButton").off('click')
-       $("#previousQuestionButton").click(function () { //register click event on previous button
-            
-            if(arrayIndex > 0){
-                arrayIndex --;
                 $("#question").text(questionPool[arrayIndex][0]);
-                console.log("Question id: "+questionPool[arrayIndex][1])   //questionPool[arrayIndex[1]] is an array create function to color situation
+                console.log("Question id: " + questionPool[arrayIndex][1])   //questionPool[arrayIndex[1]] is an array create function to color situation
 
-            }else{
-                console.log("No previous question");
-                
+                 //save corresponding polygon in a variable
+                polygon = getPolygon(questionPool[arrayIndex][1]);
+
+            } else {
+                console.log("No more question")
+
+                if (dutiesToBeVisited != [] && dutyIndex < (dutiesToBeVisited.length - 1)) {
+                    dutyIndex++;
+                    visitDuty(dutiesToBeVisited, dutyIndex);
+
+                } else {
+
+                    if (dutyIndex < (dutiesToBeVisited.length - 1) && dutiesToBeVisited != []) {
+                        visitDuty(dutiesToBeVisited, dutyIndex)
+                    }
+                    console.log("done traversing")
+
+
+                }
             }
-       });
+
+        });
+        $("#previousQuestionButton").off('click')
+        $("#previousQuestionButton").click(function () { //register click event on previous button
+            //reset dropdown or check box here
+            $("#choice").val("Don't know")
+            if (arrayIndex > 0) {
+                arrayIndex--;
+                $("#question").text(questionPool[arrayIndex][0]);
+                console.log("Question id: " + questionPool[arrayIndex][1])   //questionPool[arrayIndex[1]] is an array create function to color situation
+                //save corresponding polygon in a variable
+                polygon = getPolygon(questionPool[arrayIndex][1]);
+            } else {
+                console.log("No previous question");
+
+            }
+        });
 
 
-    }else if(graph.children().children("title").html() == "G_Right"){
+    } else if (graph.children().children("title").html() == "G_Right") {
         duties = [] //empty duties array
-        var previousIndex = dutyIndex;
-        dutyIndex = 0;
-       $("#wizard-box-question").hide();
-       $("#wizard-box-list").show()
+
+        $("#wizard-box-question").hide();
+        $("#wizard-box-list").show()
 
         questionPool = [];
         SS_name = graph.children().children("g#clust1").children("text").html();
-        
+
         graphObj = graph.children().children();
-        console.log("right name: "+ SS_name)
+        console.log("right name: " + SS_name)
         console.log("Display right stuff");
-        
+
         //start by node with index 4 to skip unnecessary nodes
 
-        for (var i = 4; i < graphObj.length; i++){
+        for (var i = 4; i < graphObj.length; i++) {
             //only visit nodes not edges
-            if(graphObj[i].id.includes('node')){
+            if (graphObj[i].id.includes('node')) {
 
                 var children = graphObj[i].children;
                 //console.log(graphObj[i])
-                
+
                 //console.log(children);
-    
+
                 //start by index 1 because index 0 is the title of node
-                for(var j = 1; j < children.length; j++){
-                    if (children[j].nodeName == "text"  ) {
-    
-                        if(children[j].innerHTML[0] == "S" && children[j].innerHTML[1] == "S"){
+                for (var j = 1; j < children.length; j++) {
+                    if (children[j].nodeName == "text") {
+
+                        if (children[j].innerHTML[0] == "S" && children[j].innerHTML[1] == "S") {
                             // console.log("Duty: "+children[j].innerHTML)
                             duties.push(children[j].innerHTML); //populate the duties array
-
+            
                         }
                     }
                 }
             }
-            
+
         }
 
         dutiesToBeVisited = duties;
-        console.log("This right duties: "+ duties) //display the activating duties for this right
+        console.log("This right duties: " + duties) //display the activating duties for this right
 
         //get corresponding right questionPool
-        for (const ss_name_key of Object.keys(rightQuestionPool)){
-          
-            if(SS_name == ss_name_key){
-               questionPool = Object.entries(rightQuestionPool[ss_name_key])
-            }
-       }
-      
+        for (const ss_name_key of Object.keys(rightQuestionPool)) {
 
-       console.log(questionPool);
-       
-       console.log("displaying duties that need to be visited");
-           
-        
+            if (SS_name == ss_name_key) {
+                questionPool = Object.entries(rightQuestionPool[ss_name_key])
+            }
+        }
+
+
+        console.log("Questions for this right "+questionPool);
+
         $("#duty_list").empty();
-        $("#prompt").text("The following SS need to be visited to get "+SS_name+" right");
+        $("#prompt").text("The following SS need to be visited to get " + SS_name + " right");
 
         duties.forEach(element => {
-            
-            $("#duty_list").append("<li> <a class ='supersit'>" + element +"</a></li>")
+
+            $("#duty_list").append("<li> <a class ='supersit'>" + element + "</a></li>")
 
         });
 
         //When user click next, recursively visit every duty or rights. At the end, display satisfying question to a user
         $("#nextButtonList").off('click');
-        $("#nextButtonList").click(function (){
+        $("#nextButtonList").click(function () {
 
             $("#nextQuestionButton").off('click');
-            visitDuty(dutiesToBeVisited,dutyIndex);
+            visitDuty(dutiesToBeVisited, dutyIndex);
             $("#nextQuestionButton").off('click');
         });
 
@@ -846,53 +751,313 @@ function SS_handler() {
 
 }
 
+function SS_handler2() {
+
+    //clear box-3, which is the wizard box
+    $("#question").text("")
+    $("#duty_list").empty();
+    //hold the SS_name
+    SS_name = null;
+    //hold the specific questionPool for the given super situation
+    questionPool = [];
+    var arrayIndex = 0; //index to loop through question pool
+
+    //enable tooltip
+    enableTooltip(graph);
 
 
-function visitDuty(_duties,_index) {
+
+
+    if (graph.children().children("title").html() == "G_Duty") {
+
+
+        $("#wizard-box-question").show();
+        $("#wizard-box-list").hide()
+        questionPool = [];
+        console.log("Display duty stuff");
+        //get name of super situation then compare to dutyQuestion array (object) and then display the corresponding question in box 3
+        SS_name = graph.children().children("g#clust1").children("text").html();
+        console.log("duty name: " + SS_name);
+        //TODO save the user answer and color the satisfying box here
+        //Ask assessement question related to SS_duty and save answer
+        //get corresponding duty questionPool
+
+        for (const ss_name_key of Object.keys(dutyQuestionPool)) {
+
+            if (SS_name == ss_name_key) {
+                questionPool = Object.entries(dutyQuestionPool[ss_name_key])
+            }
+        }
+
+        console.log("duty questions:" + questionPool); //display the question pool
+
+        //Display first question in list 
+        $("#question").text(questionPool[arrayIndex][0]);
+
+        console.log("Question id: " + questionPool[arrayIndex][1])
+
+        //save corresponding polygon in a variable
+        polygon = getPolygon(questionPool[arrayIndex][1]);
+
+        //clicking the next button display the next question
+        $("#nextQuestionButton").off('click');
+        $("#nextQuestionButton").click(function () { //register click event on next button
+
+            //reset dropdown or check box here
+            $("#choice").val("Don't know")
+            if (arrayIndex < (questionPool.length - 1)) {
+                arrayIndex++;
+                $("#question").text(questionPool[arrayIndex][0]);
+                console.log("Question id: " + questionPool[arrayIndex][1])   //questionPool[arrayIndex[1]] is an array create function to color situation
+                //save corresponding polygon in a variable
+                polygon = getPolygon(questionPool[arrayIndex][1]);
+                //colorSituation(questionPool[arrayIndex][1],user_input)
+
+                
+
+            } else {
+                console.log("No more question")
+
+
+                if (dutiesToBeVisited != [] && dutyIndex < (dutiesToBeVisited.length - 1)) {
+                    dutyIndex++;
+                    visitDuty(dutiesToBeVisited, dutyIndex);
+
+                } else {
+
+                    if (dutyIndex < (dutiesToBeVisited.length - 1) && dutiesToBeVisited != []) {
+                        visitDuty(dutiesToBeVisited, dutyIndex)
+                    }
+                    console.log("done traversing")
+
+
+                }
+            }
+
+        });
+        $("#previousQuestionButton").off('click')
+        $("#previousQuestionButton").click(function () { //register click event on previous button
+            //reset dropdown or checkvox here
+            $("#choice").val("Don't know")
+            if (arrayIndex > 0) {
+                arrayIndex--;
+                $("#question").text(questionPool[arrayIndex][0]);
+                console.log("Question id: " + questionPool[arrayIndex][1])   //questionPool[arrayIndex[1]] is an array create function to color situation
+                //save corresponding polygon in a variable
+                polygon = getPolygon(questionPool[arrayIndex][1]);
+            } else {
+                console.log("No previous question");
+
+            }
+        });
+
+
+    } else if (graph.children().children("title").html() == "G_Right") {
+
+        duties = [] //empty duties array
+        // var previousIndex = dutyIndex;
+        // dutyIndex = 0;
+        $("#wizard-box-question").hide();
+        $("#wizard-box-list").show()
+
+        questionPool = [];
+        SS_name = graph.children().children("g#clust1").children("text").html();
+
+        graphObj = graph.children().children();
+        console.log("right name: " + SS_name)
+        console.log("Display right stuff");
+        //populate this array with right already visited.
+        visitedRight[visitedRightIndex] = dutiesToBeVisited.splice(dutyIndex, 1);
+        visitedRightIndex++;
+        console.log(dutiesToBeVisited);
+
+        //start by node with index 4 to skip unnecessary nodes
+
+        for (var i = 4; i < graphObj.length; i++) {
+            //only visit nodes not edges
+            if (graphObj[i].id.includes('node')) {
+
+                var children = graphObj[i].children;
+                //console.log(graphObj[i])
+
+                //console.log(children);
+
+                //start by index 1 because index 0 is the title of node
+                for (var j = 1; j < children.length; j++) {
+                    if (children[j].nodeName == "text") {
+
+                        if (children[j].innerHTML[0] == "S" && children[j].innerHTML[1] == "S") {
+                            // console.log("Duty: "+children[j].innerHTML)
+
+                            duties.push(children[j].innerHTML); //populate the duties array
+                            /**
+                             * If the element to be added to the dutiesToBeVisited is in visitedRight array then dont add it. Prompt user that this super situation has alreday been visited.
+                             */
+
+                             if ([].concat.apply([],visitedRight).includes(children[j].innerHTML)){
+                                 //Maybe an alert to user to tell this rights have already been visited
+                                 alert(children[j].innerHTML+ " has already been visited. Questions related to this right will not be ask again.");
+
+                                console.log(children[j].innerHTML+ " has already been visited");
+                             } else {
+                                 //?? duties are populated in inverse so they are visited in inverse too. Fix this
+                                dutiesToBeVisited.splice(dutyIndex, 0, children[j].innerHTML); //populate the duties array starting at the position of the previously removed element
+                             }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        console.log("This right duties: " + duties) //display the activating duties for this right
+
+        //get corresponding right questionPool (in case we need to ask those at some point in time)
+        for (const ss_name_key of Object.keys(rightQuestionPool)) {
+
+            if (SS_name == ss_name_key) {
+                questionPool = Object.entries(rightQuestionPool[ss_name_key])
+            }
+        }
+
+        console.log("Questions for this right: " + questionPool);
+
+        $("#duty_list").empty();
+
+        $("#prompt").text("The following SS need to be visited to get " + SS_name + " right");
+
+        duties.forEach(element => {
+
+            $("#duty_list").append("<li> <a class ='supersit'>" + element + "</a></li>")
+
+        });
+
+        //When user click next, recursively visit every duty or rights. At the end, display satisfying question to a user
+        $("#nextButtonList").off('click');
+        $("#nextButtonList").click(function () {
+
+            $("#nextQuestionButton").off('click');
+            if (dutyIndex < (dutiesToBeVisited.length - 1)) {
+                visitDuty(dutiesToBeVisited, dutyIndex);
+
+            }else{
+                //The dutiesToBeVisited array has been looped through. Maybe prompt user to visit other supersituation of interest?
+                console.log("No more duties");
+                
+            }
+            
+            $("#nextQuestionButton").off('click');
+        });
+
+    }
+
+}
+
+function visitDuty(_duties, _index) {
     //duties = [];
     $("#nextQuestionButton").off('click')
     var duty = _duties[_index].slice(3)
 
-    $("."+duty).focus();
-    var index = $("."+duty).attr("class").split(" ")[1];
+    $("." + duty).focus();
+    var index = $("." + duty).attr("class").split(" ")[1];
 
     graphviz
-            .dot(apache2[index])
-            .zoom(false)
-            .render(function (){
-                graph = $("svg")
-                SS_handler()
-            });
-    
-    
-    // if(_index < (_duties.length-1)){
+        .dot(apache2[index])
+        .zoom(false)
+        .render(function () {
 
-    //     _index++;
-    //     visitDuty(_duties,_index);
-    // }        
+            SS_handler2()
+
+        });
 
 }
 
-function colorSituation(_id,user_input) {
-    
-}
-
-
-/* function resizeSVG() {
-    console.log('Resize');
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-    d3.select("#graph").selectWithoutDataPropagation("svg")
-        .transition()
-        .duration(700)
-        .attr("width",width - margin)
-        .attr("height",height - margin);
-};
-d3.select(".box-2").on("resize",resizeSVG);
-d3.select("#box-2").on("click",resetZoom);
+/**
+ * 
+ * @param {*} ___id 
+ * This function color polygon to default yellow and return corresponding polygon
  */
+function getPolygon(__id) {
+    var __polygon = [];
+
+    for(var i = 4; i< graph.children().children().length; i++){
+
+                    
+        if (graph.children().children()[i].id.includes("node") && graph.children().children()[i].children[0].innerHTML == __id) {
+
+             __polygon.push(graph.children().children()[i].children[1]);
+             __polygon[0].setAttribute('fill','#E5E338');
+        
+        }
+    }
+    __polygon.push(__id);
+    return __polygon;
+    
+}
+
+$("#choice").on('change', function () {
+   
+    if ($("#choice option:selected").text() == "Yes") {
+
+        polygon[0].setAttribute('fill','#57BC90'); //set the polygon attribute fill to green
+        console.log(polygon[1][0]);
+        updateJSON(polygon[1][0],"ST");
+        
+    } else if ($("#choice option:selected").text() == "No") {
+
+        polygon[0].setAttribute('fill','#CD5360'); //set the polygon attribute fill to red
+        updateJSON(polygon[1][0],"SF");
+
+    } else if ($("#choice option:selected").text() == "Dont'know"){
+
+        polygon[0].setAttribute('fill','#E5E338'); //set the polygone attribute fill to yellow
+        updateJSON(polygon[1][0],"SU");
+    }
+});
+
+function updateJSON(_id,status) {
+    
+}
+
+function enableTooltip(_graph) {
+
+   
+        
+    
+
+    _graph.mouseover(function(event){
+
+        var situationSVG = null;
+        var _text = "";
+        var lines = [];
+        var id = "";
+        
+        if($(event.target).parent().hasClass("node")){
+            _text = $(event.target).parent().text();
+            lines = _text.split("\n");
+            lines.splice(0,3);
+            _text = lines.join("\n");
+           
+            if(_text != "not\n" && _text != "and\n" && _text != "or\n" ){
+                id = $(event.target).parent()[0].id;
+                console.log(id)
+                
+                situationSVG = $(event.target).parent();
+                console.log(situationSVG);
+                console.log(_text);
+                  
+            }
+
+            
+        }
+
+        
 
 
 
+
+    });
+    
+}
 
 
