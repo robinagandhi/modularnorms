@@ -1,5 +1,11 @@
 from myutils import *
 
+# these DLV rules approximate what the nrtool generates
+# on example yourlicense-test.html (as of 3/27/2018) and using the OWL rules available at that time,
+#   the results diverge given [sf(YPL4a_2), st(YPL4a_1), st(YPL4_3)]:
+#       SWRL: [tol(YPL4a), com(YPL4)]
+#       DLV: [inc(YPL4a), inc(YPL4)]
+
 SSLinks = []
 DutyList = []
 RightList = []
