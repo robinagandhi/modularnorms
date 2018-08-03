@@ -3,7 +3,7 @@ import json
 from pyparsing import *
 
 if len(sys.argv) < 2:
-	print 'Usage: ' + sys.argv[0] + ' <JSON file> [dot|owl|nr]'
+	print 'Usage: ' + sys.argv[0] + ' <JSON file> [dot|owl|nr|dlv]'
 	sys.exit()
 
 JSONFileName = sys.argv[1]
@@ -11,6 +11,8 @@ if len(sys.argv) > 2 and sys.argv[2] == 'owl':
 	from genowlfunc import *
 elif len(sys.argv) > 2 and sys.argv[2] == 'nr':	
 	from gennr import *
+elif len(sys.argv) > 2 and sys.argv[2] == 'dlv':	
+	from gendlv import *
 else:
 	from gendot import *
 
