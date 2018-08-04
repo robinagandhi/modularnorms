@@ -1,10 +1,10 @@
 from myutils import *
 
-# these DLV rules approximate what the nrtool generates
+# these DLV rules approximate the behavior of the OWL rules as of 3/27/2018
 # on example yourlicense-test.html (as of 3/27/2018) and using the OWL rules available at that time,
 #   the results diverge given [sf(YPL4a_2), st(YPL4a_1), st(YPL4_3)]:
 #       SWRL: [tol(YPL4a), com(YPL4)]
-#       DLV: [inc(YPL4a), inc(YPL4)]
+#       DLV: [tol(YPL4a), inc(YPL4)]
 
 SSLinks = []
 DutyList = []
@@ -90,7 +90,9 @@ def printRight(id):
 	print '% Compliance rules for right', id
 	print 'com(', id, ') :- at(', id, '), st(', id, ').'
 	print 'tol(', id, ') :- at(', id, '), not st(', id, ').'
-	print 'tol(', id, ') :- af(', id, ').'
+	# change AF -> Tol to AF -> Inc
+	print 'inc(', id, ') :- af(', id, ').'
+	#print 'tol(', id, ') :- af(', id, ').'
 	print 'inc(', id, ') :- au(', id, ').'
 	print 'tol(', id, ') :- com(', id, ').'
 	print 'acc(', id, ') :- tol(', id, ').'
@@ -127,23 +129,35 @@ def printAndSatisfy(id, elems):
 	print '.'
 	print 'st_rel(', id, ', rsat) :- stx(', id, ').'
 	for elem in elems:
-		print 'sux(', id, ') :- not st(', elem, ').'
+		# change behavior from SF and * -> SU to SF and * -> SF 
+		print 'sfx(', id, ') :- sf(', elem, ').'
+		print 'sf_rel(', id, ', rsat) :- sfx(', id, ').'
+		print 'sux(', id, ') :- not st(', elem, '), not sf(', elem, ').'
+		# print 'sux(', id, ') :- not st(', elem, ').'
 		print 'su_rel(', id, ', rsat) :- sux(', id, ').'
 	print
 	
 
 def printOrSatisfy(id, elems):
 	print '% or-satisfy(', id, ',', elems, ').'
-	print 'sux(', id, ') :- ', 
+	# change behavior from SF or SF -> SU to SF or SF -> SF 
+	print 'sfx(', id, ') :- ', 
+	#print 'sux(', id, ') :- ', 
 	for ndx, elem in enumerate(elems):
 		if ndx > 0:
 			print ', ', 
-		print 'not st(', elem, ')', 
+		print 'sf(', elem, ')', 
+		#print 'not st(', elem, ')', 
 	print '.'
-	print 'su_rel(', id, ', rsat) :- sux(', id, ').'
+	# change behavior from SF or SF -> SU to SF or SF -> SF 
+	print 'sf_rel(', id, ', rsat) :- sfx(', id, ').'
+	#print 'su_rel(', id, ', rsat) :- sux(', id, ').'
 	for elem in elems:
 		print 'stx(', id, ') :- st(', elem, ').'
 		print 'st_rel(', id, ', rsat) :- stx(', id, ').'
+		# change behavior from SF or SF -> SU to SF or SF -> SF 
+		print 'sux(', id, ') :- not st(', elem, '), not sf(', elem, ').'
+		print 'su_rel(', id, ', rsat) :- sux(', id, ').'
 	print
 
 def printAndActivate(id, elems):
@@ -156,7 +170,11 @@ def printAndActivate(id, elems):
 	print ', not st(', id+'s', ').'
 	print 'at_rel(', id, ', ract) :- atx(', id, ').'
 	for elem in elems:
-		print 'aux(', id, ') :- not st(', elem, '), not st(', id+'s', ').'
+		# change behavior from AF and * -> AU to AF and * -> AF 
+		print 'afx(', id, ') :- sf(', elem, ').'
+		print 'af_rel(', id, ', rsat) :- afx(', id, ').'
+		print 'aux(', id, ') :- not st(', elem, '), not sf(', elem, '), not st(', id+'s', ').'
+		# print 'aux(', id, ') :- not st(', elem, '), not st(', id+'s', ').'
 		print 'au_rel(', id, ', ract) :- aux(', id, ').'
 	print
 
