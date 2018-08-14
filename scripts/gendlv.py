@@ -266,7 +266,9 @@ def genepilogs():
 		id, type = ruleID.split(':')
 		id = id.lower()
 		if len(Rules[ruleID]) == 0: 
-			print '% ## empty rule:',
+			print '% ## empty rule:', type, id
+			print 
+			continue
 		Rules[ruleID] = [sid.lower() for sid in Rules[ruleID]]
 		rulebody = ' '.join(Rules[ruleID]) + ' ' + id
 		if type == 'or':
@@ -332,7 +334,7 @@ def drawSS_start(id):
 	global SituationList
 	ssname = 'SS_' + id
 	SituationList.append(ssname)
-	createRule(ssname + ':satisfies')
+	# createRule(ssname + ':satisfies') # not needed; no situation satisfies a supersituation, follow 'contains' rules
 	createRule(ssname + ':contains')
 	updateRule(ssname + ':contains', id)
 
