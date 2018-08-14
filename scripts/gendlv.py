@@ -1,10 +1,29 @@
 from myutils import *
 
-# these DLV rules approximate the behavior of the OWL rules as of 3/27/2018
+# these DLV rules approximate the behavior of the OWL rules as of 8/6/2018
+#
+# OWL rule changes as of 8/6/2018:
+# Rights:
+# AF -> Nex (was AF -> Inc)
+# AT -> Exr (new rule - replaces the next 3 rules below)
+#     AT and SF -> Tol (deleted rule)
+#     AT and SU -> Tol (deleted rule)
+#     AT and ST ->  Com (deleted rule)
+# Exr propagates as ST (new rule)
+# Nex propagates as SF (new rule)
+#
+# Duties:
+# AF -> Com (was AF -> Tol)
+# AT and SU -> Vio (was AT and SU -> Inc)
+#
+# All Norms:
+# Tol propagates as ST (deleted rule)
+# AU -> Inc (new rule - merged from separate but same rules for Duty and Right)
+# 
 # on example yourlicense-test.html (as of 3/27/2018) and using the OWL rules available at that time,
-#   the results diverge given [sf(YPL4a_2), st(YPL4a_1), st(YPL4_3)]:
-#       SWRL: [tol(YPL4a), com(YPL4)]
-#       DLV: [tol(YPL4a), inc(YPL4)]
+#   the results converge now given [sf(YPL4a_2), st(YPL4a_1), st(YPL4_3)]:
+#       SWRL: [com(YPL4a), exr(YPL4)]
+#       DLV: [com(YPL4a), exr(YPL4)]
 
 SSLinks = []
 DutyList = []
@@ -77,7 +96,9 @@ def printDuty(id):
 	print '% Compliance rules for duty', id
 	print 'com(', id, ') :- at(', id, '), st(', id, ').'
 	print 'vio(', id, ') :- at(', id, '), not st(', id, ').'
-	print 'tol(', id, ') :- af(', id, ').'
+	# change AF -> Tol to AF -> Com
+	print 'com(', id, ') :- af(', id, ').'
+	#print 'tol(', id, ') :- af(', id, ').'
 	print 'inc(', id, ') :- au(', id, ').'
 	print 'tol(', id, ') :- com(', id, ').'
 	print 'conf(', id, ') :- atx(', id, '), stx(', id, '), not stx(', id, ').'
@@ -88,10 +109,13 @@ def printDuty(id):
 def printRight(id):
 	printCommonNorm(id, 'right')
 	print '% Compliance rules for right', id
-	print 'com(', id, ') :- at(', id, '), st(', id, ').'
-	print 'tol(', id, ') :- at(', id, '), not st(', id, ').'
-	# change AF -> Tol to AF -> Inc
-	print 'inc(', id, ') :- af(', id, ').'
+	# change (AT and ST -> Com, AT and not ST -> Tol) to AT -> Exr
+	print 'exr(', id, ') :- at(', id, ').'
+	#print 'com(', id, ') :- at(', id, '), st(', id, ').'
+	#print 'tol(', id, ') :- at(', id, '), not st(', id, ').'
+	# change AF -> Tol to AF -> Inc to AF -> Nex
+	print 'nex(', id, ') :- af(', id, ').' 
+	#print 'inc(', id, ') :- af(', id, ').'
 	#print 'tol(', id, ') :- af(', id, ').'
 	print 'inc(', id, ') :- au(', id, ').'
 	print 'tol(', id, ') :- com(', id, ').'
@@ -207,6 +231,20 @@ def printBlock(id, elems):
 	print
 
 
+def printContains(id, elems):
+	global DutyList
+	for elem in elems:
+		print '% propagate ', elem, ' to ', id, '.'
+		if elem in DutyList:
+			print 'st(', id, ') :- com(', elem, ').'
+			print 'sf(', id, ') :- vio(', elem, ').'
+		else:
+			print 'st(', id, ') :- exr(', elem, ').'
+			print 'sf(', id, ') :- nex(', elem, ').'
+		print 'su(', id, ') :- inc(', elem, ').'
+	print
+	
+	
 def genepilogs():
 	global Rules, DutyList, RightList, SituationList, STValues, SFValues, SUValues
 	
@@ -250,6 +288,9 @@ def genepilogs():
 		elif type == 'activates':
 			print '%activate', rulebody
 			printAndActivate(id, Rules[ruleID])
+		elif type == 'contains':
+			print '%contains', rulebody
+			printContains(id, Rules[ruleID])
 		else:
 			print '% unknown rule:', type, rulebody
 
@@ -292,6 +333,8 @@ def drawSS_start(id):
 	ssname = 'SS_' + id
 	SituationList.append(ssname)
 	createRule(ssname + ':satisfies')
+	createRule(ssname + ':contains')
+	updateRule(ssname + ':contains', id)
 
 
 def drawSS_end():
@@ -343,12 +386,12 @@ def drawSituation(slabel, id, type, suggestsid=''):
 	SituationList.append(sid)
 	updateRule(id + ':' + type, sid)
 	
-	# connect to supersituation if id is a norm (type in 'activates' or 'satisfies')
-	if type == 'activates':
-		ssname = 'SS_' + id
-		updateRule(ssname + ':satisfies', sid)
-	elif type == 'satisfies' and id in DutyList:
-		ssname = 'SS_' + id
-		updateRule(ssname + ':satisfies', sid)
+	# # connect to supersituation if id is a norm (type in 'activates' or 'satisfies')
+	# if type == 'activates':
+		# ssname = 'SS_' + id
+		# updateRule(ssname + ':satisfies', sid)
+	# elif type == 'satisfies' and id in DutyList:
+		# ssname = 'SS_' + id
+		# updateRule(ssname + ':satisfies', sid)
 	return sid
 
