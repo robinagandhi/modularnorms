@@ -294,6 +294,8 @@ public class NormServer {
 		DatatypeProperty Tol = model.getDatatypeProperty(ont + "Tol");
 		DatatypeProperty Vio = model.getDatatypeProperty(ont + "Vio");
 		DatatypeProperty Inc = model.getDatatypeProperty(ont + "Inc");
+		DatatypeProperty Exr = model.getDatatypeProperty(ont + "Exr");
+		DatatypeProperty Nex = model.getDatatypeProperty(ont + "Nex");
 		instanceList = Norm.listInstances();
 		while( instanceList.hasNext() ) {
 			Individual iNorm = (Individual) instanceList.next();
@@ -306,6 +308,10 @@ public class NormServer {
 				compval = "VIO";
 			} else if (iNorm.getPropertyValue(Inc) != null && ((Literal) iNorm.getPropertyValue(Inc)).getBoolean()) {
 				compval = "INC";
+			} else if (iNorm.getPropertyValue(Exr) != null && ((Literal) iNorm.getPropertyValue(Exr)).getBoolean()) {
+				compval = "EXR";
+			} else if (iNorm.getPropertyValue(Nex) != null && ((Literal) iNorm.getPropertyValue(Nex)).getBoolean()) {
+				compval = "NEX";
 			}
 			System.out.println(iNorm.getLocalName() + " = " + compval);
 
