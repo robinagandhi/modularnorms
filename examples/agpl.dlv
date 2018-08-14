@@ -1,0 +1,1194 @@
+% AGPL2 (Right) 2. You may modify your copy or copies of the Program or any portion of it, thus forming a work based on the Program, and copy and distribute such modifications or work under the terms of Section 1 above, provided that you also meet all of these conditions.
+% AGPL2_1 [you modified] your copy or copies of the Program or any portion of it, ... and [copied and distributed] such modifications or work
+% AGPL2_2 and
+% AGPL2_3 and
+% AGPL2_4 $AGPL1a
+% AGPL2_5 and
+% AGPL2_6 $AGPL1b
+% AGPL2_7 $AGPL1c
+% AGPL2_8 and
+% AGPL2_9 $AGPL2a
+% AGPL2_10 and
+% AGPL2_11 $AGPL2b
+% AGPL2_12 and
+% AGPL2_13 $AGPL2c
+% AGPL2_14 $AGPL2d
+% AGPL2a (Duty) 2.a) You must cause the modified files to carry prominent notices stating that you changed the files and the date of any change.
+% AGPL2a_15 [you caused] the modified files to carry prominent notices stating that you changed the files and the date of any change
+% AGPL2a_16 [you intend to modify the Program, and copy and distribute such modifications]
+% AGPL2b (Duty) 2.b) You must cause any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License.
+% AGPL2b_17 [you caused] any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License
+% AGPL2b_18 [you intend to modify the Program, and copy and distribute such modifications]
+% AGPL2c (Duty) 2.c) If the modified program normally reads commands interactively when run, you must cause it, when started running for such interactive use in the most ordinary way, to print or display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty) and that users may redistribute the program under these conditions, and telling the user how to view a copy of this License. (Exception: if the Program itself is interactive but does not normally print such an announcement, your work based on the Program is not required to print an announcement.)
+% AGPL2c_19 [you caused the modified program] ... to print or display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty) and that users may redistribute the program under these conditions, and telling the user how to view a copy of this License
+% AGPL2c_20 and
+% AGPL2c_21 [you intend to modify the Program, and copy and distribute such modifications]
+% AGPL2c_22 or
+% AGPL2c_23 the modified program normally reads commands interactively when run
+% AGPL2c_24 not
+% AGPL2c_25 [original] Program itself is interactive but does not normally print such an announcement
+% AGPL2d (Duty) 2.d) If the Program as you received it is intended to interact with users through a computer network and if, in the version you received, any user interacting with the Program was given the opportunity to request transmission to that user of the Program's complete source code, you must not remove that facility from your modified version of the Program or work based on the Program, and must offer an equivalent opportunity for all users interacting with your Program through a computer network to request immediate transmission by HTTP of the complete source code of your modified version or other derivative work.
+% AGPL2d_26 and
+% AGPL2d_27 not
+% AGPL2d_28 [you removed] that facility [to request transmission of source code] from your modified version of the Program or work based on the Program
+% AGPL2d_29 [you offered] an equivalent opportunity for all users interacting with your Program through a computer network to request immediate transmission by HTTP of the complete source code of your modified version or other derivative work
+% AGPL2d_30 and
+% AGPL2d_31 [you intend to modify the Program, and copy and distribute such modifications]
+% AGPL2d_32 and
+% AGPL2d_33 the [original] Program as you received it is intended to interact with users through a computer network
+% AGPL2d_34 in the version you received, any user interacting with the [original] Program was given the opportunity to request transmission to that user of the Program's complete source code
+% AGPL1 (Right) 1. You may copy and distribute verbatim copies of the [original] Program's source code as you receive it, in any medium, provided that you conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty; keep intact all the notices that refer to this License and to the absence of any warranty; and give any other recipients of the Program a copy of this License along with the Program.
+% AGPL1_35 [you copied and distributed] verbatim copies of the [original] Program's source code
+% AGPL1_36 and
+% AGPL1_37 $AGPL1a
+% AGPL1_38 and
+% AGPL1_39 $AGPL1b
+% AGPL1_40 $AGPL1c
+% AGPL1a (Duty) you [must] conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty
+% AGPL1a_41 [you conspicuously and appropriately published] on each copy an appropriate copyright notice and disclaimer of warranty
+% AGPL1a_42 or
+% AGPL1a_43 [you intend to copy and distribute verbatim copies of the original Program's source code]
+% AGPL1a_44 [you intend to modify the Program, and copy and distribute such modifications]
+% AGPL1b (Duty) [you must] keep intact all the notices that refer to this License and to the absence of any warranty
+% AGPL1b_45 [you kept intact] all the notices that refer to this License and to the absence of any warranty
+% AGPL1b_46 or
+% AGPL1b_47 [you intend to copy and distribute verbatim copies of the original Program's source code]
+% AGPL1b_48 [you intend to modify the Program, and copy and distribute such modifications]
+% AGPL1c (Duty) [you must] give any other recipients of the Program a copy of this License along with the Program
+% AGPL1c_49 [you gave] any other recipients of the Program a copy of this License along with the Program
+% AGPL1c_50 or
+% AGPL1c_51 [you intend to copy and distribute verbatim copies of the original Program's source code]
+% AGPL1c_52 [you intend to modify the Program, and copy and distribute such modifications]
+
+% duty agpl2a agpl2b agpl2c agpl2d agpl1a agpl1b agpl1c
+% Applicability and satisfiability rules for norm agpl2a
+st( agpl2a ) :- stx( agpl2a ).
+su( agpl2a ) :- sux( agpl2a ), not stx( agpl2a ).
+sf( agpl2a ) :- sfx( agpl2a ), not sux( agpl2a ), not stx( agpl2a ).
+at( agpl2a ) :- atx( agpl2a ).
+au( agpl2a ) :- aux( agpl2a ), not atx( agpl2a ).
+af( agpl2a ) :- afx( agpl2a ), not aux( agpl2a ), not atx( agpl2a ).
+
+% Compliance rules for duty agpl2a
+com( agpl2a ) :- at( agpl2a ), st( agpl2a ).
+vio( agpl2a ) :- at( agpl2a ), not st( agpl2a ).
+com( agpl2a ) :- af( agpl2a ).
+inc( agpl2a ) :- au( agpl2a ).
+tol( agpl2a ) :- com( agpl2a ).
+conf( agpl2a ) :- atx( agpl2a ), stx( agpl2a ), not stx( agpl2a ).
+acc( agpl2a ) :- tol( agpl2a ).
+acc( agpl2a ) :- vio( agpl2a ).
+
+% Applicability and satisfiability rules for norm agpl2b
+st( agpl2b ) :- stx( agpl2b ).
+su( agpl2b ) :- sux( agpl2b ), not stx( agpl2b ).
+sf( agpl2b ) :- sfx( agpl2b ), not sux( agpl2b ), not stx( agpl2b ).
+at( agpl2b ) :- atx( agpl2b ).
+au( agpl2b ) :- aux( agpl2b ), not atx( agpl2b ).
+af( agpl2b ) :- afx( agpl2b ), not aux( agpl2b ), not atx( agpl2b ).
+
+% Compliance rules for duty agpl2b
+com( agpl2b ) :- at( agpl2b ), st( agpl2b ).
+vio( agpl2b ) :- at( agpl2b ), not st( agpl2b ).
+com( agpl2b ) :- af( agpl2b ).
+inc( agpl2b ) :- au( agpl2b ).
+tol( agpl2b ) :- com( agpl2b ).
+conf( agpl2b ) :- atx( agpl2b ), stx( agpl2b ), not stx( agpl2b ).
+acc( agpl2b ) :- tol( agpl2b ).
+acc( agpl2b ) :- vio( agpl2b ).
+
+% Applicability and satisfiability rules for norm agpl2c
+st( agpl2c ) :- stx( agpl2c ).
+su( agpl2c ) :- sux( agpl2c ), not stx( agpl2c ).
+sf( agpl2c ) :- sfx( agpl2c ), not sux( agpl2c ), not stx( agpl2c ).
+at( agpl2c ) :- atx( agpl2c ).
+au( agpl2c ) :- aux( agpl2c ), not atx( agpl2c ).
+af( agpl2c ) :- afx( agpl2c ), not aux( agpl2c ), not atx( agpl2c ).
+
+% Compliance rules for duty agpl2c
+com( agpl2c ) :- at( agpl2c ), st( agpl2c ).
+vio( agpl2c ) :- at( agpl2c ), not st( agpl2c ).
+com( agpl2c ) :- af( agpl2c ).
+inc( agpl2c ) :- au( agpl2c ).
+tol( agpl2c ) :- com( agpl2c ).
+conf( agpl2c ) :- atx( agpl2c ), stx( agpl2c ), not stx( agpl2c ).
+acc( agpl2c ) :- tol( agpl2c ).
+acc( agpl2c ) :- vio( agpl2c ).
+
+% Applicability and satisfiability rules for norm agpl2d
+st( agpl2d ) :- stx( agpl2d ).
+su( agpl2d ) :- sux( agpl2d ), not stx( agpl2d ).
+sf( agpl2d ) :- sfx( agpl2d ), not sux( agpl2d ), not stx( agpl2d ).
+at( agpl2d ) :- atx( agpl2d ).
+au( agpl2d ) :- aux( agpl2d ), not atx( agpl2d ).
+af( agpl2d ) :- afx( agpl2d ), not aux( agpl2d ), not atx( agpl2d ).
+
+% Compliance rules for duty agpl2d
+com( agpl2d ) :- at( agpl2d ), st( agpl2d ).
+vio( agpl2d ) :- at( agpl2d ), not st( agpl2d ).
+com( agpl2d ) :- af( agpl2d ).
+inc( agpl2d ) :- au( agpl2d ).
+tol( agpl2d ) :- com( agpl2d ).
+conf( agpl2d ) :- atx( agpl2d ), stx( agpl2d ), not stx( agpl2d ).
+acc( agpl2d ) :- tol( agpl2d ).
+acc( agpl2d ) :- vio( agpl2d ).
+
+% Applicability and satisfiability rules for norm agpl1a
+st( agpl1a ) :- stx( agpl1a ).
+su( agpl1a ) :- sux( agpl1a ), not stx( agpl1a ).
+sf( agpl1a ) :- sfx( agpl1a ), not sux( agpl1a ), not stx( agpl1a ).
+at( agpl1a ) :- atx( agpl1a ).
+au( agpl1a ) :- aux( agpl1a ), not atx( agpl1a ).
+af( agpl1a ) :- afx( agpl1a ), not aux( agpl1a ), not atx( agpl1a ).
+
+% Compliance rules for duty agpl1a
+com( agpl1a ) :- at( agpl1a ), st( agpl1a ).
+vio( agpl1a ) :- at( agpl1a ), not st( agpl1a ).
+com( agpl1a ) :- af( agpl1a ).
+inc( agpl1a ) :- au( agpl1a ).
+tol( agpl1a ) :- com( agpl1a ).
+conf( agpl1a ) :- atx( agpl1a ), stx( agpl1a ), not stx( agpl1a ).
+acc( agpl1a ) :- tol( agpl1a ).
+acc( agpl1a ) :- vio( agpl1a ).
+
+% Applicability and satisfiability rules for norm agpl1b
+st( agpl1b ) :- stx( agpl1b ).
+su( agpl1b ) :- sux( agpl1b ), not stx( agpl1b ).
+sf( agpl1b ) :- sfx( agpl1b ), not sux( agpl1b ), not stx( agpl1b ).
+at( agpl1b ) :- atx( agpl1b ).
+au( agpl1b ) :- aux( agpl1b ), not atx( agpl1b ).
+af( agpl1b ) :- afx( agpl1b ), not aux( agpl1b ), not atx( agpl1b ).
+
+% Compliance rules for duty agpl1b
+com( agpl1b ) :- at( agpl1b ), st( agpl1b ).
+vio( agpl1b ) :- at( agpl1b ), not st( agpl1b ).
+com( agpl1b ) :- af( agpl1b ).
+inc( agpl1b ) :- au( agpl1b ).
+tol( agpl1b ) :- com( agpl1b ).
+conf( agpl1b ) :- atx( agpl1b ), stx( agpl1b ), not stx( agpl1b ).
+acc( agpl1b ) :- tol( agpl1b ).
+acc( agpl1b ) :- vio( agpl1b ).
+
+% Applicability and satisfiability rules for norm agpl1c
+st( agpl1c ) :- stx( agpl1c ).
+su( agpl1c ) :- sux( agpl1c ), not stx( agpl1c ).
+sf( agpl1c ) :- sfx( agpl1c ), not sux( agpl1c ), not stx( agpl1c ).
+at( agpl1c ) :- atx( agpl1c ).
+au( agpl1c ) :- aux( agpl1c ), not atx( agpl1c ).
+af( agpl1c ) :- afx( agpl1c ), not aux( agpl1c ), not atx( agpl1c ).
+
+% Compliance rules for duty agpl1c
+com( agpl1c ) :- at( agpl1c ), st( agpl1c ).
+vio( agpl1c ) :- at( agpl1c ), not st( agpl1c ).
+com( agpl1c ) :- af( agpl1c ).
+inc( agpl1c ) :- au( agpl1c ).
+tol( agpl1c ) :- com( agpl1c ).
+conf( agpl1c ) :- atx( agpl1c ), stx( agpl1c ), not stx( agpl1c ).
+acc( agpl1c ) :- tol( agpl1c ).
+acc( agpl1c ) :- vio( agpl1c ).
+
+% right agpl2 agpl1
+% Applicability and satisfiability rules for norm agpl2
+st( agpl2 ) :- stx( agpl2 ).
+su( agpl2 ) :- sux( agpl2 ), not stx( agpl2 ).
+sf( agpl2 ) :- sfx( agpl2 ), not sux( agpl2 ), not stx( agpl2 ).
+at( agpl2 ) :- atx( agpl2 ).
+au( agpl2 ) :- aux( agpl2 ), not atx( agpl2 ).
+af( agpl2 ) :- afx( agpl2 ), not aux( agpl2 ), not atx( agpl2 ).
+
+% Compliance rules for right agpl2
+exr( agpl2 ) :- at( agpl2 ).
+nex( agpl2 ) :- af( agpl2 ).
+inc( agpl2 ) :- au( agpl2 ).
+tol( agpl2 ) :- com( agpl2 ).
+acc( agpl2 ) :- tol( agpl2 ).
+acc( agpl2 ) :- vio( agpl2 ).
+
+% Applicability and satisfiability rules for norm agpl1
+st( agpl1 ) :- stx( agpl1 ).
+su( agpl1 ) :- sux( agpl1 ), not stx( agpl1 ).
+sf( agpl1 ) :- sfx( agpl1 ), not sux( agpl1 ), not stx( agpl1 ).
+at( agpl1 ) :- atx( agpl1 ).
+au( agpl1 ) :- aux( agpl1 ), not atx( agpl1 ).
+af( agpl1 ) :- afx( agpl1 ), not aux( agpl1 ), not atx( agpl1 ).
+
+% Compliance rules for right agpl1
+exr( agpl1 ) :- at( agpl1 ).
+nex( agpl1 ) :- af( agpl1 ).
+inc( agpl1 ) :- au( agpl1 ).
+tol( agpl1 ) :- com( agpl1 ).
+acc( agpl1 ) :- tol( agpl1 ).
+acc( agpl1 ) :- vio( agpl1 ).
+
+% situation ss_agpl2 agpl2_1 agpl2_2 agpl2_3 agpl2_4 agpl2_5 agpl2_6 agpl2_7 agpl2_8 agpl2_9 agpl2_10 agpl2_11 agpl2_12 agpl2_13 agpl2_14 ss_agpl2a agpl2a_15 agpl2a_16 ss_agpl2b agpl2b_17 agpl2b_18 ss_agpl2c agpl2c_19 agpl2c_20 agpl2c_21 agpl2c_22 agpl2c_23 agpl2c_24 agpl2c_25 ss_agpl2d agpl2d_26 agpl2d_27 agpl2d_28 agpl2d_29 agpl2d_30 agpl2d_31 agpl2d_32 agpl2d_33 agpl2d_34 ss_agpl1 agpl1_35 agpl1_36 agpl1_37 agpl1_38 agpl1_39 agpl1_40 ss_agpl1a agpl1a_41 agpl1a_42 agpl1a_43 agpl1a_44 ss_agpl1b agpl1b_45 agpl1b_46 agpl1b_47 agpl1b_48 ss_agpl1c agpl1c_49 agpl1c_50 agpl1c_51 agpl1c_52
+% Satisfiability rules for situation ss_agpl2
+st( ss_agpl2 ) :- stx( ss_agpl2 ).
+su( ss_agpl2 ) :- sux( ss_agpl2 ), not stx( ss_agpl2 ).
+sf( ss_agpl2 ) :- sfx( ss_agpl2 ), not sux( ss_agpl2 ), not stx( ss_agpl2 ).
+
+% Satisfiability rules for situation agpl2_1
+st( agpl2_1 ) :- stx( agpl2_1 ).
+su( agpl2_1 ) :- sux( agpl2_1 ), not stx( agpl2_1 ).
+sf( agpl2_1 ) :- sfx( agpl2_1 ), not sux( agpl2_1 ), not stx( agpl2_1 ).
+
+% Satisfiability rules for situation agpl2_2
+st( agpl2_2 ) :- stx( agpl2_2 ).
+su( agpl2_2 ) :- sux( agpl2_2 ), not stx( agpl2_2 ).
+sf( agpl2_2 ) :- sfx( agpl2_2 ), not sux( agpl2_2 ), not stx( agpl2_2 ).
+
+% Satisfiability rules for situation agpl2_3
+st( agpl2_3 ) :- stx( agpl2_3 ).
+su( agpl2_3 ) :- sux( agpl2_3 ), not stx( agpl2_3 ).
+sf( agpl2_3 ) :- sfx( agpl2_3 ), not sux( agpl2_3 ), not stx( agpl2_3 ).
+
+% Satisfiability rules for situation agpl2_4
+st( agpl2_4 ) :- stx( agpl2_4 ).
+su( agpl2_4 ) :- sux( agpl2_4 ), not stx( agpl2_4 ).
+sf( agpl2_4 ) :- sfx( agpl2_4 ), not sux( agpl2_4 ), not stx( agpl2_4 ).
+
+% Satisfiability rules for situation agpl2_5
+st( agpl2_5 ) :- stx( agpl2_5 ).
+su( agpl2_5 ) :- sux( agpl2_5 ), not stx( agpl2_5 ).
+sf( agpl2_5 ) :- sfx( agpl2_5 ), not sux( agpl2_5 ), not stx( agpl2_5 ).
+
+% Satisfiability rules for situation agpl2_6
+st( agpl2_6 ) :- stx( agpl2_6 ).
+su( agpl2_6 ) :- sux( agpl2_6 ), not stx( agpl2_6 ).
+sf( agpl2_6 ) :- sfx( agpl2_6 ), not sux( agpl2_6 ), not stx( agpl2_6 ).
+
+% Satisfiability rules for situation agpl2_7
+st( agpl2_7 ) :- stx( agpl2_7 ).
+su( agpl2_7 ) :- sux( agpl2_7 ), not stx( agpl2_7 ).
+sf( agpl2_7 ) :- sfx( agpl2_7 ), not sux( agpl2_7 ), not stx( agpl2_7 ).
+
+% Satisfiability rules for situation agpl2_8
+st( agpl2_8 ) :- stx( agpl2_8 ).
+su( agpl2_8 ) :- sux( agpl2_8 ), not stx( agpl2_8 ).
+sf( agpl2_8 ) :- sfx( agpl2_8 ), not sux( agpl2_8 ), not stx( agpl2_8 ).
+
+% Satisfiability rules for situation agpl2_9
+st( agpl2_9 ) :- stx( agpl2_9 ).
+su( agpl2_9 ) :- sux( agpl2_9 ), not stx( agpl2_9 ).
+sf( agpl2_9 ) :- sfx( agpl2_9 ), not sux( agpl2_9 ), not stx( agpl2_9 ).
+
+% Satisfiability rules for situation agpl2_10
+st( agpl2_10 ) :- stx( agpl2_10 ).
+su( agpl2_10 ) :- sux( agpl2_10 ), not stx( agpl2_10 ).
+sf( agpl2_10 ) :- sfx( agpl2_10 ), not sux( agpl2_10 ), not stx( agpl2_10 ).
+
+% Satisfiability rules for situation agpl2_11
+st( agpl2_11 ) :- stx( agpl2_11 ).
+su( agpl2_11 ) :- sux( agpl2_11 ), not stx( agpl2_11 ).
+sf( agpl2_11 ) :- sfx( agpl2_11 ), not sux( agpl2_11 ), not stx( agpl2_11 ).
+
+% Satisfiability rules for situation agpl2_12
+st( agpl2_12 ) :- stx( agpl2_12 ).
+su( agpl2_12 ) :- sux( agpl2_12 ), not stx( agpl2_12 ).
+sf( agpl2_12 ) :- sfx( agpl2_12 ), not sux( agpl2_12 ), not stx( agpl2_12 ).
+
+% Satisfiability rules for situation agpl2_13
+st( agpl2_13 ) :- stx( agpl2_13 ).
+su( agpl2_13 ) :- sux( agpl2_13 ), not stx( agpl2_13 ).
+sf( agpl2_13 ) :- sfx( agpl2_13 ), not sux( agpl2_13 ), not stx( agpl2_13 ).
+
+% Satisfiability rules for situation agpl2_14
+st( agpl2_14 ) :- stx( agpl2_14 ).
+su( agpl2_14 ) :- sux( agpl2_14 ), not stx( agpl2_14 ).
+sf( agpl2_14 ) :- sfx( agpl2_14 ), not sux( agpl2_14 ), not stx( agpl2_14 ).
+
+% Satisfiability rules for situation ss_agpl2a
+st( ss_agpl2a ) :- stx( ss_agpl2a ).
+su( ss_agpl2a ) :- sux( ss_agpl2a ), not stx( ss_agpl2a ).
+sf( ss_agpl2a ) :- sfx( ss_agpl2a ), not sux( ss_agpl2a ), not stx( ss_agpl2a ).
+
+% Satisfiability rules for situation agpl2a_15
+st( agpl2a_15 ) :- stx( agpl2a_15 ).
+su( agpl2a_15 ) :- sux( agpl2a_15 ), not stx( agpl2a_15 ).
+sf( agpl2a_15 ) :- sfx( agpl2a_15 ), not sux( agpl2a_15 ), not stx( agpl2a_15 ).
+
+% Satisfiability rules for situation agpl2a_16
+st( agpl2a_16 ) :- stx( agpl2a_16 ).
+su( agpl2a_16 ) :- sux( agpl2a_16 ), not stx( agpl2a_16 ).
+sf( agpl2a_16 ) :- sfx( agpl2a_16 ), not sux( agpl2a_16 ), not stx( agpl2a_16 ).
+
+% Satisfiability rules for situation ss_agpl2b
+st( ss_agpl2b ) :- stx( ss_agpl2b ).
+su( ss_agpl2b ) :- sux( ss_agpl2b ), not stx( ss_agpl2b ).
+sf( ss_agpl2b ) :- sfx( ss_agpl2b ), not sux( ss_agpl2b ), not stx( ss_agpl2b ).
+
+% Satisfiability rules for situation agpl2b_17
+st( agpl2b_17 ) :- stx( agpl2b_17 ).
+su( agpl2b_17 ) :- sux( agpl2b_17 ), not stx( agpl2b_17 ).
+sf( agpl2b_17 ) :- sfx( agpl2b_17 ), not sux( agpl2b_17 ), not stx( agpl2b_17 ).
+
+% Satisfiability rules for situation agpl2b_18
+st( agpl2b_18 ) :- stx( agpl2b_18 ).
+su( agpl2b_18 ) :- sux( agpl2b_18 ), not stx( agpl2b_18 ).
+sf( agpl2b_18 ) :- sfx( agpl2b_18 ), not sux( agpl2b_18 ), not stx( agpl2b_18 ).
+
+% Satisfiability rules for situation ss_agpl2c
+st( ss_agpl2c ) :- stx( ss_agpl2c ).
+su( ss_agpl2c ) :- sux( ss_agpl2c ), not stx( ss_agpl2c ).
+sf( ss_agpl2c ) :- sfx( ss_agpl2c ), not sux( ss_agpl2c ), not stx( ss_agpl2c ).
+
+% Satisfiability rules for situation agpl2c_19
+st( agpl2c_19 ) :- stx( agpl2c_19 ).
+su( agpl2c_19 ) :- sux( agpl2c_19 ), not stx( agpl2c_19 ).
+sf( agpl2c_19 ) :- sfx( agpl2c_19 ), not sux( agpl2c_19 ), not stx( agpl2c_19 ).
+
+% Satisfiability rules for situation agpl2c_20
+st( agpl2c_20 ) :- stx( agpl2c_20 ).
+su( agpl2c_20 ) :- sux( agpl2c_20 ), not stx( agpl2c_20 ).
+sf( agpl2c_20 ) :- sfx( agpl2c_20 ), not sux( agpl2c_20 ), not stx( agpl2c_20 ).
+
+% Satisfiability rules for situation agpl2c_21
+st( agpl2c_21 ) :- stx( agpl2c_21 ).
+su( agpl2c_21 ) :- sux( agpl2c_21 ), not stx( agpl2c_21 ).
+sf( agpl2c_21 ) :- sfx( agpl2c_21 ), not sux( agpl2c_21 ), not stx( agpl2c_21 ).
+
+% Satisfiability rules for situation agpl2c_22
+st( agpl2c_22 ) :- stx( agpl2c_22 ).
+su( agpl2c_22 ) :- sux( agpl2c_22 ), not stx( agpl2c_22 ).
+sf( agpl2c_22 ) :- sfx( agpl2c_22 ), not sux( agpl2c_22 ), not stx( agpl2c_22 ).
+
+% Satisfiability rules for situation agpl2c_23
+st( agpl2c_23 ) :- stx( agpl2c_23 ).
+su( agpl2c_23 ) :- sux( agpl2c_23 ), not stx( agpl2c_23 ).
+sf( agpl2c_23 ) :- sfx( agpl2c_23 ), not sux( agpl2c_23 ), not stx( agpl2c_23 ).
+
+% Satisfiability rules for situation agpl2c_24
+st( agpl2c_24 ) :- stx( agpl2c_24 ).
+su( agpl2c_24 ) :- sux( agpl2c_24 ), not stx( agpl2c_24 ).
+sf( agpl2c_24 ) :- sfx( agpl2c_24 ), not sux( agpl2c_24 ), not stx( agpl2c_24 ).
+
+% Satisfiability rules for situation agpl2c_25
+st( agpl2c_25 ) :- stx( agpl2c_25 ).
+su( agpl2c_25 ) :- sux( agpl2c_25 ), not stx( agpl2c_25 ).
+sf( agpl2c_25 ) :- sfx( agpl2c_25 ), not sux( agpl2c_25 ), not stx( agpl2c_25 ).
+
+% Satisfiability rules for situation ss_agpl2d
+st( ss_agpl2d ) :- stx( ss_agpl2d ).
+su( ss_agpl2d ) :- sux( ss_agpl2d ), not stx( ss_agpl2d ).
+sf( ss_agpl2d ) :- sfx( ss_agpl2d ), not sux( ss_agpl2d ), not stx( ss_agpl2d ).
+
+% Satisfiability rules for situation agpl2d_26
+st( agpl2d_26 ) :- stx( agpl2d_26 ).
+su( agpl2d_26 ) :- sux( agpl2d_26 ), not stx( agpl2d_26 ).
+sf( agpl2d_26 ) :- sfx( agpl2d_26 ), not sux( agpl2d_26 ), not stx( agpl2d_26 ).
+
+% Satisfiability rules for situation agpl2d_27
+st( agpl2d_27 ) :- stx( agpl2d_27 ).
+su( agpl2d_27 ) :- sux( agpl2d_27 ), not stx( agpl2d_27 ).
+sf( agpl2d_27 ) :- sfx( agpl2d_27 ), not sux( agpl2d_27 ), not stx( agpl2d_27 ).
+
+% Satisfiability rules for situation agpl2d_28
+st( agpl2d_28 ) :- stx( agpl2d_28 ).
+su( agpl2d_28 ) :- sux( agpl2d_28 ), not stx( agpl2d_28 ).
+sf( agpl2d_28 ) :- sfx( agpl2d_28 ), not sux( agpl2d_28 ), not stx( agpl2d_28 ).
+
+% Satisfiability rules for situation agpl2d_29
+st( agpl2d_29 ) :- stx( agpl2d_29 ).
+su( agpl2d_29 ) :- sux( agpl2d_29 ), not stx( agpl2d_29 ).
+sf( agpl2d_29 ) :- sfx( agpl2d_29 ), not sux( agpl2d_29 ), not stx( agpl2d_29 ).
+
+% Satisfiability rules for situation agpl2d_30
+st( agpl2d_30 ) :- stx( agpl2d_30 ).
+su( agpl2d_30 ) :- sux( agpl2d_30 ), not stx( agpl2d_30 ).
+sf( agpl2d_30 ) :- sfx( agpl2d_30 ), not sux( agpl2d_30 ), not stx( agpl2d_30 ).
+
+% Satisfiability rules for situation agpl2d_31
+st( agpl2d_31 ) :- stx( agpl2d_31 ).
+su( agpl2d_31 ) :- sux( agpl2d_31 ), not stx( agpl2d_31 ).
+sf( agpl2d_31 ) :- sfx( agpl2d_31 ), not sux( agpl2d_31 ), not stx( agpl2d_31 ).
+
+% Satisfiability rules for situation agpl2d_32
+st( agpl2d_32 ) :- stx( agpl2d_32 ).
+su( agpl2d_32 ) :- sux( agpl2d_32 ), not stx( agpl2d_32 ).
+sf( agpl2d_32 ) :- sfx( agpl2d_32 ), not sux( agpl2d_32 ), not stx( agpl2d_32 ).
+
+% Satisfiability rules for situation agpl2d_33
+st( agpl2d_33 ) :- stx( agpl2d_33 ).
+su( agpl2d_33 ) :- sux( agpl2d_33 ), not stx( agpl2d_33 ).
+sf( agpl2d_33 ) :- sfx( agpl2d_33 ), not sux( agpl2d_33 ), not stx( agpl2d_33 ).
+
+% Satisfiability rules for situation agpl2d_34
+st( agpl2d_34 ) :- stx( agpl2d_34 ).
+su( agpl2d_34 ) :- sux( agpl2d_34 ), not stx( agpl2d_34 ).
+sf( agpl2d_34 ) :- sfx( agpl2d_34 ), not sux( agpl2d_34 ), not stx( agpl2d_34 ).
+
+% Satisfiability rules for situation ss_agpl1
+st( ss_agpl1 ) :- stx( ss_agpl1 ).
+su( ss_agpl1 ) :- sux( ss_agpl1 ), not stx( ss_agpl1 ).
+sf( ss_agpl1 ) :- sfx( ss_agpl1 ), not sux( ss_agpl1 ), not stx( ss_agpl1 ).
+
+% Satisfiability rules for situation agpl1_35
+st( agpl1_35 ) :- stx( agpl1_35 ).
+su( agpl1_35 ) :- sux( agpl1_35 ), not stx( agpl1_35 ).
+sf( agpl1_35 ) :- sfx( agpl1_35 ), not sux( agpl1_35 ), not stx( agpl1_35 ).
+
+% Satisfiability rules for situation agpl1_36
+st( agpl1_36 ) :- stx( agpl1_36 ).
+su( agpl1_36 ) :- sux( agpl1_36 ), not stx( agpl1_36 ).
+sf( agpl1_36 ) :- sfx( agpl1_36 ), not sux( agpl1_36 ), not stx( agpl1_36 ).
+
+% Satisfiability rules for situation agpl1_37
+st( agpl1_37 ) :- stx( agpl1_37 ).
+su( agpl1_37 ) :- sux( agpl1_37 ), not stx( agpl1_37 ).
+sf( agpl1_37 ) :- sfx( agpl1_37 ), not sux( agpl1_37 ), not stx( agpl1_37 ).
+
+% Satisfiability rules for situation agpl1_38
+st( agpl1_38 ) :- stx( agpl1_38 ).
+su( agpl1_38 ) :- sux( agpl1_38 ), not stx( agpl1_38 ).
+sf( agpl1_38 ) :- sfx( agpl1_38 ), not sux( agpl1_38 ), not stx( agpl1_38 ).
+
+% Satisfiability rules for situation agpl1_39
+st( agpl1_39 ) :- stx( agpl1_39 ).
+su( agpl1_39 ) :- sux( agpl1_39 ), not stx( agpl1_39 ).
+sf( agpl1_39 ) :- sfx( agpl1_39 ), not sux( agpl1_39 ), not stx( agpl1_39 ).
+
+% Satisfiability rules for situation agpl1_40
+st( agpl1_40 ) :- stx( agpl1_40 ).
+su( agpl1_40 ) :- sux( agpl1_40 ), not stx( agpl1_40 ).
+sf( agpl1_40 ) :- sfx( agpl1_40 ), not sux( agpl1_40 ), not stx( agpl1_40 ).
+
+% Satisfiability rules for situation ss_agpl1a
+st( ss_agpl1a ) :- stx( ss_agpl1a ).
+su( ss_agpl1a ) :- sux( ss_agpl1a ), not stx( ss_agpl1a ).
+sf( ss_agpl1a ) :- sfx( ss_agpl1a ), not sux( ss_agpl1a ), not stx( ss_agpl1a ).
+
+% Satisfiability rules for situation agpl1a_41
+st( agpl1a_41 ) :- stx( agpl1a_41 ).
+su( agpl1a_41 ) :- sux( agpl1a_41 ), not stx( agpl1a_41 ).
+sf( agpl1a_41 ) :- sfx( agpl1a_41 ), not sux( agpl1a_41 ), not stx( agpl1a_41 ).
+
+% Satisfiability rules for situation agpl1a_42
+st( agpl1a_42 ) :- stx( agpl1a_42 ).
+su( agpl1a_42 ) :- sux( agpl1a_42 ), not stx( agpl1a_42 ).
+sf( agpl1a_42 ) :- sfx( agpl1a_42 ), not sux( agpl1a_42 ), not stx( agpl1a_42 ).
+
+% Satisfiability rules for situation agpl1a_43
+st( agpl1a_43 ) :- stx( agpl1a_43 ).
+su( agpl1a_43 ) :- sux( agpl1a_43 ), not stx( agpl1a_43 ).
+sf( agpl1a_43 ) :- sfx( agpl1a_43 ), not sux( agpl1a_43 ), not stx( agpl1a_43 ).
+
+% Satisfiability rules for situation agpl1a_44
+st( agpl1a_44 ) :- stx( agpl1a_44 ).
+su( agpl1a_44 ) :- sux( agpl1a_44 ), not stx( agpl1a_44 ).
+sf( agpl1a_44 ) :- sfx( agpl1a_44 ), not sux( agpl1a_44 ), not stx( agpl1a_44 ).
+
+% Satisfiability rules for situation ss_agpl1b
+st( ss_agpl1b ) :- stx( ss_agpl1b ).
+su( ss_agpl1b ) :- sux( ss_agpl1b ), not stx( ss_agpl1b ).
+sf( ss_agpl1b ) :- sfx( ss_agpl1b ), not sux( ss_agpl1b ), not stx( ss_agpl1b ).
+
+% Satisfiability rules for situation agpl1b_45
+st( agpl1b_45 ) :- stx( agpl1b_45 ).
+su( agpl1b_45 ) :- sux( agpl1b_45 ), not stx( agpl1b_45 ).
+sf( agpl1b_45 ) :- sfx( agpl1b_45 ), not sux( agpl1b_45 ), not stx( agpl1b_45 ).
+
+% Satisfiability rules for situation agpl1b_46
+st( agpl1b_46 ) :- stx( agpl1b_46 ).
+su( agpl1b_46 ) :- sux( agpl1b_46 ), not stx( agpl1b_46 ).
+sf( agpl1b_46 ) :- sfx( agpl1b_46 ), not sux( agpl1b_46 ), not stx( agpl1b_46 ).
+
+% Satisfiability rules for situation agpl1b_47
+st( agpl1b_47 ) :- stx( agpl1b_47 ).
+su( agpl1b_47 ) :- sux( agpl1b_47 ), not stx( agpl1b_47 ).
+sf( agpl1b_47 ) :- sfx( agpl1b_47 ), not sux( agpl1b_47 ), not stx( agpl1b_47 ).
+
+% Satisfiability rules for situation agpl1b_48
+st( agpl1b_48 ) :- stx( agpl1b_48 ).
+su( agpl1b_48 ) :- sux( agpl1b_48 ), not stx( agpl1b_48 ).
+sf( agpl1b_48 ) :- sfx( agpl1b_48 ), not sux( agpl1b_48 ), not stx( agpl1b_48 ).
+
+% Satisfiability rules for situation ss_agpl1c
+st( ss_agpl1c ) :- stx( ss_agpl1c ).
+su( ss_agpl1c ) :- sux( ss_agpl1c ), not stx( ss_agpl1c ).
+sf( ss_agpl1c ) :- sfx( ss_agpl1c ), not sux( ss_agpl1c ), not stx( ss_agpl1c ).
+
+% Satisfiability rules for situation agpl1c_49
+st( agpl1c_49 ) :- stx( agpl1c_49 ).
+su( agpl1c_49 ) :- sux( agpl1c_49 ), not stx( agpl1c_49 ).
+sf( agpl1c_49 ) :- sfx( agpl1c_49 ), not sux( agpl1c_49 ), not stx( agpl1c_49 ).
+
+% Satisfiability rules for situation agpl1c_50
+st( agpl1c_50 ) :- stx( agpl1c_50 ).
+su( agpl1c_50 ) :- sux( agpl1c_50 ), not stx( agpl1c_50 ).
+sf( agpl1c_50 ) :- sfx( agpl1c_50 ), not sux( agpl1c_50 ), not stx( agpl1c_50 ).
+
+% Satisfiability rules for situation agpl1c_51
+st( agpl1c_51 ) :- stx( agpl1c_51 ).
+su( agpl1c_51 ) :- sux( agpl1c_51 ), not stx( agpl1c_51 ).
+sf( agpl1c_51 ) :- sfx( agpl1c_51 ), not sux( agpl1c_51 ), not stx( agpl1c_51 ).
+
+% Satisfiability rules for situation agpl1c_52
+st( agpl1c_52 ) :- stx( agpl1c_52 ).
+su( agpl1c_52 ) :- sux( agpl1c_52 ), not stx( agpl1c_52 ).
+sf( agpl1c_52 ) :- sfx( agpl1c_52 ), not sux( agpl1c_52 ), not stx( agpl1c_52 ).
+
+
+%satisfy agpl2d_31 agpl2d_32 agpl2d_30
+% and-satisfy( agpl2d_30 , [u'agpl2d_31', u'agpl2d_32'] ).
+stx( agpl2d_30 ) :-  st( agpl2d_31 ) ,  st( agpl2d_32 ) .
+st_rel( agpl2d_30 , rsat) :- stx( agpl2d_30 ).
+sfx( agpl2d_30 ) :- sf( agpl2d_31 ).
+sf_rel( agpl2d_30 , rsat) :- sfx( agpl2d_30 ).
+sux( agpl2d_30 ) :- not st( agpl2d_31 ), not sf( agpl2d_31 ).
+su_rel( agpl2d_30 , rsat) :- sux( agpl2d_30 ).
+sfx( agpl2d_30 ) :- sf( agpl2d_32 ).
+sf_rel( agpl2d_30 , rsat) :- sfx( agpl2d_30 ).
+sux( agpl2d_30 ) :- not st( agpl2d_32 ), not sf( agpl2d_32 ).
+su_rel( agpl2d_30 , rsat) :- sux( agpl2d_30 ).
+
+%activate agpl1c_50 agpl1c
+% and-activate( agpl1c , [u'agpl1c_50'] ).
+atx( agpl1c ) :-  st( agpl1c_50 ) , not st( agpl1cs ).
+at_rel( agpl1c , ract) :- atx( agpl1c ).
+afx( agpl1c ) :- sf( agpl1c_50 ).
+af_rel( agpl1c , rsat) :- afx( agpl1c ).
+aux( agpl1c ) :- not st( agpl1c_50 ), not sf( agpl1c_50 ), not st( agpl1cs ).
+au_rel( agpl1c , ract) :- aux( agpl1c ).
+
+%activate agpl2c_20 agpl2c
+% and-activate( agpl2c , [u'agpl2c_20'] ).
+atx( agpl2c ) :-  st( agpl2c_20 ) , not st( agpl2cs ).
+at_rel( agpl2c , ract) :- atx( agpl2c ).
+afx( agpl2c ) :- sf( agpl2c_20 ).
+af_rel( agpl2c , rsat) :- afx( agpl2c ).
+aux( agpl2c ) :- not st( agpl2c_20 ), not sf( agpl2c_20 ), not st( agpl2cs ).
+au_rel( agpl2c , ract) :- aux( agpl2c ).
+
+%activate agpl1a_42 agpl1a
+% and-activate( agpl1a , [u'agpl1a_42'] ).
+atx( agpl1a ) :-  st( agpl1a_42 ) , not st( agpl1as ).
+at_rel( agpl1a , ract) :- atx( agpl1a ).
+afx( agpl1a ) :- sf( agpl1a_42 ).
+af_rel( agpl1a , rsat) :- afx( agpl1a ).
+aux( agpl1a ) :- not st( agpl1a_42 ), not sf( agpl1a_42 ), not st( agpl1as ).
+au_rel( agpl1a , ract) :- aux( agpl1a ).
+
+%satisfy ss_agpl2d agpl2_14
+% and-satisfy( agpl2_14 , [u'ss_agpl2d'] ).
+stx( agpl2_14 ) :-  st( ss_agpl2d ) .
+st_rel( agpl2_14 , rsat) :- stx( agpl2_14 ).
+sfx( agpl2_14 ) :- sf( ss_agpl2d ).
+sf_rel( agpl2_14 , rsat) :- sfx( agpl2_14 ).
+sux( agpl2_14 ) :- not st( ss_agpl2d ), not sf( ss_agpl2d ).
+su_rel( agpl2_14 , rsat) :- sux( agpl2_14 ).
+
+%activate agpl2d_30 agpl2d
+% and-activate( agpl2d , [u'agpl2d_30'] ).
+atx( agpl2d ) :-  st( agpl2d_30 ) , not st( agpl2ds ).
+at_rel( agpl2d , ract) :- atx( agpl2d ).
+afx( agpl2d ) :- sf( agpl2d_30 ).
+af_rel( agpl2d , rsat) :- afx( agpl2d ).
+aux( agpl2d ) :- not st( agpl2d_30 ), not sf( agpl2d_30 ), not st( agpl2ds ).
+au_rel( agpl2d , ract) :- aux( agpl2d ).
+
+%satisfy agpl1c_51 agpl1c_52 agpl1c_50 or
+% or-satisfy( agpl1c_50 , [u'agpl1c_51', u'agpl1c_52'] ).
+sfx( agpl1c_50 ) :-  sf( agpl1c_51 ) ,  sf( agpl1c_52 ) .
+sf_rel( agpl1c_50 , rsat) :- sfx( agpl1c_50 ).
+stx( agpl1c_50 ) :- st( agpl1c_51 ).
+st_rel( agpl1c_50 , rsat) :- stx( agpl1c_50 ).
+sux( agpl1c_50 ) :- not st( agpl1c_51 ), not sf( agpl1c_51 ).
+su_rel( agpl1c_50 , rsat) :- sux( agpl1c_50 ).
+stx( agpl1c_50 ) :- st( agpl1c_52 ).
+st_rel( agpl1c_50 , rsat) :- stx( agpl1c_50 ).
+sux( agpl1c_50 ) :- not st( agpl1c_52 ), not sf( agpl1c_52 ).
+su_rel( agpl1c_50 , rsat) :- sux( agpl1c_50 ).
+
+%contains agpl2b ss_agpl2b
+% propagate  agpl2b  to  ss_agpl2b .
+st( ss_agpl2b ) :- com( agpl2b ).
+sf( ss_agpl2b ) :- vio( agpl2b ).
+su( ss_agpl2b ) :- inc( agpl2b ).
+
+%activate agpl1_36 agpl1
+% and-activate( agpl1 , [u'agpl1_36'] ).
+atx( agpl1 ) :-  st( agpl1_36 ) , not st( agpl1s ).
+at_rel( agpl1 , ract) :- atx( agpl1 ).
+afx( agpl1 ) :- sf( agpl1_36 ).
+af_rel( agpl1 , rsat) :- afx( agpl1 ).
+aux( agpl1 ) :- not st( agpl1_36 ), not sf( agpl1_36 ), not st( agpl1s ).
+au_rel( agpl1 , ract) :- aux( agpl1 ).
+
+%contains agpl1b ss_agpl1b
+% propagate  agpl1b  to  ss_agpl1b .
+st( ss_agpl1b ) :- com( agpl1b ).
+sf( ss_agpl1b ) :- vio( agpl1b ).
+su( ss_agpl1b ) :- inc( agpl1b ).
+
+%satisfy ss_agpl2a agpl2_9
+% and-satisfy( agpl2_9 , [u'ss_agpl2a'] ).
+stx( agpl2_9 ) :-  st( ss_agpl2a ) .
+st_rel( agpl2_9 , rsat) :- stx( agpl2_9 ).
+sfx( agpl2_9 ) :- sf( ss_agpl2a ).
+sf_rel( agpl2_9 , rsat) :- sfx( agpl2_9 ).
+sux( agpl2_9 ) :- not st( ss_agpl2a ), not sf( ss_agpl2a ).
+su_rel( agpl2_9 , rsat) :- sux( agpl2_9 ).
+
+%satisfy ss_agpl1c agpl1_40
+% and-satisfy( agpl1_40 , [u'ss_agpl1c'] ).
+stx( agpl1_40 ) :-  st( ss_agpl1c ) .
+st_rel( agpl1_40 , rsat) :- stx( agpl1_40 ).
+sfx( agpl1_40 ) :- sf( ss_agpl1c ).
+sf_rel( agpl1_40 , rsat) :- sfx( agpl1_40 ).
+sux( agpl1_40 ) :- not st( ss_agpl1c ), not sf( ss_agpl1c ).
+su_rel( agpl1_40 , rsat) :- sux( agpl1_40 ).
+
+%satisfy agpl1_39 agpl1_40 agpl1_38
+% and-satisfy( agpl1_38 , [u'agpl1_39', u'agpl1_40'] ).
+stx( agpl1_38 ) :-  st( agpl1_39 ) ,  st( agpl1_40 ) .
+st_rel( agpl1_38 , rsat) :- stx( agpl1_38 ).
+sfx( agpl1_38 ) :- sf( agpl1_39 ).
+sf_rel( agpl1_38 , rsat) :- sfx( agpl1_38 ).
+sux( agpl1_38 ) :- not st( agpl1_39 ), not sf( agpl1_39 ).
+su_rel( agpl1_38 , rsat) :- sux( agpl1_38 ).
+sfx( agpl1_38 ) :- sf( agpl1_40 ).
+sf_rel( agpl1_38 , rsat) :- sfx( agpl1_38 ).
+sux( agpl1_38 ) :- not st( agpl1_40 ), not sf( agpl1_40 ).
+su_rel( agpl1_38 , rsat) :- sux( agpl1_38 ).
+
+%satisfy ss_agpl1b agpl1_39
+% and-satisfy( agpl1_39 , [u'ss_agpl1b'] ).
+stx( agpl1_39 ) :-  st( ss_agpl1b ) .
+st_rel( agpl1_39 , rsat) :- stx( agpl1_39 ).
+sfx( agpl1_39 ) :- sf( ss_agpl1b ).
+sf_rel( agpl1_39 , rsat) :- sfx( agpl1_39 ).
+sux( agpl1_39 ) :- not st( ss_agpl1b ), not sf( ss_agpl1b ).
+su_rel( agpl1_39 , rsat) :- sux( agpl1_39 ).
+
+break agpl2c_25 agpl2c_24
+% and-break( agpl2c_24 , [u'agpl2c_25'] ).
+sfx( agpl2c_24 ) :-  st( agpl2c_25 ) .
+sf_rel( agpl2c_24 , rbrk) :- sfx( agpl2c_24 ).
+sux( agpl2c_24 ) :- not st( agpl2c_25 ).
+su_rel( agpl2c_24 , rbrk) :- sux( agpl2c_24 ).
+
+%satisfy agpl1b_47 agpl1b_48 agpl1b_46 or
+% or-satisfy( agpl1b_46 , [u'agpl1b_47', u'agpl1b_48'] ).
+sfx( agpl1b_46 ) :-  sf( agpl1b_47 ) ,  sf( agpl1b_48 ) .
+sf_rel( agpl1b_46 , rsat) :- sfx( agpl1b_46 ).
+stx( agpl1b_46 ) :- st( agpl1b_47 ).
+st_rel( agpl1b_46 , rsat) :- stx( agpl1b_46 ).
+sux( agpl1b_46 ) :- not st( agpl1b_47 ), not sf( agpl1b_47 ).
+su_rel( agpl1b_46 , rsat) :- sux( agpl1b_46 ).
+stx( agpl1b_46 ) :- st( agpl1b_48 ).
+st_rel( agpl1b_46 , rsat) :- stx( agpl1b_46 ).
+sux( agpl1b_46 ) :- not st( agpl1b_48 ), not sf( agpl1b_48 ).
+su_rel( agpl1b_46 , rsat) :- sux( agpl1b_46 ).
+
+%satisfy agpl2c_23 agpl2c_24 agpl2c_22 or
+% or-satisfy( agpl2c_22 , [u'agpl2c_23', u'agpl2c_24'] ).
+sfx( agpl2c_22 ) :-  sf( agpl2c_23 ) ,  sf( agpl2c_24 ) .
+sf_rel( agpl2c_22 , rsat) :- sfx( agpl2c_22 ).
+stx( agpl2c_22 ) :- st( agpl2c_23 ).
+st_rel( agpl2c_22 , rsat) :- stx( agpl2c_22 ).
+sux( agpl2c_22 ) :- not st( agpl2c_23 ), not sf( agpl2c_23 ).
+su_rel( agpl2c_22 , rsat) :- sux( agpl2c_22 ).
+stx( agpl2c_22 ) :- st( agpl2c_24 ).
+st_rel( agpl2c_22 , rsat) :- stx( agpl2c_22 ).
+sux( agpl2c_22 ) :- not st( agpl2c_24 ), not sf( agpl2c_24 ).
+su_rel( agpl2c_22 , rsat) :- sux( agpl2c_22 ).
+
+%satisfy ss_agpl2c agpl2_13
+% and-satisfy( agpl2_13 , [u'ss_agpl2c'] ).
+stx( agpl2_13 ) :-  st( ss_agpl2c ) .
+st_rel( agpl2_13 , rsat) :- stx( agpl2_13 ).
+sfx( agpl2_13 ) :- sf( ss_agpl2c ).
+sf_rel( agpl2_13 , rsat) :- sfx( agpl2_13 ).
+sux( agpl2_13 ) :- not st( ss_agpl2c ), not sf( ss_agpl2c ).
+su_rel( agpl2_13 , rsat) :- sux( agpl2_13 ).
+
+%satisfy agpl1_35 agpl1
+% and-satisfy( agpl1 , [u'agpl1_35'] ).
+stx( agpl1 ) :-  st( agpl1_35 ) .
+st_rel( agpl1 , rsat) :- stx( agpl1 ).
+sfx( agpl1 ) :- sf( agpl1_35 ).
+sf_rel( agpl1 , rsat) :- sfx( agpl1 ).
+sux( agpl1 ) :- not st( agpl1_35 ), not sf( agpl1_35 ).
+su_rel( agpl1 , rsat) :- sux( agpl1 ).
+
+%satisfy ss_agpl1c agpl2_7
+% and-satisfy( agpl2_7 , [u'ss_agpl1c'] ).
+stx( agpl2_7 ) :-  st( ss_agpl1c ) .
+st_rel( agpl2_7 , rsat) :- stx( agpl2_7 ).
+sfx( agpl2_7 ) :- sf( ss_agpl1c ).
+sf_rel( agpl2_7 , rsat) :- sfx( agpl2_7 ).
+sux( agpl2_7 ) :- not st( ss_agpl1c ), not sf( ss_agpl1c ).
+su_rel( agpl2_7 , rsat) :- sux( agpl2_7 ).
+
+%satisfy agpl2d_27 agpl2d_29 agpl2d_26
+% and-satisfy( agpl2d_26 , [u'agpl2d_27', u'agpl2d_29'] ).
+stx( agpl2d_26 ) :-  st( agpl2d_27 ) ,  st( agpl2d_29 ) .
+st_rel( agpl2d_26 , rsat) :- stx( agpl2d_26 ).
+sfx( agpl2d_26 ) :- sf( agpl2d_27 ).
+sf_rel( agpl2d_26 , rsat) :- sfx( agpl2d_26 ).
+sux( agpl2d_26 ) :- not st( agpl2d_27 ), not sf( agpl2d_27 ).
+su_rel( agpl2d_26 , rsat) :- sux( agpl2d_26 ).
+sfx( agpl2d_26 ) :- sf( agpl2d_29 ).
+sf_rel( agpl2d_26 , rsat) :- sfx( agpl2d_26 ).
+sux( agpl2d_26 ) :- not st( agpl2d_29 ), not sf( agpl2d_29 ).
+su_rel( agpl2d_26 , rsat) :- sux( agpl2d_26 ).
+
+%satisfy agpl2_11 agpl2_12 agpl2_10
+% and-satisfy( agpl2_10 , [u'agpl2_11', u'agpl2_12'] ).
+stx( agpl2_10 ) :-  st( agpl2_11 ) ,  st( agpl2_12 ) .
+st_rel( agpl2_10 , rsat) :- stx( agpl2_10 ).
+sfx( agpl2_10 ) :- sf( agpl2_11 ).
+sf_rel( agpl2_10 , rsat) :- sfx( agpl2_10 ).
+sux( agpl2_10 ) :- not st( agpl2_11 ), not sf( agpl2_11 ).
+su_rel( agpl2_10 , rsat) :- sux( agpl2_10 ).
+sfx( agpl2_10 ) :- sf( agpl2_12 ).
+sf_rel( agpl2_10 , rsat) :- sfx( agpl2_10 ).
+sux( agpl2_10 ) :- not st( agpl2_12 ), not sf( agpl2_12 ).
+su_rel( agpl2_10 , rsat) :- sux( agpl2_10 ).
+
+%satisfy agpl2_1 agpl2
+% and-satisfy( agpl2 , [u'agpl2_1'] ).
+stx( agpl2 ) :-  st( agpl2_1 ) .
+st_rel( agpl2 , rsat) :- stx( agpl2 ).
+sfx( agpl2 ) :- sf( agpl2_1 ).
+sf_rel( agpl2 , rsat) :- sfx( agpl2 ).
+sux( agpl2 ) :- not st( agpl2_1 ), not sf( agpl2_1 ).
+su_rel( agpl2 , rsat) :- sux( agpl2 ).
+
+%satisfy ss_agpl2b agpl2_11
+% and-satisfy( agpl2_11 , [u'ss_agpl2b'] ).
+stx( agpl2_11 ) :-  st( ss_agpl2b ) .
+st_rel( agpl2_11 , rsat) :- stx( agpl2_11 ).
+sfx( agpl2_11 ) :- sf( ss_agpl2b ).
+sf_rel( agpl2_11 , rsat) :- sfx( agpl2_11 ).
+sux( agpl2_11 ) :- not st( ss_agpl2b ), not sf( ss_agpl2b ).
+su_rel( agpl2_11 , rsat) :- sux( agpl2_11 ).
+
+%satisfy agpl1b_45 agpl1b
+% and-satisfy( agpl1b , [u'agpl1b_45'] ).
+stx( agpl1b ) :-  st( agpl1b_45 ) .
+st_rel( agpl1b , rsat) :- stx( agpl1b ).
+sfx( agpl1b ) :- sf( agpl1b_45 ).
+sf_rel( agpl1b , rsat) :- sfx( agpl1b ).
+sux( agpl1b ) :- not st( agpl1b_45 ), not sf( agpl1b_45 ).
+su_rel( agpl1b , rsat) :- sux( agpl1b ).
+
+%satisfy ss_agpl1b agpl2_6
+% and-satisfy( agpl2_6 , [u'ss_agpl1b'] ).
+stx( agpl2_6 ) :-  st( ss_agpl1b ) .
+st_rel( agpl2_6 , rsat) :- stx( agpl2_6 ).
+sfx( agpl2_6 ) :- sf( ss_agpl1b ).
+sf_rel( agpl2_6 , rsat) :- sfx( agpl2_6 ).
+sux( agpl2_6 ) :- not st( ss_agpl1b ), not sf( ss_agpl1b ).
+su_rel( agpl2_6 , rsat) :- sux( agpl2_6 ).
+
+%satisfy agpl1c_49 agpl1c
+% and-satisfy( agpl1c , [u'agpl1c_49'] ).
+stx( agpl1c ) :-  st( agpl1c_49 ) .
+st_rel( agpl1c , rsat) :- stx( agpl1c ).
+sfx( agpl1c ) :- sf( agpl1c_49 ).
+sf_rel( agpl1c , rsat) :- sfx( agpl1c ).
+sux( agpl1c ) :- not st( agpl1c_49 ), not sf( agpl1c_49 ).
+su_rel( agpl1c , rsat) :- sux( agpl1c ).
+
+%satisfy agpl2_4 agpl2_5 agpl2_3
+% and-satisfy( agpl2_3 , [u'agpl2_4', u'agpl2_5'] ).
+stx( agpl2_3 ) :-  st( agpl2_4 ) ,  st( agpl2_5 ) .
+st_rel( agpl2_3 , rsat) :- stx( agpl2_3 ).
+sfx( agpl2_3 ) :- sf( agpl2_4 ).
+sf_rel( agpl2_3 , rsat) :- sfx( agpl2_3 ).
+sux( agpl2_3 ) :- not st( agpl2_4 ), not sf( agpl2_4 ).
+su_rel( agpl2_3 , rsat) :- sux( agpl2_3 ).
+sfx( agpl2_3 ) :- sf( agpl2_5 ).
+sf_rel( agpl2_3 , rsat) :- sfx( agpl2_3 ).
+sux( agpl2_3 ) :- not st( agpl2_5 ), not sf( agpl2_5 ).
+su_rel( agpl2_3 , rsat) :- sux( agpl2_3 ).
+
+%satisfy ss_agpl1a agpl2_4
+% and-satisfy( agpl2_4 , [u'ss_agpl1a'] ).
+stx( agpl2_4 ) :-  st( ss_agpl1a ) .
+st_rel( agpl2_4 , rsat) :- stx( agpl2_4 ).
+sfx( agpl2_4 ) :- sf( ss_agpl1a ).
+sf_rel( agpl2_4 , rsat) :- sfx( agpl2_4 ).
+sux( agpl2_4 ) :- not st( ss_agpl1a ), not sf( ss_agpl1a ).
+su_rel( agpl2_4 , rsat) :- sux( agpl2_4 ).
+
+%satisfy agpl1a_43 agpl1a_44 agpl1a_42 or
+% or-satisfy( agpl1a_42 , [u'agpl1a_43', u'agpl1a_44'] ).
+sfx( agpl1a_42 ) :-  sf( agpl1a_43 ) ,  sf( agpl1a_44 ) .
+sf_rel( agpl1a_42 , rsat) :- sfx( agpl1a_42 ).
+stx( agpl1a_42 ) :- st( agpl1a_43 ).
+st_rel( agpl1a_42 , rsat) :- stx( agpl1a_42 ).
+sux( agpl1a_42 ) :- not st( agpl1a_43 ), not sf( agpl1a_43 ).
+su_rel( agpl1a_42 , rsat) :- sux( agpl1a_42 ).
+stx( agpl1a_42 ) :- st( agpl1a_44 ).
+st_rel( agpl1a_42 , rsat) :- stx( agpl1a_42 ).
+sux( agpl1a_42 ) :- not st( agpl1a_44 ), not sf( agpl1a_44 ).
+su_rel( agpl1a_42 , rsat) :- sux( agpl1a_42 ).
+
+%satisfy agpl2d_26 agpl2d
+% and-satisfy( agpl2d , [u'agpl2d_26'] ).
+stx( agpl2d ) :-  st( agpl2d_26 ) .
+st_rel( agpl2d , rsat) :- stx( agpl2d ).
+sfx( agpl2d ) :- sf( agpl2d_26 ).
+sf_rel( agpl2d , rsat) :- sfx( agpl2d ).
+sux( agpl2d ) :- not st( agpl2d_26 ), not sf( agpl2d_26 ).
+su_rel( agpl2d , rsat) :- sux( agpl2d ).
+
+%contains agpl1c ss_agpl1c
+% propagate  agpl1c  to  ss_agpl1c .
+st( ss_agpl1c ) :- com( agpl1c ).
+sf( ss_agpl1c ) :- vio( agpl1c ).
+su( ss_agpl1c ) :- inc( agpl1c ).
+
+%satisfy agpl2_13 agpl2_14 agpl2_12
+% and-satisfy( agpl2_12 , [u'agpl2_13', u'agpl2_14'] ).
+stx( agpl2_12 ) :-  st( agpl2_13 ) ,  st( agpl2_14 ) .
+st_rel( agpl2_12 , rsat) :- stx( agpl2_12 ).
+sfx( agpl2_12 ) :- sf( agpl2_13 ).
+sf_rel( agpl2_12 , rsat) :- sfx( agpl2_12 ).
+sux( agpl2_12 ) :- not st( agpl2_13 ), not sf( agpl2_13 ).
+su_rel( agpl2_12 , rsat) :- sux( agpl2_12 ).
+sfx( agpl2_12 ) :- sf( agpl2_14 ).
+sf_rel( agpl2_12 , rsat) :- sfx( agpl2_12 ).
+sux( agpl2_12 ) :- not st( agpl2_14 ), not sf( agpl2_14 ).
+su_rel( agpl2_12 , rsat) :- sux( agpl2_12 ).
+
+%satisfy agpl2c_21 agpl2c_22 agpl2c_20
+% and-satisfy( agpl2c_20 , [u'agpl2c_21', u'agpl2c_22'] ).
+stx( agpl2c_20 ) :-  st( agpl2c_21 ) ,  st( agpl2c_22 ) .
+st_rel( agpl2c_20 , rsat) :- stx( agpl2c_20 ).
+sfx( agpl2c_20 ) :- sf( agpl2c_21 ).
+sf_rel( agpl2c_20 , rsat) :- sfx( agpl2c_20 ).
+sux( agpl2c_20 ) :- not st( agpl2c_21 ), not sf( agpl2c_21 ).
+su_rel( agpl2c_20 , rsat) :- sux( agpl2c_20 ).
+sfx( agpl2c_20 ) :- sf( agpl2c_22 ).
+sf_rel( agpl2c_20 , rsat) :- sfx( agpl2c_20 ).
+sux( agpl2c_20 ) :- not st( agpl2c_22 ), not sf( agpl2c_22 ).
+su_rel( agpl2c_20 , rsat) :- sux( agpl2c_20 ).
+
+break agpl2d_28 agpl2d_27
+% and-break( agpl2d_27 , [u'agpl2d_28'] ).
+sfx( agpl2d_27 ) :-  st( agpl2d_28 ) .
+sf_rel( agpl2d_27 , rbrk) :- sfx( agpl2d_27 ).
+sux( agpl2d_27 ) :- not st( agpl2d_28 ).
+su_rel( agpl2d_27 , rbrk) :- sux( agpl2d_27 ).
+
+%contains agpl1a ss_agpl1a
+% propagate  agpl1a  to  ss_agpl1a .
+st( ss_agpl1a ) :- com( agpl1a ).
+sf( ss_agpl1a ) :- vio( agpl1a ).
+su( ss_agpl1a ) :- inc( agpl1a ).
+
+%contains agpl2c ss_agpl2c
+% propagate  agpl2c  to  ss_agpl2c .
+st( ss_agpl2c ) :- com( agpl2c ).
+sf( ss_agpl2c ) :- vio( agpl2c ).
+su( ss_agpl2c ) :- inc( agpl2c ).
+
+%activate agpl2b_18 agpl2b
+% and-activate( agpl2b , [u'agpl2b_18'] ).
+atx( agpl2b ) :-  st( agpl2b_18 ) , not st( agpl2bs ).
+at_rel( agpl2b , ract) :- atx( agpl2b ).
+afx( agpl2b ) :- sf( agpl2b_18 ).
+af_rel( agpl2b , rsat) :- afx( agpl2b ).
+aux( agpl2b ) :- not st( agpl2b_18 ), not sf( agpl2b_18 ), not st( agpl2bs ).
+au_rel( agpl2b , ract) :- aux( agpl2b ).
+
+%contains agpl2a ss_agpl2a
+% propagate  agpl2a  to  ss_agpl2a .
+st( ss_agpl2a ) :- com( agpl2a ).
+sf( ss_agpl2a ) :- vio( agpl2a ).
+su( ss_agpl2a ) :- inc( agpl2a ).
+
+%activate agpl1b_46 agpl1b
+% and-activate( agpl1b , [u'agpl1b_46'] ).
+atx( agpl1b ) :-  st( agpl1b_46 ) , not st( agpl1bs ).
+at_rel( agpl1b , ract) :- atx( agpl1b ).
+afx( agpl1b ) :- sf( agpl1b_46 ).
+af_rel( agpl1b , rsat) :- afx( agpl1b ).
+aux( agpl1b ) :- not st( agpl1b_46 ), not sf( agpl1b_46 ), not st( agpl1bs ).
+au_rel( agpl1b , ract) :- aux( agpl1b ).
+
+%satisfy agpl2_3 agpl2_8 agpl2_2
+% and-satisfy( agpl2_2 , [u'agpl2_3', u'agpl2_8'] ).
+stx( agpl2_2 ) :-  st( agpl2_3 ) ,  st( agpl2_8 ) .
+st_rel( agpl2_2 , rsat) :- stx( agpl2_2 ).
+sfx( agpl2_2 ) :- sf( agpl2_3 ).
+sf_rel( agpl2_2 , rsat) :- sfx( agpl2_2 ).
+sux( agpl2_2 ) :- not st( agpl2_3 ), not sf( agpl2_3 ).
+su_rel( agpl2_2 , rsat) :- sux( agpl2_2 ).
+sfx( agpl2_2 ) :- sf( agpl2_8 ).
+sf_rel( agpl2_2 , rsat) :- sfx( agpl2_2 ).
+sux( agpl2_2 ) :- not st( agpl2_8 ), not sf( agpl2_8 ).
+su_rel( agpl2_2 , rsat) :- sux( agpl2_2 ).
+
+%satisfy agpl2_6 agpl2_7 agpl2_5
+% and-satisfy( agpl2_5 , [u'agpl2_6', u'agpl2_7'] ).
+stx( agpl2_5 ) :-  st( agpl2_6 ) ,  st( agpl2_7 ) .
+st_rel( agpl2_5 , rsat) :- stx( agpl2_5 ).
+sfx( agpl2_5 ) :- sf( agpl2_6 ).
+sf_rel( agpl2_5 , rsat) :- sfx( agpl2_5 ).
+sux( agpl2_5 ) :- not st( agpl2_6 ), not sf( agpl2_6 ).
+su_rel( agpl2_5 , rsat) :- sux( agpl2_5 ).
+sfx( agpl2_5 ) :- sf( agpl2_7 ).
+sf_rel( agpl2_5 , rsat) :- sfx( agpl2_5 ).
+sux( agpl2_5 ) :- not st( agpl2_7 ), not sf( agpl2_7 ).
+su_rel( agpl2_5 , rsat) :- sux( agpl2_5 ).
+
+%activate agpl2_2 agpl2
+% and-activate( agpl2 , [u'agpl2_2'] ).
+atx( agpl2 ) :-  st( agpl2_2 ) , not st( agpl2s ).
+at_rel( agpl2 , ract) :- atx( agpl2 ).
+afx( agpl2 ) :- sf( agpl2_2 ).
+af_rel( agpl2 , rsat) :- afx( agpl2 ).
+aux( agpl2 ) :- not st( agpl2_2 ), not sf( agpl2_2 ), not st( agpl2s ).
+au_rel( agpl2 , ract) :- aux( agpl2 ).
+
+%contains agpl1 ss_agpl1
+% propagate  agpl1  to  ss_agpl1 .
+st( ss_agpl1 ) :- exr( agpl1 ).
+sf( ss_agpl1 ) :- nex( agpl1 ).
+su( ss_agpl1 ) :- inc( agpl1 ).
+
+%satisfy agpl1_37 agpl1_38 agpl1_36
+% and-satisfy( agpl1_36 , [u'agpl1_37', u'agpl1_38'] ).
+stx( agpl1_36 ) :-  st( agpl1_37 ) ,  st( agpl1_38 ) .
+st_rel( agpl1_36 , rsat) :- stx( agpl1_36 ).
+sfx( agpl1_36 ) :- sf( agpl1_37 ).
+sf_rel( agpl1_36 , rsat) :- sfx( agpl1_36 ).
+sux( agpl1_36 ) :- not st( agpl1_37 ), not sf( agpl1_37 ).
+su_rel( agpl1_36 , rsat) :- sux( agpl1_36 ).
+sfx( agpl1_36 ) :- sf( agpl1_38 ).
+sf_rel( agpl1_36 , rsat) :- sfx( agpl1_36 ).
+sux( agpl1_36 ) :- not st( agpl1_38 ), not sf( agpl1_38 ).
+su_rel( agpl1_36 , rsat) :- sux( agpl1_36 ).
+
+%satisfy ss_agpl1a agpl1_37
+% and-satisfy( agpl1_37 , [u'ss_agpl1a'] ).
+stx( agpl1_37 ) :-  st( ss_agpl1a ) .
+st_rel( agpl1_37 , rsat) :- stx( agpl1_37 ).
+sfx( agpl1_37 ) :- sf( ss_agpl1a ).
+sf_rel( agpl1_37 , rsat) :- sfx( agpl1_37 ).
+sux( agpl1_37 ) :- not st( ss_agpl1a ), not sf( ss_agpl1a ).
+su_rel( agpl1_37 , rsat) :- sux( agpl1_37 ).
+
+%contains agpl2d ss_agpl2d
+% propagate  agpl2d  to  ss_agpl2d .
+st( ss_agpl2d ) :- com( agpl2d ).
+sf( ss_agpl2d ) :- vio( agpl2d ).
+su( ss_agpl2d ) :- inc( agpl2d ).
+
+%satisfy agpl2b_17 agpl2b
+% and-satisfy( agpl2b , [u'agpl2b_17'] ).
+stx( agpl2b ) :-  st( agpl2b_17 ) .
+st_rel( agpl2b , rsat) :- stx( agpl2b ).
+sfx( agpl2b ) :- sf( agpl2b_17 ).
+sf_rel( agpl2b , rsat) :- sfx( agpl2b ).
+sux( agpl2b ) :- not st( agpl2b_17 ), not sf( agpl2b_17 ).
+su_rel( agpl2b , rsat) :- sux( agpl2b ).
+
+%activate agpl2a_16 agpl2a
+% and-activate( agpl2a , [u'agpl2a_16'] ).
+atx( agpl2a ) :-  st( agpl2a_16 ) , not st( agpl2as ).
+at_rel( agpl2a , ract) :- atx( agpl2a ).
+afx( agpl2a ) :- sf( agpl2a_16 ).
+af_rel( agpl2a , rsat) :- afx( agpl2a ).
+aux( agpl2a ) :- not st( agpl2a_16 ), not sf( agpl2a_16 ), not st( agpl2as ).
+au_rel( agpl2a , ract) :- aux( agpl2a ).
+
+%satisfy agpl2_9 agpl2_10 agpl2_8
+% and-satisfy( agpl2_8 , [u'agpl2_9', u'agpl2_10'] ).
+stx( agpl2_8 ) :-  st( agpl2_9 ) ,  st( agpl2_10 ) .
+st_rel( agpl2_8 , rsat) :- stx( agpl2_8 ).
+sfx( agpl2_8 ) :- sf( agpl2_9 ).
+sf_rel( agpl2_8 , rsat) :- sfx( agpl2_8 ).
+sux( agpl2_8 ) :- not st( agpl2_9 ), not sf( agpl2_9 ).
+su_rel( agpl2_8 , rsat) :- sux( agpl2_8 ).
+sfx( agpl2_8 ) :- sf( agpl2_10 ).
+sf_rel( agpl2_8 , rsat) :- sfx( agpl2_8 ).
+sux( agpl2_8 ) :- not st( agpl2_10 ), not sf( agpl2_10 ).
+su_rel( agpl2_8 , rsat) :- sux( agpl2_8 ).
+
+%satisfy agpl1a_41 agpl1a
+% and-satisfy( agpl1a , [u'agpl1a_41'] ).
+stx( agpl1a ) :-  st( agpl1a_41 ) .
+st_rel( agpl1a , rsat) :- stx( agpl1a ).
+sfx( agpl1a ) :- sf( agpl1a_41 ).
+sf_rel( agpl1a , rsat) :- sfx( agpl1a ).
+sux( agpl1a ) :- not st( agpl1a_41 ), not sf( agpl1a_41 ).
+su_rel( agpl1a , rsat) :- sux( agpl1a ).
+
+%satisfy agpl2c_19 agpl2c
+% and-satisfy( agpl2c , [u'agpl2c_19'] ).
+stx( agpl2c ) :-  st( agpl2c_19 ) .
+st_rel( agpl2c , rsat) :- stx( agpl2c ).
+sfx( agpl2c ) :- sf( agpl2c_19 ).
+sf_rel( agpl2c , rsat) :- sfx( agpl2c ).
+sux( agpl2c ) :- not st( agpl2c_19 ), not sf( agpl2c_19 ).
+su_rel( agpl2c , rsat) :- sux( agpl2c ).
+
+%satisfy agpl2d_33 agpl2d_34 agpl2d_32
+% and-satisfy( agpl2d_32 , [u'agpl2d_33', u'agpl2d_34'] ).
+stx( agpl2d_32 ) :-  st( agpl2d_33 ) ,  st( agpl2d_34 ) .
+st_rel( agpl2d_32 , rsat) :- stx( agpl2d_32 ).
+sfx( agpl2d_32 ) :- sf( agpl2d_33 ).
+sf_rel( agpl2d_32 , rsat) :- sfx( agpl2d_32 ).
+sux( agpl2d_32 ) :- not st( agpl2d_33 ), not sf( agpl2d_33 ).
+su_rel( agpl2d_32 , rsat) :- sux( agpl2d_32 ).
+sfx( agpl2d_32 ) :- sf( agpl2d_34 ).
+sf_rel( agpl2d_32 , rsat) :- sfx( agpl2d_32 ).
+sux( agpl2d_32 ) :- not st( agpl2d_34 ), not sf( agpl2d_34 ).
+su_rel( agpl2d_32 , rsat) :- sux( agpl2d_32 ).
+
+%contains agpl2 ss_agpl2
+% propagate  agpl2  to  ss_agpl2 .
+st( ss_agpl2 ) :- exr( agpl2 ).
+sf( ss_agpl2 ) :- nex( agpl2 ).
+su( ss_agpl2 ) :- inc( agpl2 ).
+
+%satisfy agpl2a_15 agpl2a
+% and-satisfy( agpl2a , [u'agpl2a_15'] ).
+stx( agpl2a ) :-  st( agpl2a_15 ) .
+st_rel( agpl2a , rsat) :- stx( agpl2a ).
+sfx( agpl2a ) :- sf( agpl2a_15 ).
+sf_rel( agpl2a , rsat) :- sfx( agpl2a ).
+sux( agpl2a ) :- not st( agpl2a_15 ), not sf( agpl2a_15 ).
+su_rel( agpl2a , rsat) :- sux( agpl2a ).
+
+
+% Scenario
+st( ss_agpl2 ) v sf( ss_agpl2 ) v su( ss_agpl2 ).
+st( agpl2_1 ) v sf( agpl2_1 ) v su( agpl2_1 ).
+st( agpl2_2 ) v sf( agpl2_2 ) v su( agpl2_2 ).
+st( agpl2_3 ) v sf( agpl2_3 ) v su( agpl2_3 ).
+st( agpl2_4 ) v sf( agpl2_4 ) v su( agpl2_4 ).
+st( agpl2_5 ) v sf( agpl2_5 ) v su( agpl2_5 ).
+st( agpl2_6 ) v sf( agpl2_6 ) v su( agpl2_6 ).
+st( agpl2_7 ) v sf( agpl2_7 ) v su( agpl2_7 ).
+st( agpl2_8 ) v sf( agpl2_8 ) v su( agpl2_8 ).
+st( agpl2_9 ) v sf( agpl2_9 ) v su( agpl2_9 ).
+st( agpl2_10 ) v sf( agpl2_10 ) v su( agpl2_10 ).
+st( agpl2_11 ) v sf( agpl2_11 ) v su( agpl2_11 ).
+st( agpl2_12 ) v sf( agpl2_12 ) v su( agpl2_12 ).
+st( agpl2_13 ) v sf( agpl2_13 ) v su( agpl2_13 ).
+st( agpl2_14 ) v sf( agpl2_14 ) v su( agpl2_14 ).
+st( ss_agpl2a ) v sf( ss_agpl2a ) v su( ss_agpl2a ).
+st( agpl2a_15 ) v sf( agpl2a_15 ) v su( agpl2a_15 ).
+st( agpl2a_16 ) v sf( agpl2a_16 ) v su( agpl2a_16 ).
+st( ss_agpl2b ) v sf( ss_agpl2b ) v su( ss_agpl2b ).
+st( agpl2b_17 ) v sf( agpl2b_17 ) v su( agpl2b_17 ).
+st( agpl2b_18 ) v sf( agpl2b_18 ) v su( agpl2b_18 ).
+st( ss_agpl2c ) v sf( ss_agpl2c ) v su( ss_agpl2c ).
+st( agpl2c_19 ) v sf( agpl2c_19 ) v su( agpl2c_19 ).
+st( agpl2c_20 ) v sf( agpl2c_20 ) v su( agpl2c_20 ).
+st( agpl2c_21 ) v sf( agpl2c_21 ) v su( agpl2c_21 ).
+st( agpl2c_22 ) v sf( agpl2c_22 ) v su( agpl2c_22 ).
+st( agpl2c_23 ) v sf( agpl2c_23 ) v su( agpl2c_23 ).
+st( agpl2c_24 ) v sf( agpl2c_24 ) v su( agpl2c_24 ).
+st( agpl2c_25 ) v sf( agpl2c_25 ) v su( agpl2c_25 ).
+st( ss_agpl2d ) v sf( ss_agpl2d ) v su( ss_agpl2d ).
+st( agpl2d_26 ) v sf( agpl2d_26 ) v su( agpl2d_26 ).
+st( agpl2d_27 ) v sf( agpl2d_27 ) v su( agpl2d_27 ).
+st( agpl2d_28 ) v sf( agpl2d_28 ) v su( agpl2d_28 ).
+st( agpl2d_29 ) v sf( agpl2d_29 ) v su( agpl2d_29 ).
+st( agpl2d_30 ) v sf( agpl2d_30 ) v su( agpl2d_30 ).
+st( agpl2d_31 ) v sf( agpl2d_31 ) v su( agpl2d_31 ).
+st( agpl2d_32 ) v sf( agpl2d_32 ) v su( agpl2d_32 ).
+st( agpl2d_33 ) v sf( agpl2d_33 ) v su( agpl2d_33 ).
+st( agpl2d_34 ) v sf( agpl2d_34 ) v su( agpl2d_34 ).
+st( ss_agpl1 ) v sf( ss_agpl1 ) v su( ss_agpl1 ).
+st( agpl1_35 ) v sf( agpl1_35 ) v su( agpl1_35 ).
+st( agpl1_36 ) v sf( agpl1_36 ) v su( agpl1_36 ).
+st( agpl1_37 ) v sf( agpl1_37 ) v su( agpl1_37 ).
+st( agpl1_38 ) v sf( agpl1_38 ) v su( agpl1_38 ).
+st( agpl1_39 ) v sf( agpl1_39 ) v su( agpl1_39 ).
+st( agpl1_40 ) v sf( agpl1_40 ) v su( agpl1_40 ).
+st( ss_agpl1a ) v sf( ss_agpl1a ) v su( ss_agpl1a ).
+st( agpl1a_41 ) v sf( agpl1a_41 ) v su( agpl1a_41 ).
+st( agpl1a_42 ) v sf( agpl1a_42 ) v su( agpl1a_42 ).
+st( agpl1a_43 ) v sf( agpl1a_43 ) v su( agpl1a_43 ).
+st( agpl1a_44 ) v sf( agpl1a_44 ) v su( agpl1a_44 ).
+st( ss_agpl1b ) v sf( ss_agpl1b ) v su( ss_agpl1b ).
+st( agpl1b_45 ) v sf( agpl1b_45 ) v su( agpl1b_45 ).
+st( agpl1b_46 ) v sf( agpl1b_46 ) v su( agpl1b_46 ).
+st( agpl1b_47 ) v sf( agpl1b_47 ) v su( agpl1b_47 ).
+st( agpl1b_48 ) v sf( agpl1b_48 ) v su( agpl1b_48 ).
+st( ss_agpl1c ) v sf( ss_agpl1c ) v su( ss_agpl1c ).
+st( agpl1c_49 ) v sf( agpl1c_49 ) v su( agpl1c_49 ).
+st( agpl1c_50 ) v sf( agpl1c_50 ) v su( agpl1c_50 ).
+st( agpl1c_51 ) v sf( agpl1c_51 ) v su( agpl1c_51 ).
+st( agpl1c_52 ) v sf( agpl1c_52 ) v su( agpl1c_52 ).
+
+% Costs
+% cost 2: uncompliance
+:~ vio( agpl2a ). [1:2]
+:~ vio( agpl2b ). [1:2]
+:~ vio( agpl2c ). [1:2]
+:~ vio( agpl2d ). [1:2]
+:~ vio( agpl1a ). [1:2]
+:~ vio( agpl1b ). [1:2]
+:~ vio( agpl1c ). [1:2]
+:~ vio( agpl2 ). [1:2]
+:~ vio( agpl1 ). [1:2]
+% cost 1: freedom
+:~ st( ss_agpl2 ). [1:1]
+:~ st( agpl2_1 ). [1:1]
+:~ st( agpl2_2 ). [1:1]
+:~ st( agpl2_3 ). [1:1]
+:~ st( agpl2_4 ). [1:1]
+:~ st( agpl2_5 ). [1:1]
+:~ st( agpl2_6 ). [1:1]
+:~ st( agpl2_7 ). [1:1]
+:~ st( agpl2_8 ). [1:1]
+:~ st( agpl2_9 ). [1:1]
+:~ st( agpl2_10 ). [1:1]
+:~ st( agpl2_11 ). [1:1]
+:~ st( agpl2_12 ). [1:1]
+:~ st( agpl2_13 ). [1:1]
+:~ st( agpl2_14 ). [1:1]
+:~ st( ss_agpl2a ). [1:1]
+:~ st( agpl2a_15 ). [1:1]
+:~ st( agpl2a_16 ). [1:1]
+:~ st( ss_agpl2b ). [1:1]
+:~ st( agpl2b_17 ). [1:1]
+:~ st( agpl2b_18 ). [1:1]
+:~ st( ss_agpl2c ). [1:1]
+:~ st( agpl2c_19 ). [1:1]
+:~ st( agpl2c_20 ). [1:1]
+:~ st( agpl2c_21 ). [1:1]
+:~ st( agpl2c_22 ). [1:1]
+:~ st( agpl2c_23 ). [1:1]
+:~ st( agpl2c_24 ). [1:1]
+:~ st( agpl2c_25 ). [1:1]
+:~ st( ss_agpl2d ). [1:1]
+:~ st( agpl2d_26 ). [1:1]
+:~ st( agpl2d_27 ). [1:1]
+:~ st( agpl2d_28 ). [1:1]
+:~ st( agpl2d_29 ). [1:1]
+:~ st( agpl2d_30 ). [1:1]
+:~ st( agpl2d_31 ). [1:1]
+:~ st( agpl2d_32 ). [1:1]
+:~ st( agpl2d_33 ). [1:1]
+:~ st( agpl2d_34 ). [1:1]
+:~ st( ss_agpl1 ). [1:1]
+:~ st( agpl1_35 ). [1:1]
+:~ st( agpl1_36 ). [1:1]
+:~ st( agpl1_37 ). [1:1]
+:~ st( agpl1_38 ). [1:1]
+:~ st( agpl1_39 ). [1:1]
+:~ st( agpl1_40 ). [1:1]
+:~ st( ss_agpl1a ). [1:1]
+:~ st( agpl1a_41 ). [1:1]
+:~ st( agpl1a_42 ). [1:1]
+:~ st( agpl1a_43 ). [1:1]
+:~ st( agpl1a_44 ). [1:1]
+:~ st( ss_agpl1b ). [1:1]
+:~ st( agpl1b_45 ). [1:1]
+:~ st( agpl1b_46 ). [1:1]
+:~ st( agpl1b_47 ). [1:1]
+:~ st( agpl1b_48 ). [1:1]
+:~ st( ss_agpl1c ). [1:1]
+:~ st( agpl1c_49 ). [1:1]
+:~ st( agpl1c_50 ). [1:1]
+:~ st( agpl1c_51 ). [1:1]
+:~ st( agpl1c_52 ). [1:1]

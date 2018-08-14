@@ -1,0 +1,1311 @@
+% HIPAA1 (Duty) Section 1: Disclosures of protected health information: A covered entity may not disclose protected health information, except as permitted or required by sections 2 and 3 in this document.
+% HIPAA1_1 covered entity [did not disclose] protected health information
+% HIPAA1_2 not
+% HIPAA1_3 or
+% HIPAA1_4 $HIPAA2
+% HIPAA1_5 $HIPAA3
+% HIPAA2 (Right) Section 2: Disclosures requiring an opportunity for the individual to agree or to object: A covered entity may disclose protected health information, provided that the individual is informed in advance of the disclosure and has the opportunity to agree to or prohibit or restrict the disclosure, in accordance with the applicable requirements of this section.
+% HIPAA2_6 covered entity [disclosed] protected health information
+% HIPAA2_7 and
+% HIPAA2_8 and
+% HIPAA2_9 individual is informed in advance of the disclosure
+% HIPAA2_10 [individual] has the opportunity to agree to or prohibit or restrict the disclosure
+% HIPAA2_11 $HIPAA2a
+% HIPAA2a (Duty) Section 2(a): Opportunity to object: A covered health care provider must inform an individual of the persons to whom it may disclose such protected health information  (including disclosures to clergy of information regarding religious affiliation) and provide the individual with the opportunity to restrict or prohibit some or all of the disclosures permitted by [Section 2(b) and (c)].
+% HIPAA2a_12 and
+% HIPAA2a_13 covered entity [informed] an individual of the persons to whom it may disclose such protected health information  (including disclosures to clergy of information regarding religious affiliation)
+% HIPAA2a_14 and
+% HIPAA2a_15 not
+% HIPAA2a_16 [individual restricted or prohibited some or all of the disclosures]
+% HIPAA2a_17 [covered entity provided] the individual with the opportunity to restrict or prohibit some or all of the disclosures
+% HIPAA2a_18 covered entity intends to disclose protected health information
+% HIPAA2b (Right) Section 2(b): Disclosures for involvement in the individual's care: A covered entity may disclose to a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual, the protected health information directly relevant to such person's involvement with the individual's health care or payment related to the individual's health care.
+% HIPAA2b_19 covered entity [disclosed] protected health information
+% HIPAA2b_20 and
+% HIPAA2b_21 [individual is alive]
+% HIPAA2b_22 and
+% HIPAA2b_23 $HIPAA2a
+% HIPAA2b_24 and
+% HIPAA2b_25 [person requesting protected health information is] a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual
+% HIPAA2b_26 [protected health information to disclose is] directly relevant to such person's [(family member, other relative, etc.)] involvement with the individual's health care or payment related to the individual's health care.
+% HIPAA2c (Right) Section 2(c): Disclosures when the individual is deceased: If the individual is deceased, a covered entity may disclose to a family member, or other persons identified in [Section 2(b)] who were involved in the individual's care or payment for health care prior to the individual's death, protected health information of the individual that is relevant to such person's involvement, unless doing so is inconsistent with any prior expressed preference of the individual that is known to the covered entity.
+% HIPAA2c_27 covered entity [disclosed] protected health information
+% HIPAA2c_28 and
+% HIPAA2c_29 individual is deceased
+% HIPAA2c_30 and
+% HIPAA2c_31 or
+% HIPAA2c_32 [disclosing protected health information] is [consistent] with any prior expressed preference of the individual that is known to the covered entity
+% HIPAA2c_33 $HIPAA2a
+% HIPAA2c_34 and
+% HIPAA2c_35 [person requesting protected health information is] a family member, other relative, or a close personal friend of the individual, or any other person identified by the individual
+% HIPAA2c_36 [protected health information to disclose is] directly relevant to such person's [(family member, other relative, etc.)] involvement with the individual's health care or payment related to the individual's health care.
+% HIPAA3 (Right) Section 3: Disclosures for which an opportunity to agree or object is not required. A covered entity may disclose protected health information without the opportunity for the individual to agree or object as described in section 2, in the situations covered by this section.
+% HIPAA3_37 covered entity [disclosed] protected health information
+% HIPAA3_38 $HIPAA3a
+% HIPAA3a (Right) Section 3(a): Uses and disclosures required for a law enforcement purpose: A covered entity may disclose protected health information to the extent that such disclosure is required for law enforcement purpose if the following conditions are met, as applicable.
+% HIPAA3a_39 covered entity [disclosed] protected health information
+% HIPAA3a_40 or
+% HIPAA3a_41 $HIPAA3ai
+% HIPAA3a_42 $HIPAA3aii
+% HIPAA3ai (Right) Section 3(a)(i): Disclosures required for law enforcement purpose: A covered entity may disclose protected health information [as required by law or in compliance with and as limited by relevant legal requirements]
+% HIPAA3ai_43 covered entity [disclosed] protected health information
+% HIPAA3ai_44 or
+% HIPAA3ai_45 [3(a)(i)(1) covered entity is] required by law [to disclose protected health information] including laws that require the reporting of certain types of wounds (gunshot, stabbing) or other physical injuries
+% HIPAA3ai_46 or
+% HIPAA3ai_47 or
+% HIPAA3ai_48 [3(a)(i)(2)(a) disclosure of protected health information is in compliance with and as limited by the relevant requirements of] a court order or court-ordered warrant, or a subpoena or summons issued by a judicial officer
+% HIPAA3ai_49 [3(a)(i)(2)(b) disclosure of protected health information is in compliance with and as limited by the relevant requirements of] a grand jury subpoena
+% HIPAA3ai_50 and
+% HIPAA3ai_51 [3(a)(i)(2)(c) disclosure of protected health information is in compliance with and as limited by the relevant requirements of] an administrative request, including an administrative subpoena or summons, a civil or an authorized investigative demand, or similar process authorized under law
+% HIPAA3ai_52 and
+% HIPAA3ai_53 [3(a)(i)(2)(c)(i) disclosure of protected health information is in compliance with and as limited by the relevant requirements of an administrative request ... provided that] the information sought is relevant and material to a legitimate law enforcement inquiry
+% HIPAA3ai_54 and
+% HIPAA3ai_55 [3(a)(i)(2)(c)(ii) disclosure of protected health information is in compliance with and as limited by the relevant requirements of an administrative request ... provided that] the request is specific and limited in scope to the extent reasonably practicable in light of the purpose for which the information is sought
+% HIPAA3ai_56 [3(a)(i)(2)(c)(iii) disclosure of protected health information is in compliance with and as limited by the relevant requirements of an administrative request ... provided that] de-identified information could not reasonably be used [to identify the individual]
+% HIPAA3aii (Right) Section 3(a)(ii): Victims of a crime. Except for disclosures required for law enforcement purpose as permitted by [section 3(a)(i)], a covered entity may disclose protected health information in response to a law enforcement official's request for such information about an individual who is or is suspected to be a victim of a crime [if the following conditions are met: The individual agrees to the disclosure; or The covered entity is unable to obtain the individual's agreement because of incapacity or other emergency circumstance].
+% HIPAA3aii_57 covered entity [disclosed] protected health information
+% HIPAA3aii_58 and
+% HIPAA3aii_59 individual is or is suspected to be a victim of a crime
+% HIPAA3aii_60 or
+% HIPAA3aii_61 [3(a)(ii)(1)] individual agrees to the disclosure of protected health information
+% HIPAA3aii_62 [3(a)(ii)(2)] covered entity is unable to obtain the individual's agreement because of incapacity or other emergency circumstance
+
+% duty hipaa1 hipaa2a
+% Applicability and satisfiability rules for norm hipaa1
+st( hipaa1 ) :- stx( hipaa1 ).
+su( hipaa1 ) :- sux( hipaa1 ), not stx( hipaa1 ).
+sf( hipaa1 ) :- sfx( hipaa1 ), not sux( hipaa1 ), not stx( hipaa1 ).
+at( hipaa1 ) :- atx( hipaa1 ).
+au( hipaa1 ) :- aux( hipaa1 ), not atx( hipaa1 ).
+af( hipaa1 ) :- afx( hipaa1 ), not aux( hipaa1 ), not atx( hipaa1 ).
+
+% Compliance rules for duty hipaa1
+com( hipaa1 ) :- at( hipaa1 ), st( hipaa1 ).
+vio( hipaa1 ) :- at( hipaa1 ), not st( hipaa1 ).
+com( hipaa1 ) :- af( hipaa1 ).
+inc( hipaa1 ) :- au( hipaa1 ).
+tol( hipaa1 ) :- com( hipaa1 ).
+conf( hipaa1 ) :- atx( hipaa1 ), stx( hipaa1 ), not stx( hipaa1 ).
+acc( hipaa1 ) :- tol( hipaa1 ).
+acc( hipaa1 ) :- vio( hipaa1 ).
+
+% Applicability and satisfiability rules for norm hipaa2a
+st( hipaa2a ) :- stx( hipaa2a ).
+su( hipaa2a ) :- sux( hipaa2a ), not stx( hipaa2a ).
+sf( hipaa2a ) :- sfx( hipaa2a ), not sux( hipaa2a ), not stx( hipaa2a ).
+at( hipaa2a ) :- atx( hipaa2a ).
+au( hipaa2a ) :- aux( hipaa2a ), not atx( hipaa2a ).
+af( hipaa2a ) :- afx( hipaa2a ), not aux( hipaa2a ), not atx( hipaa2a ).
+
+% Compliance rules for duty hipaa2a
+com( hipaa2a ) :- at( hipaa2a ), st( hipaa2a ).
+vio( hipaa2a ) :- at( hipaa2a ), not st( hipaa2a ).
+com( hipaa2a ) :- af( hipaa2a ).
+inc( hipaa2a ) :- au( hipaa2a ).
+tol( hipaa2a ) :- com( hipaa2a ).
+conf( hipaa2a ) :- atx( hipaa2a ), stx( hipaa2a ), not stx( hipaa2a ).
+acc( hipaa2a ) :- tol( hipaa2a ).
+acc( hipaa2a ) :- vio( hipaa2a ).
+
+% right hipaa2 hipaa2b hipaa2c hipaa3 hipaa3a hipaa3ai hipaa3aii
+% Applicability and satisfiability rules for norm hipaa2
+st( hipaa2 ) :- stx( hipaa2 ).
+su( hipaa2 ) :- sux( hipaa2 ), not stx( hipaa2 ).
+sf( hipaa2 ) :- sfx( hipaa2 ), not sux( hipaa2 ), not stx( hipaa2 ).
+at( hipaa2 ) :- atx( hipaa2 ).
+au( hipaa2 ) :- aux( hipaa2 ), not atx( hipaa2 ).
+af( hipaa2 ) :- afx( hipaa2 ), not aux( hipaa2 ), not atx( hipaa2 ).
+
+% Compliance rules for right hipaa2
+exr( hipaa2 ) :- at( hipaa2 ).
+nex( hipaa2 ) :- af( hipaa2 ).
+inc( hipaa2 ) :- au( hipaa2 ).
+tol( hipaa2 ) :- com( hipaa2 ).
+acc( hipaa2 ) :- tol( hipaa2 ).
+acc( hipaa2 ) :- vio( hipaa2 ).
+
+% Applicability and satisfiability rules for norm hipaa2b
+st( hipaa2b ) :- stx( hipaa2b ).
+su( hipaa2b ) :- sux( hipaa2b ), not stx( hipaa2b ).
+sf( hipaa2b ) :- sfx( hipaa2b ), not sux( hipaa2b ), not stx( hipaa2b ).
+at( hipaa2b ) :- atx( hipaa2b ).
+au( hipaa2b ) :- aux( hipaa2b ), not atx( hipaa2b ).
+af( hipaa2b ) :- afx( hipaa2b ), not aux( hipaa2b ), not atx( hipaa2b ).
+
+% Compliance rules for right hipaa2b
+exr( hipaa2b ) :- at( hipaa2b ).
+nex( hipaa2b ) :- af( hipaa2b ).
+inc( hipaa2b ) :- au( hipaa2b ).
+tol( hipaa2b ) :- com( hipaa2b ).
+acc( hipaa2b ) :- tol( hipaa2b ).
+acc( hipaa2b ) :- vio( hipaa2b ).
+
+% Applicability and satisfiability rules for norm hipaa2c
+st( hipaa2c ) :- stx( hipaa2c ).
+su( hipaa2c ) :- sux( hipaa2c ), not stx( hipaa2c ).
+sf( hipaa2c ) :- sfx( hipaa2c ), not sux( hipaa2c ), not stx( hipaa2c ).
+at( hipaa2c ) :- atx( hipaa2c ).
+au( hipaa2c ) :- aux( hipaa2c ), not atx( hipaa2c ).
+af( hipaa2c ) :- afx( hipaa2c ), not aux( hipaa2c ), not atx( hipaa2c ).
+
+% Compliance rules for right hipaa2c
+exr( hipaa2c ) :- at( hipaa2c ).
+nex( hipaa2c ) :- af( hipaa2c ).
+inc( hipaa2c ) :- au( hipaa2c ).
+tol( hipaa2c ) :- com( hipaa2c ).
+acc( hipaa2c ) :- tol( hipaa2c ).
+acc( hipaa2c ) :- vio( hipaa2c ).
+
+% Applicability and satisfiability rules for norm hipaa3
+st( hipaa3 ) :- stx( hipaa3 ).
+su( hipaa3 ) :- sux( hipaa3 ), not stx( hipaa3 ).
+sf( hipaa3 ) :- sfx( hipaa3 ), not sux( hipaa3 ), not stx( hipaa3 ).
+at( hipaa3 ) :- atx( hipaa3 ).
+au( hipaa3 ) :- aux( hipaa3 ), not atx( hipaa3 ).
+af( hipaa3 ) :- afx( hipaa3 ), not aux( hipaa3 ), not atx( hipaa3 ).
+
+% Compliance rules for right hipaa3
+exr( hipaa3 ) :- at( hipaa3 ).
+nex( hipaa3 ) :- af( hipaa3 ).
+inc( hipaa3 ) :- au( hipaa3 ).
+tol( hipaa3 ) :- com( hipaa3 ).
+acc( hipaa3 ) :- tol( hipaa3 ).
+acc( hipaa3 ) :- vio( hipaa3 ).
+
+% Applicability and satisfiability rules for norm hipaa3a
+st( hipaa3a ) :- stx( hipaa3a ).
+su( hipaa3a ) :- sux( hipaa3a ), not stx( hipaa3a ).
+sf( hipaa3a ) :- sfx( hipaa3a ), not sux( hipaa3a ), not stx( hipaa3a ).
+at( hipaa3a ) :- atx( hipaa3a ).
+au( hipaa3a ) :- aux( hipaa3a ), not atx( hipaa3a ).
+af( hipaa3a ) :- afx( hipaa3a ), not aux( hipaa3a ), not atx( hipaa3a ).
+
+% Compliance rules for right hipaa3a
+exr( hipaa3a ) :- at( hipaa3a ).
+nex( hipaa3a ) :- af( hipaa3a ).
+inc( hipaa3a ) :- au( hipaa3a ).
+tol( hipaa3a ) :- com( hipaa3a ).
+acc( hipaa3a ) :- tol( hipaa3a ).
+acc( hipaa3a ) :- vio( hipaa3a ).
+
+% Applicability and satisfiability rules for norm hipaa3ai
+st( hipaa3ai ) :- stx( hipaa3ai ).
+su( hipaa3ai ) :- sux( hipaa3ai ), not stx( hipaa3ai ).
+sf( hipaa3ai ) :- sfx( hipaa3ai ), not sux( hipaa3ai ), not stx( hipaa3ai ).
+at( hipaa3ai ) :- atx( hipaa3ai ).
+au( hipaa3ai ) :- aux( hipaa3ai ), not atx( hipaa3ai ).
+af( hipaa3ai ) :- afx( hipaa3ai ), not aux( hipaa3ai ), not atx( hipaa3ai ).
+
+% Compliance rules for right hipaa3ai
+exr( hipaa3ai ) :- at( hipaa3ai ).
+nex( hipaa3ai ) :- af( hipaa3ai ).
+inc( hipaa3ai ) :- au( hipaa3ai ).
+tol( hipaa3ai ) :- com( hipaa3ai ).
+acc( hipaa3ai ) :- tol( hipaa3ai ).
+acc( hipaa3ai ) :- vio( hipaa3ai ).
+
+% Applicability and satisfiability rules for norm hipaa3aii
+st( hipaa3aii ) :- stx( hipaa3aii ).
+su( hipaa3aii ) :- sux( hipaa3aii ), not stx( hipaa3aii ).
+sf( hipaa3aii ) :- sfx( hipaa3aii ), not sux( hipaa3aii ), not stx( hipaa3aii ).
+at( hipaa3aii ) :- atx( hipaa3aii ).
+au( hipaa3aii ) :- aux( hipaa3aii ), not atx( hipaa3aii ).
+af( hipaa3aii ) :- afx( hipaa3aii ), not aux( hipaa3aii ), not atx( hipaa3aii ).
+
+% Compliance rules for right hipaa3aii
+exr( hipaa3aii ) :- at( hipaa3aii ).
+nex( hipaa3aii ) :- af( hipaa3aii ).
+inc( hipaa3aii ) :- au( hipaa3aii ).
+tol( hipaa3aii ) :- com( hipaa3aii ).
+acc( hipaa3aii ) :- tol( hipaa3aii ).
+acc( hipaa3aii ) :- vio( hipaa3aii ).
+
+% situation ss_hipaa1 hipaa1_1 hipaa1_2 hipaa1_3 hipaa1_4 hipaa1_5 ss_hipaa2 hipaa2_6 hipaa2_7 hipaa2_8 hipaa2_9 hipaa2_10 hipaa2_11 ss_hipaa2a hipaa2a_12 hipaa2a_13 hipaa2a_14 hipaa2a_15 hipaa2a_16 hipaa2a_17 hipaa2a_18 ss_hipaa2b hipaa2b_19 hipaa2b_20 hipaa2b_21 hipaa2b_22 hipaa2b_23 hipaa2b_24 hipaa2b_25 hipaa2b_26 ss_hipaa2c hipaa2c_27 hipaa2c_28 hipaa2c_29 hipaa2c_30 hipaa2c_31 hipaa2c_32 hipaa2c_33 hipaa2c_34 hipaa2c_35 hipaa2c_36 ss_hipaa3 hipaa3_37 hipaa3_38 ss_hipaa3a hipaa3a_39 hipaa3a_40 hipaa3a_41 hipaa3a_42 ss_hipaa3ai hipaa3ai_43 hipaa3ai_44 hipaa3ai_45 hipaa3ai_46 hipaa3ai_47 hipaa3ai_48 hipaa3ai_49 hipaa3ai_50 hipaa3ai_51 hipaa3ai_52 hipaa3ai_53 hipaa3ai_54 hipaa3ai_55 hipaa3ai_56 ss_hipaa3aii hipaa3aii_57 hipaa3aii_58 hipaa3aii_59 hipaa3aii_60 hipaa3aii_61 hipaa3aii_62
+% Satisfiability rules for situation ss_hipaa1
+st( ss_hipaa1 ) :- stx( ss_hipaa1 ).
+su( ss_hipaa1 ) :- sux( ss_hipaa1 ), not stx( ss_hipaa1 ).
+sf( ss_hipaa1 ) :- sfx( ss_hipaa1 ), not sux( ss_hipaa1 ), not stx( ss_hipaa1 ).
+
+% Satisfiability rules for situation hipaa1_1
+st( hipaa1_1 ) :- stx( hipaa1_1 ).
+su( hipaa1_1 ) :- sux( hipaa1_1 ), not stx( hipaa1_1 ).
+sf( hipaa1_1 ) :- sfx( hipaa1_1 ), not sux( hipaa1_1 ), not stx( hipaa1_1 ).
+
+% Satisfiability rules for situation hipaa1_2
+st( hipaa1_2 ) :- stx( hipaa1_2 ).
+su( hipaa1_2 ) :- sux( hipaa1_2 ), not stx( hipaa1_2 ).
+sf( hipaa1_2 ) :- sfx( hipaa1_2 ), not sux( hipaa1_2 ), not stx( hipaa1_2 ).
+
+% Satisfiability rules for situation hipaa1_3
+st( hipaa1_3 ) :- stx( hipaa1_3 ).
+su( hipaa1_3 ) :- sux( hipaa1_3 ), not stx( hipaa1_3 ).
+sf( hipaa1_3 ) :- sfx( hipaa1_3 ), not sux( hipaa1_3 ), not stx( hipaa1_3 ).
+
+% Satisfiability rules for situation hipaa1_4
+st( hipaa1_4 ) :- stx( hipaa1_4 ).
+su( hipaa1_4 ) :- sux( hipaa1_4 ), not stx( hipaa1_4 ).
+sf( hipaa1_4 ) :- sfx( hipaa1_4 ), not sux( hipaa1_4 ), not stx( hipaa1_4 ).
+
+% Satisfiability rules for situation hipaa1_5
+st( hipaa1_5 ) :- stx( hipaa1_5 ).
+su( hipaa1_5 ) :- sux( hipaa1_5 ), not stx( hipaa1_5 ).
+sf( hipaa1_5 ) :- sfx( hipaa1_5 ), not sux( hipaa1_5 ), not stx( hipaa1_5 ).
+
+% Satisfiability rules for situation ss_hipaa2
+st( ss_hipaa2 ) :- stx( ss_hipaa2 ).
+su( ss_hipaa2 ) :- sux( ss_hipaa2 ), not stx( ss_hipaa2 ).
+sf( ss_hipaa2 ) :- sfx( ss_hipaa2 ), not sux( ss_hipaa2 ), not stx( ss_hipaa2 ).
+
+% Satisfiability rules for situation hipaa2_6
+st( hipaa2_6 ) :- stx( hipaa2_6 ).
+su( hipaa2_6 ) :- sux( hipaa2_6 ), not stx( hipaa2_6 ).
+sf( hipaa2_6 ) :- sfx( hipaa2_6 ), not sux( hipaa2_6 ), not stx( hipaa2_6 ).
+
+% Satisfiability rules for situation hipaa2_7
+st( hipaa2_7 ) :- stx( hipaa2_7 ).
+su( hipaa2_7 ) :- sux( hipaa2_7 ), not stx( hipaa2_7 ).
+sf( hipaa2_7 ) :- sfx( hipaa2_7 ), not sux( hipaa2_7 ), not stx( hipaa2_7 ).
+
+% Satisfiability rules for situation hipaa2_8
+st( hipaa2_8 ) :- stx( hipaa2_8 ).
+su( hipaa2_8 ) :- sux( hipaa2_8 ), not stx( hipaa2_8 ).
+sf( hipaa2_8 ) :- sfx( hipaa2_8 ), not sux( hipaa2_8 ), not stx( hipaa2_8 ).
+
+% Satisfiability rules for situation hipaa2_9
+st( hipaa2_9 ) :- stx( hipaa2_9 ).
+su( hipaa2_9 ) :- sux( hipaa2_9 ), not stx( hipaa2_9 ).
+sf( hipaa2_9 ) :- sfx( hipaa2_9 ), not sux( hipaa2_9 ), not stx( hipaa2_9 ).
+
+% Satisfiability rules for situation hipaa2_10
+st( hipaa2_10 ) :- stx( hipaa2_10 ).
+su( hipaa2_10 ) :- sux( hipaa2_10 ), not stx( hipaa2_10 ).
+sf( hipaa2_10 ) :- sfx( hipaa2_10 ), not sux( hipaa2_10 ), not stx( hipaa2_10 ).
+
+% Satisfiability rules for situation hipaa2_11
+st( hipaa2_11 ) :- stx( hipaa2_11 ).
+su( hipaa2_11 ) :- sux( hipaa2_11 ), not stx( hipaa2_11 ).
+sf( hipaa2_11 ) :- sfx( hipaa2_11 ), not sux( hipaa2_11 ), not stx( hipaa2_11 ).
+
+% Satisfiability rules for situation ss_hipaa2a
+st( ss_hipaa2a ) :- stx( ss_hipaa2a ).
+su( ss_hipaa2a ) :- sux( ss_hipaa2a ), not stx( ss_hipaa2a ).
+sf( ss_hipaa2a ) :- sfx( ss_hipaa2a ), not sux( ss_hipaa2a ), not stx( ss_hipaa2a ).
+
+% Satisfiability rules for situation hipaa2a_12
+st( hipaa2a_12 ) :- stx( hipaa2a_12 ).
+su( hipaa2a_12 ) :- sux( hipaa2a_12 ), not stx( hipaa2a_12 ).
+sf( hipaa2a_12 ) :- sfx( hipaa2a_12 ), not sux( hipaa2a_12 ), not stx( hipaa2a_12 ).
+
+% Satisfiability rules for situation hipaa2a_13
+st( hipaa2a_13 ) :- stx( hipaa2a_13 ).
+su( hipaa2a_13 ) :- sux( hipaa2a_13 ), not stx( hipaa2a_13 ).
+sf( hipaa2a_13 ) :- sfx( hipaa2a_13 ), not sux( hipaa2a_13 ), not stx( hipaa2a_13 ).
+
+% Satisfiability rules for situation hipaa2a_14
+st( hipaa2a_14 ) :- stx( hipaa2a_14 ).
+su( hipaa2a_14 ) :- sux( hipaa2a_14 ), not stx( hipaa2a_14 ).
+sf( hipaa2a_14 ) :- sfx( hipaa2a_14 ), not sux( hipaa2a_14 ), not stx( hipaa2a_14 ).
+
+% Satisfiability rules for situation hipaa2a_15
+st( hipaa2a_15 ) :- stx( hipaa2a_15 ).
+su( hipaa2a_15 ) :- sux( hipaa2a_15 ), not stx( hipaa2a_15 ).
+sf( hipaa2a_15 ) :- sfx( hipaa2a_15 ), not sux( hipaa2a_15 ), not stx( hipaa2a_15 ).
+
+% Satisfiability rules for situation hipaa2a_16
+st( hipaa2a_16 ) :- stx( hipaa2a_16 ).
+su( hipaa2a_16 ) :- sux( hipaa2a_16 ), not stx( hipaa2a_16 ).
+sf( hipaa2a_16 ) :- sfx( hipaa2a_16 ), not sux( hipaa2a_16 ), not stx( hipaa2a_16 ).
+
+% Satisfiability rules for situation hipaa2a_17
+st( hipaa2a_17 ) :- stx( hipaa2a_17 ).
+su( hipaa2a_17 ) :- sux( hipaa2a_17 ), not stx( hipaa2a_17 ).
+sf( hipaa2a_17 ) :- sfx( hipaa2a_17 ), not sux( hipaa2a_17 ), not stx( hipaa2a_17 ).
+
+% Satisfiability rules for situation hipaa2a_18
+st( hipaa2a_18 ) :- stx( hipaa2a_18 ).
+su( hipaa2a_18 ) :- sux( hipaa2a_18 ), not stx( hipaa2a_18 ).
+sf( hipaa2a_18 ) :- sfx( hipaa2a_18 ), not sux( hipaa2a_18 ), not stx( hipaa2a_18 ).
+
+% Satisfiability rules for situation ss_hipaa2b
+st( ss_hipaa2b ) :- stx( ss_hipaa2b ).
+su( ss_hipaa2b ) :- sux( ss_hipaa2b ), not stx( ss_hipaa2b ).
+sf( ss_hipaa2b ) :- sfx( ss_hipaa2b ), not sux( ss_hipaa2b ), not stx( ss_hipaa2b ).
+
+% Satisfiability rules for situation hipaa2b_19
+st( hipaa2b_19 ) :- stx( hipaa2b_19 ).
+su( hipaa2b_19 ) :- sux( hipaa2b_19 ), not stx( hipaa2b_19 ).
+sf( hipaa2b_19 ) :- sfx( hipaa2b_19 ), not sux( hipaa2b_19 ), not stx( hipaa2b_19 ).
+
+% Satisfiability rules for situation hipaa2b_20
+st( hipaa2b_20 ) :- stx( hipaa2b_20 ).
+su( hipaa2b_20 ) :- sux( hipaa2b_20 ), not stx( hipaa2b_20 ).
+sf( hipaa2b_20 ) :- sfx( hipaa2b_20 ), not sux( hipaa2b_20 ), not stx( hipaa2b_20 ).
+
+% Satisfiability rules for situation hipaa2b_21
+st( hipaa2b_21 ) :- stx( hipaa2b_21 ).
+su( hipaa2b_21 ) :- sux( hipaa2b_21 ), not stx( hipaa2b_21 ).
+sf( hipaa2b_21 ) :- sfx( hipaa2b_21 ), not sux( hipaa2b_21 ), not stx( hipaa2b_21 ).
+
+% Satisfiability rules for situation hipaa2b_22
+st( hipaa2b_22 ) :- stx( hipaa2b_22 ).
+su( hipaa2b_22 ) :- sux( hipaa2b_22 ), not stx( hipaa2b_22 ).
+sf( hipaa2b_22 ) :- sfx( hipaa2b_22 ), not sux( hipaa2b_22 ), not stx( hipaa2b_22 ).
+
+% Satisfiability rules for situation hipaa2b_23
+st( hipaa2b_23 ) :- stx( hipaa2b_23 ).
+su( hipaa2b_23 ) :- sux( hipaa2b_23 ), not stx( hipaa2b_23 ).
+sf( hipaa2b_23 ) :- sfx( hipaa2b_23 ), not sux( hipaa2b_23 ), not stx( hipaa2b_23 ).
+
+% Satisfiability rules for situation hipaa2b_24
+st( hipaa2b_24 ) :- stx( hipaa2b_24 ).
+su( hipaa2b_24 ) :- sux( hipaa2b_24 ), not stx( hipaa2b_24 ).
+sf( hipaa2b_24 ) :- sfx( hipaa2b_24 ), not sux( hipaa2b_24 ), not stx( hipaa2b_24 ).
+
+% Satisfiability rules for situation hipaa2b_25
+st( hipaa2b_25 ) :- stx( hipaa2b_25 ).
+su( hipaa2b_25 ) :- sux( hipaa2b_25 ), not stx( hipaa2b_25 ).
+sf( hipaa2b_25 ) :- sfx( hipaa2b_25 ), not sux( hipaa2b_25 ), not stx( hipaa2b_25 ).
+
+% Satisfiability rules for situation hipaa2b_26
+st( hipaa2b_26 ) :- stx( hipaa2b_26 ).
+su( hipaa2b_26 ) :- sux( hipaa2b_26 ), not stx( hipaa2b_26 ).
+sf( hipaa2b_26 ) :- sfx( hipaa2b_26 ), not sux( hipaa2b_26 ), not stx( hipaa2b_26 ).
+
+% Satisfiability rules for situation ss_hipaa2c
+st( ss_hipaa2c ) :- stx( ss_hipaa2c ).
+su( ss_hipaa2c ) :- sux( ss_hipaa2c ), not stx( ss_hipaa2c ).
+sf( ss_hipaa2c ) :- sfx( ss_hipaa2c ), not sux( ss_hipaa2c ), not stx( ss_hipaa2c ).
+
+% Satisfiability rules for situation hipaa2c_27
+st( hipaa2c_27 ) :- stx( hipaa2c_27 ).
+su( hipaa2c_27 ) :- sux( hipaa2c_27 ), not stx( hipaa2c_27 ).
+sf( hipaa2c_27 ) :- sfx( hipaa2c_27 ), not sux( hipaa2c_27 ), not stx( hipaa2c_27 ).
+
+% Satisfiability rules for situation hipaa2c_28
+st( hipaa2c_28 ) :- stx( hipaa2c_28 ).
+su( hipaa2c_28 ) :- sux( hipaa2c_28 ), not stx( hipaa2c_28 ).
+sf( hipaa2c_28 ) :- sfx( hipaa2c_28 ), not sux( hipaa2c_28 ), not stx( hipaa2c_28 ).
+
+% Satisfiability rules for situation hipaa2c_29
+st( hipaa2c_29 ) :- stx( hipaa2c_29 ).
+su( hipaa2c_29 ) :- sux( hipaa2c_29 ), not stx( hipaa2c_29 ).
+sf( hipaa2c_29 ) :- sfx( hipaa2c_29 ), not sux( hipaa2c_29 ), not stx( hipaa2c_29 ).
+
+% Satisfiability rules for situation hipaa2c_30
+st( hipaa2c_30 ) :- stx( hipaa2c_30 ).
+su( hipaa2c_30 ) :- sux( hipaa2c_30 ), not stx( hipaa2c_30 ).
+sf( hipaa2c_30 ) :- sfx( hipaa2c_30 ), not sux( hipaa2c_30 ), not stx( hipaa2c_30 ).
+
+% Satisfiability rules for situation hipaa2c_31
+st( hipaa2c_31 ) :- stx( hipaa2c_31 ).
+su( hipaa2c_31 ) :- sux( hipaa2c_31 ), not stx( hipaa2c_31 ).
+sf( hipaa2c_31 ) :- sfx( hipaa2c_31 ), not sux( hipaa2c_31 ), not stx( hipaa2c_31 ).
+
+% Satisfiability rules for situation hipaa2c_32
+st( hipaa2c_32 ) :- stx( hipaa2c_32 ).
+su( hipaa2c_32 ) :- sux( hipaa2c_32 ), not stx( hipaa2c_32 ).
+sf( hipaa2c_32 ) :- sfx( hipaa2c_32 ), not sux( hipaa2c_32 ), not stx( hipaa2c_32 ).
+
+% Satisfiability rules for situation hipaa2c_33
+st( hipaa2c_33 ) :- stx( hipaa2c_33 ).
+su( hipaa2c_33 ) :- sux( hipaa2c_33 ), not stx( hipaa2c_33 ).
+sf( hipaa2c_33 ) :- sfx( hipaa2c_33 ), not sux( hipaa2c_33 ), not stx( hipaa2c_33 ).
+
+% Satisfiability rules for situation hipaa2c_34
+st( hipaa2c_34 ) :- stx( hipaa2c_34 ).
+su( hipaa2c_34 ) :- sux( hipaa2c_34 ), not stx( hipaa2c_34 ).
+sf( hipaa2c_34 ) :- sfx( hipaa2c_34 ), not sux( hipaa2c_34 ), not stx( hipaa2c_34 ).
+
+% Satisfiability rules for situation hipaa2c_35
+st( hipaa2c_35 ) :- stx( hipaa2c_35 ).
+su( hipaa2c_35 ) :- sux( hipaa2c_35 ), not stx( hipaa2c_35 ).
+sf( hipaa2c_35 ) :- sfx( hipaa2c_35 ), not sux( hipaa2c_35 ), not stx( hipaa2c_35 ).
+
+% Satisfiability rules for situation hipaa2c_36
+st( hipaa2c_36 ) :- stx( hipaa2c_36 ).
+su( hipaa2c_36 ) :- sux( hipaa2c_36 ), not stx( hipaa2c_36 ).
+sf( hipaa2c_36 ) :- sfx( hipaa2c_36 ), not sux( hipaa2c_36 ), not stx( hipaa2c_36 ).
+
+% Satisfiability rules for situation ss_hipaa3
+st( ss_hipaa3 ) :- stx( ss_hipaa3 ).
+su( ss_hipaa3 ) :- sux( ss_hipaa3 ), not stx( ss_hipaa3 ).
+sf( ss_hipaa3 ) :- sfx( ss_hipaa3 ), not sux( ss_hipaa3 ), not stx( ss_hipaa3 ).
+
+% Satisfiability rules for situation hipaa3_37
+st( hipaa3_37 ) :- stx( hipaa3_37 ).
+su( hipaa3_37 ) :- sux( hipaa3_37 ), not stx( hipaa3_37 ).
+sf( hipaa3_37 ) :- sfx( hipaa3_37 ), not sux( hipaa3_37 ), not stx( hipaa3_37 ).
+
+% Satisfiability rules for situation hipaa3_38
+st( hipaa3_38 ) :- stx( hipaa3_38 ).
+su( hipaa3_38 ) :- sux( hipaa3_38 ), not stx( hipaa3_38 ).
+sf( hipaa3_38 ) :- sfx( hipaa3_38 ), not sux( hipaa3_38 ), not stx( hipaa3_38 ).
+
+% Satisfiability rules for situation ss_hipaa3a
+st( ss_hipaa3a ) :- stx( ss_hipaa3a ).
+su( ss_hipaa3a ) :- sux( ss_hipaa3a ), not stx( ss_hipaa3a ).
+sf( ss_hipaa3a ) :- sfx( ss_hipaa3a ), not sux( ss_hipaa3a ), not stx( ss_hipaa3a ).
+
+% Satisfiability rules for situation hipaa3a_39
+st( hipaa3a_39 ) :- stx( hipaa3a_39 ).
+su( hipaa3a_39 ) :- sux( hipaa3a_39 ), not stx( hipaa3a_39 ).
+sf( hipaa3a_39 ) :- sfx( hipaa3a_39 ), not sux( hipaa3a_39 ), not stx( hipaa3a_39 ).
+
+% Satisfiability rules for situation hipaa3a_40
+st( hipaa3a_40 ) :- stx( hipaa3a_40 ).
+su( hipaa3a_40 ) :- sux( hipaa3a_40 ), not stx( hipaa3a_40 ).
+sf( hipaa3a_40 ) :- sfx( hipaa3a_40 ), not sux( hipaa3a_40 ), not stx( hipaa3a_40 ).
+
+% Satisfiability rules for situation hipaa3a_41
+st( hipaa3a_41 ) :- stx( hipaa3a_41 ).
+su( hipaa3a_41 ) :- sux( hipaa3a_41 ), not stx( hipaa3a_41 ).
+sf( hipaa3a_41 ) :- sfx( hipaa3a_41 ), not sux( hipaa3a_41 ), not stx( hipaa3a_41 ).
+
+% Satisfiability rules for situation hipaa3a_42
+st( hipaa3a_42 ) :- stx( hipaa3a_42 ).
+su( hipaa3a_42 ) :- sux( hipaa3a_42 ), not stx( hipaa3a_42 ).
+sf( hipaa3a_42 ) :- sfx( hipaa3a_42 ), not sux( hipaa3a_42 ), not stx( hipaa3a_42 ).
+
+% Satisfiability rules for situation ss_hipaa3ai
+st( ss_hipaa3ai ) :- stx( ss_hipaa3ai ).
+su( ss_hipaa3ai ) :- sux( ss_hipaa3ai ), not stx( ss_hipaa3ai ).
+sf( ss_hipaa3ai ) :- sfx( ss_hipaa3ai ), not sux( ss_hipaa3ai ), not stx( ss_hipaa3ai ).
+
+% Satisfiability rules for situation hipaa3ai_43
+st( hipaa3ai_43 ) :- stx( hipaa3ai_43 ).
+su( hipaa3ai_43 ) :- sux( hipaa3ai_43 ), not stx( hipaa3ai_43 ).
+sf( hipaa3ai_43 ) :- sfx( hipaa3ai_43 ), not sux( hipaa3ai_43 ), not stx( hipaa3ai_43 ).
+
+% Satisfiability rules for situation hipaa3ai_44
+st( hipaa3ai_44 ) :- stx( hipaa3ai_44 ).
+su( hipaa3ai_44 ) :- sux( hipaa3ai_44 ), not stx( hipaa3ai_44 ).
+sf( hipaa3ai_44 ) :- sfx( hipaa3ai_44 ), not sux( hipaa3ai_44 ), not stx( hipaa3ai_44 ).
+
+% Satisfiability rules for situation hipaa3ai_45
+st( hipaa3ai_45 ) :- stx( hipaa3ai_45 ).
+su( hipaa3ai_45 ) :- sux( hipaa3ai_45 ), not stx( hipaa3ai_45 ).
+sf( hipaa3ai_45 ) :- sfx( hipaa3ai_45 ), not sux( hipaa3ai_45 ), not stx( hipaa3ai_45 ).
+
+% Satisfiability rules for situation hipaa3ai_46
+st( hipaa3ai_46 ) :- stx( hipaa3ai_46 ).
+su( hipaa3ai_46 ) :- sux( hipaa3ai_46 ), not stx( hipaa3ai_46 ).
+sf( hipaa3ai_46 ) :- sfx( hipaa3ai_46 ), not sux( hipaa3ai_46 ), not stx( hipaa3ai_46 ).
+
+% Satisfiability rules for situation hipaa3ai_47
+st( hipaa3ai_47 ) :- stx( hipaa3ai_47 ).
+su( hipaa3ai_47 ) :- sux( hipaa3ai_47 ), not stx( hipaa3ai_47 ).
+sf( hipaa3ai_47 ) :- sfx( hipaa3ai_47 ), not sux( hipaa3ai_47 ), not stx( hipaa3ai_47 ).
+
+% Satisfiability rules for situation hipaa3ai_48
+st( hipaa3ai_48 ) :- stx( hipaa3ai_48 ).
+su( hipaa3ai_48 ) :- sux( hipaa3ai_48 ), not stx( hipaa3ai_48 ).
+sf( hipaa3ai_48 ) :- sfx( hipaa3ai_48 ), not sux( hipaa3ai_48 ), not stx( hipaa3ai_48 ).
+
+% Satisfiability rules for situation hipaa3ai_49
+st( hipaa3ai_49 ) :- stx( hipaa3ai_49 ).
+su( hipaa3ai_49 ) :- sux( hipaa3ai_49 ), not stx( hipaa3ai_49 ).
+sf( hipaa3ai_49 ) :- sfx( hipaa3ai_49 ), not sux( hipaa3ai_49 ), not stx( hipaa3ai_49 ).
+
+% Satisfiability rules for situation hipaa3ai_50
+st( hipaa3ai_50 ) :- stx( hipaa3ai_50 ).
+su( hipaa3ai_50 ) :- sux( hipaa3ai_50 ), not stx( hipaa3ai_50 ).
+sf( hipaa3ai_50 ) :- sfx( hipaa3ai_50 ), not sux( hipaa3ai_50 ), not stx( hipaa3ai_50 ).
+
+% Satisfiability rules for situation hipaa3ai_51
+st( hipaa3ai_51 ) :- stx( hipaa3ai_51 ).
+su( hipaa3ai_51 ) :- sux( hipaa3ai_51 ), not stx( hipaa3ai_51 ).
+sf( hipaa3ai_51 ) :- sfx( hipaa3ai_51 ), not sux( hipaa3ai_51 ), not stx( hipaa3ai_51 ).
+
+% Satisfiability rules for situation hipaa3ai_52
+st( hipaa3ai_52 ) :- stx( hipaa3ai_52 ).
+su( hipaa3ai_52 ) :- sux( hipaa3ai_52 ), not stx( hipaa3ai_52 ).
+sf( hipaa3ai_52 ) :- sfx( hipaa3ai_52 ), not sux( hipaa3ai_52 ), not stx( hipaa3ai_52 ).
+
+% Satisfiability rules for situation hipaa3ai_53
+st( hipaa3ai_53 ) :- stx( hipaa3ai_53 ).
+su( hipaa3ai_53 ) :- sux( hipaa3ai_53 ), not stx( hipaa3ai_53 ).
+sf( hipaa3ai_53 ) :- sfx( hipaa3ai_53 ), not sux( hipaa3ai_53 ), not stx( hipaa3ai_53 ).
+
+% Satisfiability rules for situation hipaa3ai_54
+st( hipaa3ai_54 ) :- stx( hipaa3ai_54 ).
+su( hipaa3ai_54 ) :- sux( hipaa3ai_54 ), not stx( hipaa3ai_54 ).
+sf( hipaa3ai_54 ) :- sfx( hipaa3ai_54 ), not sux( hipaa3ai_54 ), not stx( hipaa3ai_54 ).
+
+% Satisfiability rules for situation hipaa3ai_55
+st( hipaa3ai_55 ) :- stx( hipaa3ai_55 ).
+su( hipaa3ai_55 ) :- sux( hipaa3ai_55 ), not stx( hipaa3ai_55 ).
+sf( hipaa3ai_55 ) :- sfx( hipaa3ai_55 ), not sux( hipaa3ai_55 ), not stx( hipaa3ai_55 ).
+
+% Satisfiability rules for situation hipaa3ai_56
+st( hipaa3ai_56 ) :- stx( hipaa3ai_56 ).
+su( hipaa3ai_56 ) :- sux( hipaa3ai_56 ), not stx( hipaa3ai_56 ).
+sf( hipaa3ai_56 ) :- sfx( hipaa3ai_56 ), not sux( hipaa3ai_56 ), not stx( hipaa3ai_56 ).
+
+% Satisfiability rules for situation ss_hipaa3aii
+st( ss_hipaa3aii ) :- stx( ss_hipaa3aii ).
+su( ss_hipaa3aii ) :- sux( ss_hipaa3aii ), not stx( ss_hipaa3aii ).
+sf( ss_hipaa3aii ) :- sfx( ss_hipaa3aii ), not sux( ss_hipaa3aii ), not stx( ss_hipaa3aii ).
+
+% Satisfiability rules for situation hipaa3aii_57
+st( hipaa3aii_57 ) :- stx( hipaa3aii_57 ).
+su( hipaa3aii_57 ) :- sux( hipaa3aii_57 ), not stx( hipaa3aii_57 ).
+sf( hipaa3aii_57 ) :- sfx( hipaa3aii_57 ), not sux( hipaa3aii_57 ), not stx( hipaa3aii_57 ).
+
+% Satisfiability rules for situation hipaa3aii_58
+st( hipaa3aii_58 ) :- stx( hipaa3aii_58 ).
+su( hipaa3aii_58 ) :- sux( hipaa3aii_58 ), not stx( hipaa3aii_58 ).
+sf( hipaa3aii_58 ) :- sfx( hipaa3aii_58 ), not sux( hipaa3aii_58 ), not stx( hipaa3aii_58 ).
+
+% Satisfiability rules for situation hipaa3aii_59
+st( hipaa3aii_59 ) :- stx( hipaa3aii_59 ).
+su( hipaa3aii_59 ) :- sux( hipaa3aii_59 ), not stx( hipaa3aii_59 ).
+sf( hipaa3aii_59 ) :- sfx( hipaa3aii_59 ), not sux( hipaa3aii_59 ), not stx( hipaa3aii_59 ).
+
+% Satisfiability rules for situation hipaa3aii_60
+st( hipaa3aii_60 ) :- stx( hipaa3aii_60 ).
+su( hipaa3aii_60 ) :- sux( hipaa3aii_60 ), not stx( hipaa3aii_60 ).
+sf( hipaa3aii_60 ) :- sfx( hipaa3aii_60 ), not sux( hipaa3aii_60 ), not stx( hipaa3aii_60 ).
+
+% Satisfiability rules for situation hipaa3aii_61
+st( hipaa3aii_61 ) :- stx( hipaa3aii_61 ).
+su( hipaa3aii_61 ) :- sux( hipaa3aii_61 ), not stx( hipaa3aii_61 ).
+sf( hipaa3aii_61 ) :- sfx( hipaa3aii_61 ), not sux( hipaa3aii_61 ), not stx( hipaa3aii_61 ).
+
+% Satisfiability rules for situation hipaa3aii_62
+st( hipaa3aii_62 ) :- stx( hipaa3aii_62 ).
+su( hipaa3aii_62 ) :- sux( hipaa3aii_62 ), not stx( hipaa3aii_62 ).
+sf( hipaa3aii_62 ) :- sfx( hipaa3aii_62 ), not sux( hipaa3aii_62 ), not stx( hipaa3aii_62 ).
+
+
+%satisfy hipaa2c_27 hipaa2c
+% and-satisfy( hipaa2c , [u'hipaa2c_27'] ).
+stx( hipaa2c ) :-  st( hipaa2c_27 ) .
+st_rel( hipaa2c , rsat) :- stx( hipaa2c ).
+sfx( hipaa2c ) :- sf( hipaa2c_27 ).
+sf_rel( hipaa2c , rsat) :- sfx( hipaa2c ).
+sux( hipaa2c ) :- not st( hipaa2c_27 ), not sf( hipaa2c_27 ).
+su_rel( hipaa2c , rsat) :- sux( hipaa2c ).
+
+%activate hipaa3aii_58 hipaa3aii
+% and-activate( hipaa3aii , [u'hipaa3aii_58'] ).
+atx( hipaa3aii ) :-  st( hipaa3aii_58 ) , not st( hipaa3aiis ).
+at_rel( hipaa3aii , ract) :- atx( hipaa3aii ).
+afx( hipaa3aii ) :- sf( hipaa3aii_58 ).
+af_rel( hipaa3aii , rsat) :- afx( hipaa3aii ).
+aux( hipaa3aii ) :- not st( hipaa3aii_58 ), not sf( hipaa3aii_58 ), not st( hipaa3aiis ).
+au_rel( hipaa3aii , ract) :- aux( hipaa3aii ).
+
+%contains hipaa2c ss_hipaa2c
+% propagate  hipaa2c  to  ss_hipaa2c .
+st( ss_hipaa2c ) :- exr( hipaa2c ).
+sf( ss_hipaa2c ) :- nex( hipaa2c ).
+su( ss_hipaa2c ) :- inc( hipaa2c ).
+
+%satisfy hipaa3ai_45 hipaa3ai_46 hipaa3ai_44 or
+% or-satisfy( hipaa3ai_44 , [u'hipaa3ai_45', u'hipaa3ai_46'] ).
+sfx( hipaa3ai_44 ) :-  sf( hipaa3ai_45 ) ,  sf( hipaa3ai_46 ) .
+sf_rel( hipaa3ai_44 , rsat) :- sfx( hipaa3ai_44 ).
+stx( hipaa3ai_44 ) :- st( hipaa3ai_45 ).
+st_rel( hipaa3ai_44 , rsat) :- stx( hipaa3ai_44 ).
+sux( hipaa3ai_44 ) :- not st( hipaa3ai_45 ), not sf( hipaa3ai_45 ).
+su_rel( hipaa3ai_44 , rsat) :- sux( hipaa3ai_44 ).
+stx( hipaa3ai_44 ) :- st( hipaa3ai_46 ).
+st_rel( hipaa3ai_44 , rsat) :- stx( hipaa3ai_44 ).
+sux( hipaa3ai_44 ) :- not st( hipaa3ai_46 ), not sf( hipaa3ai_46 ).
+su_rel( hipaa3ai_44 , rsat) :- sux( hipaa3ai_44 ).
+
+%contains hipaa3ai ss_hipaa3ai
+% propagate  hipaa3ai  to  ss_hipaa3ai .
+st( ss_hipaa3ai ) :- exr( hipaa3ai ).
+sf( ss_hipaa3ai ) :- nex( hipaa3ai ).
+su( ss_hipaa3ai ) :- inc( hipaa3ai ).
+
+%satisfy ss_hipaa2a hipaa2_11
+% and-satisfy( hipaa2_11 , [u'ss_hipaa2a'] ).
+stx( hipaa2_11 ) :-  st( ss_hipaa2a ) .
+st_rel( hipaa2_11 , rsat) :- stx( hipaa2_11 ).
+sfx( hipaa2_11 ) :- sf( ss_hipaa2a ).
+sf_rel( hipaa2_11 , rsat) :- sfx( hipaa2_11 ).
+sux( hipaa2_11 ) :- not st( ss_hipaa2a ), not sf( ss_hipaa2a ).
+su_rel( hipaa2_11 , rsat) :- sux( hipaa2_11 ).
+
+%satisfy hipaa3ai_53 hipaa3ai_54 hipaa3ai_52
+% and-satisfy( hipaa3ai_52 , [u'hipaa3ai_53', u'hipaa3ai_54'] ).
+stx( hipaa3ai_52 ) :-  st( hipaa3ai_53 ) ,  st( hipaa3ai_54 ) .
+st_rel( hipaa3ai_52 , rsat) :- stx( hipaa3ai_52 ).
+sfx( hipaa3ai_52 ) :- sf( hipaa3ai_53 ).
+sf_rel( hipaa3ai_52 , rsat) :- sfx( hipaa3ai_52 ).
+sux( hipaa3ai_52 ) :- not st( hipaa3ai_53 ), not sf( hipaa3ai_53 ).
+su_rel( hipaa3ai_52 , rsat) :- sux( hipaa3ai_52 ).
+sfx( hipaa3ai_52 ) :- sf( hipaa3ai_54 ).
+sf_rel( hipaa3ai_52 , rsat) :- sfx( hipaa3ai_52 ).
+sux( hipaa3ai_52 ) :- not st( hipaa3ai_54 ), not sf( hipaa3ai_54 ).
+su_rel( hipaa3ai_52 , rsat) :- sux( hipaa3ai_52 ).
+
+%satisfy hipaa3aii_57 hipaa3aii
+% and-satisfy( hipaa3aii , [u'hipaa3aii_57'] ).
+stx( hipaa3aii ) :-  st( hipaa3aii_57 ) .
+st_rel( hipaa3aii , rsat) :- stx( hipaa3aii ).
+sfx( hipaa3aii ) :- sf( hipaa3aii_57 ).
+sf_rel( hipaa3aii , rsat) :- sfx( hipaa3aii ).
+sux( hipaa3aii ) :- not st( hipaa3aii_57 ), not sf( hipaa3aii_57 ).
+su_rel( hipaa3aii , rsat) :- sux( hipaa3aii ).
+
+%satisfy ss_hipaa2a hipaa2b_23
+% and-satisfy( hipaa2b_23 , [u'ss_hipaa2a'] ).
+stx( hipaa2b_23 ) :-  st( ss_hipaa2a ) .
+st_rel( hipaa2b_23 , rsat) :- stx( hipaa2b_23 ).
+sfx( hipaa2b_23 ) :- sf( ss_hipaa2a ).
+sf_rel( hipaa2b_23 , rsat) :- sfx( hipaa2b_23 ).
+sux( hipaa2b_23 ) :- not st( ss_hipaa2a ), not sf( ss_hipaa2a ).
+su_rel( hipaa2b_23 , rsat) :- sux( hipaa2b_23 ).
+
+%activate hipaa3ai_44 hipaa3ai
+% and-activate( hipaa3ai , [u'hipaa3ai_44'] ).
+atx( hipaa3ai ) :-  st( hipaa3ai_44 ) , not st( hipaa3ais ).
+at_rel( hipaa3ai , ract) :- atx( hipaa3ai ).
+afx( hipaa3ai ) :- sf( hipaa3ai_44 ).
+af_rel( hipaa3ai , rsat) :- afx( hipaa3ai ).
+aux( hipaa3ai ) :- not st( hipaa3ai_44 ), not sf( hipaa3ai_44 ), not st( hipaa3ais ).
+au_rel( hipaa3ai , ract) :- aux( hipaa3ai ).
+
+%satisfy hipaa2a_12 hipaa2a
+% and-satisfy( hipaa2a , [u'hipaa2a_12'] ).
+stx( hipaa2a ) :-  st( hipaa2a_12 ) .
+st_rel( hipaa2a , rsat) :- stx( hipaa2a ).
+sfx( hipaa2a ) :- sf( hipaa2a_12 ).
+sf_rel( hipaa2a , rsat) :- sfx( hipaa2a ).
+sux( hipaa2a ) :- not st( hipaa2a_12 ), not sf( hipaa2a_12 ).
+su_rel( hipaa2a , rsat) :- sux( hipaa2a ).
+
+break hipaa1_3 hipaa1_2
+% and-break( hipaa1_2 , [u'hipaa1_3'] ).
+sfx( hipaa1_2 ) :-  st( hipaa1_3 ) .
+sf_rel( hipaa1_2 , rbrk) :- sfx( hipaa1_2 ).
+sux( hipaa1_2 ) :- not st( hipaa1_3 ).
+su_rel( hipaa1_2 , rbrk) :- sux( hipaa1_2 ).
+
+%satisfy hipaa2a_15 hipaa2a_17 hipaa2a_14
+% and-satisfy( hipaa2a_14 , [u'hipaa2a_15', u'hipaa2a_17'] ).
+stx( hipaa2a_14 ) :-  st( hipaa2a_15 ) ,  st( hipaa2a_17 ) .
+st_rel( hipaa2a_14 , rsat) :- stx( hipaa2a_14 ).
+sfx( hipaa2a_14 ) :- sf( hipaa2a_15 ).
+sf_rel( hipaa2a_14 , rsat) :- sfx( hipaa2a_14 ).
+sux( hipaa2a_14 ) :- not st( hipaa2a_15 ), not sf( hipaa2a_15 ).
+su_rel( hipaa2a_14 , rsat) :- sux( hipaa2a_14 ).
+sfx( hipaa2a_14 ) :- sf( hipaa2a_17 ).
+sf_rel( hipaa2a_14 , rsat) :- sfx( hipaa2a_14 ).
+sux( hipaa2a_14 ) :- not st( hipaa2a_17 ), not sf( hipaa2a_17 ).
+su_rel( hipaa2a_14 , rsat) :- sux( hipaa2a_14 ).
+
+%satisfy hipaa3a_39 hipaa3a
+% and-satisfy( hipaa3a , [u'hipaa3a_39'] ).
+stx( hipaa3a ) :-  st( hipaa3a_39 ) .
+st_rel( hipaa3a , rsat) :- stx( hipaa3a ).
+sfx( hipaa3a ) :- sf( hipaa3a_39 ).
+sf_rel( hipaa3a , rsat) :- sfx( hipaa3a ).
+sux( hipaa3a ) :- not st( hipaa3a_39 ), not sf( hipaa3a_39 ).
+su_rel( hipaa3a , rsat) :- sux( hipaa3a ).
+
+%activate hipaa1_2 hipaa1
+% and-activate( hipaa1 , [u'hipaa1_2'] ).
+atx( hipaa1 ) :-  st( hipaa1_2 ) , not st( hipaa1s ).
+at_rel( hipaa1 , ract) :- atx( hipaa1 ).
+afx( hipaa1 ) :- sf( hipaa1_2 ).
+af_rel( hipaa1 , rsat) :- afx( hipaa1 ).
+aux( hipaa1 ) :- not st( hipaa1_2 ), not sf( hipaa1_2 ), not st( hipaa1s ).
+au_rel( hipaa1 , ract) :- aux( hipaa1 ).
+
+%satisfy ss_hipaa2a hipaa2c_33
+% and-satisfy( hipaa2c_33 , [u'ss_hipaa2a'] ).
+stx( hipaa2c_33 ) :-  st( ss_hipaa2a ) .
+st_rel( hipaa2c_33 , rsat) :- stx( hipaa2c_33 ).
+sfx( hipaa2c_33 ) :- sf( ss_hipaa2a ).
+sf_rel( hipaa2c_33 , rsat) :- sfx( hipaa2c_33 ).
+sux( hipaa2c_33 ) :- not st( ss_hipaa2a ), not sf( ss_hipaa2a ).
+su_rel( hipaa2c_33 , rsat) :- sux( hipaa2c_33 ).
+
+%satisfy ss_hipaa3aii hipaa3a_42
+% and-satisfy( hipaa3a_42 , [u'ss_hipaa3aii'] ).
+stx( hipaa3a_42 ) :-  st( ss_hipaa3aii ) .
+st_rel( hipaa3a_42 , rsat) :- stx( hipaa3a_42 ).
+sfx( hipaa3a_42 ) :- sf( ss_hipaa3aii ).
+sf_rel( hipaa3a_42 , rsat) :- sfx( hipaa3a_42 ).
+sux( hipaa3a_42 ) :- not st( ss_hipaa3aii ), not sf( ss_hipaa3aii ).
+su_rel( hipaa3a_42 , rsat) :- sux( hipaa3a_42 ).
+
+%satisfy ss_hipaa2 hipaa1_4
+% and-satisfy( hipaa1_4 , [u'ss_hipaa2'] ).
+stx( hipaa1_4 ) :-  st( ss_hipaa2 ) .
+st_rel( hipaa1_4 , rsat) :- stx( hipaa1_4 ).
+sfx( hipaa1_4 ) :- sf( ss_hipaa2 ).
+sf_rel( hipaa1_4 , rsat) :- sfx( hipaa1_4 ).
+sux( hipaa1_4 ) :- not st( ss_hipaa2 ), not sf( ss_hipaa2 ).
+su_rel( hipaa1_4 , rsat) :- sux( hipaa1_4 ).
+
+%activate hipaa2c_28 hipaa2c
+% and-activate( hipaa2c , [u'hipaa2c_28'] ).
+atx( hipaa2c ) :-  st( hipaa2c_28 ) , not st( hipaa2cs ).
+at_rel( hipaa2c , ract) :- atx( hipaa2c ).
+afx( hipaa2c ) :- sf( hipaa2c_28 ).
+af_rel( hipaa2c , rsat) :- afx( hipaa2c ).
+aux( hipaa2c ) :- not st( hipaa2c_28 ), not sf( hipaa2c_28 ), not st( hipaa2cs ).
+au_rel( hipaa2c , ract) :- aux( hipaa2c ).
+
+%satisfy hipaa3_37 hipaa3
+% and-satisfy( hipaa3 , [u'hipaa3_37'] ).
+stx( hipaa3 ) :-  st( hipaa3_37 ) .
+st_rel( hipaa3 , rsat) :- stx( hipaa3 ).
+sfx( hipaa3 ) :- sf( hipaa3_37 ).
+sf_rel( hipaa3 , rsat) :- sfx( hipaa3 ).
+sux( hipaa3 ) :- not st( hipaa3_37 ), not sf( hipaa3_37 ).
+su_rel( hipaa3 , rsat) :- sux( hipaa3 ).
+
+%satisfy ss_hipaa3ai hipaa3a_41
+% and-satisfy( hipaa3a_41 , [u'ss_hipaa3ai'] ).
+stx( hipaa3a_41 ) :-  st( ss_hipaa3ai ) .
+st_rel( hipaa3a_41 , rsat) :- stx( hipaa3a_41 ).
+sfx( hipaa3a_41 ) :- sf( ss_hipaa3ai ).
+sf_rel( hipaa3a_41 , rsat) :- sfx( hipaa3a_41 ).
+sux( hipaa3a_41 ) :- not st( ss_hipaa3ai ), not sf( ss_hipaa3ai ).
+su_rel( hipaa3a_41 , rsat) :- sux( hipaa3a_41 ).
+
+%activate hipaa2_7 hipaa2
+% and-activate( hipaa2 , [u'hipaa2_7'] ).
+atx( hipaa2 ) :-  st( hipaa2_7 ) , not st( hipaa2s ).
+at_rel( hipaa2 , ract) :- atx( hipaa2 ).
+afx( hipaa2 ) :- sf( hipaa2_7 ).
+af_rel( hipaa2 , rsat) :- afx( hipaa2 ).
+aux( hipaa2 ) :- not st( hipaa2_7 ), not sf( hipaa2_7 ), not st( hipaa2s ).
+au_rel( hipaa2 , ract) :- aux( hipaa2 ).
+
+%satisfy hipaa2c_29 hipaa2c_30 hipaa2c_28
+% and-satisfy( hipaa2c_28 , [u'hipaa2c_29', u'hipaa2c_30'] ).
+stx( hipaa2c_28 ) :-  st( hipaa2c_29 ) ,  st( hipaa2c_30 ) .
+st_rel( hipaa2c_28 , rsat) :- stx( hipaa2c_28 ).
+sfx( hipaa2c_28 ) :- sf( hipaa2c_29 ).
+sf_rel( hipaa2c_28 , rsat) :- sfx( hipaa2c_28 ).
+sux( hipaa2c_28 ) :- not st( hipaa2c_29 ), not sf( hipaa2c_29 ).
+su_rel( hipaa2c_28 , rsat) :- sux( hipaa2c_28 ).
+sfx( hipaa2c_28 ) :- sf( hipaa2c_30 ).
+sf_rel( hipaa2c_28 , rsat) :- sfx( hipaa2c_28 ).
+sux( hipaa2c_28 ) :- not st( hipaa2c_30 ), not sf( hipaa2c_30 ).
+su_rel( hipaa2c_28 , rsat) :- sux( hipaa2c_28 ).
+
+%satisfy hipaa2_9 hipaa2_10 hipaa2_8
+% and-satisfy( hipaa2_8 , [u'hipaa2_9', u'hipaa2_10'] ).
+stx( hipaa2_8 ) :-  st( hipaa2_9 ) ,  st( hipaa2_10 ) .
+st_rel( hipaa2_8 , rsat) :- stx( hipaa2_8 ).
+sfx( hipaa2_8 ) :- sf( hipaa2_9 ).
+sf_rel( hipaa2_8 , rsat) :- sfx( hipaa2_8 ).
+sux( hipaa2_8 ) :- not st( hipaa2_9 ), not sf( hipaa2_9 ).
+su_rel( hipaa2_8 , rsat) :- sux( hipaa2_8 ).
+sfx( hipaa2_8 ) :- sf( hipaa2_10 ).
+sf_rel( hipaa2_8 , rsat) :- sfx( hipaa2_8 ).
+sux( hipaa2_8 ) :- not st( hipaa2_10 ), not sf( hipaa2_10 ).
+su_rel( hipaa2_8 , rsat) :- sux( hipaa2_8 ).
+
+%contains hipaa2a ss_hipaa2a
+% propagate  hipaa2a  to  ss_hipaa2a .
+st( ss_hipaa2a ) :- com( hipaa2a ).
+sf( ss_hipaa2a ) :- vio( hipaa2a ).
+su( ss_hipaa2a ) :- inc( hipaa2a ).
+
+%satisfy hipaa3ai_47 hipaa3ai_50 hipaa3ai_46 or
+% or-satisfy( hipaa3ai_46 , [u'hipaa3ai_47', u'hipaa3ai_50'] ).
+sfx( hipaa3ai_46 ) :-  sf( hipaa3ai_47 ) ,  sf( hipaa3ai_50 ) .
+sf_rel( hipaa3ai_46 , rsat) :- sfx( hipaa3ai_46 ).
+stx( hipaa3ai_46 ) :- st( hipaa3ai_47 ).
+st_rel( hipaa3ai_46 , rsat) :- stx( hipaa3ai_46 ).
+sux( hipaa3ai_46 ) :- not st( hipaa3ai_47 ), not sf( hipaa3ai_47 ).
+su_rel( hipaa3ai_46 , rsat) :- sux( hipaa3ai_46 ).
+stx( hipaa3ai_46 ) :- st( hipaa3ai_50 ).
+st_rel( hipaa3ai_46 , rsat) :- stx( hipaa3ai_46 ).
+sux( hipaa3ai_46 ) :- not st( hipaa3ai_50 ), not sf( hipaa3ai_50 ).
+su_rel( hipaa3ai_46 , rsat) :- sux( hipaa3ai_46 ).
+
+%contains hipaa3a ss_hipaa3a
+% propagate  hipaa3a  to  ss_hipaa3a .
+st( ss_hipaa3a ) :- exr( hipaa3a ).
+sf( ss_hipaa3a ) :- nex( hipaa3a ).
+su( ss_hipaa3a ) :- inc( hipaa3a ).
+
+%satisfy hipaa2c_31 hipaa2c_34 hipaa2c_30
+% and-satisfy( hipaa2c_30 , [u'hipaa2c_31', u'hipaa2c_34'] ).
+stx( hipaa2c_30 ) :-  st( hipaa2c_31 ) ,  st( hipaa2c_34 ) .
+st_rel( hipaa2c_30 , rsat) :- stx( hipaa2c_30 ).
+sfx( hipaa2c_30 ) :- sf( hipaa2c_31 ).
+sf_rel( hipaa2c_30 , rsat) :- sfx( hipaa2c_30 ).
+sux( hipaa2c_30 ) :- not st( hipaa2c_31 ), not sf( hipaa2c_31 ).
+su_rel( hipaa2c_30 , rsat) :- sux( hipaa2c_30 ).
+sfx( hipaa2c_30 ) :- sf( hipaa2c_34 ).
+sf_rel( hipaa2c_30 , rsat) :- sfx( hipaa2c_30 ).
+sux( hipaa2c_30 ) :- not st( hipaa2c_34 ), not sf( hipaa2c_34 ).
+su_rel( hipaa2c_30 , rsat) :- sux( hipaa2c_30 ).
+
+%satisfy hipaa1_4 hipaa1_5 hipaa1_3 or
+% or-satisfy( hipaa1_3 , [u'hipaa1_4', u'hipaa1_5'] ).
+sfx( hipaa1_3 ) :-  sf( hipaa1_4 ) ,  sf( hipaa1_5 ) .
+sf_rel( hipaa1_3 , rsat) :- sfx( hipaa1_3 ).
+stx( hipaa1_3 ) :- st( hipaa1_4 ).
+st_rel( hipaa1_3 , rsat) :- stx( hipaa1_3 ).
+sux( hipaa1_3 ) :- not st( hipaa1_4 ), not sf( hipaa1_4 ).
+su_rel( hipaa1_3 , rsat) :- sux( hipaa1_3 ).
+stx( hipaa1_3 ) :- st( hipaa1_5 ).
+st_rel( hipaa1_3 , rsat) :- stx( hipaa1_3 ).
+sux( hipaa1_3 ) :- not st( hipaa1_5 ), not sf( hipaa1_5 ).
+su_rel( hipaa1_3 , rsat) :- sux( hipaa1_3 ).
+
+%satisfy hipaa2b_23 hipaa2b_24 hipaa2b_22
+% and-satisfy( hipaa2b_22 , [u'hipaa2b_23', u'hipaa2b_24'] ).
+stx( hipaa2b_22 ) :-  st( hipaa2b_23 ) ,  st( hipaa2b_24 ) .
+st_rel( hipaa2b_22 , rsat) :- stx( hipaa2b_22 ).
+sfx( hipaa2b_22 ) :- sf( hipaa2b_23 ).
+sf_rel( hipaa2b_22 , rsat) :- sfx( hipaa2b_22 ).
+sux( hipaa2b_22 ) :- not st( hipaa2b_23 ), not sf( hipaa2b_23 ).
+su_rel( hipaa2b_22 , rsat) :- sux( hipaa2b_22 ).
+sfx( hipaa2b_22 ) :- sf( hipaa2b_24 ).
+sf_rel( hipaa2b_22 , rsat) :- sfx( hipaa2b_22 ).
+sux( hipaa2b_22 ) :- not st( hipaa2b_24 ), not sf( hipaa2b_24 ).
+su_rel( hipaa2b_22 , rsat) :- sux( hipaa2b_22 ).
+
+%activate hipaa3a_40 hipaa3a
+% and-activate( hipaa3a , [u'hipaa3a_40'] ).
+atx( hipaa3a ) :-  st( hipaa3a_40 ) , not st( hipaa3as ).
+at_rel( hipaa3a , ract) :- atx( hipaa3a ).
+afx( hipaa3a ) :- sf( hipaa3a_40 ).
+af_rel( hipaa3a , rsat) :- afx( hipaa3a ).
+aux( hipaa3a ) :- not st( hipaa3a_40 ), not sf( hipaa3a_40 ), not st( hipaa3as ).
+au_rel( hipaa3a , ract) :- aux( hipaa3a ).
+
+%satisfy ss_hipaa3a hipaa3_38
+% and-satisfy( hipaa3_38 , [u'ss_hipaa3a'] ).
+stx( hipaa3_38 ) :-  st( ss_hipaa3a ) .
+st_rel( hipaa3_38 , rsat) :- stx( hipaa3_38 ).
+sfx( hipaa3_38 ) :- sf( ss_hipaa3a ).
+sf_rel( hipaa3_38 , rsat) :- sfx( hipaa3_38 ).
+sux( hipaa3_38 ) :- not st( ss_hipaa3a ), not sf( ss_hipaa3a ).
+su_rel( hipaa3_38 , rsat) :- sux( hipaa3_38 ).
+
+%satisfy hipaa1_1 hipaa1
+% and-satisfy( hipaa1 , [u'hipaa1_1'] ).
+stx( hipaa1 ) :-  st( hipaa1_1 ) .
+st_rel( hipaa1 , rsat) :- stx( hipaa1 ).
+sfx( hipaa1 ) :- sf( hipaa1_1 ).
+sf_rel( hipaa1 , rsat) :- sfx( hipaa1 ).
+sux( hipaa1 ) :- not st( hipaa1_1 ), not sf( hipaa1_1 ).
+su_rel( hipaa1 , rsat) :- sux( hipaa1 ).
+
+%satisfy hipaa2_6 hipaa2
+% and-satisfy( hipaa2 , [u'hipaa2_6'] ).
+stx( hipaa2 ) :-  st( hipaa2_6 ) .
+st_rel( hipaa2 , rsat) :- stx( hipaa2 ).
+sfx( hipaa2 ) :- sf( hipaa2_6 ).
+sf_rel( hipaa2 , rsat) :- sfx( hipaa2 ).
+sux( hipaa2 ) :- not st( hipaa2_6 ), not sf( hipaa2_6 ).
+su_rel( hipaa2 , rsat) :- sux( hipaa2 ).
+
+%satisfy hipaa3ai_43 hipaa3ai
+% and-satisfy( hipaa3ai , [u'hipaa3ai_43'] ).
+stx( hipaa3ai ) :-  st( hipaa3ai_43 ) .
+st_rel( hipaa3ai , rsat) :- stx( hipaa3ai ).
+sfx( hipaa3ai ) :- sf( hipaa3ai_43 ).
+sf_rel( hipaa3ai , rsat) :- sfx( hipaa3ai ).
+sux( hipaa3ai ) :- not st( hipaa3ai_43 ), not sf( hipaa3ai_43 ).
+su_rel( hipaa3ai , rsat) :- sux( hipaa3ai ).
+
+%satisfy hipaa2b_21 hipaa2b_22 hipaa2b_20
+% and-satisfy( hipaa2b_20 , [u'hipaa2b_21', u'hipaa2b_22'] ).
+stx( hipaa2b_20 ) :-  st( hipaa2b_21 ) ,  st( hipaa2b_22 ) .
+st_rel( hipaa2b_20 , rsat) :- stx( hipaa2b_20 ).
+sfx( hipaa2b_20 ) :- sf( hipaa2b_21 ).
+sf_rel( hipaa2b_20 , rsat) :- sfx( hipaa2b_20 ).
+sux( hipaa2b_20 ) :- not st( hipaa2b_21 ), not sf( hipaa2b_21 ).
+su_rel( hipaa2b_20 , rsat) :- sux( hipaa2b_20 ).
+sfx( hipaa2b_20 ) :- sf( hipaa2b_22 ).
+sf_rel( hipaa2b_20 , rsat) :- sfx( hipaa2b_20 ).
+sux( hipaa2b_20 ) :- not st( hipaa2b_22 ), not sf( hipaa2b_22 ).
+su_rel( hipaa2b_20 , rsat) :- sux( hipaa2b_20 ).
+
+%satisfy hipaa2_8 hipaa2_11 hipaa2_7
+% and-satisfy( hipaa2_7 , [u'hipaa2_8', u'hipaa2_11'] ).
+stx( hipaa2_7 ) :-  st( hipaa2_8 ) ,  st( hipaa2_11 ) .
+st_rel( hipaa2_7 , rsat) :- stx( hipaa2_7 ).
+sfx( hipaa2_7 ) :- sf( hipaa2_8 ).
+sf_rel( hipaa2_7 , rsat) :- sfx( hipaa2_7 ).
+sux( hipaa2_7 ) :- not st( hipaa2_8 ), not sf( hipaa2_8 ).
+su_rel( hipaa2_7 , rsat) :- sux( hipaa2_7 ).
+sfx( hipaa2_7 ) :- sf( hipaa2_11 ).
+sf_rel( hipaa2_7 , rsat) :- sfx( hipaa2_7 ).
+sux( hipaa2_7 ) :- not st( hipaa2_11 ), not sf( hipaa2_11 ).
+su_rel( hipaa2_7 , rsat) :- sux( hipaa2_7 ).
+
+%activate hipaa3_38 hipaa3
+% and-activate( hipaa3 , [u'hipaa3_38'] ).
+atx( hipaa3 ) :-  st( hipaa3_38 ) , not st( hipaa3s ).
+at_rel( hipaa3 , ract) :- atx( hipaa3 ).
+afx( hipaa3 ) :- sf( hipaa3_38 ).
+af_rel( hipaa3 , rsat) :- afx( hipaa3 ).
+aux( hipaa3 ) :- not st( hipaa3_38 ), not sf( hipaa3_38 ), not st( hipaa3s ).
+au_rel( hipaa3 , ract) :- aux( hipaa3 ).
+
+%contains hipaa3 ss_hipaa3
+% propagate  hipaa3  to  ss_hipaa3 .
+st( ss_hipaa3 ) :- exr( hipaa3 ).
+sf( ss_hipaa3 ) :- nex( hipaa3 ).
+su( ss_hipaa3 ) :- inc( hipaa3 ).
+
+%contains hipaa3aii ss_hipaa3aii
+% propagate  hipaa3aii  to  ss_hipaa3aii .
+st( ss_hipaa3aii ) :- exr( hipaa3aii ).
+sf( ss_hipaa3aii ) :- nex( hipaa3aii ).
+su( ss_hipaa3aii ) :- inc( hipaa3aii ).
+
+%satisfy hipaa2b_25 hipaa2b_26 hipaa2b_24
+% and-satisfy( hipaa2b_24 , [u'hipaa2b_25', u'hipaa2b_26'] ).
+stx( hipaa2b_24 ) :-  st( hipaa2b_25 ) ,  st( hipaa2b_26 ) .
+st_rel( hipaa2b_24 , rsat) :- stx( hipaa2b_24 ).
+sfx( hipaa2b_24 ) :- sf( hipaa2b_25 ).
+sf_rel( hipaa2b_24 , rsat) :- sfx( hipaa2b_24 ).
+sux( hipaa2b_24 ) :- not st( hipaa2b_25 ), not sf( hipaa2b_25 ).
+su_rel( hipaa2b_24 , rsat) :- sux( hipaa2b_24 ).
+sfx( hipaa2b_24 ) :- sf( hipaa2b_26 ).
+sf_rel( hipaa2b_24 , rsat) :- sfx( hipaa2b_24 ).
+sux( hipaa2b_24 ) :- not st( hipaa2b_26 ), not sf( hipaa2b_26 ).
+su_rel( hipaa2b_24 , rsat) :- sux( hipaa2b_24 ).
+
+%satisfy hipaa2b_19 hipaa2b
+% and-satisfy( hipaa2b , [u'hipaa2b_19'] ).
+stx( hipaa2b ) :-  st( hipaa2b_19 ) .
+st_rel( hipaa2b , rsat) :- stx( hipaa2b ).
+sfx( hipaa2b ) :- sf( hipaa2b_19 ).
+sf_rel( hipaa2b , rsat) :- sfx( hipaa2b ).
+sux( hipaa2b ) :- not st( hipaa2b_19 ), not sf( hipaa2b_19 ).
+su_rel( hipaa2b , rsat) :- sux( hipaa2b ).
+
+%satisfy hipaa3aii_61 hipaa3aii_62 hipaa3aii_60 or
+% or-satisfy( hipaa3aii_60 , [u'hipaa3aii_61', u'hipaa3aii_62'] ).
+sfx( hipaa3aii_60 ) :-  sf( hipaa3aii_61 ) ,  sf( hipaa3aii_62 ) .
+sf_rel( hipaa3aii_60 , rsat) :- sfx( hipaa3aii_60 ).
+stx( hipaa3aii_60 ) :- st( hipaa3aii_61 ).
+st_rel( hipaa3aii_60 , rsat) :- stx( hipaa3aii_60 ).
+sux( hipaa3aii_60 ) :- not st( hipaa3aii_61 ), not sf( hipaa3aii_61 ).
+su_rel( hipaa3aii_60 , rsat) :- sux( hipaa3aii_60 ).
+stx( hipaa3aii_60 ) :- st( hipaa3aii_62 ).
+st_rel( hipaa3aii_60 , rsat) :- stx( hipaa3aii_60 ).
+sux( hipaa3aii_60 ) :- not st( hipaa3aii_62 ), not sf( hipaa3aii_62 ).
+su_rel( hipaa3aii_60 , rsat) :- sux( hipaa3aii_60 ).
+
+%satisfy hipaa2a_13 hipaa2a_14 hipaa2a_12
+% and-satisfy( hipaa2a_12 , [u'hipaa2a_13', u'hipaa2a_14'] ).
+stx( hipaa2a_12 ) :-  st( hipaa2a_13 ) ,  st( hipaa2a_14 ) .
+st_rel( hipaa2a_12 , rsat) :- stx( hipaa2a_12 ).
+sfx( hipaa2a_12 ) :- sf( hipaa2a_13 ).
+sf_rel( hipaa2a_12 , rsat) :- sfx( hipaa2a_12 ).
+sux( hipaa2a_12 ) :- not st( hipaa2a_13 ), not sf( hipaa2a_13 ).
+su_rel( hipaa2a_12 , rsat) :- sux( hipaa2a_12 ).
+sfx( hipaa2a_12 ) :- sf( hipaa2a_14 ).
+sf_rel( hipaa2a_12 , rsat) :- sfx( hipaa2a_12 ).
+sux( hipaa2a_12 ) :- not st( hipaa2a_14 ), not sf( hipaa2a_14 ).
+su_rel( hipaa2a_12 , rsat) :- sux( hipaa2a_12 ).
+
+%satisfy hipaa3ai_51 hipaa3ai_52 hipaa3ai_50
+% and-satisfy( hipaa3ai_50 , [u'hipaa3ai_51', u'hipaa3ai_52'] ).
+stx( hipaa3ai_50 ) :-  st( hipaa3ai_51 ) ,  st( hipaa3ai_52 ) .
+st_rel( hipaa3ai_50 , rsat) :- stx( hipaa3ai_50 ).
+sfx( hipaa3ai_50 ) :- sf( hipaa3ai_51 ).
+sf_rel( hipaa3ai_50 , rsat) :- sfx( hipaa3ai_50 ).
+sux( hipaa3ai_50 ) :- not st( hipaa3ai_51 ), not sf( hipaa3ai_51 ).
+su_rel( hipaa3ai_50 , rsat) :- sux( hipaa3ai_50 ).
+sfx( hipaa3ai_50 ) :- sf( hipaa3ai_52 ).
+sf_rel( hipaa3ai_50 , rsat) :- sfx( hipaa3ai_50 ).
+sux( hipaa3ai_50 ) :- not st( hipaa3ai_52 ), not sf( hipaa3ai_52 ).
+su_rel( hipaa3ai_50 , rsat) :- sux( hipaa3ai_50 ).
+
+break hipaa2a_16 hipaa2a_15
+% and-break( hipaa2a_15 , [u'hipaa2a_16'] ).
+sfx( hipaa2a_15 ) :-  st( hipaa2a_16 ) .
+sf_rel( hipaa2a_15 , rbrk) :- sfx( hipaa2a_15 ).
+sux( hipaa2a_15 ) :- not st( hipaa2a_16 ).
+su_rel( hipaa2a_15 , rbrk) :- sux( hipaa2a_15 ).
+
+%satisfy hipaa2c_35 hipaa2c_36 hipaa2c_34
+% and-satisfy( hipaa2c_34 , [u'hipaa2c_35', u'hipaa2c_36'] ).
+stx( hipaa2c_34 ) :-  st( hipaa2c_35 ) ,  st( hipaa2c_36 ) .
+st_rel( hipaa2c_34 , rsat) :- stx( hipaa2c_34 ).
+sfx( hipaa2c_34 ) :- sf( hipaa2c_35 ).
+sf_rel( hipaa2c_34 , rsat) :- sfx( hipaa2c_34 ).
+sux( hipaa2c_34 ) :- not st( hipaa2c_35 ), not sf( hipaa2c_35 ).
+su_rel( hipaa2c_34 , rsat) :- sux( hipaa2c_34 ).
+sfx( hipaa2c_34 ) :- sf( hipaa2c_36 ).
+sf_rel( hipaa2c_34 , rsat) :- sfx( hipaa2c_34 ).
+sux( hipaa2c_34 ) :- not st( hipaa2c_36 ), not sf( hipaa2c_36 ).
+su_rel( hipaa2c_34 , rsat) :- sux( hipaa2c_34 ).
+
+%contains hipaa1 ss_hipaa1
+% propagate  hipaa1  to  ss_hipaa1 .
+st( ss_hipaa1 ) :- com( hipaa1 ).
+sf( ss_hipaa1 ) :- vio( hipaa1 ).
+su( ss_hipaa1 ) :- inc( hipaa1 ).
+
+%satisfy hipaa3ai_55 hipaa3ai_56 hipaa3ai_54
+% and-satisfy( hipaa3ai_54 , [u'hipaa3ai_55', u'hipaa3ai_56'] ).
+stx( hipaa3ai_54 ) :-  st( hipaa3ai_55 ) ,  st( hipaa3ai_56 ) .
+st_rel( hipaa3ai_54 , rsat) :- stx( hipaa3ai_54 ).
+sfx( hipaa3ai_54 ) :- sf( hipaa3ai_55 ).
+sf_rel( hipaa3ai_54 , rsat) :- sfx( hipaa3ai_54 ).
+sux( hipaa3ai_54 ) :- not st( hipaa3ai_55 ), not sf( hipaa3ai_55 ).
+su_rel( hipaa3ai_54 , rsat) :- sux( hipaa3ai_54 ).
+sfx( hipaa3ai_54 ) :- sf( hipaa3ai_56 ).
+sf_rel( hipaa3ai_54 , rsat) :- sfx( hipaa3ai_54 ).
+sux( hipaa3ai_54 ) :- not st( hipaa3ai_56 ), not sf( hipaa3ai_56 ).
+su_rel( hipaa3ai_54 , rsat) :- sux( hipaa3ai_54 ).
+
+%activate hipaa2a_18 hipaa2a
+% and-activate( hipaa2a , [u'hipaa2a_18'] ).
+atx( hipaa2a ) :-  st( hipaa2a_18 ) , not st( hipaa2as ).
+at_rel( hipaa2a , ract) :- atx( hipaa2a ).
+afx( hipaa2a ) :- sf( hipaa2a_18 ).
+af_rel( hipaa2a , rsat) :- afx( hipaa2a ).
+aux( hipaa2a ) :- not st( hipaa2a_18 ), not sf( hipaa2a_18 ), not st( hipaa2as ).
+au_rel( hipaa2a , ract) :- aux( hipaa2a ).
+
+%satisfy hipaa3a_41 hipaa3a_42 hipaa3a_40 or
+% or-satisfy( hipaa3a_40 , [u'hipaa3a_41', u'hipaa3a_42'] ).
+sfx( hipaa3a_40 ) :-  sf( hipaa3a_41 ) ,  sf( hipaa3a_42 ) .
+sf_rel( hipaa3a_40 , rsat) :- sfx( hipaa3a_40 ).
+stx( hipaa3a_40 ) :- st( hipaa3a_41 ).
+st_rel( hipaa3a_40 , rsat) :- stx( hipaa3a_40 ).
+sux( hipaa3a_40 ) :- not st( hipaa3a_41 ), not sf( hipaa3a_41 ).
+su_rel( hipaa3a_40 , rsat) :- sux( hipaa3a_40 ).
+stx( hipaa3a_40 ) :- st( hipaa3a_42 ).
+st_rel( hipaa3a_40 , rsat) :- stx( hipaa3a_40 ).
+sux( hipaa3a_40 ) :- not st( hipaa3a_42 ), not sf( hipaa3a_42 ).
+su_rel( hipaa3a_40 , rsat) :- sux( hipaa3a_40 ).
+
+%contains hipaa2b ss_hipaa2b
+% propagate  hipaa2b  to  ss_hipaa2b .
+st( ss_hipaa2b ) :- exr( hipaa2b ).
+sf( ss_hipaa2b ) :- nex( hipaa2b ).
+su( ss_hipaa2b ) :- inc( hipaa2b ).
+
+%satisfy ss_hipaa3 hipaa1_5
+% and-satisfy( hipaa1_5 , [u'ss_hipaa3'] ).
+stx( hipaa1_5 ) :-  st( ss_hipaa3 ) .
+st_rel( hipaa1_5 , rsat) :- stx( hipaa1_5 ).
+sfx( hipaa1_5 ) :- sf( ss_hipaa3 ).
+sf_rel( hipaa1_5 , rsat) :- sfx( hipaa1_5 ).
+sux( hipaa1_5 ) :- not st( ss_hipaa3 ), not sf( ss_hipaa3 ).
+su_rel( hipaa1_5 , rsat) :- sux( hipaa1_5 ).
+
+%satisfy hipaa3aii_59 hipaa3aii_60 hipaa3aii_58
+% and-satisfy( hipaa3aii_58 , [u'hipaa3aii_59', u'hipaa3aii_60'] ).
+stx( hipaa3aii_58 ) :-  st( hipaa3aii_59 ) ,  st( hipaa3aii_60 ) .
+st_rel( hipaa3aii_58 , rsat) :- stx( hipaa3aii_58 ).
+sfx( hipaa3aii_58 ) :- sf( hipaa3aii_59 ).
+sf_rel( hipaa3aii_58 , rsat) :- sfx( hipaa3aii_58 ).
+sux( hipaa3aii_58 ) :- not st( hipaa3aii_59 ), not sf( hipaa3aii_59 ).
+su_rel( hipaa3aii_58 , rsat) :- sux( hipaa3aii_58 ).
+sfx( hipaa3aii_58 ) :- sf( hipaa3aii_60 ).
+sf_rel( hipaa3aii_58 , rsat) :- sfx( hipaa3aii_58 ).
+sux( hipaa3aii_58 ) :- not st( hipaa3aii_60 ), not sf( hipaa3aii_60 ).
+su_rel( hipaa3aii_58 , rsat) :- sux( hipaa3aii_58 ).
+
+%activate hipaa2b_20 hipaa2b
+% and-activate( hipaa2b , [u'hipaa2b_20'] ).
+atx( hipaa2b ) :-  st( hipaa2b_20 ) , not st( hipaa2bs ).
+at_rel( hipaa2b , ract) :- atx( hipaa2b ).
+afx( hipaa2b ) :- sf( hipaa2b_20 ).
+af_rel( hipaa2b , rsat) :- afx( hipaa2b ).
+aux( hipaa2b ) :- not st( hipaa2b_20 ), not sf( hipaa2b_20 ), not st( hipaa2bs ).
+au_rel( hipaa2b , ract) :- aux( hipaa2b ).
+
+%satisfy hipaa2c_32 hipaa2c_33 hipaa2c_31 or
+% or-satisfy( hipaa2c_31 , [u'hipaa2c_32', u'hipaa2c_33'] ).
+sfx( hipaa2c_31 ) :-  sf( hipaa2c_32 ) ,  sf( hipaa2c_33 ) .
+sf_rel( hipaa2c_31 , rsat) :- sfx( hipaa2c_31 ).
+stx( hipaa2c_31 ) :- st( hipaa2c_32 ).
+st_rel( hipaa2c_31 , rsat) :- stx( hipaa2c_31 ).
+sux( hipaa2c_31 ) :- not st( hipaa2c_32 ), not sf( hipaa2c_32 ).
+su_rel( hipaa2c_31 , rsat) :- sux( hipaa2c_31 ).
+stx( hipaa2c_31 ) :- st( hipaa2c_33 ).
+st_rel( hipaa2c_31 , rsat) :- stx( hipaa2c_31 ).
+sux( hipaa2c_31 ) :- not st( hipaa2c_33 ), not sf( hipaa2c_33 ).
+su_rel( hipaa2c_31 , rsat) :- sux( hipaa2c_31 ).
+
+%satisfy hipaa3ai_48 hipaa3ai_49 hipaa3ai_47 or
+% or-satisfy( hipaa3ai_47 , [u'hipaa3ai_48', u'hipaa3ai_49'] ).
+sfx( hipaa3ai_47 ) :-  sf( hipaa3ai_48 ) ,  sf( hipaa3ai_49 ) .
+sf_rel( hipaa3ai_47 , rsat) :- sfx( hipaa3ai_47 ).
+stx( hipaa3ai_47 ) :- st( hipaa3ai_48 ).
+st_rel( hipaa3ai_47 , rsat) :- stx( hipaa3ai_47 ).
+sux( hipaa3ai_47 ) :- not st( hipaa3ai_48 ), not sf( hipaa3ai_48 ).
+su_rel( hipaa3ai_47 , rsat) :- sux( hipaa3ai_47 ).
+stx( hipaa3ai_47 ) :- st( hipaa3ai_49 ).
+st_rel( hipaa3ai_47 , rsat) :- stx( hipaa3ai_47 ).
+sux( hipaa3ai_47 ) :- not st( hipaa3ai_49 ), not sf( hipaa3ai_49 ).
+su_rel( hipaa3ai_47 , rsat) :- sux( hipaa3ai_47 ).
+
+%contains hipaa2 ss_hipaa2
+% propagate  hipaa2  to  ss_hipaa2 .
+st( ss_hipaa2 ) :- exr( hipaa2 ).
+sf( ss_hipaa2 ) :- nex( hipaa2 ).
+su( ss_hipaa2 ) :- inc( hipaa2 ).
+
+
+% Scenario
+st( ss_hipaa1 ) v sf( ss_hipaa1 ) v su( ss_hipaa1 ).
+st( hipaa1_1 ) v sf( hipaa1_1 ) v su( hipaa1_1 ).
+st( hipaa1_2 ) v sf( hipaa1_2 ) v su( hipaa1_2 ).
+st( hipaa1_3 ) v sf( hipaa1_3 ) v su( hipaa1_3 ).
+st( hipaa1_4 ) v sf( hipaa1_4 ) v su( hipaa1_4 ).
+st( hipaa1_5 ) v sf( hipaa1_5 ) v su( hipaa1_5 ).
+st( ss_hipaa2 ) v sf( ss_hipaa2 ) v su( ss_hipaa2 ).
+st( hipaa2_6 ) v sf( hipaa2_6 ) v su( hipaa2_6 ).
+st( hipaa2_7 ) v sf( hipaa2_7 ) v su( hipaa2_7 ).
+st( hipaa2_8 ) v sf( hipaa2_8 ) v su( hipaa2_8 ).
+st( hipaa2_9 ) v sf( hipaa2_9 ) v su( hipaa2_9 ).
+st( hipaa2_10 ) v sf( hipaa2_10 ) v su( hipaa2_10 ).
+st( hipaa2_11 ) v sf( hipaa2_11 ) v su( hipaa2_11 ).
+st( ss_hipaa2a ) v sf( ss_hipaa2a ) v su( ss_hipaa2a ).
+st( hipaa2a_12 ) v sf( hipaa2a_12 ) v su( hipaa2a_12 ).
+st( hipaa2a_13 ) v sf( hipaa2a_13 ) v su( hipaa2a_13 ).
+st( hipaa2a_14 ) v sf( hipaa2a_14 ) v su( hipaa2a_14 ).
+st( hipaa2a_15 ) v sf( hipaa2a_15 ) v su( hipaa2a_15 ).
+st( hipaa2a_16 ) v sf( hipaa2a_16 ) v su( hipaa2a_16 ).
+st( hipaa2a_17 ) v sf( hipaa2a_17 ) v su( hipaa2a_17 ).
+st( hipaa2a_18 ) v sf( hipaa2a_18 ) v su( hipaa2a_18 ).
+st( ss_hipaa2b ) v sf( ss_hipaa2b ) v su( ss_hipaa2b ).
+st( hipaa2b_19 ) v sf( hipaa2b_19 ) v su( hipaa2b_19 ).
+st( hipaa2b_20 ) v sf( hipaa2b_20 ) v su( hipaa2b_20 ).
+st( hipaa2b_21 ) v sf( hipaa2b_21 ) v su( hipaa2b_21 ).
+st( hipaa2b_22 ) v sf( hipaa2b_22 ) v su( hipaa2b_22 ).
+st( hipaa2b_23 ) v sf( hipaa2b_23 ) v su( hipaa2b_23 ).
+st( hipaa2b_24 ) v sf( hipaa2b_24 ) v su( hipaa2b_24 ).
+st( hipaa2b_25 ) v sf( hipaa2b_25 ) v su( hipaa2b_25 ).
+st( hipaa2b_26 ) v sf( hipaa2b_26 ) v su( hipaa2b_26 ).
+st( ss_hipaa2c ) v sf( ss_hipaa2c ) v su( ss_hipaa2c ).
+st( hipaa2c_27 ) v sf( hipaa2c_27 ) v su( hipaa2c_27 ).
+st( hipaa2c_28 ) v sf( hipaa2c_28 ) v su( hipaa2c_28 ).
+st( hipaa2c_29 ) v sf( hipaa2c_29 ) v su( hipaa2c_29 ).
+st( hipaa2c_30 ) v sf( hipaa2c_30 ) v su( hipaa2c_30 ).
+st( hipaa2c_31 ) v sf( hipaa2c_31 ) v su( hipaa2c_31 ).
+st( hipaa2c_32 ) v sf( hipaa2c_32 ) v su( hipaa2c_32 ).
+st( hipaa2c_33 ) v sf( hipaa2c_33 ) v su( hipaa2c_33 ).
+st( hipaa2c_34 ) v sf( hipaa2c_34 ) v su( hipaa2c_34 ).
+st( hipaa2c_35 ) v sf( hipaa2c_35 ) v su( hipaa2c_35 ).
+st( hipaa2c_36 ) v sf( hipaa2c_36 ) v su( hipaa2c_36 ).
+st( ss_hipaa3 ) v sf( ss_hipaa3 ) v su( ss_hipaa3 ).
+st( hipaa3_37 ) v sf( hipaa3_37 ) v su( hipaa3_37 ).
+st( hipaa3_38 ) v sf( hipaa3_38 ) v su( hipaa3_38 ).
+st( ss_hipaa3a ) v sf( ss_hipaa3a ) v su( ss_hipaa3a ).
+st( hipaa3a_39 ) v sf( hipaa3a_39 ) v su( hipaa3a_39 ).
+st( hipaa3a_40 ) v sf( hipaa3a_40 ) v su( hipaa3a_40 ).
+st( hipaa3a_41 ) v sf( hipaa3a_41 ) v su( hipaa3a_41 ).
+st( hipaa3a_42 ) v sf( hipaa3a_42 ) v su( hipaa3a_42 ).
+st( ss_hipaa3ai ) v sf( ss_hipaa3ai ) v su( ss_hipaa3ai ).
+st( hipaa3ai_43 ) v sf( hipaa3ai_43 ) v su( hipaa3ai_43 ).
+st( hipaa3ai_44 ) v sf( hipaa3ai_44 ) v su( hipaa3ai_44 ).
+st( hipaa3ai_45 ) v sf( hipaa3ai_45 ) v su( hipaa3ai_45 ).
+st( hipaa3ai_46 ) v sf( hipaa3ai_46 ) v su( hipaa3ai_46 ).
+st( hipaa3ai_47 ) v sf( hipaa3ai_47 ) v su( hipaa3ai_47 ).
+st( hipaa3ai_48 ) v sf( hipaa3ai_48 ) v su( hipaa3ai_48 ).
+st( hipaa3ai_49 ) v sf( hipaa3ai_49 ) v su( hipaa3ai_49 ).
+st( hipaa3ai_50 ) v sf( hipaa3ai_50 ) v su( hipaa3ai_50 ).
+st( hipaa3ai_51 ) v sf( hipaa3ai_51 ) v su( hipaa3ai_51 ).
+st( hipaa3ai_52 ) v sf( hipaa3ai_52 ) v su( hipaa3ai_52 ).
+st( hipaa3ai_53 ) v sf( hipaa3ai_53 ) v su( hipaa3ai_53 ).
+st( hipaa3ai_54 ) v sf( hipaa3ai_54 ) v su( hipaa3ai_54 ).
+st( hipaa3ai_55 ) v sf( hipaa3ai_55 ) v su( hipaa3ai_55 ).
+st( hipaa3ai_56 ) v sf( hipaa3ai_56 ) v su( hipaa3ai_56 ).
+st( ss_hipaa3aii ) v sf( ss_hipaa3aii ) v su( ss_hipaa3aii ).
+st( hipaa3aii_57 ) v sf( hipaa3aii_57 ) v su( hipaa3aii_57 ).
+st( hipaa3aii_58 ) v sf( hipaa3aii_58 ) v su( hipaa3aii_58 ).
+st( hipaa3aii_59 ) v sf( hipaa3aii_59 ) v su( hipaa3aii_59 ).
+st( hipaa3aii_60 ) v sf( hipaa3aii_60 ) v su( hipaa3aii_60 ).
+st( hipaa3aii_61 ) v sf( hipaa3aii_61 ) v su( hipaa3aii_61 ).
+st( hipaa3aii_62 ) v sf( hipaa3aii_62 ) v su( hipaa3aii_62 ).
+
+% Costs
+% cost 2: uncompliance
+:~ vio( hipaa1 ). [1:2]
+:~ vio( hipaa2a ). [1:2]
+:~ vio( hipaa2 ). [1:2]
+:~ vio( hipaa2b ). [1:2]
+:~ vio( hipaa2c ). [1:2]
+:~ vio( hipaa3 ). [1:2]
+:~ vio( hipaa3a ). [1:2]
+:~ vio( hipaa3ai ). [1:2]
+:~ vio( hipaa3aii ). [1:2]
+% cost 1: freedom
+:~ st( ss_hipaa1 ). [1:1]
+:~ st( hipaa1_1 ). [1:1]
+:~ st( hipaa1_2 ). [1:1]
+:~ st( hipaa1_3 ). [1:1]
+:~ st( hipaa1_4 ). [1:1]
+:~ st( hipaa1_5 ). [1:1]
+:~ st( ss_hipaa2 ). [1:1]
+:~ st( hipaa2_6 ). [1:1]
+:~ st( hipaa2_7 ). [1:1]
+:~ st( hipaa2_8 ). [1:1]
+:~ st( hipaa2_9 ). [1:1]
+:~ st( hipaa2_10 ). [1:1]
+:~ st( hipaa2_11 ). [1:1]
+:~ st( ss_hipaa2a ). [1:1]
+:~ st( hipaa2a_12 ). [1:1]
+:~ st( hipaa2a_13 ). [1:1]
+:~ st( hipaa2a_14 ). [1:1]
+:~ st( hipaa2a_15 ). [1:1]
+:~ st( hipaa2a_16 ). [1:1]
+:~ st( hipaa2a_17 ). [1:1]
+:~ st( hipaa2a_18 ). [1:1]
+:~ st( ss_hipaa2b ). [1:1]
+:~ st( hipaa2b_19 ). [1:1]
+:~ st( hipaa2b_20 ). [1:1]
+:~ st( hipaa2b_21 ). [1:1]
+:~ st( hipaa2b_22 ). [1:1]
+:~ st( hipaa2b_23 ). [1:1]
+:~ st( hipaa2b_24 ). [1:1]
+:~ st( hipaa2b_25 ). [1:1]
+:~ st( hipaa2b_26 ). [1:1]
+:~ st( ss_hipaa2c ). [1:1]
+:~ st( hipaa2c_27 ). [1:1]
+:~ st( hipaa2c_28 ). [1:1]
+:~ st( hipaa2c_29 ). [1:1]
+:~ st( hipaa2c_30 ). [1:1]
+:~ st( hipaa2c_31 ). [1:1]
+:~ st( hipaa2c_32 ). [1:1]
+:~ st( hipaa2c_33 ). [1:1]
+:~ st( hipaa2c_34 ). [1:1]
+:~ st( hipaa2c_35 ). [1:1]
+:~ st( hipaa2c_36 ). [1:1]
+:~ st( ss_hipaa3 ). [1:1]
+:~ st( hipaa3_37 ). [1:1]
+:~ st( hipaa3_38 ). [1:1]
+:~ st( ss_hipaa3a ). [1:1]
+:~ st( hipaa3a_39 ). [1:1]
+:~ st( hipaa3a_40 ). [1:1]
+:~ st( hipaa3a_41 ). [1:1]
+:~ st( hipaa3a_42 ). [1:1]
+:~ st( ss_hipaa3ai ). [1:1]
+:~ st( hipaa3ai_43 ). [1:1]
+:~ st( hipaa3ai_44 ). [1:1]
+:~ st( hipaa3ai_45 ). [1:1]
+:~ st( hipaa3ai_46 ). [1:1]
+:~ st( hipaa3ai_47 ). [1:1]
+:~ st( hipaa3ai_48 ). [1:1]
+:~ st( hipaa3ai_49 ). [1:1]
+:~ st( hipaa3ai_50 ). [1:1]
+:~ st( hipaa3ai_51 ). [1:1]
+:~ st( hipaa3ai_52 ). [1:1]
+:~ st( hipaa3ai_53 ). [1:1]
+:~ st( hipaa3ai_54 ). [1:1]
+:~ st( hipaa3ai_55 ). [1:1]
+:~ st( hipaa3ai_56 ). [1:1]
+:~ st( ss_hipaa3aii ). [1:1]
+:~ st( hipaa3aii_57 ). [1:1]
+:~ st( hipaa3aii_58 ). [1:1]
+:~ st( hipaa3aii_59 ). [1:1]
+:~ st( hipaa3aii_60 ). [1:1]
+:~ st( hipaa3aii_61 ). [1:1]
+:~ st( hipaa3aii_62 ). [1:1]
