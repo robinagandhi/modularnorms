@@ -1,0 +1,1058 @@
+% HIPAA164502a (Duty) (a)Standard. A covered entity or business associate may not use or disclose protected health information, except as permitted or required by this subpart or by subpart C of part 160 of this subchapter.
+% HIPAA164502a_1 not disclose protected health information
+% HIPAA164502a_2 not
+% HIPAA164502a_3 or
+% HIPAA164502a_4 or
+% HIPAA164502a_5 or
+% HIPAA164502a_6 or
+% HIPAA164502a_7 or
+% HIPAA164502a_8 $HIPAA164502a1
+% HIPAA164502a_9 (2)Covered entities:Required disclosures
+% HIPAA164502a_10 (3)Business associates:Permitted uses and disclosures
+% HIPAA164502a_11 (4)Business associates:Required uses and disclosures
+% HIPAA164502a_12 (5)Prohibited uses and disclosures
+% HIPAA164502a_13 permitted by subpart C of part 160 of this subchapter
+% HIPAA164502a1 (Right) (1)Covered entities: Permitted uses and disclosures. A covered entity is permitted to use or disclose protected health information as follows:
+% HIPAA164502a1_14 disclose protected health information
+% HIPAA164502a1_15 or
+% HIPAA164502a1_16 or
+% HIPAA164502a1_17 or
+% HIPAA164502a1_18 or
+% HIPAA164502a1_19 or
+% HIPAA164502a1_20 (i) To the individual
+% HIPAA164502a1_21 (ii) For treatment, payment, or health care operations, as permitted by and in compliance with S 164.506
+% HIPAA164502a1_22 (iii) Incident to a use or disclosure otherwise permitted or required by this subpart, provided that the covered entity has complied with the applicable requirements of SS 164.502(b), 164.514(d), and 164.530(c) with respect to such otherwise permitted or required use or disclosure
+% HIPAA164502a1_23 (iv) Except for uses and disclosures prohibited under S 164.502(a)(5)(i), pursuant to and in compliance with a valid authorization under S 164.508
+% HIPAA164502a1_24 $HIPAA164502a1v
+% HIPAA164502a1_25 (vi) As permitted by and in compliance with this section, S 164.512, S 164.514(e), (f), or (g)
+% HIPAA164502a1v (Right) (v) Pursuant to an agreement under, or as otherwise permitted by, S 164.510
+% HIPAA164502a1v_26 disclose protected health information
+% HIPAA164502a1v_27 $HIPAA164510
+% HIPAA164510 (Right) 164.510 Uses and disclosures requiring an opportunity for the individual to agree or to object. A covered entity may use or disclose protected health information, provided that the individual is informed in advance of the use or disclosure and has the opportunity to agree to or prohibit or restrict the use or disclosure, in accordance with the applicable requirements of this section. The covered entity may orally inform the individual of and obtain the individual's oral agreement or objection to a use or disclosure permitted by this section.
+% HIPAA164510_28 disclose protected health information
+% HIPAA164510_29 and
+% HIPAA164510_30 and
+% HIPAA164510_31 individual is informed in advance of the use or disclosure
+% HIPAA164510_32 individual has the opportunity to agree to or prohibit or restrict the use or disclosure
+% HIPAA164510_33 or
+% HIPAA164510_34 (a)Standard:Use and disclosure for facility directories
+% HIPAA164510_35 $HIPAA164510b
+% HIPAA164510b (Right) (b)Standard: Uses and disclosures for involvement in the individual's care and notification purposes-
+% HIPAA164510b_36 disclose protected health information
+% HIPAA164510b_37 or
+% HIPAA164510b_38 or
+% HIPAA164510b_39 or
+% HIPAA164510b_40 or
+% HIPAA164510b_41 (1)Permitted uses and disclosures
+% HIPAA164510b_42 (2)Uses and disclosures with the individual present
+% HIPAA164510b_43 (3)Limited uses and disclosures when the individual is not present
+% HIPAA164510b_44 (4)Uses and disclosures for disaster relief purposes
+% HIPAA164510b_45 $HIPAA164510b5
+% HIPAA164510b5 (Right) (5)Uses and disclosures when the individual is deceased. If the individual is deceased, a covered entity may disclose to a family member, or other persons identified in paragraph (b)(1) of this section who were involved in the individual's care or payment for health care prior to the individual's death, protected health information of the individual that is relevant to such person's involvement, unless doing so is inconsistent with any prior expressed preference of the individual that is known to the covered entity.
+% HIPAA164510b5_46 disclose ... protected health information
+% HIPAA164510b5_47 and
+% HIPAA164510b5_48 individual is deceased
+% HIPAA164510b5_49 and
+% HIPAA164510b5_50 disclosure is to family member, or other persons who were involved in the individual's care or payment for health care prior to the individual's death
+% HIPAA164510b5_51 and
+% HIPAA164510b5_52 protected health information of the individual is relevant to family member, or other persons who were involved in the individual's care or payment
+% HIPAA164510b5_53 not
+% HIPAA164510b5_54 disclosing is inconsistent with any prior expressed preference of the individual that is known to the covered entity
+
+% duty hipaa164502a
+% Applicability and satisfiability rules for norm hipaa164502a
+st( hipaa164502a ) :- stx( hipaa164502a ).
+su( hipaa164502a ) :- sux( hipaa164502a ), not stx( hipaa164502a ).
+sf( hipaa164502a ) :- sfx( hipaa164502a ), not sux( hipaa164502a ), not stx( hipaa164502a ).
+at( hipaa164502a ) :- atx( hipaa164502a ).
+au( hipaa164502a ) :- aux( hipaa164502a ), not atx( hipaa164502a ).
+af( hipaa164502a ) :- afx( hipaa164502a ), not aux( hipaa164502a ), not atx( hipaa164502a ).
+
+% Compliance rules for duty hipaa164502a
+com( hipaa164502a ) :- at( hipaa164502a ), st( hipaa164502a ).
+vio( hipaa164502a ) :- at( hipaa164502a ), not st( hipaa164502a ).
+com( hipaa164502a ) :- af( hipaa164502a ).
+inc( hipaa164502a ) :- au( hipaa164502a ).
+tol( hipaa164502a ) :- com( hipaa164502a ).
+conf( hipaa164502a ) :- atx( hipaa164502a ), stx( hipaa164502a ), not stx( hipaa164502a ).
+acc( hipaa164502a ) :- tol( hipaa164502a ).
+acc( hipaa164502a ) :- vio( hipaa164502a ).
+
+% right hipaa164502a1 hipaa164502a1v hipaa164510 hipaa164510b hipaa164510b5
+% Applicability and satisfiability rules for norm hipaa164502a1
+st( hipaa164502a1 ) :- stx( hipaa164502a1 ).
+su( hipaa164502a1 ) :- sux( hipaa164502a1 ), not stx( hipaa164502a1 ).
+sf( hipaa164502a1 ) :- sfx( hipaa164502a1 ), not sux( hipaa164502a1 ), not stx( hipaa164502a1 ).
+at( hipaa164502a1 ) :- atx( hipaa164502a1 ).
+au( hipaa164502a1 ) :- aux( hipaa164502a1 ), not atx( hipaa164502a1 ).
+af( hipaa164502a1 ) :- afx( hipaa164502a1 ), not aux( hipaa164502a1 ), not atx( hipaa164502a1 ).
+
+% Compliance rules for right hipaa164502a1
+exr( hipaa164502a1 ) :- at( hipaa164502a1 ).
+nex( hipaa164502a1 ) :- af( hipaa164502a1 ).
+inc( hipaa164502a1 ) :- au( hipaa164502a1 ).
+tol( hipaa164502a1 ) :- com( hipaa164502a1 ).
+acc( hipaa164502a1 ) :- tol( hipaa164502a1 ).
+acc( hipaa164502a1 ) :- vio( hipaa164502a1 ).
+
+% Applicability and satisfiability rules for norm hipaa164502a1v
+st( hipaa164502a1v ) :- stx( hipaa164502a1v ).
+su( hipaa164502a1v ) :- sux( hipaa164502a1v ), not stx( hipaa164502a1v ).
+sf( hipaa164502a1v ) :- sfx( hipaa164502a1v ), not sux( hipaa164502a1v ), not stx( hipaa164502a1v ).
+at( hipaa164502a1v ) :- atx( hipaa164502a1v ).
+au( hipaa164502a1v ) :- aux( hipaa164502a1v ), not atx( hipaa164502a1v ).
+af( hipaa164502a1v ) :- afx( hipaa164502a1v ), not aux( hipaa164502a1v ), not atx( hipaa164502a1v ).
+
+% Compliance rules for right hipaa164502a1v
+exr( hipaa164502a1v ) :- at( hipaa164502a1v ).
+nex( hipaa164502a1v ) :- af( hipaa164502a1v ).
+inc( hipaa164502a1v ) :- au( hipaa164502a1v ).
+tol( hipaa164502a1v ) :- com( hipaa164502a1v ).
+acc( hipaa164502a1v ) :- tol( hipaa164502a1v ).
+acc( hipaa164502a1v ) :- vio( hipaa164502a1v ).
+
+% Applicability and satisfiability rules for norm hipaa164510
+st( hipaa164510 ) :- stx( hipaa164510 ).
+su( hipaa164510 ) :- sux( hipaa164510 ), not stx( hipaa164510 ).
+sf( hipaa164510 ) :- sfx( hipaa164510 ), not sux( hipaa164510 ), not stx( hipaa164510 ).
+at( hipaa164510 ) :- atx( hipaa164510 ).
+au( hipaa164510 ) :- aux( hipaa164510 ), not atx( hipaa164510 ).
+af( hipaa164510 ) :- afx( hipaa164510 ), not aux( hipaa164510 ), not atx( hipaa164510 ).
+
+% Compliance rules for right hipaa164510
+exr( hipaa164510 ) :- at( hipaa164510 ).
+nex( hipaa164510 ) :- af( hipaa164510 ).
+inc( hipaa164510 ) :- au( hipaa164510 ).
+tol( hipaa164510 ) :- com( hipaa164510 ).
+acc( hipaa164510 ) :- tol( hipaa164510 ).
+acc( hipaa164510 ) :- vio( hipaa164510 ).
+
+% Applicability and satisfiability rules for norm hipaa164510b
+st( hipaa164510b ) :- stx( hipaa164510b ).
+su( hipaa164510b ) :- sux( hipaa164510b ), not stx( hipaa164510b ).
+sf( hipaa164510b ) :- sfx( hipaa164510b ), not sux( hipaa164510b ), not stx( hipaa164510b ).
+at( hipaa164510b ) :- atx( hipaa164510b ).
+au( hipaa164510b ) :- aux( hipaa164510b ), not atx( hipaa164510b ).
+af( hipaa164510b ) :- afx( hipaa164510b ), not aux( hipaa164510b ), not atx( hipaa164510b ).
+
+% Compliance rules for right hipaa164510b
+exr( hipaa164510b ) :- at( hipaa164510b ).
+nex( hipaa164510b ) :- af( hipaa164510b ).
+inc( hipaa164510b ) :- au( hipaa164510b ).
+tol( hipaa164510b ) :- com( hipaa164510b ).
+acc( hipaa164510b ) :- tol( hipaa164510b ).
+acc( hipaa164510b ) :- vio( hipaa164510b ).
+
+% Applicability and satisfiability rules for norm hipaa164510b5
+st( hipaa164510b5 ) :- stx( hipaa164510b5 ).
+su( hipaa164510b5 ) :- sux( hipaa164510b5 ), not stx( hipaa164510b5 ).
+sf( hipaa164510b5 ) :- sfx( hipaa164510b5 ), not sux( hipaa164510b5 ), not stx( hipaa164510b5 ).
+at( hipaa164510b5 ) :- atx( hipaa164510b5 ).
+au( hipaa164510b5 ) :- aux( hipaa164510b5 ), not atx( hipaa164510b5 ).
+af( hipaa164510b5 ) :- afx( hipaa164510b5 ), not aux( hipaa164510b5 ), not atx( hipaa164510b5 ).
+
+% Compliance rules for right hipaa164510b5
+exr( hipaa164510b5 ) :- at( hipaa164510b5 ).
+nex( hipaa164510b5 ) :- af( hipaa164510b5 ).
+inc( hipaa164510b5 ) :- au( hipaa164510b5 ).
+tol( hipaa164510b5 ) :- com( hipaa164510b5 ).
+acc( hipaa164510b5 ) :- tol( hipaa164510b5 ).
+acc( hipaa164510b5 ) :- vio( hipaa164510b5 ).
+
+% situation ss_hipaa164502a hipaa164502a_1 hipaa164502a_2 hipaa164502a_3 hipaa164502a_4 hipaa164502a_5 hipaa164502a_6 hipaa164502a_7 hipaa164502a_8 hipaa164502a_9 hipaa164502a_10 hipaa164502a_11 hipaa164502a_12 hipaa164502a_13 ss_hipaa164502a1 hipaa164502a1_14 hipaa164502a1_15 hipaa164502a1_16 hipaa164502a1_17 hipaa164502a1_18 hipaa164502a1_19 hipaa164502a1_20 hipaa164502a1_21 hipaa164502a1_22 hipaa164502a1_23 hipaa164502a1_24 hipaa164502a1_25 ss_hipaa164502a1v hipaa164502a1v_26 hipaa164502a1v_27 ss_hipaa164510 hipaa164510_28 hipaa164510_29 hipaa164510_30 hipaa164510_31 hipaa164510_32 hipaa164510_33 hipaa164510_34 hipaa164510_35 ss_hipaa164510b hipaa164510b_36 hipaa164510b_37 hipaa164510b_38 hipaa164510b_39 hipaa164510b_40 hipaa164510b_41 hipaa164510b_42 hipaa164510b_43 hipaa164510b_44 hipaa164510b_45 ss_hipaa164510b5 hipaa164510b5_46 hipaa164510b5_47 hipaa164510b5_48 hipaa164510b5_49 hipaa164510b5_50 hipaa164510b5_51 hipaa164510b5_52 hipaa164510b5_53 hipaa164510b5_54
+% Satisfiability rules for situation ss_hipaa164502a
+st( ss_hipaa164502a ) :- stx( ss_hipaa164502a ).
+su( ss_hipaa164502a ) :- sux( ss_hipaa164502a ), not stx( ss_hipaa164502a ).
+sf( ss_hipaa164502a ) :- sfx( ss_hipaa164502a ), not sux( ss_hipaa164502a ), not stx( ss_hipaa164502a ).
+
+% Satisfiability rules for situation hipaa164502a_1
+st( hipaa164502a_1 ) :- stx( hipaa164502a_1 ).
+su( hipaa164502a_1 ) :- sux( hipaa164502a_1 ), not stx( hipaa164502a_1 ).
+sf( hipaa164502a_1 ) :- sfx( hipaa164502a_1 ), not sux( hipaa164502a_1 ), not stx( hipaa164502a_1 ).
+
+% Satisfiability rules for situation hipaa164502a_2
+st( hipaa164502a_2 ) :- stx( hipaa164502a_2 ).
+su( hipaa164502a_2 ) :- sux( hipaa164502a_2 ), not stx( hipaa164502a_2 ).
+sf( hipaa164502a_2 ) :- sfx( hipaa164502a_2 ), not sux( hipaa164502a_2 ), not stx( hipaa164502a_2 ).
+
+% Satisfiability rules for situation hipaa164502a_3
+st( hipaa164502a_3 ) :- stx( hipaa164502a_3 ).
+su( hipaa164502a_3 ) :- sux( hipaa164502a_3 ), not stx( hipaa164502a_3 ).
+sf( hipaa164502a_3 ) :- sfx( hipaa164502a_3 ), not sux( hipaa164502a_3 ), not stx( hipaa164502a_3 ).
+
+% Satisfiability rules for situation hipaa164502a_4
+st( hipaa164502a_4 ) :- stx( hipaa164502a_4 ).
+su( hipaa164502a_4 ) :- sux( hipaa164502a_4 ), not stx( hipaa164502a_4 ).
+sf( hipaa164502a_4 ) :- sfx( hipaa164502a_4 ), not sux( hipaa164502a_4 ), not stx( hipaa164502a_4 ).
+
+% Satisfiability rules for situation hipaa164502a_5
+st( hipaa164502a_5 ) :- stx( hipaa164502a_5 ).
+su( hipaa164502a_5 ) :- sux( hipaa164502a_5 ), not stx( hipaa164502a_5 ).
+sf( hipaa164502a_5 ) :- sfx( hipaa164502a_5 ), not sux( hipaa164502a_5 ), not stx( hipaa164502a_5 ).
+
+% Satisfiability rules for situation hipaa164502a_6
+st( hipaa164502a_6 ) :- stx( hipaa164502a_6 ).
+su( hipaa164502a_6 ) :- sux( hipaa164502a_6 ), not stx( hipaa164502a_6 ).
+sf( hipaa164502a_6 ) :- sfx( hipaa164502a_6 ), not sux( hipaa164502a_6 ), not stx( hipaa164502a_6 ).
+
+% Satisfiability rules for situation hipaa164502a_7
+st( hipaa164502a_7 ) :- stx( hipaa164502a_7 ).
+su( hipaa164502a_7 ) :- sux( hipaa164502a_7 ), not stx( hipaa164502a_7 ).
+sf( hipaa164502a_7 ) :- sfx( hipaa164502a_7 ), not sux( hipaa164502a_7 ), not stx( hipaa164502a_7 ).
+
+% Satisfiability rules for situation hipaa164502a_8
+st( hipaa164502a_8 ) :- stx( hipaa164502a_8 ).
+su( hipaa164502a_8 ) :- sux( hipaa164502a_8 ), not stx( hipaa164502a_8 ).
+sf( hipaa164502a_8 ) :- sfx( hipaa164502a_8 ), not sux( hipaa164502a_8 ), not stx( hipaa164502a_8 ).
+
+% Satisfiability rules for situation hipaa164502a_9
+st( hipaa164502a_9 ) :- stx( hipaa164502a_9 ).
+su( hipaa164502a_9 ) :- sux( hipaa164502a_9 ), not stx( hipaa164502a_9 ).
+sf( hipaa164502a_9 ) :- sfx( hipaa164502a_9 ), not sux( hipaa164502a_9 ), not stx( hipaa164502a_9 ).
+
+% Satisfiability rules for situation hipaa164502a_10
+st( hipaa164502a_10 ) :- stx( hipaa164502a_10 ).
+su( hipaa164502a_10 ) :- sux( hipaa164502a_10 ), not stx( hipaa164502a_10 ).
+sf( hipaa164502a_10 ) :- sfx( hipaa164502a_10 ), not sux( hipaa164502a_10 ), not stx( hipaa164502a_10 ).
+
+% Satisfiability rules for situation hipaa164502a_11
+st( hipaa164502a_11 ) :- stx( hipaa164502a_11 ).
+su( hipaa164502a_11 ) :- sux( hipaa164502a_11 ), not stx( hipaa164502a_11 ).
+sf( hipaa164502a_11 ) :- sfx( hipaa164502a_11 ), not sux( hipaa164502a_11 ), not stx( hipaa164502a_11 ).
+
+% Satisfiability rules for situation hipaa164502a_12
+st( hipaa164502a_12 ) :- stx( hipaa164502a_12 ).
+su( hipaa164502a_12 ) :- sux( hipaa164502a_12 ), not stx( hipaa164502a_12 ).
+sf( hipaa164502a_12 ) :- sfx( hipaa164502a_12 ), not sux( hipaa164502a_12 ), not stx( hipaa164502a_12 ).
+
+% Satisfiability rules for situation hipaa164502a_13
+st( hipaa164502a_13 ) :- stx( hipaa164502a_13 ).
+su( hipaa164502a_13 ) :- sux( hipaa164502a_13 ), not stx( hipaa164502a_13 ).
+sf( hipaa164502a_13 ) :- sfx( hipaa164502a_13 ), not sux( hipaa164502a_13 ), not stx( hipaa164502a_13 ).
+
+% Satisfiability rules for situation ss_hipaa164502a1
+st( ss_hipaa164502a1 ) :- stx( ss_hipaa164502a1 ).
+su( ss_hipaa164502a1 ) :- sux( ss_hipaa164502a1 ), not stx( ss_hipaa164502a1 ).
+sf( ss_hipaa164502a1 ) :- sfx( ss_hipaa164502a1 ), not sux( ss_hipaa164502a1 ), not stx( ss_hipaa164502a1 ).
+
+% Satisfiability rules for situation hipaa164502a1_14
+st( hipaa164502a1_14 ) :- stx( hipaa164502a1_14 ).
+su( hipaa164502a1_14 ) :- sux( hipaa164502a1_14 ), not stx( hipaa164502a1_14 ).
+sf( hipaa164502a1_14 ) :- sfx( hipaa164502a1_14 ), not sux( hipaa164502a1_14 ), not stx( hipaa164502a1_14 ).
+
+% Satisfiability rules for situation hipaa164502a1_15
+st( hipaa164502a1_15 ) :- stx( hipaa164502a1_15 ).
+su( hipaa164502a1_15 ) :- sux( hipaa164502a1_15 ), not stx( hipaa164502a1_15 ).
+sf( hipaa164502a1_15 ) :- sfx( hipaa164502a1_15 ), not sux( hipaa164502a1_15 ), not stx( hipaa164502a1_15 ).
+
+% Satisfiability rules for situation hipaa164502a1_16
+st( hipaa164502a1_16 ) :- stx( hipaa164502a1_16 ).
+su( hipaa164502a1_16 ) :- sux( hipaa164502a1_16 ), not stx( hipaa164502a1_16 ).
+sf( hipaa164502a1_16 ) :- sfx( hipaa164502a1_16 ), not sux( hipaa164502a1_16 ), not stx( hipaa164502a1_16 ).
+
+% Satisfiability rules for situation hipaa164502a1_17
+st( hipaa164502a1_17 ) :- stx( hipaa164502a1_17 ).
+su( hipaa164502a1_17 ) :- sux( hipaa164502a1_17 ), not stx( hipaa164502a1_17 ).
+sf( hipaa164502a1_17 ) :- sfx( hipaa164502a1_17 ), not sux( hipaa164502a1_17 ), not stx( hipaa164502a1_17 ).
+
+% Satisfiability rules for situation hipaa164502a1_18
+st( hipaa164502a1_18 ) :- stx( hipaa164502a1_18 ).
+su( hipaa164502a1_18 ) :- sux( hipaa164502a1_18 ), not stx( hipaa164502a1_18 ).
+sf( hipaa164502a1_18 ) :- sfx( hipaa164502a1_18 ), not sux( hipaa164502a1_18 ), not stx( hipaa164502a1_18 ).
+
+% Satisfiability rules for situation hipaa164502a1_19
+st( hipaa164502a1_19 ) :- stx( hipaa164502a1_19 ).
+su( hipaa164502a1_19 ) :- sux( hipaa164502a1_19 ), not stx( hipaa164502a1_19 ).
+sf( hipaa164502a1_19 ) :- sfx( hipaa164502a1_19 ), not sux( hipaa164502a1_19 ), not stx( hipaa164502a1_19 ).
+
+% Satisfiability rules for situation hipaa164502a1_20
+st( hipaa164502a1_20 ) :- stx( hipaa164502a1_20 ).
+su( hipaa164502a1_20 ) :- sux( hipaa164502a1_20 ), not stx( hipaa164502a1_20 ).
+sf( hipaa164502a1_20 ) :- sfx( hipaa164502a1_20 ), not sux( hipaa164502a1_20 ), not stx( hipaa164502a1_20 ).
+
+% Satisfiability rules for situation hipaa164502a1_21
+st( hipaa164502a1_21 ) :- stx( hipaa164502a1_21 ).
+su( hipaa164502a1_21 ) :- sux( hipaa164502a1_21 ), not stx( hipaa164502a1_21 ).
+sf( hipaa164502a1_21 ) :- sfx( hipaa164502a1_21 ), not sux( hipaa164502a1_21 ), not stx( hipaa164502a1_21 ).
+
+% Satisfiability rules for situation hipaa164502a1_22
+st( hipaa164502a1_22 ) :- stx( hipaa164502a1_22 ).
+su( hipaa164502a1_22 ) :- sux( hipaa164502a1_22 ), not stx( hipaa164502a1_22 ).
+sf( hipaa164502a1_22 ) :- sfx( hipaa164502a1_22 ), not sux( hipaa164502a1_22 ), not stx( hipaa164502a1_22 ).
+
+% Satisfiability rules for situation hipaa164502a1_23
+st( hipaa164502a1_23 ) :- stx( hipaa164502a1_23 ).
+su( hipaa164502a1_23 ) :- sux( hipaa164502a1_23 ), not stx( hipaa164502a1_23 ).
+sf( hipaa164502a1_23 ) :- sfx( hipaa164502a1_23 ), not sux( hipaa164502a1_23 ), not stx( hipaa164502a1_23 ).
+
+% Satisfiability rules for situation hipaa164502a1_24
+st( hipaa164502a1_24 ) :- stx( hipaa164502a1_24 ).
+su( hipaa164502a1_24 ) :- sux( hipaa164502a1_24 ), not stx( hipaa164502a1_24 ).
+sf( hipaa164502a1_24 ) :- sfx( hipaa164502a1_24 ), not sux( hipaa164502a1_24 ), not stx( hipaa164502a1_24 ).
+
+% Satisfiability rules for situation hipaa164502a1_25
+st( hipaa164502a1_25 ) :- stx( hipaa164502a1_25 ).
+su( hipaa164502a1_25 ) :- sux( hipaa164502a1_25 ), not stx( hipaa164502a1_25 ).
+sf( hipaa164502a1_25 ) :- sfx( hipaa164502a1_25 ), not sux( hipaa164502a1_25 ), not stx( hipaa164502a1_25 ).
+
+% Satisfiability rules for situation ss_hipaa164502a1v
+st( ss_hipaa164502a1v ) :- stx( ss_hipaa164502a1v ).
+su( ss_hipaa164502a1v ) :- sux( ss_hipaa164502a1v ), not stx( ss_hipaa164502a1v ).
+sf( ss_hipaa164502a1v ) :- sfx( ss_hipaa164502a1v ), not sux( ss_hipaa164502a1v ), not stx( ss_hipaa164502a1v ).
+
+% Satisfiability rules for situation hipaa164502a1v_26
+st( hipaa164502a1v_26 ) :- stx( hipaa164502a1v_26 ).
+su( hipaa164502a1v_26 ) :- sux( hipaa164502a1v_26 ), not stx( hipaa164502a1v_26 ).
+sf( hipaa164502a1v_26 ) :- sfx( hipaa164502a1v_26 ), not sux( hipaa164502a1v_26 ), not stx( hipaa164502a1v_26 ).
+
+% Satisfiability rules for situation hipaa164502a1v_27
+st( hipaa164502a1v_27 ) :- stx( hipaa164502a1v_27 ).
+su( hipaa164502a1v_27 ) :- sux( hipaa164502a1v_27 ), not stx( hipaa164502a1v_27 ).
+sf( hipaa164502a1v_27 ) :- sfx( hipaa164502a1v_27 ), not sux( hipaa164502a1v_27 ), not stx( hipaa164502a1v_27 ).
+
+% Satisfiability rules for situation ss_hipaa164510
+st( ss_hipaa164510 ) :- stx( ss_hipaa164510 ).
+su( ss_hipaa164510 ) :- sux( ss_hipaa164510 ), not stx( ss_hipaa164510 ).
+sf( ss_hipaa164510 ) :- sfx( ss_hipaa164510 ), not sux( ss_hipaa164510 ), not stx( ss_hipaa164510 ).
+
+% Satisfiability rules for situation hipaa164510_28
+st( hipaa164510_28 ) :- stx( hipaa164510_28 ).
+su( hipaa164510_28 ) :- sux( hipaa164510_28 ), not stx( hipaa164510_28 ).
+sf( hipaa164510_28 ) :- sfx( hipaa164510_28 ), not sux( hipaa164510_28 ), not stx( hipaa164510_28 ).
+
+% Satisfiability rules for situation hipaa164510_29
+st( hipaa164510_29 ) :- stx( hipaa164510_29 ).
+su( hipaa164510_29 ) :- sux( hipaa164510_29 ), not stx( hipaa164510_29 ).
+sf( hipaa164510_29 ) :- sfx( hipaa164510_29 ), not sux( hipaa164510_29 ), not stx( hipaa164510_29 ).
+
+% Satisfiability rules for situation hipaa164510_30
+st( hipaa164510_30 ) :- stx( hipaa164510_30 ).
+su( hipaa164510_30 ) :- sux( hipaa164510_30 ), not stx( hipaa164510_30 ).
+sf( hipaa164510_30 ) :- sfx( hipaa164510_30 ), not sux( hipaa164510_30 ), not stx( hipaa164510_30 ).
+
+% Satisfiability rules for situation hipaa164510_31
+st( hipaa164510_31 ) :- stx( hipaa164510_31 ).
+su( hipaa164510_31 ) :- sux( hipaa164510_31 ), not stx( hipaa164510_31 ).
+sf( hipaa164510_31 ) :- sfx( hipaa164510_31 ), not sux( hipaa164510_31 ), not stx( hipaa164510_31 ).
+
+% Satisfiability rules for situation hipaa164510_32
+st( hipaa164510_32 ) :- stx( hipaa164510_32 ).
+su( hipaa164510_32 ) :- sux( hipaa164510_32 ), not stx( hipaa164510_32 ).
+sf( hipaa164510_32 ) :- sfx( hipaa164510_32 ), not sux( hipaa164510_32 ), not stx( hipaa164510_32 ).
+
+% Satisfiability rules for situation hipaa164510_33
+st( hipaa164510_33 ) :- stx( hipaa164510_33 ).
+su( hipaa164510_33 ) :- sux( hipaa164510_33 ), not stx( hipaa164510_33 ).
+sf( hipaa164510_33 ) :- sfx( hipaa164510_33 ), not sux( hipaa164510_33 ), not stx( hipaa164510_33 ).
+
+% Satisfiability rules for situation hipaa164510_34
+st( hipaa164510_34 ) :- stx( hipaa164510_34 ).
+su( hipaa164510_34 ) :- sux( hipaa164510_34 ), not stx( hipaa164510_34 ).
+sf( hipaa164510_34 ) :- sfx( hipaa164510_34 ), not sux( hipaa164510_34 ), not stx( hipaa164510_34 ).
+
+% Satisfiability rules for situation hipaa164510_35
+st( hipaa164510_35 ) :- stx( hipaa164510_35 ).
+su( hipaa164510_35 ) :- sux( hipaa164510_35 ), not stx( hipaa164510_35 ).
+sf( hipaa164510_35 ) :- sfx( hipaa164510_35 ), not sux( hipaa164510_35 ), not stx( hipaa164510_35 ).
+
+% Satisfiability rules for situation ss_hipaa164510b
+st( ss_hipaa164510b ) :- stx( ss_hipaa164510b ).
+su( ss_hipaa164510b ) :- sux( ss_hipaa164510b ), not stx( ss_hipaa164510b ).
+sf( ss_hipaa164510b ) :- sfx( ss_hipaa164510b ), not sux( ss_hipaa164510b ), not stx( ss_hipaa164510b ).
+
+% Satisfiability rules for situation hipaa164510b_36
+st( hipaa164510b_36 ) :- stx( hipaa164510b_36 ).
+su( hipaa164510b_36 ) :- sux( hipaa164510b_36 ), not stx( hipaa164510b_36 ).
+sf( hipaa164510b_36 ) :- sfx( hipaa164510b_36 ), not sux( hipaa164510b_36 ), not stx( hipaa164510b_36 ).
+
+% Satisfiability rules for situation hipaa164510b_37
+st( hipaa164510b_37 ) :- stx( hipaa164510b_37 ).
+su( hipaa164510b_37 ) :- sux( hipaa164510b_37 ), not stx( hipaa164510b_37 ).
+sf( hipaa164510b_37 ) :- sfx( hipaa164510b_37 ), not sux( hipaa164510b_37 ), not stx( hipaa164510b_37 ).
+
+% Satisfiability rules for situation hipaa164510b_38
+st( hipaa164510b_38 ) :- stx( hipaa164510b_38 ).
+su( hipaa164510b_38 ) :- sux( hipaa164510b_38 ), not stx( hipaa164510b_38 ).
+sf( hipaa164510b_38 ) :- sfx( hipaa164510b_38 ), not sux( hipaa164510b_38 ), not stx( hipaa164510b_38 ).
+
+% Satisfiability rules for situation hipaa164510b_39
+st( hipaa164510b_39 ) :- stx( hipaa164510b_39 ).
+su( hipaa164510b_39 ) :- sux( hipaa164510b_39 ), not stx( hipaa164510b_39 ).
+sf( hipaa164510b_39 ) :- sfx( hipaa164510b_39 ), not sux( hipaa164510b_39 ), not stx( hipaa164510b_39 ).
+
+% Satisfiability rules for situation hipaa164510b_40
+st( hipaa164510b_40 ) :- stx( hipaa164510b_40 ).
+su( hipaa164510b_40 ) :- sux( hipaa164510b_40 ), not stx( hipaa164510b_40 ).
+sf( hipaa164510b_40 ) :- sfx( hipaa164510b_40 ), not sux( hipaa164510b_40 ), not stx( hipaa164510b_40 ).
+
+% Satisfiability rules for situation hipaa164510b_41
+st( hipaa164510b_41 ) :- stx( hipaa164510b_41 ).
+su( hipaa164510b_41 ) :- sux( hipaa164510b_41 ), not stx( hipaa164510b_41 ).
+sf( hipaa164510b_41 ) :- sfx( hipaa164510b_41 ), not sux( hipaa164510b_41 ), not stx( hipaa164510b_41 ).
+
+% Satisfiability rules for situation hipaa164510b_42
+st( hipaa164510b_42 ) :- stx( hipaa164510b_42 ).
+su( hipaa164510b_42 ) :- sux( hipaa164510b_42 ), not stx( hipaa164510b_42 ).
+sf( hipaa164510b_42 ) :- sfx( hipaa164510b_42 ), not sux( hipaa164510b_42 ), not stx( hipaa164510b_42 ).
+
+% Satisfiability rules for situation hipaa164510b_43
+st( hipaa164510b_43 ) :- stx( hipaa164510b_43 ).
+su( hipaa164510b_43 ) :- sux( hipaa164510b_43 ), not stx( hipaa164510b_43 ).
+sf( hipaa164510b_43 ) :- sfx( hipaa164510b_43 ), not sux( hipaa164510b_43 ), not stx( hipaa164510b_43 ).
+
+% Satisfiability rules for situation hipaa164510b_44
+st( hipaa164510b_44 ) :- stx( hipaa164510b_44 ).
+su( hipaa164510b_44 ) :- sux( hipaa164510b_44 ), not stx( hipaa164510b_44 ).
+sf( hipaa164510b_44 ) :- sfx( hipaa164510b_44 ), not sux( hipaa164510b_44 ), not stx( hipaa164510b_44 ).
+
+% Satisfiability rules for situation hipaa164510b_45
+st( hipaa164510b_45 ) :- stx( hipaa164510b_45 ).
+su( hipaa164510b_45 ) :- sux( hipaa164510b_45 ), not stx( hipaa164510b_45 ).
+sf( hipaa164510b_45 ) :- sfx( hipaa164510b_45 ), not sux( hipaa164510b_45 ), not stx( hipaa164510b_45 ).
+
+% Satisfiability rules for situation ss_hipaa164510b5
+st( ss_hipaa164510b5 ) :- stx( ss_hipaa164510b5 ).
+su( ss_hipaa164510b5 ) :- sux( ss_hipaa164510b5 ), not stx( ss_hipaa164510b5 ).
+sf( ss_hipaa164510b5 ) :- sfx( ss_hipaa164510b5 ), not sux( ss_hipaa164510b5 ), not stx( ss_hipaa164510b5 ).
+
+% Satisfiability rules for situation hipaa164510b5_46
+st( hipaa164510b5_46 ) :- stx( hipaa164510b5_46 ).
+su( hipaa164510b5_46 ) :- sux( hipaa164510b5_46 ), not stx( hipaa164510b5_46 ).
+sf( hipaa164510b5_46 ) :- sfx( hipaa164510b5_46 ), not sux( hipaa164510b5_46 ), not stx( hipaa164510b5_46 ).
+
+% Satisfiability rules for situation hipaa164510b5_47
+st( hipaa164510b5_47 ) :- stx( hipaa164510b5_47 ).
+su( hipaa164510b5_47 ) :- sux( hipaa164510b5_47 ), not stx( hipaa164510b5_47 ).
+sf( hipaa164510b5_47 ) :- sfx( hipaa164510b5_47 ), not sux( hipaa164510b5_47 ), not stx( hipaa164510b5_47 ).
+
+% Satisfiability rules for situation hipaa164510b5_48
+st( hipaa164510b5_48 ) :- stx( hipaa164510b5_48 ).
+su( hipaa164510b5_48 ) :- sux( hipaa164510b5_48 ), not stx( hipaa164510b5_48 ).
+sf( hipaa164510b5_48 ) :- sfx( hipaa164510b5_48 ), not sux( hipaa164510b5_48 ), not stx( hipaa164510b5_48 ).
+
+% Satisfiability rules for situation hipaa164510b5_49
+st( hipaa164510b5_49 ) :- stx( hipaa164510b5_49 ).
+su( hipaa164510b5_49 ) :- sux( hipaa164510b5_49 ), not stx( hipaa164510b5_49 ).
+sf( hipaa164510b5_49 ) :- sfx( hipaa164510b5_49 ), not sux( hipaa164510b5_49 ), not stx( hipaa164510b5_49 ).
+
+% Satisfiability rules for situation hipaa164510b5_50
+st( hipaa164510b5_50 ) :- stx( hipaa164510b5_50 ).
+su( hipaa164510b5_50 ) :- sux( hipaa164510b5_50 ), not stx( hipaa164510b5_50 ).
+sf( hipaa164510b5_50 ) :- sfx( hipaa164510b5_50 ), not sux( hipaa164510b5_50 ), not stx( hipaa164510b5_50 ).
+
+% Satisfiability rules for situation hipaa164510b5_51
+st( hipaa164510b5_51 ) :- stx( hipaa164510b5_51 ).
+su( hipaa164510b5_51 ) :- sux( hipaa164510b5_51 ), not stx( hipaa164510b5_51 ).
+sf( hipaa164510b5_51 ) :- sfx( hipaa164510b5_51 ), not sux( hipaa164510b5_51 ), not stx( hipaa164510b5_51 ).
+
+% Satisfiability rules for situation hipaa164510b5_52
+st( hipaa164510b5_52 ) :- stx( hipaa164510b5_52 ).
+su( hipaa164510b5_52 ) :- sux( hipaa164510b5_52 ), not stx( hipaa164510b5_52 ).
+sf( hipaa164510b5_52 ) :- sfx( hipaa164510b5_52 ), not sux( hipaa164510b5_52 ), not stx( hipaa164510b5_52 ).
+
+% Satisfiability rules for situation hipaa164510b5_53
+st( hipaa164510b5_53 ) :- stx( hipaa164510b5_53 ).
+su( hipaa164510b5_53 ) :- sux( hipaa164510b5_53 ), not stx( hipaa164510b5_53 ).
+sf( hipaa164510b5_53 ) :- sfx( hipaa164510b5_53 ), not sux( hipaa164510b5_53 ), not stx( hipaa164510b5_53 ).
+
+% Satisfiability rules for situation hipaa164510b5_54
+st( hipaa164510b5_54 ) :- stx( hipaa164510b5_54 ).
+su( hipaa164510b5_54 ) :- sux( hipaa164510b5_54 ), not stx( hipaa164510b5_54 ).
+sf( hipaa164510b5_54 ) :- sfx( hipaa164510b5_54 ), not sux( hipaa164510b5_54 ), not stx( hipaa164510b5_54 ).
+
+
+%satisfy ss_hipaa164502a1 hipaa164502a_8
+% and-satisfy( hipaa164502a_8 , [u'ss_hipaa164502a1'] ).
+stx( hipaa164502a_8 ) :-  st( ss_hipaa164502a1 ) .
+st_rel( hipaa164502a_8 , rsat) :- stx( hipaa164502a_8 ).
+sfx( hipaa164502a_8 ) :- sf( ss_hipaa164502a1 ).
+sf_rel( hipaa164502a_8 , rsat) :- sfx( hipaa164502a_8 ).
+sux( hipaa164502a_8 ) :- not st( ss_hipaa164502a1 ), not sf( ss_hipaa164502a1 ).
+su_rel( hipaa164502a_8 , rsat) :- sux( hipaa164502a_8 ).
+
+break hipaa164502a_3 hipaa164502a_2
+% and-break( hipaa164502a_2 , [u'hipaa164502a_3'] ).
+sfx( hipaa164502a_2 ) :-  st( hipaa164502a_3 ) .
+sf_rel( hipaa164502a_2 , rbrk) :- sfx( hipaa164502a_2 ).
+sux( hipaa164502a_2 ) :- not st( hipaa164502a_3 ).
+su_rel( hipaa164502a_2 , rbrk) :- sux( hipaa164502a_2 ).
+
+%contains hipaa164510b5 ss_hipaa164510b5
+% propagate  hipaa164510b5  to  ss_hipaa164510b5 .
+st( ss_hipaa164510b5 ) :- exr( hipaa164510b5 ).
+sf( ss_hipaa164510b5 ) :- nex( hipaa164510b5 ).
+su( ss_hipaa164510b5 ) :- inc( hipaa164510b5 ).
+
+%satisfy hipaa164510b5_48 hipaa164510b5_49 hipaa164510b5_47
+% and-satisfy( hipaa164510b5_47 , [u'hipaa164510b5_48', u'hipaa164510b5_49'] ).
+stx( hipaa164510b5_47 ) :-  st( hipaa164510b5_48 ) ,  st( hipaa164510b5_49 ) .
+st_rel( hipaa164510b5_47 , rsat) :- stx( hipaa164510b5_47 ).
+sfx( hipaa164510b5_47 ) :- sf( hipaa164510b5_48 ).
+sf_rel( hipaa164510b5_47 , rsat) :- sfx( hipaa164510b5_47 ).
+sux( hipaa164510b5_47 ) :- not st( hipaa164510b5_48 ), not sf( hipaa164510b5_48 ).
+su_rel( hipaa164510b5_47 , rsat) :- sux( hipaa164510b5_47 ).
+sfx( hipaa164510b5_47 ) :- sf( hipaa164510b5_49 ).
+sf_rel( hipaa164510b5_47 , rsat) :- sfx( hipaa164510b5_47 ).
+sux( hipaa164510b5_47 ) :- not st( hipaa164510b5_49 ), not sf( hipaa164510b5_49 ).
+su_rel( hipaa164510b5_47 , rsat) :- sux( hipaa164510b5_47 ).
+
+%contains hipaa164510 ss_hipaa164510
+% propagate  hipaa164510  to  ss_hipaa164510 .
+st( ss_hipaa164510 ) :- exr( hipaa164510 ).
+sf( ss_hipaa164510 ) :- nex( hipaa164510 ).
+su( ss_hipaa164510 ) :- inc( hipaa164510 ).
+
+%satisfy ss_hipaa164502a1v hipaa164502a1_24
+% and-satisfy( hipaa164502a1_24 , [u'ss_hipaa164502a1v'] ).
+stx( hipaa164502a1_24 ) :-  st( ss_hipaa164502a1v ) .
+st_rel( hipaa164502a1_24 , rsat) :- stx( hipaa164502a1_24 ).
+sfx( hipaa164502a1_24 ) :- sf( ss_hipaa164502a1v ).
+sf_rel( hipaa164502a1_24 , rsat) :- sfx( hipaa164502a1_24 ).
+sux( hipaa164502a1_24 ) :- not st( ss_hipaa164502a1v ), not sf( ss_hipaa164502a1v ).
+su_rel( hipaa164502a1_24 , rsat) :- sux( hipaa164502a1_24 ).
+
+%satisfy hipaa164510b_40 hipaa164510b_43 hipaa164510b_39 or
+% or-satisfy( hipaa164510b_39 , [u'hipaa164510b_40', u'hipaa164510b_43'] ).
+sfx( hipaa164510b_39 ) :-  sf( hipaa164510b_40 ) ,  sf( hipaa164510b_43 ) .
+sf_rel( hipaa164510b_39 , rsat) :- sfx( hipaa164510b_39 ).
+stx( hipaa164510b_39 ) :- st( hipaa164510b_40 ).
+st_rel( hipaa164510b_39 , rsat) :- stx( hipaa164510b_39 ).
+sux( hipaa164510b_39 ) :- not st( hipaa164510b_40 ), not sf( hipaa164510b_40 ).
+su_rel( hipaa164510b_39 , rsat) :- sux( hipaa164510b_39 ).
+stx( hipaa164510b_39 ) :- st( hipaa164510b_43 ).
+st_rel( hipaa164510b_39 , rsat) :- stx( hipaa164510b_39 ).
+sux( hipaa164510b_39 ) :- not st( hipaa164510b_43 ), not sf( hipaa164510b_43 ).
+su_rel( hipaa164510b_39 , rsat) :- sux( hipaa164510b_39 ).
+
+%satisfy hipaa164502a1_16 hipaa164502a1_25 hipaa164502a1_15 or
+% or-satisfy( hipaa164502a1_15 , [u'hipaa164502a1_16', u'hipaa164502a1_25'] ).
+sfx( hipaa164502a1_15 ) :-  sf( hipaa164502a1_16 ) ,  sf( hipaa164502a1_25 ) .
+sf_rel( hipaa164502a1_15 , rsat) :- sfx( hipaa164502a1_15 ).
+stx( hipaa164502a1_15 ) :- st( hipaa164502a1_16 ).
+st_rel( hipaa164502a1_15 , rsat) :- stx( hipaa164502a1_15 ).
+sux( hipaa164502a1_15 ) :- not st( hipaa164502a1_16 ), not sf( hipaa164502a1_16 ).
+su_rel( hipaa164502a1_15 , rsat) :- sux( hipaa164502a1_15 ).
+stx( hipaa164502a1_15 ) :- st( hipaa164502a1_25 ).
+st_rel( hipaa164502a1_15 , rsat) :- stx( hipaa164502a1_15 ).
+sux( hipaa164502a1_15 ) :- not st( hipaa164502a1_25 ), not sf( hipaa164502a1_25 ).
+su_rel( hipaa164502a1_15 , rsat) :- sux( hipaa164502a1_15 ).
+
+break hipaa164510b5_54 hipaa164510b5_53
+% and-break( hipaa164510b5_53 , [u'hipaa164510b5_54'] ).
+sfx( hipaa164510b5_53 ) :-  st( hipaa164510b5_54 ) .
+sf_rel( hipaa164510b5_53 , rbrk) :- sfx( hipaa164510b5_53 ).
+sux( hipaa164510b5_53 ) :- not st( hipaa164510b5_54 ).
+su_rel( hipaa164510b5_53 , rbrk) :- sux( hipaa164510b5_53 ).
+
+%activate hipaa164510b_37 hipaa164510b
+% and-activate( hipaa164510b , [u'hipaa164510b_37'] ).
+atx( hipaa164510b ) :-  st( hipaa164510b_37 ) , not st( hipaa164510bs ).
+at_rel( hipaa164510b , ract) :- atx( hipaa164510b ).
+afx( hipaa164510b ) :- sf( hipaa164510b_37 ).
+af_rel( hipaa164510b , rsat) :- afx( hipaa164510b ).
+aux( hipaa164510b ) :- not st( hipaa164510b_37 ), not sf( hipaa164510b_37 ), not st( hipaa164510bs ).
+au_rel( hipaa164510b , ract) :- aux( hipaa164510b ).
+
+%satisfy hipaa164510b5_46 hipaa164510b5
+% and-satisfy( hipaa164510b5 , [u'hipaa164510b5_46'] ).
+stx( hipaa164510b5 ) :-  st( hipaa164510b5_46 ) .
+st_rel( hipaa164510b5 , rsat) :- stx( hipaa164510b5 ).
+sfx( hipaa164510b5 ) :- sf( hipaa164510b5_46 ).
+sf_rel( hipaa164510b5 , rsat) :- sfx( hipaa164510b5 ).
+sux( hipaa164510b5 ) :- not st( hipaa164510b5_46 ), not sf( hipaa164510b5_46 ).
+su_rel( hipaa164510b5 , rsat) :- sux( hipaa164510b5 ).
+
+%satisfy hipaa164510_34 hipaa164510_35 hipaa164510_33 or
+% or-satisfy( hipaa164510_33 , [u'hipaa164510_34', u'hipaa164510_35'] ).
+sfx( hipaa164510_33 ) :-  sf( hipaa164510_34 ) ,  sf( hipaa164510_35 ) .
+sf_rel( hipaa164510_33 , rsat) :- sfx( hipaa164510_33 ).
+stx( hipaa164510_33 ) :- st( hipaa164510_34 ).
+st_rel( hipaa164510_33 , rsat) :- stx( hipaa164510_33 ).
+sux( hipaa164510_33 ) :- not st( hipaa164510_34 ), not sf( hipaa164510_34 ).
+su_rel( hipaa164510_33 , rsat) :- sux( hipaa164510_33 ).
+stx( hipaa164510_33 ) :- st( hipaa164510_35 ).
+st_rel( hipaa164510_33 , rsat) :- stx( hipaa164510_33 ).
+sux( hipaa164510_33 ) :- not st( hipaa164510_35 ), not sf( hipaa164510_35 ).
+su_rel( hipaa164510_33 , rsat) :- sux( hipaa164510_33 ).
+
+%contains hipaa164502a ss_hipaa164502a
+% propagate  hipaa164502a  to  ss_hipaa164502a .
+st( ss_hipaa164502a ) :- com( hipaa164502a ).
+sf( ss_hipaa164502a ) :- vio( hipaa164502a ).
+su( ss_hipaa164502a ) :- inc( hipaa164502a ).
+
+%satisfy hipaa164502a1_18 hipaa164502a1_23 hipaa164502a1_17 or
+% or-satisfy( hipaa164502a1_17 , [u'hipaa164502a1_18', u'hipaa164502a1_23'] ).
+sfx( hipaa164502a1_17 ) :-  sf( hipaa164502a1_18 ) ,  sf( hipaa164502a1_23 ) .
+sf_rel( hipaa164502a1_17 , rsat) :- sfx( hipaa164502a1_17 ).
+stx( hipaa164502a1_17 ) :- st( hipaa164502a1_18 ).
+st_rel( hipaa164502a1_17 , rsat) :- stx( hipaa164502a1_17 ).
+sux( hipaa164502a1_17 ) :- not st( hipaa164502a1_18 ), not sf( hipaa164502a1_18 ).
+su_rel( hipaa164502a1_17 , rsat) :- sux( hipaa164502a1_17 ).
+stx( hipaa164502a1_17 ) :- st( hipaa164502a1_23 ).
+st_rel( hipaa164502a1_17 , rsat) :- stx( hipaa164502a1_17 ).
+sux( hipaa164502a1_17 ) :- not st( hipaa164502a1_23 ), not sf( hipaa164502a1_23 ).
+su_rel( hipaa164502a1_17 , rsat) :- sux( hipaa164502a1_17 ).
+
+%satisfy hipaa164510b_41 hipaa164510b_42 hipaa164510b_40 or
+% or-satisfy( hipaa164510b_40 , [u'hipaa164510b_41', u'hipaa164510b_42'] ).
+sfx( hipaa164510b_40 ) :-  sf( hipaa164510b_41 ) ,  sf( hipaa164510b_42 ) .
+sf_rel( hipaa164510b_40 , rsat) :- sfx( hipaa164510b_40 ).
+stx( hipaa164510b_40 ) :- st( hipaa164510b_41 ).
+st_rel( hipaa164510b_40 , rsat) :- stx( hipaa164510b_40 ).
+sux( hipaa164510b_40 ) :- not st( hipaa164510b_41 ), not sf( hipaa164510b_41 ).
+su_rel( hipaa164510b_40 , rsat) :- sux( hipaa164510b_40 ).
+stx( hipaa164510b_40 ) :- st( hipaa164510b_42 ).
+st_rel( hipaa164510b_40 , rsat) :- stx( hipaa164510b_40 ).
+sux( hipaa164510b_40 ) :- not st( hipaa164510b_42 ), not sf( hipaa164510b_42 ).
+su_rel( hipaa164510b_40 , rsat) :- sux( hipaa164510b_40 ).
+
+%satisfy hipaa164510_28 hipaa164510
+% and-satisfy( hipaa164510 , [u'hipaa164510_28'] ).
+stx( hipaa164510 ) :-  st( hipaa164510_28 ) .
+st_rel( hipaa164510 , rsat) :- stx( hipaa164510 ).
+sfx( hipaa164510 ) :- sf( hipaa164510_28 ).
+sf_rel( hipaa164510 , rsat) :- sfx( hipaa164510 ).
+sux( hipaa164510 ) :- not st( hipaa164510_28 ), not sf( hipaa164510_28 ).
+su_rel( hipaa164510 , rsat) :- sux( hipaa164510 ).
+
+%satisfy hipaa164502a1_17 hipaa164502a1_24 hipaa164502a1_16 or
+% or-satisfy( hipaa164502a1_16 , [u'hipaa164502a1_17', u'hipaa164502a1_24'] ).
+sfx( hipaa164502a1_16 ) :-  sf( hipaa164502a1_17 ) ,  sf( hipaa164502a1_24 ) .
+sf_rel( hipaa164502a1_16 , rsat) :- sfx( hipaa164502a1_16 ).
+stx( hipaa164502a1_16 ) :- st( hipaa164502a1_17 ).
+st_rel( hipaa164502a1_16 , rsat) :- stx( hipaa164502a1_16 ).
+sux( hipaa164502a1_16 ) :- not st( hipaa164502a1_17 ), not sf( hipaa164502a1_17 ).
+su_rel( hipaa164502a1_16 , rsat) :- sux( hipaa164502a1_16 ).
+stx( hipaa164502a1_16 ) :- st( hipaa164502a1_24 ).
+st_rel( hipaa164502a1_16 , rsat) :- stx( hipaa164502a1_16 ).
+sux( hipaa164502a1_16 ) :- not st( hipaa164502a1_24 ), not sf( hipaa164502a1_24 ).
+su_rel( hipaa164502a1_16 , rsat) :- sux( hipaa164502a1_16 ).
+
+%satisfy hipaa164502a1_19 hipaa164502a1_22 hipaa164502a1_18 or
+% or-satisfy( hipaa164502a1_18 , [u'hipaa164502a1_19', u'hipaa164502a1_22'] ).
+sfx( hipaa164502a1_18 ) :-  sf( hipaa164502a1_19 ) ,  sf( hipaa164502a1_22 ) .
+sf_rel( hipaa164502a1_18 , rsat) :- sfx( hipaa164502a1_18 ).
+stx( hipaa164502a1_18 ) :- st( hipaa164502a1_19 ).
+st_rel( hipaa164502a1_18 , rsat) :- stx( hipaa164502a1_18 ).
+sux( hipaa164502a1_18 ) :- not st( hipaa164502a1_19 ), not sf( hipaa164502a1_19 ).
+su_rel( hipaa164502a1_18 , rsat) :- sux( hipaa164502a1_18 ).
+stx( hipaa164502a1_18 ) :- st( hipaa164502a1_22 ).
+st_rel( hipaa164502a1_18 , rsat) :- stx( hipaa164502a1_18 ).
+sux( hipaa164502a1_18 ) :- not st( hipaa164502a1_22 ), not sf( hipaa164502a1_22 ).
+su_rel( hipaa164502a1_18 , rsat) :- sux( hipaa164502a1_18 ).
+
+%satisfy hipaa164502a1v_26 hipaa164502a1v
+% and-satisfy( hipaa164502a1v , [u'hipaa164502a1v_26'] ).
+stx( hipaa164502a1v ) :-  st( hipaa164502a1v_26 ) .
+st_rel( hipaa164502a1v , rsat) :- stx( hipaa164502a1v ).
+sfx( hipaa164502a1v ) :- sf( hipaa164502a1v_26 ).
+sf_rel( hipaa164502a1v , rsat) :- sfx( hipaa164502a1v ).
+sux( hipaa164502a1v ) :- not st( hipaa164502a1v_26 ), not sf( hipaa164502a1v_26 ).
+su_rel( hipaa164502a1v , rsat) :- sux( hipaa164502a1v ).
+
+%satisfy hipaa164502a_8 hipaa164502a_9 hipaa164502a_7 or
+% or-satisfy( hipaa164502a_7 , [u'hipaa164502a_8', u'hipaa164502a_9'] ).
+sfx( hipaa164502a_7 ) :-  sf( hipaa164502a_8 ) ,  sf( hipaa164502a_9 ) .
+sf_rel( hipaa164502a_7 , rsat) :- sfx( hipaa164502a_7 ).
+stx( hipaa164502a_7 ) :- st( hipaa164502a_8 ).
+st_rel( hipaa164502a_7 , rsat) :- stx( hipaa164502a_7 ).
+sux( hipaa164502a_7 ) :- not st( hipaa164502a_8 ), not sf( hipaa164502a_8 ).
+su_rel( hipaa164502a_7 , rsat) :- sux( hipaa164502a_7 ).
+stx( hipaa164502a_7 ) :- st( hipaa164502a_9 ).
+st_rel( hipaa164502a_7 , rsat) :- stx( hipaa164502a_7 ).
+sux( hipaa164502a_7 ) :- not st( hipaa164502a_9 ), not sf( hipaa164502a_9 ).
+su_rel( hipaa164502a_7 , rsat) :- sux( hipaa164502a_7 ).
+
+%contains hipaa164502a1v ss_hipaa164502a1v
+% propagate  hipaa164502a1v  to  ss_hipaa164502a1v .
+st( ss_hipaa164502a1v ) :- exr( hipaa164502a1v ).
+sf( ss_hipaa164502a1v ) :- nex( hipaa164502a1v ).
+su( ss_hipaa164502a1v ) :- inc( hipaa164502a1v ).
+
+%contains hipaa164502a1 ss_hipaa164502a1
+% propagate  hipaa164502a1  to  ss_hipaa164502a1 .
+st( ss_hipaa164502a1 ) :- exr( hipaa164502a1 ).
+sf( ss_hipaa164502a1 ) :- nex( hipaa164502a1 ).
+su( ss_hipaa164502a1 ) :- inc( hipaa164502a1 ).
+
+%satisfy hipaa164502a_1 hipaa164502a
+% and-satisfy( hipaa164502a , [u'hipaa164502a_1'] ).
+stx( hipaa164502a ) :-  st( hipaa164502a_1 ) .
+st_rel( hipaa164502a , rsat) :- stx( hipaa164502a ).
+sfx( hipaa164502a ) :- sf( hipaa164502a_1 ).
+sf_rel( hipaa164502a , rsat) :- sfx( hipaa164502a ).
+sux( hipaa164502a ) :- not st( hipaa164502a_1 ), not sf( hipaa164502a_1 ).
+su_rel( hipaa164502a , rsat) :- sux( hipaa164502a ).
+
+%satisfy hipaa164510b_39 hipaa164510b_44 hipaa164510b_38 or
+% or-satisfy( hipaa164510b_38 , [u'hipaa164510b_39', u'hipaa164510b_44'] ).
+sfx( hipaa164510b_38 ) :-  sf( hipaa164510b_39 ) ,  sf( hipaa164510b_44 ) .
+sf_rel( hipaa164510b_38 , rsat) :- sfx( hipaa164510b_38 ).
+stx( hipaa164510b_38 ) :- st( hipaa164510b_39 ).
+st_rel( hipaa164510b_38 , rsat) :- stx( hipaa164510b_38 ).
+sux( hipaa164510b_38 ) :- not st( hipaa164510b_39 ), not sf( hipaa164510b_39 ).
+su_rel( hipaa164510b_38 , rsat) :- sux( hipaa164510b_38 ).
+stx( hipaa164510b_38 ) :- st( hipaa164510b_44 ).
+st_rel( hipaa164510b_38 , rsat) :- stx( hipaa164510b_38 ).
+sux( hipaa164510b_38 ) :- not st( hipaa164510b_44 ), not sf( hipaa164510b_44 ).
+su_rel( hipaa164510b_38 , rsat) :- sux( hipaa164510b_38 ).
+
+%satisfy hipaa164502a_6 hipaa164502a_11 hipaa164502a_5 or
+% or-satisfy( hipaa164502a_5 , [u'hipaa164502a_6', u'hipaa164502a_11'] ).
+sfx( hipaa164502a_5 ) :-  sf( hipaa164502a_6 ) ,  sf( hipaa164502a_11 ) .
+sf_rel( hipaa164502a_5 , rsat) :- sfx( hipaa164502a_5 ).
+stx( hipaa164502a_5 ) :- st( hipaa164502a_6 ).
+st_rel( hipaa164502a_5 , rsat) :- stx( hipaa164502a_5 ).
+sux( hipaa164502a_5 ) :- not st( hipaa164502a_6 ), not sf( hipaa164502a_6 ).
+su_rel( hipaa164502a_5 , rsat) :- sux( hipaa164502a_5 ).
+stx( hipaa164502a_5 ) :- st( hipaa164502a_11 ).
+st_rel( hipaa164502a_5 , rsat) :- stx( hipaa164502a_5 ).
+sux( hipaa164502a_5 ) :- not st( hipaa164502a_11 ), not sf( hipaa164502a_11 ).
+su_rel( hipaa164502a_5 , rsat) :- sux( hipaa164502a_5 ).
+
+%satisfy hipaa164510_30 hipaa164510_33 hipaa164510_29
+% and-satisfy( hipaa164510_29 , [u'hipaa164510_30', u'hipaa164510_33'] ).
+stx( hipaa164510_29 ) :-  st( hipaa164510_30 ) ,  st( hipaa164510_33 ) .
+st_rel( hipaa164510_29 , rsat) :- stx( hipaa164510_29 ).
+sfx( hipaa164510_29 ) :- sf( hipaa164510_30 ).
+sf_rel( hipaa164510_29 , rsat) :- sfx( hipaa164510_29 ).
+sux( hipaa164510_29 ) :- not st( hipaa164510_30 ), not sf( hipaa164510_30 ).
+su_rel( hipaa164510_29 , rsat) :- sux( hipaa164510_29 ).
+sfx( hipaa164510_29 ) :- sf( hipaa164510_33 ).
+sf_rel( hipaa164510_29 , rsat) :- sfx( hipaa164510_29 ).
+sux( hipaa164510_29 ) :- not st( hipaa164510_33 ), not sf( hipaa164510_33 ).
+su_rel( hipaa164510_29 , rsat) :- sux( hipaa164510_29 ).
+
+%activate hipaa164510_29 hipaa164510
+% and-activate( hipaa164510 , [u'hipaa164510_29'] ).
+atx( hipaa164510 ) :-  st( hipaa164510_29 ) , not st( hipaa164510s ).
+at_rel( hipaa164510 , ract) :- atx( hipaa164510 ).
+afx( hipaa164510 ) :- sf( hipaa164510_29 ).
+af_rel( hipaa164510 , rsat) :- afx( hipaa164510 ).
+aux( hipaa164510 ) :- not st( hipaa164510_29 ), not sf( hipaa164510_29 ), not st( hipaa164510s ).
+au_rel( hipaa164510 , ract) :- aux( hipaa164510 ).
+
+%satisfy hipaa164510b5_50 hipaa164510b5_51 hipaa164510b5_49
+% and-satisfy( hipaa164510b5_49 , [u'hipaa164510b5_50', u'hipaa164510b5_51'] ).
+stx( hipaa164510b5_49 ) :-  st( hipaa164510b5_50 ) ,  st( hipaa164510b5_51 ) .
+st_rel( hipaa164510b5_49 , rsat) :- stx( hipaa164510b5_49 ).
+sfx( hipaa164510b5_49 ) :- sf( hipaa164510b5_50 ).
+sf_rel( hipaa164510b5_49 , rsat) :- sfx( hipaa164510b5_49 ).
+sux( hipaa164510b5_49 ) :- not st( hipaa164510b5_50 ), not sf( hipaa164510b5_50 ).
+su_rel( hipaa164510b5_49 , rsat) :- sux( hipaa164510b5_49 ).
+sfx( hipaa164510b5_49 ) :- sf( hipaa164510b5_51 ).
+sf_rel( hipaa164510b5_49 , rsat) :- sfx( hipaa164510b5_49 ).
+sux( hipaa164510b5_49 ) :- not st( hipaa164510b5_51 ), not sf( hipaa164510b5_51 ).
+su_rel( hipaa164510b5_49 , rsat) :- sux( hipaa164510b5_49 ).
+
+%contains hipaa164510b ss_hipaa164510b
+% propagate  hipaa164510b  to  ss_hipaa164510b .
+st( ss_hipaa164510b ) :- exr( hipaa164510b ).
+sf( ss_hipaa164510b ) :- nex( hipaa164510b ).
+su( ss_hipaa164510b ) :- inc( hipaa164510b ).
+
+%satisfy hipaa164502a_4 hipaa164502a_13 hipaa164502a_3 or
+% or-satisfy( hipaa164502a_3 , [u'hipaa164502a_4', u'hipaa164502a_13'] ).
+sfx( hipaa164502a_3 ) :-  sf( hipaa164502a_4 ) ,  sf( hipaa164502a_13 ) .
+sf_rel( hipaa164502a_3 , rsat) :- sfx( hipaa164502a_3 ).
+stx( hipaa164502a_3 ) :- st( hipaa164502a_4 ).
+st_rel( hipaa164502a_3 , rsat) :- stx( hipaa164502a_3 ).
+sux( hipaa164502a_3 ) :- not st( hipaa164502a_4 ), not sf( hipaa164502a_4 ).
+su_rel( hipaa164502a_3 , rsat) :- sux( hipaa164502a_3 ).
+stx( hipaa164502a_3 ) :- st( hipaa164502a_13 ).
+st_rel( hipaa164502a_3 , rsat) :- stx( hipaa164502a_3 ).
+sux( hipaa164502a_3 ) :- not st( hipaa164502a_13 ), not sf( hipaa164502a_13 ).
+su_rel( hipaa164502a_3 , rsat) :- sux( hipaa164502a_3 ).
+
+%satisfy ss_hipaa164510 hipaa164502a1v_27
+% and-satisfy( hipaa164502a1v_27 , [u'ss_hipaa164510'] ).
+stx( hipaa164502a1v_27 ) :-  st( ss_hipaa164510 ) .
+st_rel( hipaa164502a1v_27 , rsat) :- stx( hipaa164502a1v_27 ).
+sfx( hipaa164502a1v_27 ) :- sf( ss_hipaa164510 ).
+sf_rel( hipaa164502a1v_27 , rsat) :- sfx( hipaa164502a1v_27 ).
+sux( hipaa164502a1v_27 ) :- not st( ss_hipaa164510 ), not sf( ss_hipaa164510 ).
+su_rel( hipaa164502a1v_27 , rsat) :- sux( hipaa164502a1v_27 ).
+
+%activate hipaa164502a1_15 hipaa164502a1
+% and-activate( hipaa164502a1 , [u'hipaa164502a1_15'] ).
+atx( hipaa164502a1 ) :-  st( hipaa164502a1_15 ) , not st( hipaa164502a1s ).
+at_rel( hipaa164502a1 , ract) :- atx( hipaa164502a1 ).
+afx( hipaa164502a1 ) :- sf( hipaa164502a1_15 ).
+af_rel( hipaa164502a1 , rsat) :- afx( hipaa164502a1 ).
+aux( hipaa164502a1 ) :- not st( hipaa164502a1_15 ), not sf( hipaa164502a1_15 ), not st( hipaa164502a1s ).
+au_rel( hipaa164502a1 , ract) :- aux( hipaa164502a1 ).
+
+%satisfy hipaa164502a1_20 hipaa164502a1_21 hipaa164502a1_19 or
+% or-satisfy( hipaa164502a1_19 , [u'hipaa164502a1_20', u'hipaa164502a1_21'] ).
+sfx( hipaa164502a1_19 ) :-  sf( hipaa164502a1_20 ) ,  sf( hipaa164502a1_21 ) .
+sf_rel( hipaa164502a1_19 , rsat) :- sfx( hipaa164502a1_19 ).
+stx( hipaa164502a1_19 ) :- st( hipaa164502a1_20 ).
+st_rel( hipaa164502a1_19 , rsat) :- stx( hipaa164502a1_19 ).
+sux( hipaa164502a1_19 ) :- not st( hipaa164502a1_20 ), not sf( hipaa164502a1_20 ).
+su_rel( hipaa164502a1_19 , rsat) :- sux( hipaa164502a1_19 ).
+stx( hipaa164502a1_19 ) :- st( hipaa164502a1_21 ).
+st_rel( hipaa164502a1_19 , rsat) :- stx( hipaa164502a1_19 ).
+sux( hipaa164502a1_19 ) :- not st( hipaa164502a1_21 ), not sf( hipaa164502a1_21 ).
+su_rel( hipaa164502a1_19 , rsat) :- sux( hipaa164502a1_19 ).
+
+%satisfy hipaa164502a_5 hipaa164502a_12 hipaa164502a_4 or
+% or-satisfy( hipaa164502a_4 , [u'hipaa164502a_5', u'hipaa164502a_12'] ).
+sfx( hipaa164502a_4 ) :-  sf( hipaa164502a_5 ) ,  sf( hipaa164502a_12 ) .
+sf_rel( hipaa164502a_4 , rsat) :- sfx( hipaa164502a_4 ).
+stx( hipaa164502a_4 ) :- st( hipaa164502a_5 ).
+st_rel( hipaa164502a_4 , rsat) :- stx( hipaa164502a_4 ).
+sux( hipaa164502a_4 ) :- not st( hipaa164502a_5 ), not sf( hipaa164502a_5 ).
+su_rel( hipaa164502a_4 , rsat) :- sux( hipaa164502a_4 ).
+stx( hipaa164502a_4 ) :- st( hipaa164502a_12 ).
+st_rel( hipaa164502a_4 , rsat) :- stx( hipaa164502a_4 ).
+sux( hipaa164502a_4 ) :- not st( hipaa164502a_12 ), not sf( hipaa164502a_12 ).
+su_rel( hipaa164502a_4 , rsat) :- sux( hipaa164502a_4 ).
+
+%satisfy hipaa164510b_38 hipaa164510b_45 hipaa164510b_37 or
+% or-satisfy( hipaa164510b_37 , [u'hipaa164510b_38', u'hipaa164510b_45'] ).
+sfx( hipaa164510b_37 ) :-  sf( hipaa164510b_38 ) ,  sf( hipaa164510b_45 ) .
+sf_rel( hipaa164510b_37 , rsat) :- sfx( hipaa164510b_37 ).
+stx( hipaa164510b_37 ) :- st( hipaa164510b_38 ).
+st_rel( hipaa164510b_37 , rsat) :- stx( hipaa164510b_37 ).
+sux( hipaa164510b_37 ) :- not st( hipaa164510b_38 ), not sf( hipaa164510b_38 ).
+su_rel( hipaa164510b_37 , rsat) :- sux( hipaa164510b_37 ).
+stx( hipaa164510b_37 ) :- st( hipaa164510b_45 ).
+st_rel( hipaa164510b_37 , rsat) :- stx( hipaa164510b_37 ).
+sux( hipaa164510b_37 ) :- not st( hipaa164510b_45 ), not sf( hipaa164510b_45 ).
+su_rel( hipaa164510b_37 , rsat) :- sux( hipaa164510b_37 ).
+
+%satisfy hipaa164510_31 hipaa164510_32 hipaa164510_30
+% and-satisfy( hipaa164510_30 , [u'hipaa164510_31', u'hipaa164510_32'] ).
+stx( hipaa164510_30 ) :-  st( hipaa164510_31 ) ,  st( hipaa164510_32 ) .
+st_rel( hipaa164510_30 , rsat) :- stx( hipaa164510_30 ).
+sfx( hipaa164510_30 ) :- sf( hipaa164510_31 ).
+sf_rel( hipaa164510_30 , rsat) :- sfx( hipaa164510_30 ).
+sux( hipaa164510_30 ) :- not st( hipaa164510_31 ), not sf( hipaa164510_31 ).
+su_rel( hipaa164510_30 , rsat) :- sux( hipaa164510_30 ).
+sfx( hipaa164510_30 ) :- sf( hipaa164510_32 ).
+sf_rel( hipaa164510_30 , rsat) :- sfx( hipaa164510_30 ).
+sux( hipaa164510_30 ) :- not st( hipaa164510_32 ), not sf( hipaa164510_32 ).
+su_rel( hipaa164510_30 , rsat) :- sux( hipaa164510_30 ).
+
+%satisfy ss_hipaa164510b5 hipaa164510b_45
+% and-satisfy( hipaa164510b_45 , [u'ss_hipaa164510b5'] ).
+stx( hipaa164510b_45 ) :-  st( ss_hipaa164510b5 ) .
+st_rel( hipaa164510b_45 , rsat) :- stx( hipaa164510b_45 ).
+sfx( hipaa164510b_45 ) :- sf( ss_hipaa164510b5 ).
+sf_rel( hipaa164510b_45 , rsat) :- sfx( hipaa164510b_45 ).
+sux( hipaa164510b_45 ) :- not st( ss_hipaa164510b5 ), not sf( ss_hipaa164510b5 ).
+su_rel( hipaa164510b_45 , rsat) :- sux( hipaa164510b_45 ).
+
+%activate hipaa164502a1v_27 hipaa164502a1v
+% and-activate( hipaa164502a1v , [u'hipaa164502a1v_27'] ).
+atx( hipaa164502a1v ) :-  st( hipaa164502a1v_27 ) , not st( hipaa164502a1vs ).
+at_rel( hipaa164502a1v , ract) :- atx( hipaa164502a1v ).
+afx( hipaa164502a1v ) :- sf( hipaa164502a1v_27 ).
+af_rel( hipaa164502a1v , rsat) :- afx( hipaa164502a1v ).
+aux( hipaa164502a1v ) :- not st( hipaa164502a1v_27 ), not sf( hipaa164502a1v_27 ), not st( hipaa164502a1vs ).
+au_rel( hipaa164502a1v , ract) :- aux( hipaa164502a1v ).
+
+%satisfy hipaa164502a1_14 hipaa164502a1
+% and-satisfy( hipaa164502a1 , [u'hipaa164502a1_14'] ).
+stx( hipaa164502a1 ) :-  st( hipaa164502a1_14 ) .
+st_rel( hipaa164502a1 , rsat) :- stx( hipaa164502a1 ).
+sfx( hipaa164502a1 ) :- sf( hipaa164502a1_14 ).
+sf_rel( hipaa164502a1 , rsat) :- sfx( hipaa164502a1 ).
+sux( hipaa164502a1 ) :- not st( hipaa164502a1_14 ), not sf( hipaa164502a1_14 ).
+su_rel( hipaa164502a1 , rsat) :- sux( hipaa164502a1 ).
+
+%satisfy ss_hipaa164510b hipaa164510_35
+% and-satisfy( hipaa164510_35 , [u'ss_hipaa164510b'] ).
+stx( hipaa164510_35 ) :-  st( ss_hipaa164510b ) .
+st_rel( hipaa164510_35 , rsat) :- stx( hipaa164510_35 ).
+sfx( hipaa164510_35 ) :- sf( ss_hipaa164510b ).
+sf_rel( hipaa164510_35 , rsat) :- sfx( hipaa164510_35 ).
+sux( hipaa164510_35 ) :- not st( ss_hipaa164510b ), not sf( ss_hipaa164510b ).
+su_rel( hipaa164510_35 , rsat) :- sux( hipaa164510_35 ).
+
+%satisfy hipaa164510b5_52 hipaa164510b5_53 hipaa164510b5_51
+% and-satisfy( hipaa164510b5_51 , [u'hipaa164510b5_52', u'hipaa164510b5_53'] ).
+stx( hipaa164510b5_51 ) :-  st( hipaa164510b5_52 ) ,  st( hipaa164510b5_53 ) .
+st_rel( hipaa164510b5_51 , rsat) :- stx( hipaa164510b5_51 ).
+sfx( hipaa164510b5_51 ) :- sf( hipaa164510b5_52 ).
+sf_rel( hipaa164510b5_51 , rsat) :- sfx( hipaa164510b5_51 ).
+sux( hipaa164510b5_51 ) :- not st( hipaa164510b5_52 ), not sf( hipaa164510b5_52 ).
+su_rel( hipaa164510b5_51 , rsat) :- sux( hipaa164510b5_51 ).
+sfx( hipaa164510b5_51 ) :- sf( hipaa164510b5_53 ).
+sf_rel( hipaa164510b5_51 , rsat) :- sfx( hipaa164510b5_51 ).
+sux( hipaa164510b5_51 ) :- not st( hipaa164510b5_53 ), not sf( hipaa164510b5_53 ).
+su_rel( hipaa164510b5_51 , rsat) :- sux( hipaa164510b5_51 ).
+
+%satisfy hipaa164502a_7 hipaa164502a_10 hipaa164502a_6 or
+% or-satisfy( hipaa164502a_6 , [u'hipaa164502a_7', u'hipaa164502a_10'] ).
+sfx( hipaa164502a_6 ) :-  sf( hipaa164502a_7 ) ,  sf( hipaa164502a_10 ) .
+sf_rel( hipaa164502a_6 , rsat) :- sfx( hipaa164502a_6 ).
+stx( hipaa164502a_6 ) :- st( hipaa164502a_7 ).
+st_rel( hipaa164502a_6 , rsat) :- stx( hipaa164502a_6 ).
+sux( hipaa164502a_6 ) :- not st( hipaa164502a_7 ), not sf( hipaa164502a_7 ).
+su_rel( hipaa164502a_6 , rsat) :- sux( hipaa164502a_6 ).
+stx( hipaa164502a_6 ) :- st( hipaa164502a_10 ).
+st_rel( hipaa164502a_6 , rsat) :- stx( hipaa164502a_6 ).
+sux( hipaa164502a_6 ) :- not st( hipaa164502a_10 ), not sf( hipaa164502a_10 ).
+su_rel( hipaa164502a_6 , rsat) :- sux( hipaa164502a_6 ).
+
+%activate hipaa164502a_2 hipaa164502a
+% and-activate( hipaa164502a , [u'hipaa164502a_2'] ).
+atx( hipaa164502a ) :-  st( hipaa164502a_2 ) , not st( hipaa164502as ).
+at_rel( hipaa164502a , ract) :- atx( hipaa164502a ).
+afx( hipaa164502a ) :- sf( hipaa164502a_2 ).
+af_rel( hipaa164502a , rsat) :- afx( hipaa164502a ).
+aux( hipaa164502a ) :- not st( hipaa164502a_2 ), not sf( hipaa164502a_2 ), not st( hipaa164502as ).
+au_rel( hipaa164502a , ract) :- aux( hipaa164502a ).
+
+%activate hipaa164510b5_47 hipaa164510b5
+% and-activate( hipaa164510b5 , [u'hipaa164510b5_47'] ).
+atx( hipaa164510b5 ) :-  st( hipaa164510b5_47 ) , not st( hipaa164510b5s ).
+at_rel( hipaa164510b5 , ract) :- atx( hipaa164510b5 ).
+afx( hipaa164510b5 ) :- sf( hipaa164510b5_47 ).
+af_rel( hipaa164510b5 , rsat) :- afx( hipaa164510b5 ).
+aux( hipaa164510b5 ) :- not st( hipaa164510b5_47 ), not sf( hipaa164510b5_47 ), not st( hipaa164510b5s ).
+au_rel( hipaa164510b5 , ract) :- aux( hipaa164510b5 ).
+
+%satisfy hipaa164510b_36 hipaa164510b
+% and-satisfy( hipaa164510b , [u'hipaa164510b_36'] ).
+stx( hipaa164510b ) :-  st( hipaa164510b_36 ) .
+st_rel( hipaa164510b , rsat) :- stx( hipaa164510b ).
+sfx( hipaa164510b ) :- sf( hipaa164510b_36 ).
+sf_rel( hipaa164510b , rsat) :- sfx( hipaa164510b ).
+sux( hipaa164510b ) :- not st( hipaa164510b_36 ), not sf( hipaa164510b_36 ).
+su_rel( hipaa164510b , rsat) :- sux( hipaa164510b ).
+
+
+% Scenario
+st( ss_hipaa164502a ) v sf( ss_hipaa164502a ) v su( ss_hipaa164502a ).
+st( hipaa164502a_1 ) v sf( hipaa164502a_1 ) v su( hipaa164502a_1 ).
+st( hipaa164502a_2 ) v sf( hipaa164502a_2 ) v su( hipaa164502a_2 ).
+st( hipaa164502a_3 ) v sf( hipaa164502a_3 ) v su( hipaa164502a_3 ).
+st( hipaa164502a_4 ) v sf( hipaa164502a_4 ) v su( hipaa164502a_4 ).
+st( hipaa164502a_5 ) v sf( hipaa164502a_5 ) v su( hipaa164502a_5 ).
+st( hipaa164502a_6 ) v sf( hipaa164502a_6 ) v su( hipaa164502a_6 ).
+st( hipaa164502a_7 ) v sf( hipaa164502a_7 ) v su( hipaa164502a_7 ).
+st( hipaa164502a_8 ) v sf( hipaa164502a_8 ) v su( hipaa164502a_8 ).
+st( hipaa164502a_9 ) v sf( hipaa164502a_9 ) v su( hipaa164502a_9 ).
+st( hipaa164502a_10 ) v sf( hipaa164502a_10 ) v su( hipaa164502a_10 ).
+st( hipaa164502a_11 ) v sf( hipaa164502a_11 ) v su( hipaa164502a_11 ).
+st( hipaa164502a_12 ) v sf( hipaa164502a_12 ) v su( hipaa164502a_12 ).
+st( hipaa164502a_13 ) v sf( hipaa164502a_13 ) v su( hipaa164502a_13 ).
+st( ss_hipaa164502a1 ) v sf( ss_hipaa164502a1 ) v su( ss_hipaa164502a1 ).
+st( hipaa164502a1_14 ) v sf( hipaa164502a1_14 ) v su( hipaa164502a1_14 ).
+st( hipaa164502a1_15 ) v sf( hipaa164502a1_15 ) v su( hipaa164502a1_15 ).
+st( hipaa164502a1_16 ) v sf( hipaa164502a1_16 ) v su( hipaa164502a1_16 ).
+st( hipaa164502a1_17 ) v sf( hipaa164502a1_17 ) v su( hipaa164502a1_17 ).
+st( hipaa164502a1_18 ) v sf( hipaa164502a1_18 ) v su( hipaa164502a1_18 ).
+st( hipaa164502a1_19 ) v sf( hipaa164502a1_19 ) v su( hipaa164502a1_19 ).
+st( hipaa164502a1_20 ) v sf( hipaa164502a1_20 ) v su( hipaa164502a1_20 ).
+st( hipaa164502a1_21 ) v sf( hipaa164502a1_21 ) v su( hipaa164502a1_21 ).
+st( hipaa164502a1_22 ) v sf( hipaa164502a1_22 ) v su( hipaa164502a1_22 ).
+st( hipaa164502a1_23 ) v sf( hipaa164502a1_23 ) v su( hipaa164502a1_23 ).
+st( hipaa164502a1_24 ) v sf( hipaa164502a1_24 ) v su( hipaa164502a1_24 ).
+st( hipaa164502a1_25 ) v sf( hipaa164502a1_25 ) v su( hipaa164502a1_25 ).
+st( ss_hipaa164502a1v ) v sf( ss_hipaa164502a1v ) v su( ss_hipaa164502a1v ).
+st( hipaa164502a1v_26 ) v sf( hipaa164502a1v_26 ) v su( hipaa164502a1v_26 ).
+st( hipaa164502a1v_27 ) v sf( hipaa164502a1v_27 ) v su( hipaa164502a1v_27 ).
+st( ss_hipaa164510 ) v sf( ss_hipaa164510 ) v su( ss_hipaa164510 ).
+st( hipaa164510_28 ) v sf( hipaa164510_28 ) v su( hipaa164510_28 ).
+st( hipaa164510_29 ) v sf( hipaa164510_29 ) v su( hipaa164510_29 ).
+st( hipaa164510_30 ) v sf( hipaa164510_30 ) v su( hipaa164510_30 ).
+st( hipaa164510_31 ) v sf( hipaa164510_31 ) v su( hipaa164510_31 ).
+st( hipaa164510_32 ) v sf( hipaa164510_32 ) v su( hipaa164510_32 ).
+st( hipaa164510_33 ) v sf( hipaa164510_33 ) v su( hipaa164510_33 ).
+st( hipaa164510_34 ) v sf( hipaa164510_34 ) v su( hipaa164510_34 ).
+st( hipaa164510_35 ) v sf( hipaa164510_35 ) v su( hipaa164510_35 ).
+st( ss_hipaa164510b ) v sf( ss_hipaa164510b ) v su( ss_hipaa164510b ).
+st( hipaa164510b_36 ) v sf( hipaa164510b_36 ) v su( hipaa164510b_36 ).
+st( hipaa164510b_37 ) v sf( hipaa164510b_37 ) v su( hipaa164510b_37 ).
+st( hipaa164510b_38 ) v sf( hipaa164510b_38 ) v su( hipaa164510b_38 ).
+st( hipaa164510b_39 ) v sf( hipaa164510b_39 ) v su( hipaa164510b_39 ).
+st( hipaa164510b_40 ) v sf( hipaa164510b_40 ) v su( hipaa164510b_40 ).
+st( hipaa164510b_41 ) v sf( hipaa164510b_41 ) v su( hipaa164510b_41 ).
+st( hipaa164510b_42 ) v sf( hipaa164510b_42 ) v su( hipaa164510b_42 ).
+st( hipaa164510b_43 ) v sf( hipaa164510b_43 ) v su( hipaa164510b_43 ).
+st( hipaa164510b_44 ) v sf( hipaa164510b_44 ) v su( hipaa164510b_44 ).
+st( hipaa164510b_45 ) v sf( hipaa164510b_45 ) v su( hipaa164510b_45 ).
+st( ss_hipaa164510b5 ) v sf( ss_hipaa164510b5 ) v su( ss_hipaa164510b5 ).
+st( hipaa164510b5_46 ) v sf( hipaa164510b5_46 ) v su( hipaa164510b5_46 ).
+st( hipaa164510b5_47 ) v sf( hipaa164510b5_47 ) v su( hipaa164510b5_47 ).
+st( hipaa164510b5_48 ) v sf( hipaa164510b5_48 ) v su( hipaa164510b5_48 ).
+st( hipaa164510b5_49 ) v sf( hipaa164510b5_49 ) v su( hipaa164510b5_49 ).
+st( hipaa164510b5_50 ) v sf( hipaa164510b5_50 ) v su( hipaa164510b5_50 ).
+st( hipaa164510b5_51 ) v sf( hipaa164510b5_51 ) v su( hipaa164510b5_51 ).
+st( hipaa164510b5_52 ) v sf( hipaa164510b5_52 ) v su( hipaa164510b5_52 ).
+st( hipaa164510b5_53 ) v sf( hipaa164510b5_53 ) v su( hipaa164510b5_53 ).
+st( hipaa164510b5_54 ) v sf( hipaa164510b5_54 ) v su( hipaa164510b5_54 ).
+
+% Costs
+% cost 2: uncompliance
+:~ vio( hipaa164502a ). [1:2]
+:~ vio( hipaa164502a1 ). [1:2]
+:~ vio( hipaa164502a1v ). [1:2]
+:~ vio( hipaa164510 ). [1:2]
+:~ vio( hipaa164510b ). [1:2]
+:~ vio( hipaa164510b5 ). [1:2]
+% cost 1: freedom
+:~ st( ss_hipaa164502a ). [1:1]
+:~ st( hipaa164502a_1 ). [1:1]
+:~ st( hipaa164502a_2 ). [1:1]
+:~ st( hipaa164502a_3 ). [1:1]
+:~ st( hipaa164502a_4 ). [1:1]
+:~ st( hipaa164502a_5 ). [1:1]
+:~ st( hipaa164502a_6 ). [1:1]
+:~ st( hipaa164502a_7 ). [1:1]
+:~ st( hipaa164502a_8 ). [1:1]
+:~ st( hipaa164502a_9 ). [1:1]
+:~ st( hipaa164502a_10 ). [1:1]
+:~ st( hipaa164502a_11 ). [1:1]
+:~ st( hipaa164502a_12 ). [1:1]
+:~ st( hipaa164502a_13 ). [1:1]
+:~ st( ss_hipaa164502a1 ). [1:1]
+:~ st( hipaa164502a1_14 ). [1:1]
+:~ st( hipaa164502a1_15 ). [1:1]
+:~ st( hipaa164502a1_16 ). [1:1]
+:~ st( hipaa164502a1_17 ). [1:1]
+:~ st( hipaa164502a1_18 ). [1:1]
+:~ st( hipaa164502a1_19 ). [1:1]
+:~ st( hipaa164502a1_20 ). [1:1]
+:~ st( hipaa164502a1_21 ). [1:1]
+:~ st( hipaa164502a1_22 ). [1:1]
+:~ st( hipaa164502a1_23 ). [1:1]
+:~ st( hipaa164502a1_24 ). [1:1]
+:~ st( hipaa164502a1_25 ). [1:1]
+:~ st( ss_hipaa164502a1v ). [1:1]
+:~ st( hipaa164502a1v_26 ). [1:1]
+:~ st( hipaa164502a1v_27 ). [1:1]
+:~ st( ss_hipaa164510 ). [1:1]
+:~ st( hipaa164510_28 ). [1:1]
+:~ st( hipaa164510_29 ). [1:1]
+:~ st( hipaa164510_30 ). [1:1]
+:~ st( hipaa164510_31 ). [1:1]
+:~ st( hipaa164510_32 ). [1:1]
+:~ st( hipaa164510_33 ). [1:1]
+:~ st( hipaa164510_34 ). [1:1]
+:~ st( hipaa164510_35 ). [1:1]
+:~ st( ss_hipaa164510b ). [1:1]
+:~ st( hipaa164510b_36 ). [1:1]
+:~ st( hipaa164510b_37 ). [1:1]
+:~ st( hipaa164510b_38 ). [1:1]
+:~ st( hipaa164510b_39 ). [1:1]
+:~ st( hipaa164510b_40 ). [1:1]
+:~ st( hipaa164510b_41 ). [1:1]
+:~ st( hipaa164510b_42 ). [1:1]
+:~ st( hipaa164510b_43 ). [1:1]
+:~ st( hipaa164510b_44 ). [1:1]
+:~ st( hipaa164510b_45 ). [1:1]
+:~ st( ss_hipaa164510b5 ). [1:1]
+:~ st( hipaa164510b5_46 ). [1:1]
+:~ st( hipaa164510b5_47 ). [1:1]
+:~ st( hipaa164510b5_48 ). [1:1]
+:~ st( hipaa164510b5_49 ). [1:1]
+:~ st( hipaa164510b5_50 ). [1:1]
+:~ st( hipaa164510b5_51 ). [1:1]
+:~ st( hipaa164510b5_52 ). [1:1]
+:~ st( hipaa164510b5_53 ). [1:1]
+:~ st( hipaa164510b5_54 ). [1:1]

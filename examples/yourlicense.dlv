@@ -1,0 +1,152 @@
+% YPL4a (Duty) 4(a) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work.
+% YPL4a_1 [You retained] in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work
+% YPL4a_2 [You intend to reproduce and distribute copies of the Work or Derivative Works]
+% YPL4 (Right) 4. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following condition:
+% YPL4_3 [You reproduced and distributed] copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form
+% YPL4_4 $YPL4a
+
+% duty ypl4a
+% Applicability and satisfiability rules for norm ypl4a
+st( ypl4a ) :- stx( ypl4a ).
+su( ypl4a ) :- sux( ypl4a ), not stx( ypl4a ).
+sf( ypl4a ) :- sfx( ypl4a ), not sux( ypl4a ), not stx( ypl4a ).
+at( ypl4a ) :- atx( ypl4a ).
+au( ypl4a ) :- aux( ypl4a ), not atx( ypl4a ).
+af( ypl4a ) :- afx( ypl4a ), not aux( ypl4a ), not atx( ypl4a ).
+
+% Compliance rules for duty ypl4a
+com( ypl4a ) :- at( ypl4a ), st( ypl4a ).
+vio( ypl4a ) :- at( ypl4a ), not st( ypl4a ).
+com( ypl4a ) :- af( ypl4a ).
+inc( ypl4a ) :- au( ypl4a ).
+tol( ypl4a ) :- com( ypl4a ).
+conf( ypl4a ) :- atx( ypl4a ), stx( ypl4a ), not stx( ypl4a ).
+acc( ypl4a ) :- tol( ypl4a ).
+acc( ypl4a ) :- vio( ypl4a ).
+
+% right ypl4
+% Applicability and satisfiability rules for norm ypl4
+st( ypl4 ) :- stx( ypl4 ).
+su( ypl4 ) :- sux( ypl4 ), not stx( ypl4 ).
+sf( ypl4 ) :- sfx( ypl4 ), not sux( ypl4 ), not stx( ypl4 ).
+at( ypl4 ) :- atx( ypl4 ).
+au( ypl4 ) :- aux( ypl4 ), not atx( ypl4 ).
+af( ypl4 ) :- afx( ypl4 ), not aux( ypl4 ), not atx( ypl4 ).
+
+% Compliance rules for right ypl4
+exr( ypl4 ) :- at( ypl4 ).
+nex( ypl4 ) :- af( ypl4 ).
+inc( ypl4 ) :- au( ypl4 ).
+tol( ypl4 ) :- com( ypl4 ).
+acc( ypl4 ) :- tol( ypl4 ).
+acc( ypl4 ) :- vio( ypl4 ).
+
+% situation ss_ypl4a ypl4a_1 ypl4a_2 ss_ypl4 ypl4_3 ypl4_4
+% Satisfiability rules for situation ss_ypl4a
+st( ss_ypl4a ) :- stx( ss_ypl4a ).
+su( ss_ypl4a ) :- sux( ss_ypl4a ), not stx( ss_ypl4a ).
+sf( ss_ypl4a ) :- sfx( ss_ypl4a ), not sux( ss_ypl4a ), not stx( ss_ypl4a ).
+
+% Satisfiability rules for situation ypl4a_1
+st( ypl4a_1 ) :- stx( ypl4a_1 ).
+su( ypl4a_1 ) :- sux( ypl4a_1 ), not stx( ypl4a_1 ).
+sf( ypl4a_1 ) :- sfx( ypl4a_1 ), not sux( ypl4a_1 ), not stx( ypl4a_1 ).
+
+% Satisfiability rules for situation ypl4a_2
+st( ypl4a_2 ) :- stx( ypl4a_2 ).
+su( ypl4a_2 ) :- sux( ypl4a_2 ), not stx( ypl4a_2 ).
+sf( ypl4a_2 ) :- sfx( ypl4a_2 ), not sux( ypl4a_2 ), not stx( ypl4a_2 ).
+
+% Satisfiability rules for situation ss_ypl4
+st( ss_ypl4 ) :- stx( ss_ypl4 ).
+su( ss_ypl4 ) :- sux( ss_ypl4 ), not stx( ss_ypl4 ).
+sf( ss_ypl4 ) :- sfx( ss_ypl4 ), not sux( ss_ypl4 ), not stx( ss_ypl4 ).
+
+% Satisfiability rules for situation ypl4_3
+st( ypl4_3 ) :- stx( ypl4_3 ).
+su( ypl4_3 ) :- sux( ypl4_3 ), not stx( ypl4_3 ).
+sf( ypl4_3 ) :- sfx( ypl4_3 ), not sux( ypl4_3 ), not stx( ypl4_3 ).
+
+% Satisfiability rules for situation ypl4_4
+st( ypl4_4 ) :- stx( ypl4_4 ).
+su( ypl4_4 ) :- sux( ypl4_4 ), not stx( ypl4_4 ).
+sf( ypl4_4 ) :- sfx( ypl4_4 ), not sux( ypl4_4 ), not stx( ypl4_4 ).
+
+
+%satisfy ss_ypl4a ypl4_4
+% and-satisfy( ypl4_4 , [u'ss_ypl4a'] ).
+stx( ypl4_4 ) :-  st( ss_ypl4a ) .
+st_rel( ypl4_4 , rsat) :- stx( ypl4_4 ).
+sfx( ypl4_4 ) :- sf( ss_ypl4a ).
+sf_rel( ypl4_4 , rsat) :- sfx( ypl4_4 ).
+sux( ypl4_4 ) :- not st( ss_ypl4a ), not sf( ss_ypl4a ).
+su_rel( ypl4_4 , rsat) :- sux( ypl4_4 ).
+
+%satisfy ypl4_3 ypl4
+% and-satisfy( ypl4 , [u'ypl4_3'] ).
+stx( ypl4 ) :-  st( ypl4_3 ) .
+st_rel( ypl4 , rsat) :- stx( ypl4 ).
+sfx( ypl4 ) :- sf( ypl4_3 ).
+sf_rel( ypl4 , rsat) :- sfx( ypl4 ).
+sux( ypl4 ) :- not st( ypl4_3 ), not sf( ypl4_3 ).
+su_rel( ypl4 , rsat) :- sux( ypl4 ).
+
+%contains ypl4a ss_ypl4a
+% propagate  ypl4a  to  ss_ypl4a .
+st( ss_ypl4a ) :- com( ypl4a ).
+sf( ss_ypl4a ) :- vio( ypl4a ).
+su( ss_ypl4a ) :- inc( ypl4a ).
+
+%contains ypl4 ss_ypl4
+% propagate  ypl4  to  ss_ypl4 .
+st( ss_ypl4 ) :- exr( ypl4 ).
+sf( ss_ypl4 ) :- nex( ypl4 ).
+su( ss_ypl4 ) :- inc( ypl4 ).
+
+%activate ypl4_4 ypl4
+% and-activate( ypl4 , [u'ypl4_4'] ).
+atx( ypl4 ) :-  st( ypl4_4 ) , not st( ypl4s ).
+at_rel( ypl4 , ract) :- atx( ypl4 ).
+afx( ypl4 ) :- sf( ypl4_4 ).
+af_rel( ypl4 , rsat) :- afx( ypl4 ).
+aux( ypl4 ) :- not st( ypl4_4 ), not sf( ypl4_4 ), not st( ypl4s ).
+au_rel( ypl4 , ract) :- aux( ypl4 ).
+
+%activate ypl4a_2 ypl4a
+% and-activate( ypl4a , [u'ypl4a_2'] ).
+atx( ypl4a ) :-  st( ypl4a_2 ) , not st( ypl4as ).
+at_rel( ypl4a , ract) :- atx( ypl4a ).
+afx( ypl4a ) :- sf( ypl4a_2 ).
+af_rel( ypl4a , rsat) :- afx( ypl4a ).
+aux( ypl4a ) :- not st( ypl4a_2 ), not sf( ypl4a_2 ), not st( ypl4as ).
+au_rel( ypl4a , ract) :- aux( ypl4a ).
+
+%satisfy ypl4a_1 ypl4a
+% and-satisfy( ypl4a , [u'ypl4a_1'] ).
+stx( ypl4a ) :-  st( ypl4a_1 ) .
+st_rel( ypl4a , rsat) :- stx( ypl4a ).
+sfx( ypl4a ) :- sf( ypl4a_1 ).
+sf_rel( ypl4a , rsat) :- sfx( ypl4a ).
+sux( ypl4a ) :- not st( ypl4a_1 ), not sf( ypl4a_1 ).
+su_rel( ypl4a , rsat) :- sux( ypl4a ).
+
+
+% Scenario
+st( ss_ypl4a ) v sf( ss_ypl4a ) v su( ss_ypl4a ).
+st( ypl4a_1 ) v sf( ypl4a_1 ) v su( ypl4a_1 ).
+st( ypl4a_2 ) v sf( ypl4a_2 ) v su( ypl4a_2 ).
+st( ss_ypl4 ) v sf( ss_ypl4 ) v su( ss_ypl4 ).
+st( ypl4_3 ) v sf( ypl4_3 ) v su( ypl4_3 ).
+st( ypl4_4 ) v sf( ypl4_4 ) v su( ypl4_4 ).
+
+% Costs
+% cost 2: uncompliance
+:~ vio( ypl4a ). [1:2]
+:~ vio( ypl4 ). [1:2]
+% cost 1: freedom
+:~ st( ss_ypl4a ). [1:1]
+:~ st( ypl4a_1 ). [1:1]
+:~ st( ypl4a_2 ). [1:1]
+:~ st( ss_ypl4 ). [1:1]
+:~ st( ypl4_3 ). [1:1]
+:~ st( ypl4_4 ). [1:1]
