@@ -389,13 +389,29 @@ var apache2 = [
     `
 ]
 
-//var test = [];
+//manual mapping of statement name to dot index in apache2 array
+var mapping = {
+  "Apache2":0,
+  "Apache3":1,
+  "Apache4":2,
+  "Apache4a":3,
+  "Apache4b":4,
+  "Apache4c":5,
+  "Apache4d":6,
+  "Apache4dAddAttrib":7,
+  "Apache4dAddCopyright":8,
+  "Apache5":9,
+  "Apache6":10,
+  "Apache7":11,
+  "Apache8":12,
+  "Apache9":13
+  
+};
+  
 
 var margin = 10 //to avoid scrollbars
 var graph = null,
     graphObj = null;
-
-var polygon = [];
 
 
 var graphviz = d3.select("#graph")
@@ -405,26 +421,17 @@ var graphviz = d3.select("#graph")
 
 //statement represent an html class that all license clause have. Each statement also have a position 
 //and the corresponding model name as class
-
 $(".statement").click(function () {
 
-    polygon = [];
-
-    //index reprensent each class name eg. index[0] = statement, index [1] = position, index[2] = model name
+    //index reprensent each class name eg. index[0] = statement, index[1] = statement name (model name)
     index = $(this).attr("class").split(' ')
 
-    console.log("statement index: " + index[1])
-
-    console.log("statement name: " + index[2])
-    //generate the graph using the position
-    graphviz
-        .dot(apache2[index[1]])
-        .zoom(false)
-        .render(function () {
-            graph = $("svg")
-            SS_handler()
-        });
-
+    console.log("statement name: " + index[1])
+   
+    //generate the graph using the statement name
+  
+    genGraph(index[1])
+    
 });
 
 
@@ -434,9 +441,9 @@ $(".statement").click(function () {
 function attributer(datum, index, nodes) {
     var selection = d3.select(this);
     if (datum.tag == "svg") {
-        var width = document.getElementById("box-2").offsetWidth;
+        var width = document.getElementById("box-3").offsetWidth;
         //console.log(width);
-        var height = document.getElementById("box-2").offsetHeight;
+        var height = document.getElementById("box-3").offsetHeight;
         //console.log(height);
         selection
             .attr("width", width)
@@ -447,24 +454,78 @@ function attributer(datum, index, nodes) {
 
 }
 
-
-
 /**
- * This function distinguish between a duty or rigt super situation, and display the appropriate questions and populate the duties array in case the 
- * super situation is a right
+ * This function allow interaction with the generated graph to navigate to another super situation (right or duty)
  */
 
-function SS_handler() {
+function SVG_Interaction() {
 
-   
-    
+    graph.unbind().click(function (event){
 
+        console.log("svg clicked...Element--->"+event.target, event.type)
+        var _id = "";
+        var _text = "";
+        var _statement="";
+
+        //notes:event.target.parent is g#graph0 sometimes but should be the g#node_. This cause polygon not to change color when polygon is clicked on
+        
+        if ($(event.target).parent().children("title").first().text() !== "") {
+            _id = $(event.target).parent().children("title").first().text();
+          
+            _text = $(event.target).parent().children("text").first().text();
+          
+        }else {
+          _id = $(event.target).parent().parent().children("title").first().text();
+          
+          _text = $(event.target).parent().parent().children("text").first().text();
+          
+        }
+      
+      if (_text.startsWith("SS_")) {
+        _statement = _text.split("_");
+        console.log("generate graph "+ _statement[1]);
+        
+        genGraph(_statement[1])
+      } 
+      
+            
+    });
 }
+
+function genGraph(stat){
+  
+  var dot_index;
+  for ( var name in mapping){
+
+      if (name == stat) {
+        dot_index = mapping[name]
+      } 
+    }
+
+   graphviz
+        .dot(apache2[dot_index])
+        .zoom(false)
+        .render(function () {
+            graph = $("svg")
+            SVG_Interaction()
+            
+        });
+/**
+* Highlight the statement corresponding to generated graph
+*/
+  
+}
+
+
 
 
 $(document).ready(function(){
     $('#data').jstree({
         "plugins":["checkbox"]
     });
+  
+  /**
+  * Create JSON object to use for tree view 
+  */
 })
 
