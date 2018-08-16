@@ -16,8 +16,26 @@ body {
 
 .row {
     display: flex;
-    height: 80%;
+    height: 98%;
     padding: 0 4px;
+}
+
+.column-0 {
+    align-self: stretch;
+    justify-content: left;
+    font-size: small;
+    width: 20%;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.box-0 {
+    background-color: whitesmoke;
+    border: 1px solid;
+    overflow: scroll;
+    text-align: inherit;
+    height: 60%;
+
 }
 
 .column-1 {
@@ -25,7 +43,7 @@ body {
     justify-content: center;
     font-size: small;
     /* flex-direction: column; */
-    width:50%;
+    width:40%;
     height: 100%;
     /* margin: auto; */
     /* position: absolute; */
@@ -41,7 +59,7 @@ body {
 }
 
 .column-2 {
-    width: 50%;
+    width: 40%;
     height: 100%;
     margin-left: 10px;
     margin-right: 4px;
@@ -61,8 +79,10 @@ body {
 
 
 
-.box-3 {
+/* .box-3 {
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     background-color: whitesmoke;
     border: 1px solid;
     margin-top: 5px;
@@ -72,7 +92,18 @@ body {
     margin-left: 4px;
     margin-right: 4px;
     overflow:scroll
+} */
+
+/* #wizard_box {
+    flex-grow: 1;
+    width: 50%;
 }
+
+.inputBox {
+    flex-grow: 1;
+    width: 50%;
+} */
+
 
 a:hover {
     background-color: rgb(255, 251, 0);
@@ -117,7 +148,7 @@ a.supersit:hover {
 
 
 /* Popup container - can be anything you want */
-.node {
+/* .node {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -125,10 +156,10 @@ a.supersit:hover {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
+} */
 
 /* The actual popup */
-.node .popuptext {
+/*.node .popuptext {
     visibility: hidden;
     width: 160px;
     background-color: #555;
@@ -141,10 +172,10 @@ a.supersit:hover {
     bottom: 125%;
     left: 50%;
     margin-left: -80px;
-}
+} */
 
 /* Popup arrow */
-.node .popuptext::after {
+/* .node .popuptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -153,14 +184,14 @@ a.supersit:hover {
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
-}
+} */
 
 /* Toggle this class - hide and show the popup */
-.node .show {
+/* .node .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
-}
+} */
 
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
