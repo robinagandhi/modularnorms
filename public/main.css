@@ -114,7 +114,7 @@ body {
 } */
 
 
-a:hover {
+a.statement:hover {
     background-color: rgb(255, 251, 0);
 }
 

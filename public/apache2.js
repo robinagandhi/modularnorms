@@ -435,6 +435,8 @@ $(".statement").click(function () {
 });
 
 
+
+
 /** 
  * This function allow graph to fit in div element
 */
@@ -493,6 +495,22 @@ function SVG_Interaction() {
 }
 
 function genGraph(stat){
+
+    //console.log($("#clust1").children("title").text())
+/**
+ * Add generated graph to history
+ */
+if(!($("#clust1").children("title").text().includes(stat)) ){
+    
+    $('#visitedNode').append('<li><a href="#">'+stat+'</a></li>')
+    $("ol > li").unbind().click(function () {
+        console.log("here")
+        genGraph($(this).text())
+    });
+    
+}
+
+
   
   var dot_index;
   for ( var name in mapping){
@@ -513,8 +531,18 @@ function genGraph(stat){
 /**
 * Highlight the statement corresponding to generated graph
 */
+
+$(".statement").css('background-color','unset')
+$("."+stat).css('background-color','cornflowerblue').focus();
+
+
+
+
+
   
 }
+
+
 
 
 
