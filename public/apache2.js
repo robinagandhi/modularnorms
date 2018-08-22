@@ -500,7 +500,7 @@ function genGraph(stat){
 /**
  * Add generated graph to history
  */
-if(!($("#clust1").children("title").text().includes(stat)) ){
+if($("#clust1").children("title").text().slice(10) !== stat ){
     
     $('#visitedNode').append('<li><a href="#">'+stat+'</a></li>')
     $("ol > li").unbind().click(function () {
