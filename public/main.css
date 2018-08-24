@@ -115,16 +115,18 @@ body {
 
 
 a.statement:hover {
-    background-color: rgb(255, 251, 0);
+    border:1px solid;
+    border-color: blueviolet;
+    
 }
 
-a.statement:focus {
+/* a.statement:focus {
     background-color: cornflowerblue;
-}
+} */
 
-a.supersit:hover {
+/* a.supersit:hover {
     background-color: cornflowerblue;
-}
+} */
 
 #duty_list {
     text-align: justify;

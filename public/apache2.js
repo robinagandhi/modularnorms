@@ -421,8 +421,8 @@ var graphviz = d3.select("#graph")
 
 //statement represent an html class that all license clause have. Each statement also have a position 
 //and the corresponding model name as class
-$(".statement").click(function () {
-
+$(".statement").unbind().click(function () {
+    $(this).css('background-color','cornflowerblue').focus();
     //index reprensent each class name eg. index[0] = statement, index[1] = statement name (model name)
     index = $(this).attr("class").split(' ')
 
@@ -430,7 +430,7 @@ $(".statement").click(function () {
    
     //generate the graph using the statement name
   
-    genGraph(index[1])
+    genGraph(index[1]);
     
 });
 
@@ -502,8 +502,10 @@ function genGraph(stat){
  */
 if($("#clust1").children("title").text().slice(10) !== stat ){
     
-    $('#visitedNode').append('<li><a href="#">'+stat+'</a></li>')
-    $("ol > li").unbind().click(function () {
+    $('#visitedNode').prepend('<li><a href="#">'+stat+'</a></li>')
+
+    //generate graph when a norm model is clicked in the history list.
+    $("ul#visitedNode > li").unbind().click(function () {
         console.log("here")
         genGraph($(this).text())
     });
@@ -535,14 +537,13 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
 $(".statement").css('background-color','unset')
 $("."+stat).css('background-color','cornflowerblue').focus();
 
-
-
-
-
-  
+ 
 }
 
-
+// $("#graph.node").hover(function (event){
+//     console.log("svg hovered...Element--->"+event.target, event.type)
+//     console.log($(event.target).parent().parent().children("text").first().text())
+// })
 
 
 
