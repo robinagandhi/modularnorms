@@ -11,6 +11,8 @@ app.use(express.static(publicPath));
 app.use( (request,response) => {
     response.writeHead(200,{"Content-Type":"text/plain"});
     response.end("No such file found");
+    
+    
 });
 
 app.listen(3000,()=>{console.log("Server is up!!!")} );

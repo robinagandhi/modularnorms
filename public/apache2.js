@@ -529,13 +529,50 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
             graph = $("svg")
             SVG_Interaction()
             
-        });
+            for (let index = 1; index < graph.children().children('.node').children('text').length; index++) {
+                // const element = graph.children().children('.node').children('text')[index];
+                // console.log(element)
+                if (graph.children().children('.node').children('text')[index].innerHTML.startsWith('SS_')) {
+                    console.log(index+' '+graph.children().children('.node').children('text')[index].innerHTML)
+                    console.log(graph.children().children('.node').children('text')[index].parentElement)
+                    console.log(graph.children().children('.node').children('text')[index].previousElementSibling)
+
+
+                    graph.children().children('.node').children('text')[index].previousElementSibling.onmouseover = function()
+                    {
+                        this.style.fill = "#ffe0a8"
+                        this.style.cursor = "pointer"
+                    }
+
+                    graph.children().children('.node').children('text')[index].previousElementSibling.onmouseout = function()
+                    {
+                        this.style.fill = "#ffa500"
+                    }
+
+                    graph.children().children('.node').children('text')[index].onmouseover = function()
+                    {
+                        this.previousElementSibling.style.fill = "#ffe0a8"
+                        this.style.cursor = "pointer"
+                    }
+
+                    graph.children().children('.node').children('text')[index].onmouseout = function()
+                    {
+                        this.previousElementSibling.style.fill = "#ffa500"
+                    }
+
+
+
+            }
+        }
+            
+            
+        })
 /**
 * Highlight the statement corresponding to generated graph
 */
 
 $(".statement").css('background-color','unset')
-$("."+stat).css('background-color','cornflowerblue').focus();
+$("."+stat).css('background-color','#add8e6').focus();
 
  
 }

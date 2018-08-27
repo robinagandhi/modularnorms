@@ -24,7 +24,7 @@ body {
     align-self: stretch;
     justify-content: left;
     font-size: small;
-    width: 20%;
+    width: 200px;
     height: 100%;
     margin-right: 10px;
 }
@@ -52,7 +52,7 @@ body {
     justify-content: center;
     font-size: small;
     /* flex-direction: column; */
-    width:40%;
+    width:50%;
     height: 100%;
     /* margin: auto; */
     /* position: absolute; */
@@ -68,7 +68,7 @@ body {
 }
 
 .column-2 {
-    width: 40%;
+    width: 50%;
     height: 100%;
     margin-left: 10px;
     margin-right: 4px;
@@ -118,6 +118,9 @@ a.statement:hover {
     border:1px solid;
     border-color: blueviolet;
     
+}
+a:link {
+    text-decoration: none;
 }
 
 /* a.statement:focus {

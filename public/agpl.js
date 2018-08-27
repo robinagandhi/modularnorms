@@ -1,6 +1,6 @@
 
 var agpl = [
-    `digraph G {
+    `digraph G_Right {
         rankdir=BT
         overlap=false
         compound=true
@@ -23,7 +23,7 @@ var agpl = [
             }
         }
     `,
-    `digraph G {
+    `digraph G_Duty {
         rankdir=BT
         overlap=false
         compound=true
@@ -42,7 +42,7 @@ var agpl = [
             }
         }
     `,
-    `digraph G {
+    `digraph G_Duty {
         rankdir=BT
         overlap=false
         compound=true
@@ -61,7 +61,7 @@ var agpl = [
             }
         }
     `,
-    `digraph G {
+    `digraph G_Duty {
         rankdir=BT
         overlap=false
         compound=true
@@ -80,7 +80,7 @@ var agpl = [
             }
         }
     `,
-    `digraph G {
+    `digraph G_Right {
         rankdir=BT
         overlap=false
         compound=true
@@ -119,7 +119,7 @@ var agpl = [
         }   
     }
     `,
-    `digraph G {
+    `digraph G_Duty {
         rankdir=BT
         overlap=false
         compound=true
@@ -134,7 +134,7 @@ var agpl = [
             }
         }
     `,
-    `digraph G {
+    `digraph G_Duty {
         rankdir=BT
         overlap=false
         compound=true
@@ -149,7 +149,7 @@ var agpl = [
         }
     }
     `,
-    `digraph G {
+    `digraph G_Duty {
         rankdir=BT
         overlap=false
         compound=true
@@ -174,7 +174,7 @@ var agpl = [
             }
         }
     `,
-    `digraph G {
+    `digraph G_Duty {
         rankdir=BT
         overlap=false
         compound=true
@@ -206,146 +206,204 @@ var agpl = [
     
 ]
 
-var graph = null;
-var graphviz = d3.select("#graph").graphviz()
-                .attributer(attributer);
-var t = d3.transition().duration(1000);
-
-
-$(".statement").click(function () {
-    console.log("here")
-    index = $(this).attr("class").split(' ')
-    console.log("statement index: "+index[1])
+var mapping = {
+    "AGPL1":0,
+    "AGPL1a":1,
+    "AGPL1b":2,
+    "AGPL1c":3,
+    "AGPL2":4,
+    "AGPL2a":5,
+    "AGPL2b":6,
+    "AGPL2c":7,
+    "AGPL2d":8
     
+  };
     
-        
-        graphviz
-            .dot(agpl[index[1]])
-            .zoom(false)
-            .render(function (){
-                graph = $("svg")
-                console.log(graph)
-                //TODO : create function registering click event on svg graph, will build jsonData on click
-                // graph.click(function (event){
-                //     console.log("svg clicked...Element--->"+event.target, event.type)
-                // });
-                SVG_Interaction()
-                console.log(graphviz);
-                //TODO: fit rendered graphiz to div container and enable zooming using maybe an svg nav library
-            });
+  
+  var margin = 10 //to avoid scrollbars
+  var graph = null,
+      graphObj = null;
+  
+  
+  var graphviz = d3.select("#graph")
+      .graphviz()
+      .attributer(attributer);
+  
+  
+  //statement represent an html class that all license clause have. Each statement also have a position 
+  //and the corresponding model name as class
+  $(".statement").unbind().click(function () {
+      $(this).css('background-color','cornflowerblue').focus();
+      //index reprensent each class name eg. index[0] = statement, index[1] = statement name (model name)
+      index = $(this).attr("class").split(' ')
+  
+      console.log("statement name: " + index[1])
+     
+      //generate the graph using the statement name
     
-});
-
-// function nextModel() {
-    
-//     d3.select("#graph").graphviz()
-//         .fade(false)
-//         .zoom(false)
-//         .renderDot(agpl[index])
-
-//     index++;
-// }
-
-var margin = 10 //to avoid scrollbars
-
-function attributer(datum,index,nodes) {
-    var  selection = d3.select(this);
-    if(datum.tag == "svg"){
-        var width = document.getElementById("box-2").offsetWidth;
-        console.log(width);
-        var height = document.getElementById("box-2").offsetHeight;
-        console.log(height);
-        selection   
-            .attr("width",width)
-            .attr("height",height)
-        datum.attributes.width = width - margin;
-        datum.attributes.height = height - margin;
-    }
-
-}
-
-function resizeSVG() {
-    console.log('Resize');
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-    d3.select("#graph").selectWithoutDataPropagation("svg")
-        .transition()
-        .duration(700)
-        .attr("width",width - margin)
-        .attr("height",height - margin);
-};
-
-
-
-function SVG_Interaction() {
-
-    var jsonData = [];
-
-    graph.click(function (event){
-
-        console.log("svg clicked...Element--->"+event.target, event.type)
-        var _id = "";
-        var _text = "";
-
-        //notes:event.target.parent is g#graph0 sometimes but should be the g#node_. This cause polygon not to change color when polygon is clicked on
-        
-        if ($(event.target).parent().children("title").first().text() != "") {
-            _id = $(event.target).parent().children("title").first().text();
-            _text = $(event.target).parent().children("text").first().text();
-        }else {
-            _id = $(event.target).parent().parent().children("title").first().text();
-            _text = $(event.target).parent().parent().children("text").first().text();
-        }
-
-        //Allow clicking on text to select the sibling polygon
-        if ($(event.target).attr('points') == null) {
-            polygon = $(event.target).parent().children("polygon").first();
-        } else {
-            polygon = $(event.target);
-        }
-
-        //check if norm
-        var delimited = polygon.parent().children("title").last().text().split('_');
-        var isNorm = false;
-        if (delimited[1] == null) {
-            isNorm = true; // Is a norm
-        } else {
-            isNorm = false; // not a norm
-        }
-
-        // Don't color anything that is not polygon with points. Also don't color graphs and Norms
-        if ((polygon.attr('points') != null) & (polygon.parent().children("title").first().text() != "G") & !(isNorm)) {
-
-
-            if (polygon.attr('style') == "fill:#57BC90") { //if green turn red
-                polygon.attr('style', "fill:#CD5360")
-                //updateJSONData
-            } else if (polygon.attr('style') == "fill:#CD5360") { //if red turn yellow
-                polygon.attr('style', "fill:#E5E338")
-                //updateJSONData
-            }else if (polygon.attr('style') == "fill:#E5E338") //if yellow turn white
-            {
-                polygon.attr('style', "fill:#FFFFFF")
-                //update JSONData
-            }else{ //turn green
-                polygon.attr('style', "fill:#57BC90")
-                //updateJSONdata
-            }
-
-        }
-
+      genGraph(index[1]);
+      
+  });
+  
+  
+  
+  
+  /** 
+   * This function allow graph to fit in div element
+  */
+  function attributer(datum, index, nodes) {
+      var selection = d3.select(this);
+      if (datum.tag == "svg") {
+          var width = document.getElementById("box-3").offsetWidth;
+          //console.log(width);
+          var height = document.getElementById("box-3").offsetHeight;
+          //console.log(height);
+          selection
+              .attr("width", width)
+              .attr("height", height)
+          datum.attributes.width = width - margin;
+          datum.attributes.height = height - margin;
+      }
+  
+  }
+  
+  /**
+   * This function allow interaction with the generated graph to navigate to another super situation (right or duty)
+   */
+  
+  function SVG_Interaction() {
+  
+      graph.unbind().click(function (event){
+  
+          console.log("svg clicked...Element--->"+event.target, event.type)
+          var _id = "";
+          var _text = "";
+          var _statement="";
+  
+          //notes:event.target.parent is g#graph0 sometimes but should be the g#node_. This cause polygon not to change color when polygon is clicked on
+          
+          if ($(event.target).parent().children("title").first().text() !== "") {
+              _id = $(event.target).parent().children("title").first().text();
             
-    });
-}
-/*
-This function will update json data to perform request on server
-*/
-function updateJSON(params) {
+              _text = $(event.target).parent().children("text").first().text();
+            
+          }else {
+            _id = $(event.target).parent().parent().children("title").first().text();
+            
+            _text = $(event.target).parent().parent().children("text").first().text();
+            
+          }
+        
+        if (_text.startsWith("SS_")) {
+          _statement = _text.split("_");
+          console.log("generate graph "+ _statement[1]);
+          
+          genGraph(_statement[1])
+        } 
+        
+              
+      });
+  }
+  
+  function genGraph(stat){
+  
+      //console.log($("#clust1").children("title").text())
+  /**
+   * Add generated graph to history
+   */
+  if($("#clust1").children("title").text().slice(10) !== stat ){
+      
+      $('#visitedNode').prepend('<li><a href="#">'+stat+'</a></li>')
+  
+      //generate graph when a norm model is clicked in the history list.
+      $("ul#visitedNode > li").unbind().click(function () {
+          console.log("here")
+          genGraph($(this).text())
+      });
+      
+  }
+  
+  
     
-}
-
-
-
-
-
-
+    var dot_index;
+    for ( var name in mapping){
+  
+        if (name == stat) {
+          dot_index = mapping[name]
+        } 
+      }
+  
+     graphviz
+          .dot(agpl[dot_index])
+          .zoom(false)
+          .render(function () {
+              graph = $("svg")
+              SVG_Interaction()
+              
+              for (let index = 1; index < graph.children().children('.node').children('text').length; index++) {
+                  // const element = graph.children().children('.node').children('text')[index];
+                  // console.log(element)
+                  if (graph.children().children('.node').children('text')[index].innerHTML.startsWith('SS_')) {
+                      console.log(index+' '+graph.children().children('.node').children('text')[index].innerHTML)
+                      console.log(graph.children().children('.node').children('text')[index].parentElement)
+                      console.log(graph.children().children('.node').children('text')[index].previousElementSibling)
+  
+  
+                      graph.children().children('.node').children('text')[index].previousElementSibling.onmouseover = function()
+                      {
+                          this.style.fill = "#ffe0a8"
+                          this.style.cursor = "pointer"
+                      }
+  
+                      graph.children().children('.node').children('text')[index].previousElementSibling.onmouseout = function()
+                      {
+                          this.style.fill = "#ffa500"
+                      }
+  
+                      graph.children().children('.node').children('text')[index].onmouseover = function()
+                      {
+                          this.previousElementSibling.style.fill = "#ffe0a8"
+                          this.style.cursor = "pointer"
+                      }
+  
+                      graph.children().children('.node').children('text')[index].onmouseout = function()
+                      {
+                          this.previousElementSibling.style.fill = "#ffa500"
+                      }
+  
+  
+  
+              }
+          }
+              
+              
+          })
+  /**
+  * Highlight the statement corresponding to generated graph
+  */
+  
+  $(".statement").css('background-color','unset')
+  $("."+stat).css('background-color','#add8e6').focus();
+  
+   
+  }
+  
+  // $("#graph.node").hover(function (event){
+  //     console.log("svg hovered...Element--->"+event.target, event.type)
+  //     console.log($(event.target).parent().parent().children("text").first().text())
+  // })
+  
+  
+  
+  
+  $(document).ready(function(){
+      $('#data').jstree({
+          "plugins":["checkbox"]
+      });
+    
+    /**
+    * Create JSON object to use for tree view 
+    */
+  })
+  
+  
