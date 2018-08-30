@@ -393,17 +393,186 @@ var mapping = {
   //     console.log($(event.target).parent().parent().children("text").first().text())
   // })
   
-  
-  
-  
-  $(document).ready(function(){
-      $('#data').jstree({
-          "plugins":["checkbox"]
-      });
+  /**
+  * Create JSON object to use for tree view 
+  */
+
+
+//Build json object from DOM element here
+var myJSONArray= [];
+
+var model_text = $("a.statement")
+
+// for (let index = 0; index < model_text.length; index++) {
+//     var text = model_text[index].classList[1] + ' (' + model_text[index].innerText.slice(0,15)+ '...)'
+//     myJSONArray[index] = {
+        
+//             "text": text,
+            
     
-    /**
-    * Create JSON object to use for tree view 
-    */
-  })
+//             // "state":
+//             // {
+//             //     "opened": true,
+                
+//             // },
+    
+//             // "children": [
+//             //     {
+//             //         "text": "Child node1",
+                    
+    
+//             //     },
+//             //     {
+//             //         "text": "Child node2",
+//             //         "state":
+//             //         {
+                        
+//             //         }
+    
+                    
+    
+//             //     },
+//             //     {
+//             //         "text": "Child node2",
+    
+    
+//             //     },
+    
+//             // ]
+//         }
+
+       
+    
+// }
+
+//populate with children bu there is duplicates
+
+for (let index = 0; index < model_text.length; index++) {
+
+    //class name ---> model_text[index].classList[1]
+    //text is ----> model_text[index].innerText.slice(0,15)
+
+    var childrenJSON = [
+
+        {
+                            "text": "Child node1",
+                            
+            
+                        },
+                        {
+                            "text": "Child node2",
+                            "state":
+                            {
+                                
+                            }
+            
+                            
+            
+                        },
+                        {
+                            "text": "Child node2",
+            
+            
+                        },
+    ]
+
+   var parent_candidate =  model_text[index].classList[1]
+
+   //Build a children array : children are nodes starting with the candidate parent node
+
+    var j =0
+    var children = []
+   for(let i = index+1; i< model_text.length;i++){
+
+
+
+       if (model_text[i].classList[1].startsWith(parent_candidate)){
+           console.log(model_text[i].classList[1] + " is children of parent candidate: "+ parent_candidate)
+
+        //Add the node to chldren array at position j
+        children[j]= {
+            "text":model_text[i].classList[1]
+        }
+        j++
+
+       }
+       
+   }
+
+   if (children.length !=0){
+
+      // console.log(childrenJSON + " length:  "+ childrenJSON.length)
+    
+        myJSONArray[index] = {
+                
+            "text": parent_candidate,
+            
+    
+            "state":
+            {
+                "opened": true,
+                
+            },
+    
+            "children": children
+                
+       }
+
+   }else if (children.length == 0){
+
+       myJSONArray[index] = {
+
+           "text": parent_candidate,
+
+
+           "state":
+           {
+               "opened": true,
+
+           },
+
+       }
+
+   }
+
+
+       
+    
+}
+
+
+
+
+$(document).ready(function(){
+
+    //read document format and create an array with the data extracted from the license text body
+
+
+
+
+    $('#data').jstree({
+
+        'core': {
+            'data': myJSONArray
+        },
+        // "plugins":["checkbox"]
+        "plugins":["wholerow"]
+        
+    });
+
+    //display the text of the selected node. Will pass this node to generate graph at some point. However, name need to be consistent with genGraph needs.
+
+    $('#data').on("changed.jstree", function (e, data) {
+        console.log("The selected nodes are:");
+        console.log(data.instance.get_selected(true)[0].text.split(' ')[0]);
+        genGraph(data.instance.get_selected(true)[0].text.split(' ')[0])
+      });
+  
+  
+})
+
+
+
+
   
   
