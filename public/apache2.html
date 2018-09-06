@@ -17,34 +17,45 @@
                         body {
                                 height: 100%;
                         }
+
                         #graph {
                                 height: 93%;
                         }
+
                         .container-fluid {
                                 height: 93%;
                         }
-                        .display,.row,.column_2 {
+
+                        .display,
+                        .row,
+                        .column_2 {
                                 height: 100%;
-                                
+
                         }
-                        .column_0,.column_1 {
+
+                        .column_0,
+                        .column_1 {
                                 height: 100%;
                                 resize: horizontal;
                                 overflow: auto;
-                                
+
                         }
+
                         .panel-heading {
                                 height: 5%;
                         }
+
                         .panel-body {
                                 height: 95%;
                                 overflow: scroll;
                         }
-                        html, body {
-                        margin: 0;
-                        height: 100%;
+
+                        html,
+                        body {
+                                margin: 0;
+                                height: 100%;
                         }
-                       
+
                         /* .column_0,.column_1 {
                                 margin-right: 2px;
                         } */
@@ -53,16 +64,17 @@
                         }
 
                         a.statement:hover {
-                                border:1px solid;
-                                border-color:#c5e1eb;
+                                border: 1px solid;
+                                border-color: #c5e1eb;
 
                         }
+
                         ul.breadcrumb {
                                 margin: unset;
                                 padding: unset;
                                 list-style: none;
-                                overflow: auto;
-                               
+                                /* overflow: auto; */
+
                         }
 
                         ul.breadcrumb li {
@@ -87,6 +99,13 @@
                                 text-decoration: underline;
                         }
 
+                        button {
+                                outline: 0px;
+                                
+                                
+                        }
+
+                
                 </style>
 
         </head>
@@ -126,18 +145,18 @@
 
                                         <!--  This column contain a hierarchical view of the license in a tree view fashion-->
                                         <div class="column_0 col-sm-2 panel panel-default" style="padding: unset;">
-                                                
-                                                        <div class="panel-heading">
-                                                                License Structure
-                                                        </div>
 
-                                                        <div class= "panel-body" id="data">
+                                                <div class="panel-heading">
+                                                        License Structure
+                                                </div>
+
+                                                <div class="panel-body" id="data">
 
 
 
-                                                        </div>
+                                                </div>
 
-                                                
+
 
                                         </div>
 
@@ -149,7 +168,7 @@
                                                 <div class="box-2 panel-body" style="overflow: scroll;">
 
 
-                                                         <div property="spdx:licenseText" class="license-text"> 
+                                                        <div property="spdx:licenseText" class="license-text">
 
                                                                 <div class="optional-license-text">
                                                                         <p>Apache License
@@ -174,7 +193,8 @@
                                                                                                 <li>
                                                                                                         <p>"License" shall mean the terms and conditions for use, reproduction,
                                                                                                                 and distribution as defined by Sections 1 through 9 of this
-                                                                                                                document.</p>
+                                                                                                                document.
+                                                                                                        </p>
 
                                                                                                 </li>
                                                                                                 <li>
@@ -440,7 +460,7 @@
 
                                                                 </div>
 
-                                                        </div> 
+                                                        </div>
 
                                                 </div>
 
@@ -453,10 +473,24 @@
 
                                                 <div class="panel-heading">
 
-                                                        
-                                                        <ul class="breadcrumb" id="visitedNode">
 
-                                                        </ul>
+
+                                                        <div class="row">
+
+                                                                <button id ="scroll_left" type="button" class="btn btn-info btn-xs col-md-1" style="float:left">&lt</button>
+
+                                                                <div id ="content" style = "overflow: auto" class="col-md-10">
+                                                                        <ul class="breadcrumb" id="visitedNode">
+
+                                                                        </ul>
+
+                                                                </div>
+
+                                                                <button id="scroll_right" type="button" class="btn btn-info btn-xs col-md-1" style="float:right">&gt</button>
+                                                        </div>
+
+
+
 
                                                 </div>
 
@@ -477,7 +511,47 @@
                 </div>
 
 
+                <script>
+                        var step = 100;
+                        var scrolling = false;
+                        $("#scroll_left").bind("click", function (event) {
+                                event.preventDefault();
+                                // Animates the scrollTop property by the specified
+                                // step.
+                                $("#content").animate({
+                                        scrollLeft: "-=" + step + "px"
+                                });
+                        }).bind("mouseover", function (event) {
+                                scrolling = true;
+                                scrollContent("left");
+                        }).bind("mouseout", function (event) {
+                                scrolling = false;
+                        });
 
+
+                        $("#scroll_right").bind("click", function (event) {
+                                event.preventDefault();
+                                $("#content").animate({
+                                        scrollLeft: "+=" + step + "px"
+                                });
+                        }).bind("mouseover", function (event) {
+                                scrolling = true;
+                                scrollContent("right");
+                        }).bind("mouseout", function (event) {
+                                scrolling = false;
+                        });
+
+                        function scrollContent(direction) {
+                                var amount = (direction === "left" ? "-=1px" : "+=1px");
+                                $("#content").animate({
+                                        scrollLeft: amount
+                                }, 1, function () {
+                                        if (scrolling) {
+                                                scrollContent(direction);
+                                        }
+                                });
+                        }
+                </script>
 
 
                 <script src="./apache2.js"></script>
