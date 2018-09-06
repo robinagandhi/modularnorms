@@ -88,7 +88,7 @@ body {
 
 
 
-/* .box-3 {
+.box-3 {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -101,17 +101,11 @@ body {
     margin-left: 4px;
     margin-right: 4px;
     overflow:scroll
-} */
-
-/* #wizard_box {
-    flex-grow: 1;
-    width: 50%;
 }
 
-.inputBox {
-    flex-grow: 1;
-    width: 50%;
-} */
+
+
+
 
 
 a.statement:hover {
@@ -131,9 +125,6 @@ a:link {
     background-color: cornflowerblue;
 } */
 
-#duty_list {
-    text-align: justify;
-}
 
  /* .node {
     transition: transform .2s;
@@ -208,7 +199,7 @@ a:link {
 } */
 
 /* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
+/* @-webkit-keyframes fadeIn {
     from {opacity: 0;} 
     to {opacity: 1;}
 }
@@ -216,4 +207,4 @@ a:link {
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity:1 ;}
-}
+} */

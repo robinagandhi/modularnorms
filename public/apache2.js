@@ -443,9 +443,9 @@ $(".statement").unbind().click(function () {
 function attributer(datum, index, nodes) {
     var selection = d3.select(this);
     if (datum.tag == "svg") {
-        var width = document.getElementById("box-3").offsetWidth;
+        var width = document.getElementById("graph").offsetWidth;
         //console.log(width);
-        var height = document.getElementById("box-3").offsetHeight;
+        var height = document.getElementById("graph").offsetHeight;
         //console.log(height);
         selection
             .attr("width", width)
@@ -496,13 +496,42 @@ function SVG_Interaction() {
 
 function genGraph(stat){
 
-    //console.log($("#clust1").children("title").text())
+    
+
+    /**
+     *selected = true on tree view
+     */
+
+     var treeInstance = $("#data").jstree(true)
+    //  treeInstance.deselect_all()
+     treeInstance.select_node(myJSONArray[0],[true,false])
+
+    //  myJSONArray.forEach(function (element) {
+
+    //     if(element.text == stat){
+    //         console.log("highlight"+ element.text)
+    //         // element.state.selected = true
+    //         // $('#data').jstree({
+
+    //         //     'core': {
+    //         //         'data': myJSONArray
+    //         //     },
+    //         //     // "plugins":["checkbox"]
+    //         //     "plugins":["wholerow"]
+                
+    //         // });
+    //         treeInstance.deselect_all()
+    //         treeInstance.select_node('1')
+    //     }
+         
+    //  });
 /**
  * Add generated graph to history
  */
 if($("#clust1").children("title").text().slice(10) !== stat ){
     
-    $('#visitedNode').prepend('<li><a href="#">'+stat+'</a></li>')
+    $('#visitedNode').append('<li><a href="#" >'+stat+'</a></li>')
+    // $('ul.breadcrumb li:last-child ').focus()
 
     //generate graph when a norm model is clicked in the history list.
     $("ul#visitedNode > li").unbind().click(function () {
@@ -533,10 +562,7 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
                 // const element = graph.children().children('.node').children('text')[index];
                 // console.log(element)
                 if (graph.children().children('.node').children('text')[index].innerHTML.startsWith('SS_')) {
-                    console.log(index+' '+graph.children().children('.node').children('text')[index].innerHTML)
-                    console.log(graph.children().children('.node').children('text')[index].parentElement)
-                    console.log(graph.children().children('.node').children('text')[index].previousElementSibling)
-
+                   
 
                     graph.children().children('.node').children('text')[index].previousElementSibling.onmouseover = function()
                     {
@@ -577,10 +603,7 @@ $("."+stat).css('background-color','#add8e6').focus();
  
 }
 
-// $("#graph.node").hover(function (event){
-//     console.log("svg hovered...Element--->"+event.target, event.type)
-//     console.log($(event.target).parent().parent().children("text").first().text())
-// })
+
 
 /**
   * Create JSON object to use for tree view 
@@ -589,143 +612,141 @@ $("."+stat).css('background-color','#add8e6').focus();
 
 //Build json object from DOM element here
 var myJSONArray= [];
-var children_array = []  //This array will store the parent node so they do not duplicate
+var children_array = []  //This array will store the children node so they do not duplicate
 
 var model_text = $("a.statement")
 
 //populate with no children
 
-// for (let index = 0; index < model_text.length; index++) {
-//     var text = model_text[index].classList[1] + ' (' + model_text[index].innerText.slice(0,15)+ '...)'
+ for (let index = 0; index < model_text.length; index++) {
+    var text =  model_text[index].classList[1]+ ' (' +model_text[index].innerText.slice(0,20) + '...)'
 
-//     //class name ---> model_text[index].classList[1]
-//     //text is ----> model_text[index].innerText.slice(0,15)
-
-//     if (index > 0) {
-
-//         if(model_text[index].classList[1].startsWith(model_text[index-1].classList[1])){
-//             console.log(model_text[index].classList[1]+ ' start with '+ model_text[index-1].classList[1])
-//         }
-        
-//     } 
-
-//     myJSONArray[index] = {
-            
-//         "text": text,
-        
-
-//         // "state":
-//         // {
-//         //     "opened": true,
-            
-//         // },
-
-//         // "children": [
-//         //     {
-//         //         "text": "Child node1",
-                
-
-//         //     },
-//         //     {
-//         //         "text": "Child node2",
-//         //         "state":
-//         //         {
-                    
-//         //         }
-
-                
-
-//         //     },
-//         //     {
-//         //         "text": "Child node2",
-
-
-//         //     },
-
-//         // ]
-//     }
-
-       
-    
-// }
-
-//populate with children bu there is duplicates
-
-
-for (let index = 0; index < model_text.length; index++) {
 
     //class name ---> model_text[index].classList[1]
     //text is ----> model_text[index].innerText.slice(0,15)
 
+    if (index > 0) {
 
-   var parent_candidate =  model_text[index].classList[1]
-
-   //Build a children array : children are nodes starting with the candidate parent node
-
-    var j =0
-    var children = []
-   for(let i = index+1; i< model_text.length;i++){
-
-
-
-       if (model_text[i].classList[1].startsWith(parent_candidate)){
-           console.log(model_text[i].classList[1] + " is children of parent candidate: "+ parent_candidate)
-
-        //Add the node to chldren array at position j
-        children[j]= {
-            "text":model_text[i].classList[1]
+        if(model_text[index].classList[1].startsWith(model_text[index-1].classList[1])){
+            console.log(model_text[index].classList[1]+ ' start with '+ model_text[index-1].classList[1])
         }
-        children_array.push(model_text[i].classList[1])
-        j++
-       }
-       
-   }
+        
+    } 
 
-   if (children.length !=0 ){
-
-      // console.log(childrenJSON + " length:  "+ childrenJSON.length)
-    
-        myJSONArray[index] = {
-                
-            "text": parent_candidate,
+    myJSONArray[index] = {
             
-    
-            "state":
-            {
-                "opened": true,
-                
-            },
-    
-            "children": children
-                
-       }
+        "text": text,
+        
 
-   }
-   
-   if (children.length == 0  ){ //&& !(children_array.includes(parent_candidate))
+        "state":
+        {
+            "opened": true,
+            
+        },
 
-   
-
-        myJSONArray[index] = {
- 
-            "text": parent_candidate,
- 
- 
-            "state":
-            {
-                "opened": true,
- 
-            },
- 
-        }
-    
-
-   }
-
+        "children": [
+            
+        ]
+    }
 
        
     
 }
+  
+ 
+
+
+
+
+//populate with children but there is duplicates
+
+
+// for (let index = 0; index < model_text.length; index++) {
+
+//     //class name = model_text[index].classList[1]
+//     //text  = model_text[index].innerText.slice(0,15)
+
+
+//    var parent_candidate =  model_text[index].classList[1]
+
+//    //Build a children array : children are nodes starting after the candidate parent node
+
+//     var j =0
+//     var children = []
+
+//     if (!(children_array.includes(parent_candidate))){ //&& !(children_array.includes(parent_candidate))
+
+   
+
+//         myJSONArray[index] = {
+ 
+//             "text": parent_candidate,
+ 
+ 
+//             "state":
+//             {
+//                 "opened": true,
+//                 "selected":false,
+ 
+//             },
+ 
+//         }
+
+//         for(let i = (index ); i< model_text.length;i++){
+
+
+            
+    
+//             if (model_text[i].classList[1].startsWith(parent_candidate)){
+//                 console.log(model_text[i].classList[1] + " is children of parent candidate: "+ parent_candidate)
+     
+//              //Add the node to children array at position j
+//              children[j]= {
+//                  "text":model_text[i].classList[1]
+//              }
+//              //push children
+//              children_array.push(model_text[i].classList[1])
+     
+//              j++
+//             }
+           
+    
+           
+//        }
+    
+
+//    }
+
+   
+
+//    if (children.length !=0  ){ //add children array check
+
+//       // console.log(childrenJSON + " length:  "+ childrenJSON.length)
+    
+//         myJSONArray[index] = {
+                
+//             "text": parent_candidate,
+            
+    
+//             "state":
+//             {
+//                 "opened": true,
+//                 "selected":false,
+                
+//             },
+    
+//             "children": children
+                
+//        }
+
+//    }
+   
+   
+
+
+       
+    
+// }
 
 
 
@@ -752,10 +773,15 @@ $(document).ready(function(){
     //display the text of the selected node. Will pass this node to generate graph at some point. However, name need to be consistent with genGraph needs.
 
     $('#data').on("changed.jstree", function (e, data) {
-        console.log("The selected nodes are:");
-        console.log(data.instance.get_selected(true)[0].text.split(' ')[0]);
+        //console.log(data.instance.get_selected(true)[0].text.split(' ')[1])
         genGraph(data.instance.get_selected(true)[0].text.split(' ')[0])
+
       });
+
+    // $("#data").on("hover_node.jstree", function(e, data){
+    //     var nodeId = jQuery.data(data.instance.obj[0], "jstree").id;
+    //     console.log(nodeId)
+    // });
   
   
 })
