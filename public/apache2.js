@@ -535,7 +535,9 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
     $('#visitedNode').append('<li><a href="#" >'+stat+'</a></li>')
 
     $("ul.breadcrumb li:last-child").css('font-weight','bold')
-    // $('ul.breadcrumb li:last-child ').focus()
+    // $("ul.breadcrumb li:last-child").focus()
+    var left = $("#content").width()
+    $("#content").scrollLeft(left)
 
     //generate graph when a norm model is clicked in the history list.
     $("ul#visitedNode > li").unbind().click(function () {
