@@ -531,10 +531,13 @@ function genGraph(stat){
 if($("#clust1").children("title").text().slice(10) !== stat ){
 
     $("ul.breadcrumb li:last-child").css('font-weight','normal')
+    $("ul.breadcrumb li:last-child").css('text-decoration','none')
+    
     
     $('#visitedNode').append('<li><a href="#" >'+stat+'</a></li>')
 
     $("ul.breadcrumb li:last-child").css('font-weight','bold')
+    $("ul.breadcrumb li:last-child").css('text-decoration','underline')
     // $("ul.breadcrumb li:last-child").focus()
     var left = $("#content").width()
     $("#content").scrollLeft(left)
@@ -754,17 +757,57 @@ var model_text = $("a.statement")
     
 // }
 
+//code for left and right button for history breadcrum
+
+    var step = 100;
+    var scrolling = false;
+    $("#scroll_left").bind("click", function (event) {
+            event.preventDefault();
+            // Animates the scrollTop property by the specified
+            // step.
+            $("#content").animate({
+                    scrollLeft: "-=" + step + "px"
+            });
+
+            // var norm_id= $('ul.breadcrumb li:last-child').prev().text()
+            // genGraph(norm_id)
+
+    }).bind("mouseover", function (event) {
+            scrolling = true;
+            scrollContent("left");
+    }).bind("mouseout", function (event) {
+            scrolling = false;
+    });
 
 
+    $("#scroll_right").bind("click", function (event) {
+            event.preventDefault();
+            $("#content").animate({
+                    scrollLeft: "+=" + step + "px"
+            });
+    }).bind("mouseover", function (event) {
+            scrolling = true;
+            scrollContent("right");
+    }).bind("mouseout", function (event) {
+            scrolling = false;
+    });
+
+    function scrollContent(direction) {
+            var amount = (direction === "left" ? "-=1px" : "+=1px");
+            $("#content").animate({
+                    scrollLeft: amount
+            }, 1, function () {
+                    if (scrolling) {
+                            scrollContent(direction);
+                    }
+            });
+    }
 
 
 
 $(document).ready(function(){
 
     //read document format and create an array with the data extracted from the license text body
-
-
-
 
     $('#data').jstree({
 
@@ -788,7 +831,8 @@ $(document).ready(function(){
     //     var nodeId = jQuery.data(data.instance.obj[0], "jstree").id;
     //     console.log(nodeId)
     // });
-  
+    
+
   
 })
 

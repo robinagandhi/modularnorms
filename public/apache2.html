@@ -19,7 +19,7 @@
                         }
 
                         #graph {
-                                height: 93%;
+                                height: 98%;
                         }
 
                         .container-fluid {
@@ -36,7 +36,7 @@
                         .column_0,
                         .column_1 {
                                 height: 100%;
-                                resize: horizontal;
+                               
                                 overflow: auto;
 
                         }
@@ -79,7 +79,7 @@
 
                         ul.breadcrumb li {
                                 display: inline;
-                                font-size: 14px;
+                                font-size: 11px;
 
                         }
 
@@ -472,32 +472,35 @@
                                         <div class="column_2 col-sm-5 panel panel-default" id="box-3" style="padding: unset;">
 
                                                 <div class="panel-heading">
+                                                        <p>breadcrumb hierarchy(from license structure)</p>
 
+                                                </div>
 
+                                                <div class="panel-body" style="height:90%">
 
-                                                        <div class="row">
+                                                        <div  id="graph" style="text-align: center;">
+        
+                                                                
+                                                        </div>
+        
+                                                </div>
+                                                
+                                                <div class="row panel-heading" style="padding-left: 0px;
+                                                margin-left: 0px;
+                                                margin-right: 0px;  padding-right: 0px">
+                                                        
+                                                        <button id ="scroll_left" type="button" class="btn btn-info btn-xs col-md-1" style="float:left ;width: 4%;margin-left: 5px">&lt</button>
 
-                                                                <button id ="scroll_left" type="button" class="btn btn-info btn-xs col-md-1" style="float:left">&lt</button>
+                                                        <div id ="content" style = "overflow: auto;margin-left: 20px" class="col-md-10">
+                                                                <ul class="breadcrumb" id="visitedNode">
 
-                                                                <div id ="content" style = "overflow: auto" class="col-md-10">
-                                                                        <ul class="breadcrumb" id="visitedNode">
+                                                                </ul>
 
-                                                                        </ul>
-
-                                                                </div>
-
-                                                                <button id="scroll_right" type="button" class="btn btn-info btn-xs col-md-1" style="float:right">&gt</button>
                                                         </div>
 
-
-
-
+                                                        <button id="scroll_right" type="button" class="btn btn-info btn-xs col-md-1" style="float:right ;width: 4%;margin-right: 5px">&gt</button>
                                                 </div>
 
-                                                <div class="panel-body" id="graph" style="text-align: center;">
-
-
-                                                </div>
                                         </div>
 
 
@@ -511,7 +514,7 @@
                 </div>
 
 
-                <script>
+                <!-- <script>
                         var step = 100;
                         var scrolling = false;
                         $("#scroll_left").bind("click", function (event) {
@@ -551,7 +554,7 @@
                                         }
                                 });
                         }
-                </script>
+                </script> -->
 
 
                 <script src="./apache2.js"></script>
