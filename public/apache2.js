@@ -1,6 +1,11 @@
 /*
-Note check why click event register more than once when a SS_ is clicked
-maybe add click event to SS_ in column 1 box-3
+TODO: 
+-Add focus on preamble and appendix section,
+-add burger menu in panel column 0 to show rest of licenses list
+-add hierarchy breadcrumn to graph
+-fix history breadcrumb
+-add tooltip with beginning of text to tree view
+-add interactive to graph, communicate values to server and update graph ()
 
 */
 //hold dot description of the models in the same order as in the license text
@@ -502,9 +507,9 @@ function genGraph(stat){
      *selected = true on tree view
      */
 
-     var treeInstance = $("#data").jstree(true)
+    //  var treeInstance = $("#data").jstree(true)
     //  treeInstance.deselect_all()
-     treeInstance.select_node(myJSONArray[0],[true,false])
+    //  treeInstance.select_node(myJSONArray[0],[true,false])
 
     //  myJSONArray.forEach(function (element) {
 
@@ -606,7 +611,7 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
 * Highlight the statement corresponding to generated graph
 */
 
-$(".statement").css('background-color','unset')
+$(".statement,.preamble,.appendix").css('background-color','unset')
 $("."+stat).css('background-color','#add8e6').focus();
 
  
@@ -620,31 +625,14 @@ $("."+stat).css('background-color','#add8e6').focus();
 
 
 //Build json object from DOM element here
-var myJSONArray= [];
-var children_array = []  //This array will store the children node so they do not duplicate
+var myJSONArray= [
+    {
+        "text":"Preamble"
+    },
 
-var model_text = $("a.statement")
-
-//populate with no children
-
- for (let index = 0; index < model_text.length; index++) {
-    var text =  model_text[index].classList[1]+ ' (' +model_text[index].innerText.slice(0,20) + '...)'
-
-
-    //class name ---> model_text[index].classList[1]
-    //text is ----> model_text[index].innerText.slice(0,15)
-
-    if (index > 0) {
-
-        if(model_text[index].classList[1].startsWith(model_text[index-1].classList[1])){
-            console.log(model_text[index].classList[1]+ ' start with '+ model_text[index-1].classList[1])
-        }
-        
-    } 
-
-    myJSONArray[index] = {
+    {
             
-        "text": text,
+        "text": "Apache2",
         
 
         "state":
@@ -656,11 +644,131 @@ var model_text = $("a.statement")
         "children": [
             
         ]
+    },
+    {
+            
+        "text": "Apache3",
+        
+
+        "state":
+        {
+            "opened": true,
+            
+        },
+
+        "children": [
+            
+        ]
+    },
+    {
+            
+        "text": "Apache4",
+        
+
+        "state":
+        {
+            "opened": true,
+            
+        },
+
+        "children": [
+            {
+                "text":"Apache4a",
+               
+            },
+            {
+                "text":"Apache4b",
+                
+            },
+            {
+                "text":"Apache4c",
+               
+            },
+            {
+                "text":"Apache4d",
+                "state":{
+                    "opened":true,
+                    
+                },
+                "children":[
+                    {
+                    
+                        "text":"Apache4dAddAttrib",
+                        
+                    },
+                    {
+                        "text":"Apache4dAddCopyright"
+                    }
+                ]
+            }    
+        ]
+    },
+    {
+            
+        "text": "Apache5"
+    
+    },
+    {
+            
+        "text": "Apache6"
+    
+    },
+    {
+        "text":"Apache7"
+    },
+    {
+        "text":"Apache8"
+    },
+    {
+        "text":"Apache9"
+    },
+    {
+        "text":"Appendix"
     }
+
+];
+
+
+//var children_array = []  //This array will store the children node so they do not duplicate
+
+var model_text = $("a.statement")
+
+//populate with no children
+
+//  for (let index = 0; index < model_text.length; index++) {
+//     var text =  model_text[index].classList[1]+ ' (' +model_text[index].innerText.slice(0,20) + '...)'
+
+
+    //class name ---> model_text[index].classList[1]
+    //text is ----> model_text[index].innerText.slice(0,15)
+
+    // if (index > 0) {
+
+    //     if(model_text[index].classList[1].startsWith(model_text[index-1].classList[1])){
+    //         console.log(model_text[index].classList[1]+ ' start with '+ model_text[index-1].classList[1])
+    //     }
+        
+    // } 
+
+//     myJSONArray[index] = {
+            
+//         "text": text,
+        
+
+//         "state":
+//         {
+//             "opened": true,
+            
+//         },
+
+//         "children": [
+            
+//         ]
+//     }
 
        
     
-}
+// }
   
  
 
@@ -759,49 +867,49 @@ var model_text = $("a.statement")
 
 //code for left and right button for history breadcrum
 
-    var step = 100;
-    var scrolling = false;
-    $("#scroll_left").bind("click", function (event) {
-            event.preventDefault();
-            // Animates the scrollTop property by the specified
-            // step.
-            $("#content").animate({
-                    scrollLeft: "-=" + step + "px"
-            });
+    // var step = 100;
+    // var scrolling = false;
+    // $("#scroll_left").bind("click", function (event) {
+    //         event.preventDefault();
+    //         // Animates the scrollTop property by the specified
+    //         // step.
+    //         $("#content").animate({
+    //                 scrollLeft: "-=" + step + "px"
+    //         });
 
-            // var norm_id= $('ul.breadcrumb li:last-child').prev().text()
-            // genGraph(norm_id)
+    //         // var norm_id= $('ul.breadcrumb li:last-child').prev().text()
+    //         // genGraph(norm_id)
 
-    }).bind("mouseover", function (event) {
-            scrolling = true;
-            scrollContent("left");
-    }).bind("mouseout", function (event) {
-            scrolling = false;
-    });
+    // }).bind("mouseover", function (event) {
+    //         scrolling = true;
+    //         scrollContent("left");
+    // }).bind("mouseout", function (event) {
+    //         scrolling = false;
+    // });
 
 
-    $("#scroll_right").bind("click", function (event) {
-            event.preventDefault();
-            $("#content").animate({
-                    scrollLeft: "+=" + step + "px"
-            });
-    }).bind("mouseover", function (event) {
-            scrolling = true;
-            scrollContent("right");
-    }).bind("mouseout", function (event) {
-            scrolling = false;
-    });
+    // $("#scroll_right").bind("click", function (event) {
+    //         event.preventDefault();
+    //         $("#content").animate({
+    //                 scrollLeft: "+=" + step + "px"
+    //         });
+    // }).bind("mouseover", function (event) {
+    //         scrolling = true;
+    //         scrollContent("right");
+    // }).bind("mouseout", function (event) {
+    //         scrolling = false;
+    // });
 
-    function scrollContent(direction) {
-            var amount = (direction === "left" ? "-=1px" : "+=1px");
-            $("#content").animate({
-                    scrollLeft: amount
-            }, 1, function () {
-                    if (scrolling) {
-                            scrollContent(direction);
-                    }
-            });
-    }
+    // function scrollContent(direction) {
+    //         var amount = (direction === "left" ? "-=1px" : "+=1px");
+    //         $("#content").animate({
+    //                 scrollLeft: amount
+    //         }, 1, function () {
+    //                 if (scrolling) {
+    //                         scrollContent(direction);
+    //                 }
+    //         });
+    // }
 
 
 
@@ -823,7 +931,17 @@ $(document).ready(function(){
 
     $('#data').on("changed.jstree", function (e, data) {
         //console.log(data.instance.get_selected(true)[0].text.split(' ')[1])
-        genGraph(data.instance.get_selected(true)[0].text.split(' ')[0])
+
+        if (data.instance.get_selected(true)[0].text.split(' ')[0].startsWith('Apache')) {
+            
+            genGraph(data.instance.get_selected(true)[0].text.split(' ')[0])
+        }else{
+            console.log("."+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase())
+            $(".statement,.preamble,.appendix").css('background-color','unset')
+            
+            $("."+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase()).css('background-color','#add8e6')
+            window.location.hash = "#"+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase();
+        }
 
       });
 
