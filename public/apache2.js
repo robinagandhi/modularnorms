@@ -42,7 +42,7 @@ var apache2 = [
             Apache2_52 -> Apache2_42;
             Apache2_53 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache2_53 -> Apache2[label="activates"];
-            Apache2_54 [shape=box, label="SS_Apache4", style=filled, fillcolor=orange];
+            Apache2_54 [shape=box, label="SS_Apache4", style=filled, fillcolor=white];
             Apache2_54 -> Apache2_53;
             Apache2_55 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache2_55 -> Apache2_53;
@@ -50,17 +50,17 @@ var apache2 = [
             Apache2_56 -> Apache2_55;
             Apache2_57 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache2_57 -> Apache2_56;
-            Apache2_58 [shape=box, label="SS_Apache5", style=filled, fillcolor=orange];
+            Apache2_58 [shape=box, label="SS_Apache5", style=filled, fillcolor=white];
             Apache2_58 -> Apache2_57;
             Apache2_59 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache2_59 -> Apache2_57;
-            Apache2_60 [shape=box, label="SS_Apache6", style=filled, fillcolor=orange];
+            Apache2_60 [shape=box, label="SS_Apache6", style=filled, fillcolor=white];
             Apache2_60 -> Apache2_59;
-            Apache2_61 [shape=box, label="SS_Apache7", style=filled, fillcolor=orange];
+            Apache2_61 [shape=box, label="SS_Apache7", style=filled, fillcolor=white];
             Apache2_61 -> Apache2_59;
-            Apache2_62 [shape=box, label="SS_Apache8", style=filled, fillcolor=orange];
+            Apache2_62 [shape=box, label="SS_Apache8", style=filled, fillcolor=white];
             Apache2_62 -> Apache2_56;
-            Apache2_63 [shape=box, label="SS_Apache9", style=filled, fillcolor=orange];
+            Apache2_63 [shape=box, label="SS_Apache9", style=filled, fillcolor=white];
             Apache2_63 -> Apache2_55;
             }
         }
@@ -99,7 +99,7 @@ var apache2 = [
             Apache3_75 -> Apache3_74;
             Apache3_76 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache3_76 -> Apache3[label="activates"];
-            Apache3_77 [shape=box, label="SS_Apache4", style=filled, fillcolor=orange];
+            Apache3_77 [shape=box, label="SS_Apache4", style=filled, fillcolor=white];
             Apache3_77 -> Apache3_76;
             Apache3_78 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache3_78 -> Apache3_76;
@@ -107,17 +107,17 @@ var apache2 = [
             Apache3_79 -> Apache3_78;
             Apache3_80 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache3_80 -> Apache3_79;
-            Apache3_81 [shape=box, label="SS_Apache9", style=filled, fillcolor=orange];
+            Apache3_81 [shape=box, label="SS_Apache9", style=filled, fillcolor=white];
             Apache3_81 -> Apache3_80;
             Apache3_82 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache3_82 -> Apache3_80;
-            Apache3_83 [shape=box, label="SS_Apache6", style=filled, fillcolor=orange];
+            Apache3_83 [shape=box, label="SS_Apache6", style=filled, fillcolor=white];
             Apache3_83 -> Apache3_82;
-            Apache3_84 [shape=box, label="SS_Apache7", style=filled, fillcolor=orange];
+            Apache3_84 [shape=box, label="SS_Apache7", style=filled, fillcolor=white];
             Apache3_84 -> Apache3_82;
-            Apache3_85 [shape=box, label="SS_Apache8", style=filled, fillcolor=orange];
+            Apache3_85 [shape=box, label="SS_Apache8", style=filled, fillcolor=white];
             Apache3_85 -> Apache3_79;
-            Apache3_86 [shape=box, label="SS_Apache5", style=filled, fillcolor=orange];
+            Apache3_86 [shape=box, label="SS_Apache5", style=filled, fillcolor=white];
             Apache3_86 -> Apache3_78;
             }
         }
@@ -134,17 +134,17 @@ var apache2 = [
             Apache4_1 -> Apache4[label="satisfies"];
             Apache4_2 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache4_2 -> Apache4[label="activates"];
-            Apache4_3 [shape=box, label="SS_Apache4a", style=filled, fillcolor=orange];
+            Apache4_3 [shape=box, label="SS_Apache4a", style=filled, fillcolor=white];
             Apache4_3 -> Apache4_2;
             Apache4_4 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache4_4 -> Apache4_2;
-            Apache4_5 [shape=box, label="SS_Apache4b", style=filled, fillcolor=orange];
+            Apache4_5 [shape=box, label="SS_Apache4b", style=filled, fillcolor=white];
             Apache4_5 -> Apache4_4;
             Apache4_6 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache4_6 -> Apache4_4;
-            Apache4_7 [shape=box, label="SS_Apache4c", style=filled, fillcolor=orange];
+            Apache4_7 [shape=box, label="SS_Apache4c", style=filled, fillcolor=white];
             Apache4_7 -> Apache4_6;
-            Apache4_8 [shape=box, label="SS_Apache4d", style=filled, fillcolor=orange];
+            Apache4_8 [shape=box, label="SS_Apache4d", style=filled, fillcolor=white];
             Apache4_8 -> Apache4_6;
             }
         }
@@ -255,7 +255,7 @@ var apache2 = [
             Apache4dAddAttrib_34 -> Apache4dAddAttrib[label="satisfies"];
             Apache4dAddAttrib_35 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache4dAddAttrib_35 -> Apache4dAddAttrib[label="activates"];
-            Apache4dAddAttrib_36 [shape=box, label="SS_Apache4d", style=filled, fillcolor=orange];
+            Apache4dAddAttrib_36 [shape=box, label="SS_Apache4d", style=filled, fillcolor=white];
             Apache4dAddAttrib_36 -> Apache4dAddAttrib_35;
             Apache4dAddAttrib_37 [shape=box, label="[Your own] additional\n attribution notices cannot\n be construed as modifying\n the License"];
             Apache4dAddAttrib_37 -> Apache4dAddAttrib_35;
@@ -276,7 +276,7 @@ var apache2 = [
             Apache4dAddCopyright_39 -> Apache4dAddCopyright_38;
             Apache4dAddCopyright_40 [shape=box, label="[You provided] additional or\n different license terms and\n conditions for use,\n reproduction, or\n distribution of Your\n modifications, or for any\n such Derivative Works as a whole"];
             Apache4dAddCopyright_40 -> Apache4dAddCopyright_38;
-            Apache4dAddCopyright_41 [shape=box, label="SS_Apache4", style=filled, fillcolor=orange];
+            Apache4dAddCopyright_41 [shape=box, label="SS_Apache4", style=filled, fillcolor=white];
             Apache4dAddCopyright_41 -> Apache4dAddCopyright[label="activates"];
             }
         }
@@ -387,7 +387,7 @@ var apache2 = [
             Apache9_112 -> Apache9_110;
             Apache9_113 [shape=box, label="[You agreed] to indemnify,\n defend, and hold each\n Contributor harmless for\n any liability incurred by,\n or claims asserted against,\n such Contributor by reason\n of your accepting any such\n warranty or additional liability"];
             Apache9_113 -> Apache9_109;
-            Apache9_114 [shape=box, label="SS_Apache4", style=filled, fillcolor=orange];
+            Apache9_114 [shape=box, label="SS_Apache4", style=filled, fillcolor=white];
             Apache9_114 -> Apache9[label="activates"];
             }
         }
@@ -412,6 +412,128 @@ var mapping = {
   "Apache9":13
   
 };
+
+var jsonInput = [];
+var jsonState = [];
+  
+  // Builds the JSON data object
+  function updateJSON(id, status) {
+
+    //check if norm
+    var delimited = id.split('_');
+    var isNorm = false;
+    if (delimited[1] == null) {
+        isNorm = true; // Is a norm
+    } else {
+        isNorm = false; // not a norm
+    }
+
+    if (!isNorm) {
+        var exist = false;
+        $.each(jsonInput, function(key, val) {
+            if (val.id == id) {
+                val.satisfied = status;
+                exist = true;
+            }
+        });
+        if (exist == false) {
+            item = {};
+            item["id"] = id;
+            item["satisfied"] = status;
+            jsonInput.push(item);
+        }
+
+    } else { // this is a norm
+        var exist = false;
+        $.each(jsonInput, function(key, val) {
+            if (val.id == id) {
+                val.compliance = status;
+                exist = true;
+            }
+        });
+        if (exist == false) {
+            item = {};
+            item["id"] = id;
+            item["compliance"] = status;
+            jsonInput.push(item);
+        }
+    }
+
+   //console.log(JSON.stringify(jsonInput));
+
+}
+
+function updateSVG (data){
+
+    $.each(data, function(key, val) {
+        if (val.id != null && !(val.id.startsWith('cluster'))) {
+            $("title").each(function(index, element) {
+              if ($(this).text() == val.id){
+                 polygon = $(this).parent().children("polygon").first();
+                 if (val.satisfied != null) {
+                    textNode = $(this).parent().children("text").last();
+                  //  delimited = textNode.text().split('|');
+                  //  if (delimited[1] == null) {
+                  //      textNode.text(delimited[0] + " | " + val.satisfied);
+                  //  } else {
+                  //      textNode.text(delimited[0] + " | " + val.satisfied);
+                  //  }
+                   if (val.satisfied == "SF"){
+                     polygon.attr('style', "fill:#CD5360"); //red
+                   } else {
+                     if (val.satisfied == "ST"){
+                       polygon.attr('style', "fill:#57BC90"); //green
+                     } else {
+                       if (val.satisfied == "SU"){
+                         polygon.attr('style', "fill:#FFFFFF"); //yellow
+                       }
+                     }
+                   }
+                   // Check if this is a super situation. Then color the related container also
+                   ssCheck = textNode.text().split('_');
+                   if (ssCheck[0] == "SS") {
+                     $("title").each(function(index, element){
+                       ssNode = "cluster" + textNode.text().split('|')[0].trim();
+                       //Dont color container
+                    //    if ($(this).text() == ssNode) {
+                    //      polygonSS = $(this).parent().children("polygon").first();
+                    //     //  textNodeSS = $(this).parent().children("text").last();
+                    //     //  delimited = textNodeSS.text().split('|');
+                    //     //  if (delimited[1] == null) {
+                    //     //      textNodeSS.text(delimited[0] + " | " + val.satisfied);
+                    //     //  } else {
+                    //     //      textNodeSS.text(delimited[0] + " | " + val.satisfied);
+                    //     //  }
+                    //      if (val.satisfied == "SF"){
+                    //        polygonSS.attr('style', "fill:#CD5360"); //red
+                    //      } else {
+                    //        if (val.satisfied == "ST"){
+                    //          polygonSS.attr('style', "fill:#57BC90"); //green
+                    //        } else {
+                    //          if (val.satisfied == "SU"){
+                    //            polygonSS.attr('style', "fill:#E5E338"); //yellow
+                    //          }
+                    //        }
+                    //      }
+                    //    }
+                     });
+                   }
+                 } else {  // Handle the Norm Comliance value and related display text
+                   if (val.compliance != null){
+                     textNodeNorm = $(this).parent().children("g").first().children("a").first().children("text").first();
+                     var delimited = textNodeNorm.text().split('|');
+                     if (delimited[1] == null) {
+                         textNodeNorm.text(delimited[0] + " | " + val.compliance);
+                     } else {
+                         textNodeNorm.text(delimited[0] + " | " + val.compliance);
+                     }
+                   }
+                 }
+              }
+            });
+        }
+    });
+  }
   
 
 var margin = 10 //to avoid scrollbars
@@ -469,67 +591,171 @@ function SVG_Interaction() {
 
     graph.unbind().click(function (event){
 
-        console.log("svg clicked...Element--->"+event.target, event.type)
+        
         var _id = "";
         var _text = "";
+        var polygon;
         var _statement="";
+
+        
 
         //notes:event.target.parent is g#graph0 sometimes but should be the g#node_. This cause polygon not to change color when polygon is clicked on
         
         if ($(event.target).parent().children("title").first().text() !== "") {
+
             _id = $(event.target).parent().children("title").first().text();
           
             _text = $(event.target).parent().children("text").first().text();
+
+            //console.log(_id);
+            //console.log(_text);
+            
           
         }else {
           _id = $(event.target).parent().parent().children("title").first().text();
           
           _text = $(event.target).parent().parent().children("text").first().text();
           
+            //console.log(_id);
+           // console.log(_text);
         }
+
+          //Allow clicking on text to select the sibling polygon
+          if ($(event.target).attr('points') == null) {
+            polygon = $(event.target).parent().children("polygon").first();
+            //console.log(polygon)
+        } else {
+            polygon = $(event.target);
+            //console.log(polygon)
+        }
+
       
       if (_text.startsWith("SS_")) {
         _statement = _text.split("_");
-        console.log("generate graph "+ _statement[1]);
+        //console.log("generate graph "+ _statement[1]);
         
         genGraph(_statement[1])
-      } 
-      
+
+      }else{
+
+        if (!(_id.startsWith("G_")) && _id!= "") {
+
+            let mypromise = new Promise((resolve, reject) => {
+
+                if (polygon.attr('style') == "fill:#57BC90") { // if green then turn red
+                    polygon.attr('style', "fill:#CD5360"); //red
+                    // var delimited = polygon.parent().children("text").last().text().split('|');
+                    // if (delimited[1] == null) {
+                    //     polygon.parent().children("text").last().text(delimited[0] + " | SF");
+                    // } else {
+                    //     polygon.parent().children("text").last().text(delimited[0] + " | SF");
+                    // }
+                    updateJSON(_id, "SF");
+                    $("text").each(function (index, element) {
+                        if (($(this).text() != "and") && ($(this).text() != "or") && ($(this).text() != "not")) {
+                            if ($(this).text() == _text) {
+                                _twinpolygon = $(this).parent().children("polygon").first();
+                                _twinpolygon.attr('style', "fill:#CD5360");
+                                _twinid = $(this).parent().children("title").first().text();
+                                updateJSON(_twinid, "SF");
+                            }
+                        }
+                    });
+
+
+                } else if(polygon.attr('style') == "fill:#CD5360") { //if red  then turn yellow
+
+                        polygon.attr('style', "fill:#FFFFFF"); //Yellow
+
+                        // var delimited = polygon.parent().children("text").last().text().split('|');
+                        // if (delimited[1] == null) {
+                        //     polygon.parent().children("text").last().text(delimited[0] + " | SU");
+                        // } else {
+                        //     polygon.parent().children("text").last().text(delimited[0] + " | SU");
+                        // }
+
+                        updateJSON(_id, "SU");
+
+                        $("text").each(function (index, element) {
+                            if (($(this).text() != "and") && ($(this).text() != "or") && ($(this).text() != "not")) {
+                                if ($(this).text() == _text) {
+                                    _twinpolygon = $(this).parent().children("polygon").first();
+                                    _twinpolygon.attr('style', "fill:#FFFFFF");
+                                    _twinid = $(this).parent().children("title").first().text();
+                                    updateJSON(_twinid, "SU");
+                                }
+                            }
+
+                        });
+                        
+                    } else { //turn green
+
+                        polygon.attr('style', "fill:#57BC90"); //Green
+                        // var delimited = polygon.parent().children("text").last().text().split('|');
+                        // if (delimited[1] == null) {
+                        //     polygon.parent().children("text").last().text(delimited[0] + " | ST");
+                        // } else {
+                        //     polygon.parent().children("text").last().text(delimited[0] + " | ST");
+                        // }
+                        updateJSON(_id, "ST");
+                        $("text").each(function (index, element) {
+                            if (($(this).text() != "and") && ($(this).text() != "or") && ($(this).text() != "not")) {
+                                if ($(this).text() == _text) {
+                                    _twinpolygon = $(this).parent().children("polygon").first();
+                                    _twinpolygon.attr('style', "fill:#57BC90");
+                                    _twinid = $(this).parent().children("title").first().text();
+                                    updateJSON(_twinid, "ST");
+                                }
+                            }
+                        });
+                    }
+
+                    setTimeout(function(){
+                        resolve("Success");
+                    },600);
+
+                });
+        
+
+                mypromise.then((successMessage)=>{
+                    console.log('Yay'+successMessage)
+                    console.log("FROM ME:"+JSON.stringify(jsonInput))
+                    // //query normserver
+                    accessURL = "http://localhost:4567/assert/3/1"
+                    $.ajax(accessURL, {
+                        method: 'POST',
+                        data: JSON.stringify(jsonInput),
+                        crossDomain: true
+                    }).then(function(data) {
+                        console.log("FROM SERVER"+JSON.stringify(data));
+                        jsonState = data
+                        updateSVG(jsonState);
+                        
+                        //alert("Done! Review results")
+                        
+                    });
+                })
+
+        }
             
+
+
+        }
+        
+
+       
     });
+
+   
+
+    
 }
 
 function genGraph(stat){
 
     
 
-    /**
-     *selected = true on tree view
-     */
-
-    //  var treeInstance = $("#data").jstree(true)
-    //  treeInstance.deselect_all()
-    //  treeInstance.select_node(myJSONArray[0],[true,false])
-
-    //  myJSONArray.forEach(function (element) {
-
-    //     if(element.text == stat){
-    //         console.log("highlight"+ element.text)
-    //         // element.state.selected = true
-    //         // $('#data').jstree({
-
-    //         //     'core': {
-    //         //         'data': myJSONArray
-    //         //     },
-    //         //     // "plugins":["checkbox"]
-    //         //     "plugins":["wholerow"]
-                
-    //         // });
-    //         treeInstance.deselect_all()
-    //         treeInstance.select_node('1')
-    //     }
-         
-    //  });
+    
 /**
  * Add generated graph to history
  */
@@ -576,34 +802,70 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
                 // const element = graph.children().children('.node').children('text')[index];
                 // console.log(element)
                 if (graph.children().children('.node').children('text')[index].innerHTML.startsWith('SS_')) {
+
+                    var prevColor = null; 
                    
 
                     graph.children().children('.node').children('text')[index].previousElementSibling.onmouseover = function()
                     {
-                        this.style.fill = "#ffe0a8"
+                        prevColor = graph.children().children('.node').children('text')[index].previousElementSibling.style.fill;
+                        this.style.fill = "#d8d6d6"
                         this.style.cursor = "pointer"
                     }
 
                     graph.children().children('.node').children('text')[index].previousElementSibling.onmouseout = function()
                     {
-                        this.style.fill = "#ffa500"
+                        console.log(prevColor);
+                        
+                        this.style.fill = prevColor
                     }
 
                     graph.children().children('.node').children('text')[index].onmouseover = function()
                     {
-                        this.previousElementSibling.style.fill = "#ffe0a8"
+                        prevColor = graph.children().children('.node').children('text')[index].previousElementSibling.style.fill;
+                        this.previousElementSibling.style.fill = "#d8d6d6"
                         this.style.cursor = "pointer"
                     }
 
                     graph.children().children('.node').children('text')[index].onmouseout = function()
                     {
-                        this.previousElementSibling.style.fill = "#ffa500"
+                        console.log(prevColor);
+                        
+                        this.previousElementSibling.style.fill = prevColor
                     }
 
 
 
+            }else{
+
+                graph.children().children('.node').children('text')[index].previousElementSibling.onmouseover = function()
+                {
+                    
+                    this.style.cursor = "pointer"
+                }
+
+                graph.children().children('.node').children('text')[index].previousElementSibling.onmouseout = function()
+                {
+                    
+                }
+
+                graph.children().children('.node').children('text')[index].onmouseover = function()
+                {
+                    
+                    this.style.cursor = "pointer"
+                }
+
+                graph.children().children('.node').children('text')[index].onmouseout = function()
+                {
+                    
+                }
             }
         }
+            //color graph using jsonState
+             console.log("currentState: "+JSON.stringify(jsonState));
+    
+
+            updateSVG(jsonState);
             
             
         })
@@ -733,183 +995,7 @@ var myJSONArray= [
 
 var model_text = $("a.statement")
 
-//populate with no children
 
-//  for (let index = 0; index < model_text.length; index++) {
-//     var text =  model_text[index].classList[1]+ ' (' +model_text[index].innerText.slice(0,20) + '...)'
-
-
-    //class name ---> model_text[index].classList[1]
-    //text is ----> model_text[index].innerText.slice(0,15)
-
-    // if (index > 0) {
-
-    //     if(model_text[index].classList[1].startsWith(model_text[index-1].classList[1])){
-    //         console.log(model_text[index].classList[1]+ ' start with '+ model_text[index-1].classList[1])
-    //     }
-        
-    // } 
-
-//     myJSONArray[index] = {
-            
-//         "text": text,
-        
-
-//         "state":
-//         {
-//             "opened": true,
-            
-//         },
-
-//         "children": [
-            
-//         ]
-//     }
-
-       
-    
-// }
-  
- 
-
-
-
-
-//populate with children but there is duplicates
-
-
-// for (let index = 0; index < model_text.length; index++) {
-
-//     //class name = model_text[index].classList[1]
-//     //text  = model_text[index].innerText.slice(0,15)
-
-
-//    var parent_candidate =  model_text[index].classList[1]
-
-//    //Build a children array : children are nodes starting after the candidate parent node
-
-//     var j =0
-//     var children = []
-
-//     if (!(children_array.includes(parent_candidate))){ //&& !(children_array.includes(parent_candidate))
-
-   
-
-//         myJSONArray[index] = {
- 
-//             "text": parent_candidate,
- 
- 
-//             "state":
-//             {
-//                 "opened": true,
-//                 "selected":false,
- 
-//             },
- 
-//         }
-
-//         for(let i = (index ); i< model_text.length;i++){
-
-
-            
-    
-//             if (model_text[i].classList[1].startsWith(parent_candidate)){
-//                 console.log(model_text[i].classList[1] + " is children of parent candidate: "+ parent_candidate)
-     
-//              //Add the node to children array at position j
-//              children[j]= {
-//                  "text":model_text[i].classList[1]
-//              }
-//              //push children
-//              children_array.push(model_text[i].classList[1])
-     
-//              j++
-//             }
-           
-    
-           
-//        }
-    
-
-//    }
-
-   
-
-//    if (children.length !=0  ){ //add children array check
-
-//       // console.log(childrenJSON + " length:  "+ childrenJSON.length)
-    
-//         myJSONArray[index] = {
-                
-//             "text": parent_candidate,
-            
-    
-//             "state":
-//             {
-//                 "opened": true,
-//                 "selected":false,
-                
-//             },
-    
-//             "children": children
-                
-//        }
-
-//    }
-   
-   
-
-
-       
-    
-// }
-
-//code for left and right button for history breadcrum
-
-    // var step = 100;
-    // var scrolling = false;
-    // $("#scroll_left").bind("click", function (event) {
-    //         event.preventDefault();
-    //         // Animates the scrollTop property by the specified
-    //         // step.
-    //         $("#content").animate({
-    //                 scrollLeft: "-=" + step + "px"
-    //         });
-
-    //         // var norm_id= $('ul.breadcrumb li:last-child').prev().text()
-    //         // genGraph(norm_id)
-
-    // }).bind("mouseover", function (event) {
-    //         scrolling = true;
-    //         scrollContent("left");
-    // }).bind("mouseout", function (event) {
-    //         scrolling = false;
-    // });
-
-
-    // $("#scroll_right").bind("click", function (event) {
-    //         event.preventDefault();
-    //         $("#content").animate({
-    //                 scrollLeft: "+=" + step + "px"
-    //         });
-    // }).bind("mouseover", function (event) {
-    //         scrolling = true;
-    //         scrollContent("right");
-    // }).bind("mouseout", function (event) {
-    //         scrolling = false;
-    // });
-
-    // function scrollContent(direction) {
-    //         var amount = (direction === "left" ? "-=1px" : "+=1px");
-    //         $("#content").animate({
-    //                 scrollLeft: amount
-    //         }, 1, function () {
-    //                 if (scrolling) {
-    //                         scrollContent(direction);
-    //                 }
-    //         });
-    // }
 
 
 
