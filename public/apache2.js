@@ -721,7 +721,7 @@ function SVG_Interaction() {
                     console.log('Yay'+successMessage)
                     console.log("FROM ME:"+JSON.stringify(jsonInput))
                     // //query normserver
-                    accessURL = "http://localhost:4567/assert/3/1"
+                    accessURL = "http://localhost:4567/assert/7/1"
                     $.ajax(accessURL, {
                         method: 'POST',
                         data: JSON.stringify(jsonInput),

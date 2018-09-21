@@ -51,6 +51,37 @@ var mapping = {
 
 var jsonInput = [];
 var jsonState = [];
+
+/**
+  * Create JSON object to use for tree view 
+  */
+
+
+//Build json object from DOM element here
+var myJSONArray= [
+    
+
+    {
+            
+        "text": "YPL4",
+        
+
+        "state":
+        {
+            "opened": true,
+            
+        },
+
+        "children": [
+
+           { 
+               "text": "YPL4a"
+            }
+        ]
+    }
+    
+
+];
   
   // Builds the JSON data object
   function updateJSON(id, status) {
@@ -514,36 +545,7 @@ $("."+stat).css('background-color','#add8e6').focus();
 
 
 
-/**
-  * Create JSON object to use for tree view 
-  */
 
-
-//Build json object from DOM element here
-var myJSONArray= [
-    
-
-    {
-            
-        "text": "YPL4",
-        
-
-        "state":
-        {
-            "opened": true,
-            
-        },
-
-        "children": [
-
-           { 
-               "text": "YPL4a"
-            }
-        ]
-    }
-    
-
-];
 
 
 //var children_array = []  //This array will store the children node so they do not duplicate
