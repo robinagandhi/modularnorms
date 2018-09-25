@@ -117,9 +117,9 @@ a:link {
     text-decoration: none;
 }
 
-/* a.statement:focus {
+a.appendix:focus {
     background-color: cornflowerblue;
-} */
+}
 
 /* a.supersit:hover {
     background-color: cornflowerblue;

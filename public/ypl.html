@@ -1,144 +1,169 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>NormViz D3</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/themes/default/style.min.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/jstree.min.js"></script>
+        <head>
+                <meta charset="utf-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>NormViz D3</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/themes/default/style.min.css" />
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/jstree.min.js"></script>
 
-        <style>
+                <style>
 
-                @media (min-width: 768px)
-{
-    .navbar-header
-    {
-        float: none;
-    }
-
-    .navbar-toggle
-    {
-        display: block;
-    }
-
-    .navbar-collapse.collapse
-    {
-        display: none !important;
-    }
-}
-            body {
-                                height: 100%;
+                #loader {
+                        display: none;
+                        border: 16px solid silver;
+                        border-radius: 50%;
+                        border-top: 16px solid #3498db;
+                        width: 120px;
+                        height: 120px;
+                        -webkit-animation: spin 2s linear infinite; /* Safari */
+                        animation: spin 4s linear infinite;
+                        margin: auto;
+                        position: absolute;
+                        top: 50px; left: 50px;
+                        bottom: 50px; right: 50px;
+                        /* background-color: #000; */
+                        color: #FFF;
+                        z-index:5;
+                        opacity: 0.5;
+                        filter: alpha(opacity=50);
                         }
 
-                        #graph {
-                                height: 98%;
+                /* Safari */
+                @-webkit-keyframes spin {
+                0% { -webkit-transform: rotate(0deg); }
+                100% { -webkit-transform: rotate(360deg); }
+                }
+
+                @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+                }
+                @media (min-width: 768px) {
+                        .navbar-header {
+                                float: none;
                         }
-
-                        .container-fluid {
-                                height: 100%;
+        
+                        .navbar-toggle {
+                                display: block;
                         }
-
-                        .display,
-                        .row,
-                        .column_2 {
-                                height: 100%;
-
+        
+                        .navbar-collapse.collapse {
+                                display: none !important;
                         }
+                }
+        
+                body {
+                        height: 100%;
+                }
+        
+                #graph {
+                        height: 98%;
+                }
+        
+                .container-fluid {
+                        height: 100%;
+                }
+        
+                .display,
+                .row,
+                .column_2 {
+                        height: 100%;
+        
+                }
+        
+                .column_0,
+                .column_1 {
+                        height: 100%;
+        
+                        overflow: auto;
+        
+                }
+        
+                .panel-heading {
+                        height: 5%;
+                }
+        
+                .panel-body {
+                        height: 95%;
+                        overflow: scroll;
+                }
+        
+                html,
+                body {
+                        margin: 0;
+                        height: 100%;
+                }
+        
+                /* .column_0,.column_1 {
+                                        margin-right: 2px;
+                                } */
+                .panel-heading {
+                        text-align: center
+                }
+        
+                a.statement:hover {
+                        border: 1px solid;
+                        border-color: #c5e1eb;
+        
+                }
+        
+                ul.breadcrumb {
+                        margin: unset;
+                        padding: unset;
+                        list-style: none;
+                        /* overflow: auto; */
+        
+                }
+        
+                ul.breadcrumb li {
+                        display: inline-block;
+                        font-size: 10px;
+        
+                }
+        
+                ul.breadcrumb li+li:before {
+                        padding: 4px;
+                        color: black;
+                        content: "/\00a0";
+                }
+        
+                ul.breadcrumb li a {
+                        color: #0275d8;
+                        text-decoration: none;
+                }
+        
+                ul.breadcrumb li a:hover {
+                        color: #01447e;
+                        text-decoration: underline;
+                }
+        
+                button {
+                        outline: 0px;
+        
+        
+                }
+        </style>
 
-                        .column_0,
-                        .column_1 {
-                                height: 100%;
-                               
-                                overflow: auto;
+        </head>
 
-                        }
+        <body>
 
-                        .panel-heading {
-                                height: 5%;
-                        }
+                <script src="//d3js.org/d3.v5.min.js"></script>
+                <script src="https://unpkg.com/viz.js@1.8.1/viz.js" type="javascript/worker"></script>
+                <script src="https://unpkg.com/d3-graphviz@1.4.0/build/d3-graphviz.min.js"></script>
 
-                        .panel-body {
-                                height: 95%;
-                                overflow: scroll;
-                        }
-
-                        html,
-                        body {
-                                margin: 0;
-                                height: 100%;
-                        }
-
-                        /* .column_0,.column_1 {
-                                margin-right: 2px;
-                        } */
-                        .panel-heading {
-                                text-align: center
-                        }
-
-                        a.statement:hover {
-                                border: 1px solid;
-                                border-color: #c5e1eb;
-
-                        }
-
-                        ul.breadcrumb {
-                                margin: unset;
-                                padding: unset;
-                                list-style: none;
-                                /* overflow: auto; */
-
-                        }
-
-                        ul.breadcrumb li {
-                                display: inline-block;
-                                font-size: 10px;
-
-                        }
-
-                        ul.breadcrumb li+li:before {
-                                padding: 4px;
-                                color: black;
-                                content: "/\00a0";
-                        }
-
-                        ul.breadcrumb li a {
-                                color: #0275d8;
-                                text-decoration: none;
-                        }
-
-                        ul.breadcrumb li a:hover {
-                                color: #01447e;
-                                text-decoration: underline;
-                        }
-
-                        button {
-                                outline: 0px;
-                                
-                                
-                        }
-
-                
-                </style>
-
-    </head>
-
-    <body>
-
-        <script src="//d3js.org/d3.v5.min.js"></script>
-        <script src="https://unpkg.com/viz.js@1.8.1/viz.js" type="javascript/worker"></script>
-        <script src="https://unpkg.com/d3-graphviz@1.4.0/build/d3-graphviz.min.js"></script>
-
-        <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+                <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
                 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script> -->
 
 
-        <!-- <nav class="navbar navbar-default" style="margin:unset">
+                <!-- <nav class="navbar navbar-default" style="margin:unset">
                         <div class="container-fluid">
                                 <div class="navbar-header">
                                         <a class="navbar-brand" href="./apache2.html">License IDE</a>
@@ -155,177 +180,143 @@
 
 
 
-        <div class="container-fluid">
+                <div class="container-fluid">
+                             
 
+                        <div class="display">
+                                <div class="row">
 
-            <div class="display">
-                <div class="row">
+                                        <!--  This column contain a hierarchical view of the license in a tree view fashion-->
+                                        <div class="column_0 col-sm-2 panel panel-default" style="padding: unset;">
 
-                    <!--  This column contain a hierarchical view of the license in a tree view fashion-->
-                    <div class="column_0 col-sm-2 panel panel-default" style="padding: unset;">
-
-                        <div class="panel-heading">
-
-                                        <!-- <nav class="navbar navbar-default" role="navigation">
+                                                <div class="panel-heading">
                                                         
-                                                      
-                                                          <div class="navbar-header">
-                                                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                                              <span class="sr-only">Toggle navigation</span>
-                                                              <span class="icon-bar"></span>
-                                                              <span class="icon-bar"></span>
-                                                              <span class="icon-bar"></span>
-                                                            </button>
-                                                            <a class="navbar-brand" href="#">YPL</a>
-                                                          </div>  
-                                                      
-                                                          
-                                                          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                                            <ul class="nav navbar-nav">
-                                                              <li class="active"><a href="#">Link</a></li>
-                                                              <li><a href="#">Link</a></li>
-                                                              <li class="dropdown">
-                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                                                                <ul class="dropdown-menu">
-                                                                  <li><a href="#">Action</a></li>
-                                                                  <li><a href="#">Another action</a></li>
-                                                                  <li><a href="#">Something else here</a></li>
-                                                                  <li class="divider"></li>
-                                                                  <li><a href="#">Separated link</a></li>
-                                                                  <li class="divider"></li>
-                                                                  <li><a href="#">One more separated link</a></li>
-                                                                </ul>
-                                                              </li>
-                                                            </ul>
-                                                            <form class="navbar-form navbar-left" role="search">
-                                                              <div class="form-group">
-                                                                <input type="text" class="form-control" placeholder="Search">
-                                                              </div>
-                                                              <button type="submit" class="btn btn-default">Submit</button>
-                                                            </form>
-                                                            <ul class="nav navbar-nav navbar-right">
-                                                              <li><a href="#">Link</a></li>
-                                                              <li class="dropdown">
-                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                                                                <ul class="dropdown-menu">
-                                                                  <li><a href="#">Action</a></li>
-                                                                  <li><a href="#">Another action</a></li>
-                                                                  <li><a href="#">Something else here</a></li>
-                                                                  <li class="divider"></li>
-                                                                  <li><a href="#">Separated link</a></li>
-                                                                </ul>
-                                                              </li>
-                                                            </ul>
-                                                          </div>
-                                                        
-                                                      </nav>   -->
-                        </div>
+                                                                <div style="float:left" class="dropdown">
+                                                                                <button style = "border: 0px" class="btn btn-default dropdown-toggle btn-xs" type="button" data-toggle="dropdown"><span>
+                                                                                <span class="glyphicon glyphicon-th-list"></span></button>
+                                                                                <ul class="dropdown-menu">
+                                                                                  <li><a href="/apache2.html">APACHE2</a></li>
+                                                                                  <li><a href="/agpl.html">AGPL</a></li>
+                                                                                  
+                                                                                </ul>
+                                                                              </div>
 
-                        <div class="panel-body" id="data">
+                                                                              <p>YPL</p>
 
 
 
-                        </div>
+                                                </div>
+
+                                                <div class="panel-body" id="data">
 
 
 
-                    </div>
-
-                    <!-- First colum containing license text and assessement question -->
-                    <div class="column_1 col-sm-5 panel panel-default" style="padding: unset;">
-
-                        <div class="panel-heading">License Text</div>
-
-                        <div class="box-2 panel-body" style="overflow: scroll;">
+                                                </div>
 
 
-                            <div property="spdx:licenseText" class="license-text">
 
-                                <li>
+                                        </div>
 
-                                    <var class="replacable-license-text">4.</var>
-                                    <a href="#" class="statement YPL4">You may reproduce and distribute copies of
-                                        the
-                                        Work or Derivative Works thereof in any medium, with or without modifications, and in
-                                        Source
-                                        or Object form, provided that You meet the following conditions:</a>
+                                        <!-- First colum containing license text and assessement question -->
+                                        <div class="column_1 col-sm-5 panel panel-default" style="padding: unset;">
 
+                                                <div class="panel-heading">License Text</div>
 
-                                    <ul style="list-style:none">
+                                                <div class="box-2 panel-body" style="overflow: scroll;">
 
 
-                                        <var class="replacable-license-text">(a)</var>
-                                        <a href="#" class="statement YPL4a"> You must retain, in the Source form of any Derivative Works that You distribute, all
-                                            copyright, patent, trademark, and attribution notices from the Source form of the Work</a>
+                                                        <div property="spdx:licenseText" class="license-text">
 
-                                    </ul>
-                                </li>
+                                                                <li>
 
-
-                            </div>
-
-                        </div>
-
-                    </div>
+                                                                        <var class="replacable-license-text">4.</var>
+                                                                        <a href="#" class="statement YPL4">You may reproduce and distribute copies of
+                                                                                the
+                                                                                Work or Derivative Works thereof in any medium, with or without modifications, and in
+                                                                                Source
+                                                                                or Object form, provided that You meet the following conditions:</a>
 
 
-                    <!-- Second column containing genarated graph -->
-    
-                    <div class="column_2 col-sm-5 panel panel-default" id="box-3" style="padding: unset;">
-    
-                        <div class="panel-heading">
-                            <p>breadcrumb hierarchy(from license structure)</p>
-    
-                        </div>
-    
-                        <div class="panel-body" style="height:90%">
-    
-                            <div id="graph" style="text-align: center;">
-    
-    
-                            </div>
-    
-                        </div>
-    
-                        <div class="row panel-heading" style="padding-left: 0px;
+                                                                        <ul style="list-style:none">
+
+
+                                                                                <var class="replacable-license-text">(a)</var>
+                                                                                <a href="#" class="statement YPL4a"> You must retain, in the Source form of any
+                                                                                        Derivative Works that You distribute, all
+                                                                                        copyright, patent, trademark, and attribution notices from the Source form of the
+                                                                                        Work</a>
+
+                                                                        </ul>
+                                                                </li>
+
+
+                                                        </div>
+
+                                                </div>
+
+                                        </div>
+
+                                        <div id="loader"></div>
+                                        <!-- Second column containing genarated graph -->
+
+                                        <div class="column_2 col-sm-5 panel panel-default" id="box-3" style="padding: unset;">
+
+                                                <div class="panel-heading">
+                                                        <p>Model <button id="play" type="button" class="btn btn-default btn-xs" style="float:right">
+                                                                        <span class="glyphicon glyphicon-play"></span>
+                                                                </button></p>
+
+
+                                                </div>
+
+                                                <div class="panel-body" style="height:90%">
+
+                                                        <div id="graph" style="text-align: center;">
+
+
+                                                        </div>
+
+                                                </div>
+
+                                                <div class="row panel-heading" style="padding-left: 0px;
                                                     margin-left: 0px;
                                                     margin-right: 0px;  padding-right: 0px">
-    
-    
-    
-                            <div id="content" style="overflow: scroll;" class="col-md-10">
-    
-                                <ul class="breadcrumb" id="visitedNode">
-                                </ul>
-    
-                            </div>
-    
-    
+
+
+
+                                                        <div id="content" style="overflow: scroll;" class="col-md-10">
+
+                                                                <ul class="breadcrumb" id="visitedNode">
+                                                                </ul>
+
+                                                        </div>
+
+
+                                                </div>
+
+                                        </div>
+
+                                </div>
+
+
+
+
                         </div>
-    
-                    </div>
+                </div>
+
+
 
                 </div>
 
 
 
 
-            </div>
-        </div>
+                <script src="./ypl.js"></script>
 
 
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                        crossorigin="anonymous"></script>
 
-        </div>
-
-
-
-
-        <script src="./ypl.js"></script>
-
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-
-    </body>
+        </body>
 
 </html>

@@ -14,6 +14,51 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/jstree.min.js"></script>
 
                 <style>
+
+                        #loader {
+                        display: none;
+                        border: 16px solid silver;
+                        border-radius: 50%;
+                        border-top: 16px solid #3498db;
+                        width: 120px;
+                        height: 120px;
+                        -webkit-animation: spin 2s linear infinite; /* Safari */
+                        animation: spin 4s linear infinite;
+                        margin: auto;
+                        position: absolute;
+                        top: 50px; left: 50px;
+                        bottom: 50px; right: 50px;
+                        /* background-color: #000; */
+                        color: #FFF;
+                        z-index:5;
+                        opacity: 0.5;
+                        filter: alpha(opacity=50);
+                        }
+
+                /* Safari */
+                @-webkit-keyframes spin {
+                0% { -webkit-transform: rotate(0deg); }
+                100% { -webkit-transform: rotate(360deg); }
+                }
+
+                @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+                }
+                @media (min-width: 768px) {
+                        .navbar-header {
+                                float: none;
+                        }
+        
+                        .navbar-toggle {
+                                display: block;
+                        }
+        
+                        .navbar-collapse.collapse {
+                                display: none !important;
+                        }
+                }
+
                         body {
                                 height: 100%;
                         }
@@ -147,7 +192,17 @@
                                         <div class="column_0 col-sm-2 panel panel-default" style="padding: unset;">
 
                                                 <div class="panel-heading">
-                                                        Apache 2.0
+                                                                <div style="float:left" class="dropdown">
+                                                                                <button class="btn btn-default dropdown-toggle btn-xs" type="button" data-toggle="dropdown"><span>
+                                                                                <span class="glyphicon glyphicon-th-list"></span></button>
+                                                                                <ul class="dropdown-menu">
+                                                                                  <li><a href="/ypl.html">YPL</a></li>
+                                                                                  <li><a href="/agpl.html">AGPL</a></li>
+                                                                                  
+                                                                                </ul>
+                                                                              </div>
+
+                                                                              <p>Apache2</p>
                                                 </div>
 
                                                 <div class="panel-body" id="data">
@@ -532,41 +587,45 @@
                                                                 </li>
                                                                 </ul>
 
-                                                                <div class="optional-license-text appendix">
-                                                                        <p>END OF TERMS AND CONDITIONS</p>
+                                                                <div class="optional-license-text ">
+                                                                        <a href="#" class="appendix">
 
-                                                                        <p>APPENDIX: How to apply the Apache License to your work.</p>
+                                                                                <p>END OF TERMS AND CONDITIONS</p>
+        
+                                                                                <p>APPENDIX: How to apply the Apache License to your work.</p>
+        
+                                                                                <p>To apply the Apache License to your work, attach the following boilerplate notice, with the
+                                                                                        fields
+                                                                                        enclosed by brackets "[]" replaced with your own identifying information. (Don't include
+                                                                                        the
+                                                                                        brackets!) The text should be enclosed in the appropriate comment syntax for the file
+                                                                                        format.
+                                                                                        We also recommend that a file or class name and description of purpose be included on the
+                                                                                        same
+                                                                                        "printed page" as the copyright notice for easier identification within third-party
+                                                                                        archives.
+                                                                                </p>
+        
+        
+                                                                                <p>Copyright
+                                                                                        <var class="replacable-license-text">[yyyy] [name of copyright owner]</var>
+                                                                                </p>
+        
+                                                                                <p>Licensed under the Apache License, Version 2.0 (the "License");
+                                                                                        <br> you may not use this file except in compliance with the License.
+                                                                                        <br> You may obtain a copy of the License at
+                                                                                </p>
+        
+                                                                                <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+        
+                                                                                <p>Unless required by applicable law or agreed to in writing, software
+                                                                                        <br> distributed under the License is distributed on an "AS IS" BASIS,
+                                                                                        <br> WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                                                                        <br> See the License for the specific language governing permissions and
+                                                                                        <br> limitations under the License.
+                                                                                </p>
 
-                                                                        <p>To apply the Apache License to your work, attach the following boilerplate notice, with the
-                                                                                fields
-                                                                                enclosed by brackets "[]" replaced with your own identifying information. (Don't include
-                                                                                the
-                                                                                brackets!) The text should be enclosed in the appropriate comment syntax for the file
-                                                                                format.
-                                                                                We also recommend that a file or class name and description of purpose be included on the
-                                                                                same
-                                                                                "printed page" as the copyright notice for easier identification within third-party
-                                                                                archives.
-                                                                        </p>
-
-
-                                                                        <p>Copyright
-                                                                                <var class="replacable-license-text">[yyyy] [name of copyright owner]</var>
-                                                                        </p>
-
-                                                                        <p>Licensed under the Apache License, Version 2.0 (the "License");
-                                                                                <br> you may not use this file except in compliance with the License.
-                                                                                <br> You may obtain a copy of the License at
-                                                                        </p>
-
-                                                                        <p>http://www.apache.org/licenses/LICENSE-2.0</p>
-
-                                                                        <p>Unless required by applicable law or agreed to in writing, software
-                                                                                <br> distributed under the License is distributed on an "AS IS" BASIS,
-                                                                                <br> WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-                                                                                <br> See the License for the specific language governing permissions and
-                                                                                <br> limitations under the License.
-                                                                        </p>
+                                                                </a>
 
 
                                                                 </div>
@@ -578,14 +637,20 @@
 
 
                                         </div>
+
+                                        <div id="loader"></div>
+
                                         <!-- Second column containing genarated graph -->
 
                                         <div class="column_2 col-sm-5 panel panel-default" id="box-3" style="padding: unset;">
 
-                                                <div class="panel-heading">
-                                                        <p>breadcrumb hierarchy(from license structure)</p>
-
-                                                </div>
+                                                        <div class="panel-heading">
+                                                                        <p>Model <button id="play" type="button" class="btn btn-default btn-xs" style="float:right">
+                                                                                        <span class="glyphicon glyphicon-play"></span>
+                                                                                </button></p>
+                
+                
+                                                                </div>
 
                                                 <div class="panel-body" style="height:90%">
 

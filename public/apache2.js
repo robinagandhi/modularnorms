@@ -415,6 +415,7 @@ var mapping = {
 
 var jsonInput = [];
 var jsonState = [];
+var polygon_top = null;
   
   // Builds the JSON data object
   function updateJSON(id, status) {
@@ -479,10 +480,12 @@ function updateSVG (data){
                   //      textNode.text(delimited[0] + " | " + val.satisfied);
                   //  }
                    if (val.satisfied == "SF"){
-                     polygon.attr('style', "fill:#CD5360"); //red
+                     polygon.attr('style', "fill:rgba(205, 83, 96, 0.5)"); //red
+                    
                    } else {
                      if (val.satisfied == "ST"){
-                       polygon.attr('style', "fill:#57BC90"); //green
+                       polygon.attr('style', "fill:rgba(87, 188, 144, 0.5)"); //green
+                       
                      } else {
                        if (val.satisfied == "SU"){
                          polygon.attr('style', "fill:#FFFFFF"); //yellow
@@ -521,12 +524,36 @@ function updateSVG (data){
                  } else {  // Handle the Norm Comliance value and related display text
                    if (val.compliance != null){
                      textNodeNorm = $(this).parent().children("g").first().children("a").first().children("text").first();
+                     polygon_top = $(this).parent().children("g").first().children("a").first().children("polygon").first();
+                    
                      var delimited = textNodeNorm.text().split('|');
+                    
+
+                     if (val.compliance == "COM"|| val.compliance == "EXR") {//fill green
+                         polygon_top.attr('style',"fill:rgba(87, 188, 144, 0.5)") 
+                        
+                         $("."+delimited[0]).css('background-color','rgba(87, 188, 144, 0.5)').focus();
+                     } else if(val.compliance == "VIO" || val.compliance == "NEX"){//fill red
+                        polygon_top.attr('style', "fill:rgba(205, 83, 96, 0.5)"); //red
+                        
+                        
+                        $("."+delimited[0]).css('background-color','rgba(205, 83, 96, 0.5)').focus()//red
+                    } else{
+                        polygon_top.attr('style', "fill:#add8e6"); //blue
+                        
+                        
+                        $("."+delimited[0]).css('background-color','rgba(173, 216, 230, 0.5)').focus()
+                    }
+
                      if (delimited[1] == null) {
+
                          textNodeNorm.text(delimited[0] + " | " + val.compliance);
+                         
                      } else {
                          textNodeNorm.text(delimited[0] + " | " + val.compliance);
                      }
+
+
                    }
                  }
               }
@@ -640,10 +667,10 @@ function SVG_Interaction() {
 
         if (!(_id.startsWith("G_")) && _id!= "") {
 
-            let mypromise = new Promise((resolve, reject) => {
+            
 
-                if (polygon.attr('style') == "fill:#57BC90") { // if green then turn red
-                    polygon.attr('style', "fill:#CD5360"); //red
+                if (polygon.attr('style') == "fill:rgb(87, 188, 144,.5)") { // if green then turn red
+                    polygon.attr('style', "fill:rgb(205, 83, 96,0.5)"); //red
                     // var delimited = polygon.parent().children("text").last().text().split('|');
                     // if (delimited[1] == null) {
                     //     polygon.parent().children("text").last().text(delimited[0] + " | SF");
@@ -655,7 +682,7 @@ function SVG_Interaction() {
                         if (($(this).text() != "and") && ($(this).text() != "or") && ($(this).text() != "not")) {
                             if ($(this).text() == _text) {
                                 _twinpolygon = $(this).parent().children("polygon").first();
-                                _twinpolygon.attr('style', "fill:#CD5360");
+                                _twinpolygon.attr('style', "fill:rgb(205, 83, 96,0.5)");
                                 _twinid = $(this).parent().children("title").first().text();
                                 updateJSON(_twinid, "SF");
                             }
@@ -663,7 +690,7 @@ function SVG_Interaction() {
                     });
 
 
-                } else if(polygon.attr('style') == "fill:#CD5360") { //if red  then turn yellow
+                } else if(polygon.attr('style') == "fill:rgb(205, 83, 96,0.5)") { //if red  then turn yellow
 
                         polygon.attr('style', "fill:#FFFFFF"); //Yellow
 
@@ -690,7 +717,7 @@ function SVG_Interaction() {
                         
                     } else { //turn green
 
-                        polygon.attr('style', "fill:#57BC90"); //Green
+                        polygon.attr('style', "fill:rgb(87, 188, 144,.5)"); //Green
                         // var delimited = polygon.parent().children("text").last().text().split('|');
                         // if (delimited[1] == null) {
                         //     polygon.parent().children("text").last().text(delimited[0] + " | ST");
@@ -702,7 +729,7 @@ function SVG_Interaction() {
                             if (($(this).text() != "and") && ($(this).text() != "or") && ($(this).text() != "not")) {
                                 if ($(this).text() == _text) {
                                     _twinpolygon = $(this).parent().children("polygon").first();
-                                    _twinpolygon.attr('style', "fill:#57BC90");
+                                    _twinpolygon.attr('style', "fill:rgb(87, 188, 144,.5)");
                                     _twinid = $(this).parent().children("title").first().text();
                                     updateJSON(_twinid, "ST");
                                 }
@@ -710,31 +737,12 @@ function SVG_Interaction() {
                         });
                     }
 
-                    setTimeout(function(){
-                        resolve("Success");
-                    },600);
+                   
 
-                });
+                
         
 
-                mypromise.then((successMessage)=>{
-                    console.log('Yay'+successMessage)
-                    console.log("FROM ME:"+JSON.stringify(jsonInput))
-                    // //query normserver
-                    accessURL = "http://localhost:4567/assert/7/1"
-                    $.ajax(accessURL, {
-                        method: 'POST',
-                        data: JSON.stringify(jsonInput),
-                        crossDomain: true
-                    }).then(function(data) {
-                        console.log("FROM SERVER"+JSON.stringify(data));
-                        jsonState = data
-                        updateSVG(jsonState);
-                        
-                        //alert("Done! Review results")
-                        
-                    });
-                })
+               
 
         }
             
@@ -753,7 +761,6 @@ function SVG_Interaction() {
 
 function genGraph(stat){
 
-    
 
     
 /**
@@ -867,14 +874,22 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
 
             updateSVG(jsonState);
             
-            
         })
 /**
 * Highlight the statement corresponding to generated graph
 */
 
 $(".statement,.preamble,.appendix").css('background-color','unset')
-$("."+stat).css('background-color','#add8e6').focus();
+
+var color = 'rgba(173, 216, 230, 0.5)' ;
+$("."+stat).css('background-color',color).focus();
+
+if (polygon_top !=null) {
+    color = polygon_top.attr('style').slice(5)
+    $("."+stat).css('background-color',color).focus();
+
+    
+} 
 
  
 }
@@ -903,9 +918,7 @@ var myJSONArray= [
             
         },
 
-        "children": [
-            
-        ]
+       
     },
     {
             
@@ -918,9 +931,7 @@ var myJSONArray= [
             
         },
 
-        "children": [
-            
-        ]
+        
     },
     {
             
@@ -936,18 +947,22 @@ var myJSONArray= [
         "children": [
             {
                 "text":"Apache4a",
+                "p":"Apache4"
                
             },
             {
                 "text":"Apache4b",
+                "p":"Apache4"
                 
             },
             {
                 "text":"Apache4c",
+                "p":"Apache4"
                
             },
             {
                 "text":"Apache4d",
+                "p":"Apache4",
                 "state":{
                     "opened":true,
                     
@@ -956,10 +971,12 @@ var myJSONArray= [
                     {
                     
                         "text":"Apache4dAddAttrib",
+                        "p":"Apache4d"
                         
                     },
                     {
-                        "text":"Apache4dAddCopyright"
+                        "text":"Apache4dAddCopyright",
+                        "p":"Apache4d"
                     }
                 ]
             }    
@@ -991,6 +1008,8 @@ var myJSONArray= [
 ];
 
 
+    
+
 //var children_array = []  //This array will store the children node so they do not duplicate
 
 var model_text = $("a.statement")
@@ -1000,6 +1019,43 @@ var model_text = $("a.statement")
 
 
 $(document).ready(function(){
+
+
+    $(document).ajaxStart(function(){
+        $("#play").prop("disabled",true);
+        $("#loader").css("display", "block");
+        
+    });
+    $(document).ajaxComplete(function(){
+        $("#play").prop("disabled",false);
+        $("#loader").css("display", "none");
+        
+    });
+
+    
+    $("#play").click(function(){
+
+            
+            console.log("FROM ME:"+JSON.stringify(jsonInput))
+
+            // //query normserver
+            accessURL = "http://localhost:4567/assert/7/1"
+            $.ajax(accessURL, {
+                method: 'POST',
+                data: JSON.stringify(jsonInput),
+                crossDomain: true,
+                cache:true
+            }).then(function(data) {
+                console.log("FROM SERVER"+JSON.stringify(data));
+                jsonState = data
+                updateSVG(jsonState);
+                
+                //alert("Done! Review results")
+                
+            });
+        
+
+    });
 
     //read document format and create an array with the data extracted from the license text body
 
@@ -1022,11 +1078,15 @@ $(document).ready(function(){
             
             genGraph(data.instance.get_selected(true)[0].text.split(' ')[0])
         }else{
+
+
             console.log("."+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase())
             $(".statement,.preamble,.appendix").css('background-color','unset')
             
-            $("."+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase()).css('background-color','#add8e6')
-            window.location.hash = "#"+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase();
+            $("."+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase()).css('background-color','#add8e6').focus()
+            //window.location.hash = "#"+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase();
+
+
         }
 
       });

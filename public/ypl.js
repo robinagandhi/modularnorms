@@ -51,6 +51,7 @@ var mapping = {
 
 var jsonInput = [];
 var jsonState = [];
+var polygon_top = null;
 
 /**
   * Create JSON object to use for tree view 
@@ -75,7 +76,8 @@ var myJSONArray= [
         "children": [
 
            { 
-               "text": "YPL4a"
+               "text": "YPL4a",
+               
             }
         ]
     }
@@ -146,10 +148,12 @@ function updateSVG (data){
                   //      textNode.text(delimited[0] + " | " + val.satisfied);
                   //  }
                    if (val.satisfied == "SF"){
-                     polygon.attr('style', "fill:#CD5360"); //red
+                     polygon.attr('style', "fill:rgba(205, 83, 96, 0.5)"); //red
+                    
                    } else {
                      if (val.satisfied == "ST"){
-                       polygon.attr('style', "fill:#57BC90"); //green
+                       polygon.attr('style', "fill:rgba(87, 188, 144, 0.5)"); //green
+                       
                      } else {
                        if (val.satisfied == "SU"){
                          polygon.attr('style', "fill:#FFFFFF"); //yellow
@@ -188,12 +192,36 @@ function updateSVG (data){
                  } else {  // Handle the Norm Comliance value and related display text
                    if (val.compliance != null){
                      textNodeNorm = $(this).parent().children("g").first().children("a").first().children("text").first();
+                     polygon_top = $(this).parent().children("g").first().children("a").first().children("polygon").first();
+                    
                      var delimited = textNodeNorm.text().split('|');
+                    
+
+                     if (val.compliance == "COM"|| val.compliance == "EXR") {//fill green
+                         polygon_top.attr('style',"fill:rgba(87, 188, 144, 0.5)") 
+                        
+                         $("."+delimited[0]).css('background-color','rgba(87, 188, 144, 0.5)').focus();
+                     } else if(val.compliance == "VIO" || val.compliance == "NEX"){//fill red
+                        polygon_top.attr('style', "fill:rgba(205, 83, 96, 0.5)"); //red
+                        
+                        
+                        $("."+delimited[0]).css('background-color','rgba(205, 83, 96, 0.5)').focus()//red
+                    } else{
+                        polygon_top.attr('style', "fill:#add8e6"); //blue
+                        
+                        
+                        $("."+delimited[0]).css('background-color','rgba(173, 216, 230, 0.5)').focus()
+                    }
+
                      if (delimited[1] == null) {
+
                          textNodeNorm.text(delimited[0] + " | " + val.compliance);
+                         
                      } else {
                          textNodeNorm.text(delimited[0] + " | " + val.compliance);
                      }
+
+
                    }
                  }
               }
@@ -215,7 +243,7 @@ var graphviz = d3.select("#graph")
 //statement represent an html class that all license clause have. Each statement also have a position 
 //and the corresponding model name as class
 $(".statement").unbind().click(function () {
-    $(this).css('background-color','cornflowerblue').focus();
+    //$(this).css('background-color','cornflowerblue').focus();
     //index reprensent each class name eg. index[0] = statement, index[1] = statement name (model name)
     index = $(this).attr("class").split(' ')
 
@@ -306,10 +334,10 @@ function SVG_Interaction() {
 
         if (!(_id.startsWith("G_")) && _id!= "") {
 
-            let mypromise = new Promise((resolve, reject) => {
+            
 
-                if (polygon.attr('style') == "fill:#57BC90") { // if green then turn red
-                    polygon.attr('style', "fill:#CD5360"); //red
+                if (polygon.attr('style') == "fill:rgb(87, 188, 144,.5)") { // if green then turn red
+                    polygon.attr('style', "fill:rgb(205, 83, 96,0.5)"); //red
                     // var delimited = polygon.parent().children("text").last().text().split('|');
                     // if (delimited[1] == null) {
                     //     polygon.parent().children("text").last().text(delimited[0] + " | SF");
@@ -321,7 +349,7 @@ function SVG_Interaction() {
                         if (($(this).text() != "and") && ($(this).text() != "or") && ($(this).text() != "not")) {
                             if ($(this).text() == _text) {
                                 _twinpolygon = $(this).parent().children("polygon").first();
-                                _twinpolygon.attr('style', "fill:#CD5360");
+                                _twinpolygon.attr('style', "fill:rgb(205, 83, 96,0.5)");
                                 _twinid = $(this).parent().children("title").first().text();
                                 updateJSON(_twinid, "SF");
                             }
@@ -329,7 +357,7 @@ function SVG_Interaction() {
                     });
 
 
-                } else if(polygon.attr('style') == "fill:#CD5360") { //if red  then turn yellow
+                } else if(polygon.attr('style') == "fill:rgb(205, 83, 96,0.5)") { //if red  then turn yellow
 
                         polygon.attr('style', "fill:#FFFFFF"); //Yellow
 
@@ -356,7 +384,7 @@ function SVG_Interaction() {
                         
                     } else { //turn green
 
-                        polygon.attr('style', "fill:#57BC90"); //Green
+                        polygon.attr('style', "fill:rgb(87, 188, 144,.5)"); //Green
                         // var delimited = polygon.parent().children("text").last().text().split('|');
                         // if (delimited[1] == null) {
                         //     polygon.parent().children("text").last().text(delimited[0] + " | ST");
@@ -368,7 +396,7 @@ function SVG_Interaction() {
                             if (($(this).text() != "and") && ($(this).text() != "or") && ($(this).text() != "not")) {
                                 if ($(this).text() == _text) {
                                     _twinpolygon = $(this).parent().children("polygon").first();
-                                    _twinpolygon.attr('style', "fill:#57BC90");
+                                    _twinpolygon.attr('style', "fill:rgb(87, 188, 144,.5)");
                                     _twinid = $(this).parent().children("title").first().text();
                                     updateJSON(_twinid, "ST");
                                 }
@@ -376,31 +404,12 @@ function SVG_Interaction() {
                         });
                     }
 
-                    setTimeout(function(){
-                        resolve("Success");
-                    },600);
+                   
 
-                });
+                
         
 
-                mypromise.then((successMessage)=>{
-                    console.log('Yay'+successMessage)
-                    console.log("FROM ME:"+JSON.stringify(jsonInput))
-                    // //query normserver
-                    accessURL = "http://localhost:4567/assert/6/1"
-                    $.ajax(accessURL, {
-                        method: 'POST',
-                        data: JSON.stringify(jsonInput),
-                        crossDomain: true
-                    }).then(function(data) {
-                        console.log("FROM SERVER"+JSON.stringify(data));
-                        jsonState = data
-                        updateSVG(jsonState);
-                        
-                        //alert("Done! Review results")
-                        
-                    });
-                })
+               
 
         }
             
@@ -538,7 +547,16 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
 */
 
 $(".statement,.preamble,.appendix").css('background-color','unset')
-$("."+stat).css('background-color','#add8e6').focus();
+
+var color = '#add8e6' ;
+$("."+stat).css('background-color',color).focus();
+
+if (polygon_top !=null) {
+    color = polygon_top.attr('style').slice(5)
+    $("."+stat).css('background-color',color).focus();
+
+    
+} 
 
  
 }
@@ -554,6 +572,37 @@ var model_text = $("a.statement")
 
 
 $(document).ready(function(){
+
+    $(document).ajaxStart(function(){
+        $("#loader").css("display", "block");
+    });
+    $(document).ajaxComplete(function(){
+        $("#loader").css("display", "none");
+    });
+
+    
+    $("#play").click(function(){
+
+            
+            console.log("FROM ME:"+JSON.stringify(jsonInput))
+
+            // //query normserver
+            accessURL = "http://localhost:4567/assert/6/1"
+            $.ajax(accessURL, {
+                method: 'POST',
+                data: JSON.stringify(jsonInput),
+                crossDomain: true
+            }).then(function(data) {
+                console.log("FROM SERVER"+JSON.stringify(data));
+                jsonState = data
+                updateSVG(jsonState);
+                
+                //alert("Done! Review results")
+                
+            });
+        
+
+    });
 
     //read document format and create an array with the data extracted from the license text body
 
