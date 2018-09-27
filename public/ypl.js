@@ -63,8 +63,9 @@ var myJSONArray= [
     
 
     {
-            
+         "id":"YPL4",   
         "text": "YPL4",
+        
         
 
         "state":
@@ -76,7 +77,9 @@ var myJSONArray= [
         "children": [
 
            { 
+                "id":"YPL4a",   
                "text": "YPL4a",
+               
                
             }
         ]
@@ -130,6 +133,11 @@ var myJSONArray= [
 
    //console.log(JSON.stringify(jsonInput));
 
+}
+
+function updateTree(data){
+
+    $.each(data)
 }
 
 function updateSVG (data){
@@ -429,6 +437,19 @@ function SVG_Interaction() {
 function genGraph(stat){
 
 
+// var sel = $('#data').jstree(true).get_selected()
+// $('#data').jstree(true).deselect_node(sel[0],[true])
+
+
+   $('#data').jstree().deselect_all()
+
+    $('#data').jstree(true).select_node(stat);
+
+    $(document).ready(function(){
+
+        
+    })
+
     
 /**
  * Add generated graph to history
@@ -609,7 +630,9 @@ $(document).ready(function(){
     $('#data').jstree({
 
         'core': {
-            'data': myJSONArray
+            'data': myJSONArray,
+            'multiple':false,
+            'animation':0
         },
         // "plugins":["checkbox"]
         "plugins":["wholerow"]
@@ -618,23 +641,29 @@ $(document).ready(function(){
 
     //display the text of the selected node. Will pass this node to generate graph at some point. However, name need to be consistent with genGraph needs.
 
-    $('#data').on("changed.jstree", function (e, data) {
-        //console.log(data.instance.get_selected(true)[0].text.split(' ')[1])
+    $('#data').bind("click.jstree", function (e, data) {
 
-        if (data.instance.get_selected(true)[0].text.split(' ')[0].startsWith('YPL')) {
+        console.log($('#data').jstree('get_selected',true)[0].id)
+
+        
+       
+
+        if ($('#data').jstree('get_selected',true)[0].id.startsWith('YPL')) {
             
-            genGraph(data.instance.get_selected(true)[0].text.split(' ')[0])
+            genGraph($('#data').jstree('get_selected',true)[0].id)
         }else{
-            console.log("."+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase())
+            console.log("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase())
             $(".statement,.preamble,.appendix").css('background-color','unset')
             
-            $("."+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase()).css('background-color','#add8e6')
-            window.location.hash = "#"+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase();
+            $("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase()).css('background-color','#add8e6')
+            window.location.hash = "#"+$('#data').jstree('get_selected',true)[0].id.toLowerCase();
         }
 
       });
 
-
+    //   $('#buttontest').click(function(){
+    //     $('#data').jstree(true).select_node('YPL4a');
+    //   })
      
 
     

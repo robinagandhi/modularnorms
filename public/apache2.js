@@ -416,6 +416,125 @@ var mapping = {
 var jsonInput = [];
 var jsonState = [];
 var polygon_top = null;
+
+/**
+  * Create JSON object to use for tree view 
+  */
+
+
+//Build json object from DOM element here
+var myJSONArray= [
+
+    {
+        "id":"Preamble",
+        "text":"Preamble"
+    },
+
+    {
+        "id":"Apache2",   
+        "text": "Apache2",
+        
+
+        "state":
+        {
+            "opened": true,
+            
+        },
+
+       
+    },
+    {
+        "id":"Apache3",   
+        "text": "Apache3",
+        
+
+        "state":
+        {
+            "opened": true,
+            
+        },
+
+        
+    },
+    {
+        "id":"Apache4",
+        "text": "Apache4",
+        
+
+        "state":
+        {
+            "opened": true,
+            
+        },
+
+        "children": [
+            {
+                "text":"Apache4a",
+                "id":"Apache4a",
+               
+            },
+            {
+                "text":"Apache4b",
+                "id":"Apache4b",
+                
+            },
+            {
+                "text":"Apache4c",
+                "id":"Apache4c",
+               
+            },
+            {
+                "text":"Apache4d",
+                "id":"Apache4d",
+                "state":{
+                    "opened":true,
+                    
+                },
+                "children":[
+                    {
+                    
+                        "text":"Apache4dAddAttrib",
+                        "id":"Apache4dAddAttrib",
+                        
+                    },
+                    {
+                        "text":"Apache4dAddCopyright",
+                        "id":"Apache4dAddCopyright",
+                    }
+                ]
+            }    
+        ]
+    },
+    {
+        "id":"Apache5", 
+        "text": "Apache5"
+
+    
+    },
+    {
+        "id":"Apache6",   
+        "text": "Apache6"
+    
+    },
+    {
+        "id":"Apache7",
+        "text":"Apache7"
+    },
+    {
+        "id":"Apache8",
+        "text":"Apache8"
+    },
+    {
+        "id":"Apache9",
+        "text":"Apache9"
+    },
+    {
+        "id":"Appendix",
+        "text":"Appendix"
+    }
+
+];
+
   
   // Builds the JSON data object
   function updateJSON(id, status) {
@@ -761,6 +880,15 @@ function SVG_Interaction() {
 
 function genGraph(stat){
 
+    $('#data').jstree().deselect_all()
+
+    $('#data').jstree(true).select_node(stat);
+
+    $(document).ready(function(){
+
+        
+    })
+
 
     
 /**
@@ -896,116 +1024,6 @@ if (polygon_top !=null) {
 
 
 
-/**
-  * Create JSON object to use for tree view 
-  */
-
-
-//Build json object from DOM element here
-var myJSONArray= [
-    {
-        "text":"Preamble"
-    },
-
-    {
-            
-        "text": "Apache2",
-        
-
-        "state":
-        {
-            "opened": true,
-            
-        },
-
-       
-    },
-    {
-            
-        "text": "Apache3",
-        
-
-        "state":
-        {
-            "opened": true,
-            
-        },
-
-        
-    },
-    {
-            
-        "text": "Apache4",
-        
-
-        "state":
-        {
-            "opened": true,
-            
-        },
-
-        "children": [
-            {
-                "text":"Apache4a",
-                "p":"Apache4"
-               
-            },
-            {
-                "text":"Apache4b",
-                "p":"Apache4"
-                
-            },
-            {
-                "text":"Apache4c",
-                "p":"Apache4"
-               
-            },
-            {
-                "text":"Apache4d",
-                "p":"Apache4",
-                "state":{
-                    "opened":true,
-                    
-                },
-                "children":[
-                    {
-                    
-                        "text":"Apache4dAddAttrib",
-                        "p":"Apache4d"
-                        
-                    },
-                    {
-                        "text":"Apache4dAddCopyright",
-                        "p":"Apache4d"
-                    }
-                ]
-            }    
-        ]
-    },
-    {
-            
-        "text": "Apache5"
-    
-    },
-    {
-            
-        "text": "Apache6"
-    
-    },
-    {
-        "text":"Apache7"
-    },
-    {
-        "text":"Apache8"
-    },
-    {
-        "text":"Apache9"
-    },
-    {
-        "text":"Appendix"
-    }
-
-];
 
 
     
@@ -1071,22 +1089,22 @@ $(document).ready(function(){
 
     //display the text of the selected node. Will pass this node to generate graph at some point. However, name need to be consistent with genGraph needs.
 
-    $('#data').on("changed.jstree", function (e, data) {
-        //console.log(data.instance.get_selected(true)[0].text.split(' ')[1])
+    $('#data').bind("click.jstree", function (e, data) {
 
-        if (data.instance.get_selected(true)[0].text.split(' ')[0].startsWith('Apache')) {
+        console.log($('#data').jstree('get_selected',true)[0].id)
+
+        
+       
+
+        if ($('#data').jstree('get_selected',true)[0].id.startsWith('Apache')) {
             
-            genGraph(data.instance.get_selected(true)[0].text.split(' ')[0])
+            genGraph($('#data').jstree('get_selected',true)[0].id)
         }else{
-
-
-            console.log("."+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase())
+            console.log("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase())
             $(".statement,.preamble,.appendix").css('background-color','unset')
             
-            $("."+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase()).css('background-color','#add8e6').focus()
-            //window.location.hash = "#"+data.instance.get_selected(true)[0].text.split(' ')[0].toLowerCase();
-
-
+            $("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase()).css('background-color','#add8e6')
+            window.location.hash = "#"+$('#data').jstree('get_selected',true)[0].id.toLowerCase();
         }
 
       });
