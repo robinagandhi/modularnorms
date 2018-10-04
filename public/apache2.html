@@ -15,151 +15,167 @@
 
                 <style>
 
-                         .jstree-default .jstree-clicked {
-    
-    
-    font-weight: 900;
+               
+              
+               .jstree-default>.jstree-no-dots .jstree-open>.jstree-ocl {
+    background-position: -36px -4px;
+    background: transparent;
+}
+a {
+color: black;
+text-decoration: none;
+}
+
+.jstree-default .jstree-clicked {
+
+
+font-weight: 900;
 }
 
 .jstree-default .jstree-wholerow-clicked {
-    background: rgba(92, 90, 90, 0.18);
-    
+background: rgba(92, 90, 90, 0.18);
+
 }
 
-                        #loader {
-                        display: none;
-                        border: 16px solid silver;
-                        border-radius: 50%;
-                        border-top: 16px solid #3498db;
-                        width: 120px;
-                        height: 120px;
-                        -webkit-animation: spin 2s linear infinite; /* Safari */
-                        animation: spin 4s linear infinite;
-                        margin: auto;
-                        position: absolute;
-                        top: 50px; left: 50px;
-                        bottom: 50px; right: 50px;
-                        /* background-color: #000; */
-                        color: #FFF;
-                        z-index:5;
-                        opacity: 0.5;
-                        filter: alpha(opacity=50);
-                        }
 
-                /* Safari */
-                @-webkit-keyframes spin {
-                0% { -webkit-transform: rotate(0deg); }
-                100% { -webkit-transform: rotate(360deg); }
-                }
+#loader {
+display: none;
+border: 16px solid silver;
+border-radius: 50%;
+border-top: 16px solid #3498db;
+width: 120px;
+height: 120px;
+-webkit-animation: spin 2s linear infinite; /* Safari */
+animation: spin 4s linear infinite;
+margin: auto;
+position: absolute;
+top: 50px; left: 50px;
+bottom: 50px; right: 50px;
+/* background-color: #000; */
+color: #FFF;
+z-index:5;
+opacity: 0.5;
+filter: alpha(opacity=50);
+}
 
-                @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-                }
-                @media (min-width: 768px) {
-                        .navbar-header {
-                                float: none;
-                        }
-        
-                        .navbar-toggle {
-                                display: block;
-                        }
-        
-                        .navbar-collapse.collapse {
-                                display: none !important;
-                        }
-                }
+/* Safari */
+@-webkit-keyframes spin {
+0% { -webkit-transform: rotate(0deg); }
+100% { -webkit-transform: rotate(360deg); }
+}
 
-                        body {
-                                height: 100%;
-                        }
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+@media (min-width: 768px) {
+.navbar-header {
+        float: none;
+}
 
-                        #graph {
-                                height: 98%;
-                        }
+.navbar-toggle {
+        display: block;
+}
 
-                        .container-fluid {
-                                height: 100%;
-                        }
+.navbar-collapse.collapse {
+        display: none !important;
+}
+}
 
-                        .display,
-                        .row,
-                        .column_2 {
-                                height: 100%;
+body {
+height: 100%;
+}
 
-                        }
+#graph {
+height: 98%;
+}
 
-                        .column_0,
-                        .column_1 {
-                                height: 100%;
-                               
-                                overflow: auto;
+.container-fluid {
+height: 100%;
+}
 
-                        }
+.display,
+.row,
+.column_2 {
+height: 100%;
 
-                        .panel-heading {
-                                height: 5%;
-                        }
+}
 
-                        .panel-body {
-                                height: 95%;
-                                overflow: scroll;
-                        }
+.column_0,
+.column_1 {
+height: 100%;
 
-                        html,
-                        body {
-                                margin: 0;
-                                height: 100%;
-                        }
+overflow: auto;
 
-                        /* .column_0,.column_1 {
-                                margin-right: 2px;
-                        } */
-                        .panel-heading {
-                                text-align: center
-                        }
+}
 
-                        a.statement:hover {
-                                border: 1px solid;
-                                border-color: #c5e1eb;
+.panel-heading {
+height: 5%;
+}
 
-                        }
+.panel-body {
+height: 95%;
+overflow: scroll;
+}
 
-                        ul.breadcrumb {
-                                margin: unset;
-                                padding: unset;
-                                list-style: none;
-                                /* overflow: auto; */
+html,
+body {
+margin: 0;
+height: 100%;
+}
 
-                        }
+/* .column_0,.column_1 {
+                margin-right: 2px;
+        } */
+.panel-heading {
+text-align: center
+}
 
-                        ul.breadcrumb li {
-                                display: inline-block;
-                                font-size: 10px;
+a.statement:hover {
+border: 1px solid;
+border-color: #c5e1eb;
+text-decoration: none;
 
-                        }
+}
+a.statement:focus {
+text-decoration: none;
+}
 
-                        ul.breadcrumb li+li:before {
-                                padding: 4px;
-                                color: black;
-                                content: "/\00a0";
-                        }
+ul.breadcrumb {
+margin: unset;
+padding: unset;
+list-style: none;
+/* overflow: auto; */
 
-                        ul.breadcrumb li a {
-                                color: #0275d8;
-                                text-decoration: none;
-                        }
+}
 
-                        ul.breadcrumb li a:hover {
-                                color: #01447e;
-                                text-decoration: underline;
-                        }
+ul.breadcrumb li {
+display: inline-block;
 
-                        button {
-                                outline: 0px;
-                                
-                                
-                        }
+
+}
+
+ul.breadcrumb li+li:before {
+padding: 4px;
+color: black;
+content: " |\00a0";
+}
+
+ul.breadcrumb li a {
+color: #0275d8;
+text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+color: #01447e;
+text-decoration: underline;
+}
+
+button {
+outline: 0px;
+
+
+}
 
                 
                 </style>
@@ -213,7 +229,7 @@
                                                                                 </ul>
                                                                               </div>
 
-                                                                              <p>Apache2</p>
+                                                                              <p>Apache Version 2</p>
                                                 </div>
 
                                                 <div class="panel-body" id="data">
@@ -250,143 +266,146 @@
 
 
                                                                         <ul style="list-style:none">
-                                                                                <li>
+                                                                                <a href="#" class="preamble">
 
-                                                                                        <var class="replacable-license-text">1.</var>
-                                                                                        Definitions.
-
-                                                                                        <ul style="list-style:none">
-                                                                                                <li>
-                                                                                                        <p>"License" shall mean the terms and conditions for use,
-                                                                                                                reproduction,
-                                                                                                                and distribution as defined by Sections 1 through 9 of
-                                                                                                                this
-                                                                                                                document.
-                                                                                                        </p>
-
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                        <p>"Licensor" shall mean the copyright owner or entity authorized
-                                                                                                                by
-                                                                                                                the copyright owner that is granting the License.</p>
-
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                        <p>"Legal Entity" shall mean the union of the acting entity and
-                                                                                                                all
-                                                                                                                other entities that control, are controlled by, or are
-                                                                                                                under
-                                                                                                                common control with that entity. For the purposes of this
-                                                                                                                definition,
-                                                                                                                "control" means (i) the power, direct or indirect, to
-                                                                                                                cause
-                                                                                                                the direction or management of such entity, whether by
-                                                                                                                contract
-                                                                                                                or otherwise, or (ii) ownership of fifty percent (50%) or
-                                                                                                                more
-                                                                                                                of the outstanding shares, or (iii) beneficial ownership
-                                                                                                                of
-                                                                                                                such entity.
-                                                                                                        </p>
-
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                        <p>"You" (or "Your") shall mean an individual or Legal Entity
-                                                                                                                exercising
-                                                                                                                permissions granted by this License.</p>
-
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                        <p>"Source" form shall mean the preferred form for making
-                                                                                                                modifications,
-                                                                                                                including but not limited to software source code,
-                                                                                                                documentation
-                                                                                                                source, and configuration files.
-                                                                                                        </p>
-
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                        <p>"Object" form shall mean any form resulting from mechanical
-                                                                                                                transformation
-                                                                                                                or translation of a Source form, including but not
-                                                                                                                limited
-                                                                                                                to compiled object code, generated documentation, and
-                                                                                                                conversions
-                                                                                                                to other media types.
-                                                                                                        </p>
-
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                        <p>"Work" shall mean the work of authorship, whether in Source or
-                                                                                                                Object
-                                                                                                                form, made available under the License, as indicated by a
-                                                                                                                copyright
-                                                                                                                notice that is included in or attached to the work (an
-                                                                                                                example
-                                                                                                                is provided in the Appendix below).</p>
-
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                        <p>"Derivative Works" shall mean any work, whether in Source or
-                                                                                                                Object
-                                                                                                                form, that is based on (or derived from) the Work and for
-                                                                                                                which
-                                                                                                                the editorial revisions, annotations, elaborations, or
-                                                                                                                other
-                                                                                                                modifications represent, as a whole, an original work of
-                                                                                                                authorship.
-                                                                                                                For the purposes of this License, Derivative Works shall
-                                                                                                                not
-                                                                                                                include works that remain separable from, or merely link
-                                                                                                                (or
-                                                                                                                bind by name) to the interfaces of, the Work and
-                                                                                                                Derivative
-                                                                                                                Works thereof.
-                                                                                                        </p>
-
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                        <p>"Contribution" shall mean any work of authorship, including
-                                                                                                                the
-                                                                                                                original version of the Work and any modifications or
-                                                                                                                additions
-                                                                                                                to that Work or Derivative Works thereof, that is
-                                                                                                                intentionally
-                                                                                                                submitted to Licensor for inclusion in the Work by the
-                                                                                                                copyright
-                                                                                                                owner or by an individual or Legal Entity authorized to
-                                                                                                                submit
-                                                                                                                on behalf of the copyright owner. For the purposes of
-                                                                                                                this
-                                                                                                                definition, "submitted" means any form of electronic,
-                                                                                                                verbal,
-                                                                                                                or written communication sent to the Licensor or its
-                                                                                                                representatives,
-                                                                                                                including but not limited to communication on electronic
-                                                                                                                mailing
-                                                                                                                lists, source code control systems, and issue tracking
-                                                                                                                systems
-                                                                                                                that are managed by, or on behalf of, the Licensor for
-                                                                                                                the
-                                                                                                                purpose of discussing and improving the Work, but
-                                                                                                                excluding
-                                                                                                                communication that is conspicuously marked or otherwise
-                                                                                                                designated
-                                                                                                                in writing by the copyright owner as "Not a
-                                                                                                                Contribution."</p>
-
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                        <p>"Contributor" shall mean Licensor and any individual or Legal
-                                                                                                                Entity
-                                                                                                                on behalf of whom a Contribution has been received by
-                                                                                                                Licensor
-                                                                                                                and subsequently incorporated within the Work.
-                                                                                                        </p>
-
-                                                                                                </li>
-                                                                                        </ul>
-                                                                                </li>
+                                                                                        <li>
+        
+                                                                                                <var class="replacable-license-text">1.</var>
+                                                                                                Definitions.
+        
+                                                                                                <ul style="list-style:none">
+                                                                                                        <li>
+                                                                                                                <p>"License" shall mean the terms and conditions for use,
+                                                                                                                        reproduction,
+                                                                                                                        and distribution as defined by Sections 1 through 9 of
+                                                                                                                        this
+                                                                                                                        document.
+                                                                                                                </p>
+        
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                                <p>"Licensor" shall mean the copyright owner or entity authorized
+                                                                                                                        by
+                                                                                                                        the copyright owner that is granting the License.</p>
+        
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                                <p>"Legal Entity" shall mean the union of the acting entity and
+                                                                                                                        all
+                                                                                                                        other entities that control, are controlled by, or are
+                                                                                                                        under
+                                                                                                                        common control with that entity. For the purposes of this
+                                                                                                                        definition,
+                                                                                                                        "control" means (i) the power, direct or indirect, to
+                                                                                                                        cause
+                                                                                                                        the direction or management of such entity, whether by
+                                                                                                                        contract
+                                                                                                                        or otherwise, or (ii) ownership of fifty percent (50%) or
+                                                                                                                        more
+                                                                                                                        of the outstanding shares, or (iii) beneficial ownership
+                                                                                                                        of
+                                                                                                                        such entity.
+                                                                                                                </p>
+        
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                                <p>"You" (or "Your") shall mean an individual or Legal Entity
+                                                                                                                        exercising
+                                                                                                                        permissions granted by this License.</p>
+        
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                                <p>"Source" form shall mean the preferred form for making
+                                                                                                                        modifications,
+                                                                                                                        including but not limited to software source code,
+                                                                                                                        documentation
+                                                                                                                        source, and configuration files.
+                                                                                                                </p>
+        
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                                <p>"Object" form shall mean any form resulting from mechanical
+                                                                                                                        transformation
+                                                                                                                        or translation of a Source form, including but not
+                                                                                                                        limited
+                                                                                                                        to compiled object code, generated documentation, and
+                                                                                                                        conversions
+                                                                                                                        to other media types.
+                                                                                                                </p>
+        
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                                <p>"Work" shall mean the work of authorship, whether in Source or
+                                                                                                                        Object
+                                                                                                                        form, made available under the License, as indicated by a
+                                                                                                                        copyright
+                                                                                                                        notice that is included in or attached to the work (an
+                                                                                                                        example
+                                                                                                                        is provided in the Appendix below).</p>
+        
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                                <p>"Derivative Works" shall mean any work, whether in Source or
+                                                                                                                        Object
+                                                                                                                        form, that is based on (or derived from) the Work and for
+                                                                                                                        which
+                                                                                                                        the editorial revisions, annotations, elaborations, or
+                                                                                                                        other
+                                                                                                                        modifications represent, as a whole, an original work of
+                                                                                                                        authorship.
+                                                                                                                        For the purposes of this License, Derivative Works shall
+                                                                                                                        not
+                                                                                                                        include works that remain separable from, or merely link
+                                                                                                                        (or
+                                                                                                                        bind by name) to the interfaces of, the Work and
+                                                                                                                        Derivative
+                                                                                                                        Works thereof.
+                                                                                                                </p>
+        
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                                <p>"Contribution" shall mean any work of authorship, including
+                                                                                                                        the
+                                                                                                                        original version of the Work and any modifications or
+                                                                                                                        additions
+                                                                                                                        to that Work or Derivative Works thereof, that is
+                                                                                                                        intentionally
+                                                                                                                        submitted to Licensor for inclusion in the Work by the
+                                                                                                                        copyright
+                                                                                                                        owner or by an individual or Legal Entity authorized to
+                                                                                                                        submit
+                                                                                                                        on behalf of the copyright owner. For the purposes of
+                                                                                                                        this
+                                                                                                                        definition, "submitted" means any form of electronic,
+                                                                                                                        verbal,
+                                                                                                                        or written communication sent to the Licensor or its
+                                                                                                                        representatives,
+                                                                                                                        including but not limited to communication on electronic
+                                                                                                                        mailing
+                                                                                                                        lists, source code control systems, and issue tracking
+                                                                                                                        systems
+                                                                                                                        that are managed by, or on behalf of, the Licensor for
+                                                                                                                        the
+                                                                                                                        purpose of discussing and improving the Work, but
+                                                                                                                        excluding
+                                                                                                                        communication that is conspicuously marked or otherwise
+                                                                                                                        designated
+                                                                                                                        in writing by the copyright owner as "Not a
+                                                                                                                        Contribution."</p>
+        
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                                <p>"Contributor" shall mean Licensor and any individual or Legal
+                                                                                                                        Entity
+                                                                                                                        on behalf of whom a Contribution has been received by
+                                                                                                                        Licensor
+                                                                                                                        and subsequently incorporated within the Work.
+                                                                                                                </p>
+        
+                                                                                                        </li>
+                                                                                                </ul>
+                                                                                        </li>
+                                                                                </a>
                                                                                 <li>
                                                                 </div>
 
@@ -673,17 +692,25 @@
                                                 </div>
 
                                                 <div class="row panel-heading" style="padding-left: 0px;
-                                                margin-left: 0px;
-                                                margin-right: 0px;  padding-right: 0px">
+                                                    margin-left: 0px;
+                                                    margin-right: 0px;  padding-right: 0px">
 
+                                                        <div id = "rcv"  style = "visibility: hidden" class="col-md-4">
+                                                                <p style="float:right; padding-left:20px; ">Recently viewed:</p>
+                                                        </div>
 
+                                                        <div id="content" class="col-md-5">
 
-                                                        <div id="content" style="overflow: scroll;" class="col-md-10">
-
-                                                                <ul class="breadcrumb" id="visitedNode">
+                                                                <ul style = "float:left" class="breadcrumb" id="visitedNode">
                                                                 </ul>
 
                                                         </div>
+
+                                                        <!-- <div class="col-md-3">
+                                                                <button>r</button>
+                                                                <button>-</button>
+                                                                <button>+</button>
+                                                        </div> -->
 
 
                                                 </div>

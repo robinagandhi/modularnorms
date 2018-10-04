@@ -111,6 +111,7 @@ body {
 a.statement:hover {
     border:1px solid;
     border-color: blueviolet;
+    text-decoration: none;
     
 }
 a:link {
@@ -208,3 +209,4 @@ a.appendix:focus {
     from {opacity: 0;}
     to {opacity:1 ;}
 } */
+

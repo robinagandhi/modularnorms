@@ -6,7 +6,7 @@ TODO:
 -fix history breadcrumb
 -add tooltip with beginning of text to tree view
 -add interactive to graph, communicate values to server and update graph ()
-
+Issue: Added selection of twin polygon but the only way to get the selection sent to server is to vist the super situation
 */
 //hold dot description of the models in the same order as in the license text
 var apache2 = [
@@ -159,7 +159,7 @@ var apache2 = [
             Apache4a [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="Apache4a", tooltip="4(a) You must give any other recipients of the Work or Derivative Works a copy of this License;"];
             Apache4a_9 [shape=box, label="[You gave] other recipients of\n the Work or Derivative\n Works a copy of this License"];
             Apache4a_9 -> Apache4a[label="satisfies"];
-            Apache4a_10 [shape=box, label="[You reproduced and\n distributed copies of the\n Work or Derivative Works]"];
+            Apache4a_10 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
             Apache4a_10 -> Apache4a[label="activates"];
             }
         }
@@ -174,7 +174,7 @@ var apache2 = [
             Apache4b [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="Apache4b", tooltip="4(b) You must cause any modified files to carry prominent notices stating that You changed the files;"];
             Apache4b_11 [shape=box, label="[You caused] any modified\n files to carry prominent\n notices stating that You\n changed the files"];
             Apache4b_11 -> Apache4b[label="satisfies"];
-            Apache4b_12 [shape=box, label="[You reproduced and\n distributed copies of the\n Work or Derivative Works]"];
+            Apache4b_12 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
             Apache4b_12 -> Apache4b[label="activates"];
             }
         }
@@ -195,7 +195,7 @@ var apache2 = [
             Apache4c_15 -> Apache4c_13;
             Apache4c_16 [shape=box, label="[You retained] those notices\n that do not pertain to any\n part of the Derivative Works"];
             Apache4c_16 -> Apache4c_15;
-            Apache4c_17 [shape=box, label="[You reproduced and\n distribute copies of the\n Work or Derivative Works]"];
+            Apache4c_17 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
             Apache4c_17 -> Apache4c[label="activates"];
             }
         }
@@ -236,7 +236,7 @@ var apache2 = [
             Apache4d_30 -> Apache4d_18;
             Apache4d_31 [shape=box, label="and", style=filled, fillcolor=grey];
             Apache4d_31 -> Apache4d[label="activates"];
-            Apache4d_32 [shape=box, label="[You reproduced and\n distributed copies of the\n Work or Derivative Works]"];
+            Apache4d_32 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
             Apache4d_32 -> Apache4d_31;
             Apache4d_33 [shape=box, label="the Work includes a 'NOTICE'\n text file as part of its\n distribution"];
             Apache4d_33 -> Apache4d_31;
@@ -299,7 +299,7 @@ var apache2 = [
             Apache5_90 -> Apache5_88;
             Apache5_91 [shape=box, label="[Nothing herein supersede ]or\n modify the terms of any\n separate license agreement\n you may have executed with\n Licensor regarding such\n Contributions."];
             Apache5_91 -> Apache5_87;
-            Apache5_92 [shape=box, label="[You submitted] a Work for\n Contribution"];
+            Apache5_92 [shape=box, label="[You intend to submit] a Work for\n Contribution"];
             Apache5_92 -> Apache5[label="activates"];
             }
         }
@@ -320,7 +320,7 @@ var apache2 = [
             Apache6_95 -> Apache6_94;
             Apache6_96 [shape=box, label="[As required ]for reasonable\n and customary use in\n describing the origin of\n the Work and reproducing\n the content of the NOTICE\n file [You used] trade\n names, trademarks, service\n marks, or product names of the Licensor"];
             Apache6_96 -> Apache6_93;
-            Apache6_97 [shape=box, label="[You exerciced permission\n granted by this License ]"];
+            Apache6_97 [shape=box, label="You intend to exercice permissions\n granted by this License"];
             Apache6_97 -> Apache6[label="activates"];
             }
         }
@@ -343,7 +343,7 @@ var apache2 = [
             Apache7_101 -> Apache7_100;
             Apache7_102 [shape=box, label="[You assumed] any risks\n associated with Your\n exercice of permissions\n under this license"];
             Apache7_102 -> Apache7_100;
-            Apache7_103 [shape=box, label="You exerciced permission\n granted by this License"];
+            Apache7_103 [shape=box, label="You intend to exercice permissions\n granted by this License"];
             Apache7_103 -> Apache7[label="activates"];
             }
         }
@@ -364,7 +364,7 @@ var apache2 = [
             Apache8_106 -> Apache8_104;
             Apache8_107 [shape=box, label="[You holded] Contributor\n liable to You for damages,\n including any direct,\n indirect, special,\n incidental, or\n consequential damages of\n any character arising as a\n result of this License or\n out of the use or inability\n to use the Work (including\n but not limited to damages\n for loss of goodwill, work\n stoppage, computer failure\n or malfunction, or any and\n all other commercial damages or losses)"];
             Apache8_107 -> Apache8_106;
-            Apache8_108 [shape=box, label="You exerciced permissions\n granted by this License"];
+            Apache8_108 [shape=box, label="You intend to exercice permissions\n granted by this License"];
             Apache8_108 -> Apache8[label="activates"];
             }
         }
@@ -416,6 +416,7 @@ var mapping = {
 var jsonInput = [];
 var jsonState = [];
 var polygon_top = null;
+var jsonInput_text = [];
 
 /**
   * Create JSON object to use for tree view 
@@ -427,25 +428,21 @@ var myJSONArray= [
 
     {
         "id":"Preamble",
-        "text":"Preamble"
+        "text":"Preamble",
+        "icon":"/static/document.png"
     },
 
     {
         "id":"Apache2",   
         "text": "Apache2",
+        "icon":"/static/icon/right_blue.ico",
         
-
-        "state":
-        {
-            "opened": true,
-            
-        },
-
        
     },
     {
         "id":"Apache3",   
         "text": "Apache3",
+        "icon":"/static/icon/right_blue.ico",
         
 
         "state":
@@ -459,6 +456,8 @@ var myJSONArray= [
     {
         "id":"Apache4",
         "text": "Apache4",
+        "icon":"/static/icon/right_blue.ico",
+        
         
 
         "state":
@@ -471,21 +470,25 @@ var myJSONArray= [
             {
                 "text":"Apache4a",
                 "id":"Apache4a",
+                "icon":"/static/icon/duty_blue.ico",
                
             },
             {
                 "text":"Apache4b",
                 "id":"Apache4b",
+                "icon":"/static/icon/duty_blue.ico",
                 
             },
             {
                 "text":"Apache4c",
                 "id":"Apache4c",
+                "icon":"/static/icon/duty_blue.ico",
                
             },
             {
                 "text":"Apache4d",
                 "id":"Apache4d",
+                "icon":"/static/icon/duty_blue.ico",
                 "state":{
                     "opened":true,
                     
@@ -495,11 +498,13 @@ var myJSONArray= [
                     
                         "text":"Apache4dAddAttrib",
                         "id":"Apache4dAddAttrib",
+                        "icon":"/static/icon/right_blue.ico",
                         
                     },
                     {
                         "text":"Apache4dAddCopyright",
                         "id":"Apache4dAddCopyright",
+                        "icon":"/static/icon/right_blue.ico",
                     }
                 ]
             }    
@@ -507,37 +512,92 @@ var myJSONArray= [
     },
     {
         "id":"Apache5", 
-        "text": "Apache5"
+        "text": "Apache5",
+        "icon":"/static/icon/duty_blue.ico",
 
     
     },
     {
         "id":"Apache6",   
-        "text": "Apache6"
+        "text": "Apache6",
+        "icon":"/static/icon/duty_blue.ico",
     
     },
     {
         "id":"Apache7",
-        "text":"Apache7"
+        "text":"Apache7",
+        "icon":"/static/icon/duty_blue.ico",
     },
     {
         "id":"Apache8",
-        "text":"Apache8"
+        "text":"Apache8",
+        "icon":"/static/icon/duty_blue.ico",
     },
     {
         "id":"Apache9",
-        "text":"Apache9"
+        "text":"Apache9",
+        "icon":"/static/icon/duty_blue.ico",
     },
     {
         "id":"Appendix",
-        "text":"Appendix"
+        "text":"Appendix",
+        "icon":"/static/document.png"
     }
 
 ];
 
   
-  // Builds the JSON data object
-  function updateJSON(id, status) {
+  // Builds the JSON data object JSONInput
+//   function updateJSON(id, status) {
+
+//     //check if norm
+//     var delimited = id.split('_');
+//     var isNorm = false;
+//     if (delimited[1] == null) {
+//         isNorm = true; // Is a norm
+//     } else {
+//         isNorm = false; // not a norm
+//     }
+
+//     if (!isNorm) {
+//         var exist = false;
+//         $.each(jsonInput, function(key, val) {
+//             if (val.id == id) {
+//                 val.satisfied = status;
+//                 exist = true;
+//             }
+//         });
+//         if (exist == false) {
+//             item = {};
+//             item["id"] = id;
+//             item["satisfied"] = status;
+//             jsonInput.push(item);
+            
+            
+//         }
+
+//     } else { // this is a norm
+//         var exist = false;
+//         $.each(jsonInput, function(key, val) {
+//             if (val.id == id) {
+//                 val.compliance = status;
+//                 exist = true;
+//             }
+//         });
+//         if (exist == false) {
+//             item = {};
+//             item["id"] = id;
+//             item["compliance"] = status;
+//             jsonInput.push(item);
+//         }
+//     }
+
+//   // console.log(JSON.stringify(jsonInput));
+//   console.log(JSON.stringify(jsonInput_text));
+
+// }
+
+function updateJSON(id, status,_text) {
 
     //check if norm
     var delimited = id.split('_');
@@ -561,7 +621,16 @@ var myJSONArray= [
             item["id"] = id;
             item["satisfied"] = status;
             jsonInput.push(item);
+            item["text_first_line"] = _text;
+            jsonInput_text.push(item);
         }
+
+        //update jsoninputtext
+        $.each(jsonInput_text, function(key,val){
+            if(val.text_first_line == _text){
+                val.satisfied = status;
+            }
+        });
 
     } else { // this is a norm
         var exist = false;
@@ -579,11 +648,50 @@ var myJSONArray= [
         }
     }
 
-   //console.log(JSON.stringify(jsonInput));
+  // console.log(JSON.stringify(jsonInput));
+  console.log(JSON.stringify(jsonInput_text));
 
 }
 
-function updateSVG (data){
+function updateTree(data){
+
+    $.each(data, function(key,val){
+        if(val.id != null && !(val.id.startsWith('cluster'))){
+
+            if(val.compliance == "COM"){
+                //console.log(val.id + " "+ val.compliance)
+                $('#data').jstree(true).set_icon(val.id,"/static/icon/duty_green.ico")
+             }else if (val.compliance == "EXR"){
+               // console.log(val.id + " "+ val.compliance)
+                $('#data').jstree(true).set_icon(val.id,"/static/icon/right_green.ico")
+             }
+
+             if(val.compliance == "VIO"){
+               $('#data').jstree(true).set_icon(val.id,"/static/icon/duty_red.ico")
+               // console.log(val.id + " "+ val.compliance)
+
+             }else if(val.compliance == "NEX"){
+                 //console.log(val.id + " "+ val.compliance)
+               $('#data').jstree(true).set_icon(val.id,"/static/icon/right_red.ico")
+             }
+
+             if(val.compliance == "INC"){
+                 //console.log(val.id + " "+ val.compliance)
+                 var icon = $('#data').jstree(true).get_node(val.id).original.icon;
+                 //console.log(icon)
+                 $('#data').jstree(true).set_icon(val.id,icon)
+                 
+             }
+
+
+
+        }
+
+    })
+}
+
+function updateSVG (data,data2){
+    //console.log(data2)
 
     $.each(data, function(key, val) {
         if (val.id != null && !(val.id.startsWith('cluster'))) {
@@ -591,55 +699,21 @@ function updateSVG (data){
               if ($(this).text() == val.id){
                  polygon = $(this).parent().children("polygon").first();
                  if (val.satisfied != null) {
-                    textNode = $(this).parent().children("text").last();
-                  //  delimited = textNode.text().split('|');
-                  //  if (delimited[1] == null) {
-                  //      textNode.text(delimited[0] + " | " + val.satisfied);
-                  //  } else {
-                  //      textNode.text(delimited[0] + " | " + val.satisfied);
-                  //  }
+                  
                    if (val.satisfied == "SF"){
-                     polygon.attr('style', "fill:rgba(205, 83, 96, 0.5)"); //red
+                    polygon.attr('style', "fill:rgba(205, 83, 96, 0.5)"); //red
                     
                    } else {
                      if (val.satisfied == "ST"){
-                       polygon.attr('style', "fill:rgba(87, 188, 144, 0.5)"); //green
+                      polygon.attr('style', "fill:rgba(87, 188, 144, 0.5)"); //green
                        
                      } else {
                        if (val.satisfied == "SU"){
-                         polygon.attr('style', "fill:#FFFFFF"); //yellow
+                        polygon.attr('style', "fill:#FFFFFF"); //yellow
                        }
                      }
                    }
-                   // Check if this is a super situation. Then color the related container also
-                   ssCheck = textNode.text().split('_');
-                   if (ssCheck[0] == "SS") {
-                     $("title").each(function(index, element){
-                       ssNode = "cluster" + textNode.text().split('|')[0].trim();
-                       //Dont color container
-                    //    if ($(this).text() == ssNode) {
-                    //      polygonSS = $(this).parent().children("polygon").first();
-                    //     //  textNodeSS = $(this).parent().children("text").last();
-                    //     //  delimited = textNodeSS.text().split('|');
-                    //     //  if (delimited[1] == null) {
-                    //     //      textNodeSS.text(delimited[0] + " | " + val.satisfied);
-                    //     //  } else {
-                    //     //      textNodeSS.text(delimited[0] + " | " + val.satisfied);
-                    //     //  }
-                    //      if (val.satisfied == "SF"){
-                    //        polygonSS.attr('style', "fill:#CD5360"); //red
-                    //      } else {
-                    //        if (val.satisfied == "ST"){
-                    //          polygonSS.attr('style', "fill:#57BC90"); //green
-                    //        } else {
-                    //          if (val.satisfied == "SU"){
-                    //            polygonSS.attr('style', "fill:#E5E338"); //yellow
-                    //          }
-                    //        }
-                    //      }
-                    //    }
-                     });
-                   }
+                   
                  } else {  // Handle the Norm Comliance value and related display text
                    if (val.compliance != null){
                      textNodeNorm = $(this).parent().children("g").first().children("a").first().children("text").first();
@@ -679,6 +753,64 @@ function updateSVG (data){
             });
         }
     });
+
+    $.each(data2, function(key, val) {
+
+        if (val.id != null && !(val.id.startsWith('cluster'))) {
+            $("text").each(function(key,element){
+                
+                if($(this).text() == val.text_first_line){
+                    
+                    var _twin_id = $(this).parent().children("title").first().text();
+                    var _text_ = $(this).text()
+                    
+                    polygon = $(this).parent().children("polygon").first();
+                    if(val.satisfied == "SF"){
+                        polygon.attr('style', "fill:rgba(205, 83, 96, 0.5)"); //red
+                        updateJSON(_twin_id,"SF",_text_)
+                    
+                    }else {
+                        if (val.satisfied == "ST"){
+                          polygon.attr('style', "fill:rgba(87, 188, 144, 0.5)"); //green
+                          updateJSON(_twin_id,"ST",_text_)
+                          
+                        } else {
+                          if (val.satisfied == "SU"){
+                            polygon.attr('style', "fill:#FFFFFF"); //yellow
+                            updateJSON(_twin_id,"SU",_text_)
+                          }
+                        }
+                      }
+                      
+
+                }
+            })
+
+            $("title").each(function(index, element) {
+              if ($(this).text() == val.id){
+                 polygon = $(this).parent().children("polygon").first();
+                 if (val.satisfied != null) {
+                    textNode = $(this).parent().children("text").first();
+                   if (val.satisfied == "SF"){
+                     polygon.attr('style', "fill:rgba(205, 83, 96, 0.5)"); //red
+                    
+                   } else {
+                     if (val.satisfied == "ST"){
+                       polygon.attr('style', "fill:rgba(87, 188, 144, 0.5)"); //green
+                       
+                     } else {
+                       if (val.satisfied == "SU"){
+                         polygon.attr('style', "fill:#FFFFFF"); //yellow
+                       }
+                     }
+                   }
+                   }
+                }
+               
+              
+            });
+        }
+    });
   }
   
 
@@ -699,7 +831,7 @@ $(".statement").unbind().click(function () {
     //index reprensent each class name eg. index[0] = statement, index[1] = statement name (model name)
     index = $(this).attr("class").split(' ')
 
-    console.log("statement name: " + index[1])
+    //console.log("statement name: " + index[1])
    
     //generate the graph using the statement name
   
@@ -743,8 +875,6 @@ function SVG_Interaction() {
         var polygon;
         var _statement="";
 
-        
-
         //notes:event.target.parent is g#graph0 sometimes but should be the g#node_. This cause polygon not to change color when polygon is clicked on
         
         if ($(event.target).parent().children("title").first().text() !== "") {
@@ -754,7 +884,7 @@ function SVG_Interaction() {
             _text = $(event.target).parent().children("text").first().text();
 
             //console.log(_id);
-            //console.log(_text);
+           // console.log(_text);
             
           
         }else {
@@ -763,7 +893,7 @@ function SVG_Interaction() {
           _text = $(event.target).parent().parent().children("text").first().text();
           
             //console.log(_id);
-           // console.log(_text);
+           //console.log(_text);
         }
 
           //Allow clicking on text to select the sibling polygon
@@ -790,78 +920,26 @@ function SVG_Interaction() {
 
                 if (polygon.attr('style') == "fill:rgb(87, 188, 144,.5)") { // if green then turn red
                     polygon.attr('style', "fill:rgb(205, 83, 96,0.5)"); //red
-                    // var delimited = polygon.parent().children("text").last().text().split('|');
-                    // if (delimited[1] == null) {
-                    //     polygon.parent().children("text").last().text(delimited[0] + " | SF");
-                    // } else {
-                    //     polygon.parent().children("text").last().text(delimited[0] + " | SF");
-                    // }
-                    updateJSON(_id, "SF");
-                    $("text").each(function (index, element) {
-                        if (($(this).text() != "and") && ($(this).text() != "or") && ($(this).text() != "not")) {
-                            if ($(this).text() == _text) {
-                                _twinpolygon = $(this).parent().children("polygon").first();
-                                _twinpolygon.attr('style', "fill:rgb(205, 83, 96,0.5)");
-                                _twinid = $(this).parent().children("title").first().text();
-                                updateJSON(_twinid, "SF");
-                            }
-                        }
-                    });
-
-
+                   
+                    updateJSON(_id, "SF",_text);
+                    
+        
                 } else if(polygon.attr('style') == "fill:rgb(205, 83, 96,0.5)") { //if red  then turn yellow
 
                         polygon.attr('style', "fill:#FFFFFF"); //Yellow
 
-                        // var delimited = polygon.parent().children("text").last().text().split('|');
-                        // if (delimited[1] == null) {
-                        //     polygon.parent().children("text").last().text(delimited[0] + " | SU");
-                        // } else {
-                        //     polygon.parent().children("text").last().text(delimited[0] + " | SU");
-                        // }
+                      //updateJSON(_id, "SU");
+                        updateJSON(_id, "SU",_text);
 
-                        updateJSON(_id, "SU");
-
-                        $("text").each(function (index, element) {
-                            if (($(this).text() != "and") && ($(this).text() != "or") && ($(this).text() != "not")) {
-                                if ($(this).text() == _text) {
-                                    _twinpolygon = $(this).parent().children("polygon").first();
-                                    _twinpolygon.attr('style', "fill:#FFFFFF");
-                                    _twinid = $(this).parent().children("title").first().text();
-                                    updateJSON(_twinid, "SU");
-                                }
-                            }
-
-                        });
-                        
+             
                     } else { //turn green
 
                         polygon.attr('style', "fill:rgb(87, 188, 144,.5)"); //Green
-                        // var delimited = polygon.parent().children("text").last().text().split('|');
-                        // if (delimited[1] == null) {
-                        //     polygon.parent().children("text").last().text(delimited[0] + " | ST");
-                        // } else {
-                        //     polygon.parent().children("text").last().text(delimited[0] + " | ST");
-                        // }
-                        updateJSON(_id, "ST");
-                        $("text").each(function (index, element) {
-                            if (($(this).text() != "and") && ($(this).text() != "or") && ($(this).text() != "not")) {
-                                if ($(this).text() == _text) {
-                                    _twinpolygon = $(this).parent().children("polygon").first();
-                                    _twinpolygon.attr('style', "fill:rgb(87, 188, 144,.5)");
-                                    _twinid = $(this).parent().children("title").first().text();
-                                    updateJSON(_twinid, "ST");
-                                }
-                            }
-                        });
-                    }
-
+                    
+                        updateJSON(_id, "ST",_text);
+                        //updateJSON(_id, "ST");
                    
-
-                
-        
-
-               
+                    }
 
         }
             
@@ -895,12 +973,16 @@ function genGraph(stat){
  * Add generated graph to history
  */
 if($("#clust1").children("title").text().slice(10) !== stat ){
+    $('#rcv').css('visibility','visible')
 
     $("ul.breadcrumb li:last-child").css('font-weight','normal')
     $("ul.breadcrumb li:last-child").css('text-decoration','none')
     
-    
     $('#visitedNode').append('<li><a href="#" >'+stat+'</a></li>')
+    
+    if($('#visitedNode li').length == 6){
+        $('#visitedNode li:first-child').remove()
+    }
 
     $("ul.breadcrumb li:last-child").css('font-weight','bold')
     $("ul.breadcrumb li:last-child").css('text-decoration','underline')
@@ -910,7 +992,7 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
 
     //generate graph when a norm model is clicked in the history list.
     $("ul#visitedNode > li").unbind().click(function () {
-        console.log("here")
+        //console.log("here")
         genGraph($(this).text())
     });
     
@@ -950,7 +1032,7 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
 
                     graph.children().children('.node').children('text')[index].previousElementSibling.onmouseout = function()
                     {
-                        console.log(prevColor);
+                       // console.log(prevColor);
                         
                         this.style.fill = prevColor
                     }
@@ -964,7 +1046,7 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
 
                     graph.children().children('.node').children('text')[index].onmouseout = function()
                     {
-                        console.log(prevColor);
+                       // console.log(prevColor);
                         
                         this.previousElementSibling.style.fill = prevColor
                     }
@@ -997,10 +1079,9 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
             }
         }
             //color graph using jsonState
-             console.log("currentState: "+JSON.stringify(jsonState));
-    
-
-            updateSVG(jsonState);
+            updateSVG(jsonState,jsonInput_text);
+            //updateSVG(jsonState,jsonInput);
+            
             
         })
 /**
@@ -1054,19 +1135,20 @@ $(document).ready(function(){
     $("#play").click(function(){
 
             
-            console.log("FROM ME:"+JSON.stringify(jsonInput))
+            console.log("FROM ME:"+JSON.stringify(jsonInput_text))
 
             // //query normserver
             accessURL = "http://localhost:4567/assert/7/1"
             $.ajax(accessURL, {
                 method: 'POST',
-                data: JSON.stringify(jsonInput),
+                data: JSON.stringify(jsonInput_text),
                 crossDomain: true,
                 cache:true
             }).then(function(data) {
                 console.log("FROM SERVER"+JSON.stringify(data));
                 jsonState = data
                 updateSVG(jsonState);
+                updateTree(jsonState)
                 
                 //alert("Done! Review results")
                 
@@ -1091,7 +1173,7 @@ $(document).ready(function(){
 
     $('#data').bind("click.jstree", function (e, data) {
 
-        console.log($('#data').jstree('get_selected',true)[0].id)
+        //console.log($('#data').jstree('get_selected',true)[0].id)
 
         
        
@@ -1100,19 +1182,16 @@ $(document).ready(function(){
             
             genGraph($('#data').jstree('get_selected',true)[0].id)
         }else{
-            console.log("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase())
+            //console.log("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase())
             $(".statement,.preamble,.appendix").css('background-color','unset')
             
-            $("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase()).css('background-color','#add8e6')
-            window.location.hash = "#"+$('#data').jstree('get_selected',true)[0].id.toLowerCase();
+            $("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase()).css('background-color','#add8e6').focus()
+           
         }
 
       });
 
-    // $("#data").on("hover_node.jstree", function(e, data){
-    //     var nodeId = jQuery.data(data.instance.obj[0], "jstree").id;
-    //     console.log(nodeId)
-    // });
+   
     
 
   

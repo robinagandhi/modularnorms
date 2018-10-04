@@ -65,6 +65,7 @@ var myJSONArray= [
     {
          "id":"YPL4",   
         "text": "YPL4",
+        "icon":"/static/right_blue.png",
         
         
 
@@ -79,6 +80,7 @@ var myJSONArray= [
            { 
                 "id":"YPL4a",   
                "text": "YPL4a",
+               "icon":"/static/duty_blue.png",
                
                
             }
@@ -137,7 +139,39 @@ var myJSONArray= [
 
 function updateTree(data){
 
-    $.each(data)
+    $.each(data, function(key,val){
+        if(val.id != null && !(val.id.startsWith('cluster'))){
+
+            if(val.compliance == "COM"){
+                console.log(val.id + " "+ val.compliance)
+                $('#data').jstree(true).set_icon(val.id,"/static/duty_green.png")
+             }else if (val.compliance == "EXR"){
+                console.log(val.id + " "+ val.compliance)
+                $('#data').jstree(true).set_icon(val.id,"/static/right_green.png")
+             }
+
+             if(val.compliance == "VIO"){
+               $('#data').jstree(true).set_icon(val.id,"/static/duty_red.png")
+                console.log(val.id + " "+ val.compliance)
+
+             }else if(val.compliance == "NEX"){
+                 console.log(val.id + " "+ val.compliance)
+               $('#data').jstree(true).set_icon(val.id,"/static/right_red.png")
+             }
+
+             if(val.compliance == "INC"){
+                 console.log(val.id + " "+ val.compliance)
+                 var icon = $('#data').jstree(true).get_node(val.id).original.icon;
+                 console.log(icon)
+                 $('#data').jstree(true).set_icon(val.id,icon)
+                 
+             }
+
+
+
+        }
+
+    })
 }
 
 function updateSVG (data){
@@ -157,6 +191,7 @@ function updateSVG (data){
                   //  }
                    if (val.satisfied == "SF"){
                      polygon.attr('style', "fill:rgba(205, 83, 96, 0.5)"); //red
+                     
                     
                    } else {
                      if (val.satisfied == "ST"){
@@ -206,16 +241,25 @@ function updateSVG (data){
                     
 
                      if (val.compliance == "COM"|| val.compliance == "EXR") {//fill green
+
                          polygon_top.attr('style',"fill:rgba(87, 188, 144, 0.5)") 
+                         
+                         
                         
                          $("."+delimited[0]).css('background-color','rgba(87, 188, 144, 0.5)').focus();
                      } else if(val.compliance == "VIO" || val.compliance == "NEX"){//fill red
+
                         polygon_top.attr('style', "fill:rgba(205, 83, 96, 0.5)"); //red
+
+                        
                         
                         
                         $("."+delimited[0]).css('background-color','rgba(205, 83, 96, 0.5)').focus()//red
                     } else{
+
+
                         polygon_top.attr('style', "fill:#add8e6"); //blue
+                        
                         
                         
                         $("."+delimited[0]).css('background-color','rgba(173, 216, 230, 0.5)').focus()
@@ -255,7 +299,7 @@ $(".statement").unbind().click(function () {
     //index reprensent each class name eg. index[0] = statement, index[1] = statement name (model name)
     index = $(this).attr("class").split(' ')
 
-    console.log("statement name: " + index[1])
+    //console.log("statement name: " + index[1])
    
     //generate the graph using the statement name
   
@@ -284,6 +328,17 @@ function attributer(datum, index, nodes) {
     }
 
 }
+
+/**
+ * Rebuild tree
+ */
+
+ function rebuild_tree(data){
+     //data represent a new json with different icon color 
+     $('#data').jstree('destroy');
+
+
+ }
 
 /**
  * This function allow interaction with the generated graph to navigate to another super situation (right or duty)
@@ -455,12 +510,16 @@ function genGraph(stat){
  * Add generated graph to history
  */
 if($("#clust1").children("title").text().slice(10) !== stat ){
+    $('#rcv').css('visibility','visible')
 
     $("ul.breadcrumb li:last-child").css('font-weight','normal')
     $("ul.breadcrumb li:last-child").css('text-decoration','none')
     
-    
     $('#visitedNode').append('<li><a href="#" >'+stat+'</a></li>')
+    
+    if($('#visitedNode li').length == 6){
+        $('#visitedNode li:first-child').remove()
+    }
 
     $("ul.breadcrumb li:last-child").css('font-weight','bold')
     $("ul.breadcrumb li:last-child").css('text-decoration','underline')
@@ -470,7 +529,7 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
 
     //generate graph when a norm model is clicked in the history list.
     $("ul#visitedNode > li").unbind().click(function () {
-        console.log("here")
+        //console.log("here")
         genGraph($(this).text())
     });
     
@@ -510,7 +569,7 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
 
                     graph.children().children('.node').children('text')[index].previousElementSibling.onmouseout = function()
                     {
-                        console.log(prevColor);
+                        //console.log(prevColor);
                         
                         this.style.fill = prevColor
                     }
@@ -524,7 +583,7 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
 
                     graph.children().children('.node').children('text')[index].onmouseout = function()
                     {
-                        console.log(prevColor);
+                        //console.log(prevColor);
                         
                         this.previousElementSibling.style.fill = prevColor
                     }
@@ -616,7 +675,9 @@ $(document).ready(function(){
             }).then(function(data) {
                 console.log("FROM SERVER"+JSON.stringify(data));
                 jsonState = data
+
                 updateSVG(jsonState);
+                updateTree(jsonState);
                 
                 //alert("Done! Review results")
                 
@@ -643,7 +704,7 @@ $(document).ready(function(){
 
     $('#data').bind("click.jstree", function (e, data) {
 
-        console.log($('#data').jstree('get_selected',true)[0].id)
+        //console.log($('#data').jstree('get_selected',true)[0].id)
 
         
        
@@ -652,7 +713,7 @@ $(document).ready(function(){
             
             genGraph($('#data').jstree('get_selected',true)[0].id)
         }else{
-            console.log("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase())
+            //console.log("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase())
             $(".statement,.preamble,.appendix").css('background-color','unset')
             
             $("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase()).css('background-color','#add8e6')

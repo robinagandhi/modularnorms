@@ -12,8 +12,14 @@
                 <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/themes/default/style.min.css" />
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/jstree.min.js"></script>
+                <link rel="stylesheet" href="/public/main.css">
 
                 <style>
+
+                        a {
+    color: black;
+    text-decoration: none;
+}
 
                         .jstree-default .jstree-clicked {
     
@@ -123,7 +129,11 @@
                 a.statement:hover {
                         border: 1px solid;
                         border-color: #c5e1eb;
+                        text-decoration: none;
         
+                }
+                a.statement:focus {
+                        text-decoration: none;
                 }
         
                 ul.breadcrumb {
@@ -136,14 +146,14 @@
         
                 ul.breadcrumb li {
                         display: inline-block;
-                        font-size: 10px;
+                        
         
                 }
         
                 ul.breadcrumb li+li:before {
                         padding: 4px;
                         color: black;
-                        content: "/\00a0";
+                        content: " |\00a0";
                 }
         
                 ul.breadcrumb li a {
@@ -276,6 +286,7 @@
                                         <div class="column_2 col-sm-5 panel panel-default" id="box-3" style="padding: unset;">
 
                                                 <div class="panel-heading">
+
                                                         <p>Model <button id="play" type="button" class="btn btn-default btn-xs" style="float:right">
                                                                         <span class="glyphicon glyphicon-play"></span>
                                                                 </button></p>
@@ -296,14 +307,22 @@
                                                     margin-left: 0px;
                                                     margin-right: 0px;  padding-right: 0px">
 
+                                                        <div id = "rcv"  style = "visibility: hidden" class="col-md-4">
+                                                                <p style="float:right; padding-left:20px; ">Recently viewed:</p>
+                                                        </div>
 
+                                                        <div id="content" class="col-md-5">
 
-                                                        <div id="content" style="overflow: scroll;" class="col-md-10">
-
-                                                                <ul class="breadcrumb" id="visitedNode">
+                                                                <ul style = "float:left" class="breadcrumb" id="visitedNode">
                                                                 </ul>
 
                                                         </div>
+
+                                                        <!-- <div class="col-md-3">
+                                                                <button>r</button>
+                                                                <button>-</button>
+                                                                <button>+</button>
+                                                        </div> -->
 
 
                                                 </div>
