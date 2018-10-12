@@ -9,116 +9,85 @@ TODO:
 Issue: Added selection of twin polygon but the only way to get the selection sent to server is to vist the super situation
 */
 //hold dot description of the models in the same order as in the license text
-var apache2 = [
+var mel = [
     `digraph G_Right {
         rankdir=BT
         overlap=false
         compound=true
         ranksep=0.5
-        subgraph clusterSS_Apache2 {
-            label = "SS_Apache2"
-            Apache2 [shape=triangle, orientation=270, style=filled, fillcolor=lightblue, label="Apache2", tooltip="Grant of Copyright License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form."];
-            Apache2_42 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache2_42 -> Apache2[label="satisfies"];
-            Apache2_43 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache2_43 -> Apache2_42;
-            Apache2_44 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache2_44 -> Apache2_43;
-            Apache2_45 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache2_45 -> Apache2_44;
-            Apache2_46 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache2_46 -> Apache2_45;
-            Apache2_47 [shape=box, label="[You reproduced] the Work and\n such Derivative Works in\n Source or Object form"];
-            Apache2_47 -> Apache2_46;
-            Apache2_48 [shape=box, label="[You prepared Derivative Works\n of] the Work and such\n Derivative Works in Source\n or Object form" ];
-            Apache2_48 -> Apache2_46;
-            Apache2_49 [shape=box, label="[You publicly displayed] the\n Work and such Derivative\n Works in Source or Object form" ];
-            Apache2_49 -> Apache2_45;
-            Apache2_50 [shape=box, label="[You publicly performed] the\n Work and such Derivative\n Works in Source or Object form" ];
-            Apache2_50 -> Apache2_44;
-            Apache2_51 [shape=box, label="[You sublicenced] the Work and\n such Derivative Works in\n Source or Object form"];
-            Apache2_51 -> Apache2_43;
-            Apache2_52 [shape=box, label="[You distributed] the Work and\n such Derivative Works in\n Source or Object form"];
-            Apache2_52 -> Apache2_42;
-            Apache2_53 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache2_53 -> Apache2[label="activates"];
-            Apache2_54 [shape=box, label="SS_Apache4", style=filled, fillcolor=white];
-            Apache2_54 -> Apache2_53;
-            Apache2_55 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache2_55 -> Apache2_53;
-            Apache2_56 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache2_56 -> Apache2_55;
-            Apache2_57 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache2_57 -> Apache2_56;
-            Apache2_58 [shape=box, label="SS_Apache5", style=filled, fillcolor=white];
-            Apache2_58 -> Apache2_57;
-            Apache2_59 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache2_59 -> Apache2_57;
-            Apache2_60 [shape=box, label="SS_Apache6", style=filled, fillcolor=white];
-            Apache2_60 -> Apache2_59;
-            Apache2_61 [shape=box, label="SS_Apache7", style=filled, fillcolor=white];
-            Apache2_61 -> Apache2_59;
-            Apache2_62 [shape=box, label="SS_Apache8", style=filled, fillcolor=white];
-            Apache2_62 -> Apache2_56;
-            Apache2_63 [shape=box, label="SS_Apache9", style=filled, fillcolor=white];
-            Apache2_63 -> Apache2_55;
+        subgraph clusterSS_MEL1 {
+            label = "SS_MEL1"
+            MEL1 [shape=triangle, orientation=270, style=filled, fillcolor=lightblue, label="MEL1", tooltip="1. You may copy and distribute verbatim copies of the [original] Program's source code as you receive it, in any medium, provided that you conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty; keep intact all the notices that refer to this License and to the absence of any warranty; and give any other recipients of the Program a copy of this License along with the Program."];
+            MEL1_35 [shape=box, label="[you copied and distributed]\n verbatim copies of the\n [original] Program's source\n code"];
+            MEL1_35 -> MEL1[label="satisfies"];
+            MEL1_36 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL1_36 -> MEL1[label="activates"];
+            MEL1_37 [shape=box, label="SS_MEL1a", style=filled, fillcolor=orange];
+            MEL1_37 -> MEL1_36;
+            MEL1_38 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL1_38 -> MEL1_36;
+            MEL1_39 [shape=box, label="SS_MEL1b", style=filled, fillcolor=orange];
+            MEL1_39 -> MEL1_38;
+            MEL1_40 [shape=box, label="SS_MEL1c", style=filled, fillcolor=orange];
+            MEL1_40 -> MEL1_38;
             }
         }
     `,
-    `digraph G_Right {
+    `digraph G_Duty {
         rankdir=BT
         overlap=false
         compound=true
         ranksep=0.5
-        subgraph clusterSS_Apache3 {
-            label = "SS_Apache3"
-            Apache3 [shape=triangle, orientation=270, style=filled, fillcolor=lightblue, label="Apache3", tooltip="Grant of Patent License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted.If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed."];
-            Apache3_64 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache3_64 -> Apache3[label="satisfies"];
-            Apache3_65 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache3_65 -> Apache3_64;
-            Apache3_66 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache3_66 -> Apache3_65;
-            Apache3_67 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache3_67 -> Apache3_66;
-            Apache3_68 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache3_68 -> Apache3_67;
-            Apache3_69 [shape=box, label="[You made , have made] the\n Work "];
-            Apache3_69 -> Apache3_68;
-            Apache3_70 [shape=box, label="[You used] the Work"];
-            Apache3_70 -> Apache3_68;
-            Apache3_71 [shape=box, label="[You offered to sell, sold]\n the Work"];
-            Apache3_71 -> Apache3_67;
-            Apache3_72 [shape=box, label="[You imported] the Work"];
-            Apache3_72 -> Apache3_66;
-            Apache3_73 [shape=box, label="[You transfered] the Work"];
-            Apache3_73 -> Apache3_65;
-            Apache3_74 [shape=box, label="not", style=filled, fillcolor=grey];
-            Apache3_74 -> Apache3_64;
-            Apache3_75 [shape=box, label="[You instituted] patent\n litigation against any\n entity (including a\n cross-claim or counterclaim\n in a lawsuit) alleging that\n the Work or a Contribution\n incorporated within the\n Work constitutes direct or\n contributory patent infringement"];
-            Apache3_75 -> Apache3_74;
-            Apache3_76 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache3_76 -> Apache3[label="activates"];
-            Apache3_77 [shape=box, label="SS_Apache4", style=filled, fillcolor=white];
-            Apache3_77 -> Apache3_76;
-            Apache3_78 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache3_78 -> Apache3_76;
-            Apache3_79 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache3_79 -> Apache3_78;
-            Apache3_80 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache3_80 -> Apache3_79;
-            Apache3_81 [shape=box, label="SS_Apache9", style=filled, fillcolor=white];
-            Apache3_81 -> Apache3_80;
-            Apache3_82 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache3_82 -> Apache3_80;
-            Apache3_83 [shape=box, label="SS_Apache6", style=filled, fillcolor=white];
-            Apache3_83 -> Apache3_82;
-            Apache3_84 [shape=box, label="SS_Apache7", style=filled, fillcolor=white];
-            Apache3_84 -> Apache3_82;
-            Apache3_85 [shape=box, label="SS_Apache8", style=filled, fillcolor=white];
-            Apache3_85 -> Apache3_79;
-            Apache3_86 [shape=box, label="SS_Apache5", style=filled, fillcolor=white];
-            Apache3_86 -> Apache3_78;
+        subgraph clusterSS_MEL1a {
+            label = "SS_MEL1a"
+            MEL1a [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="MEL1a", tooltip="you [must] conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty"];
+            MEL1a_41 [shape=box, label="[you conspicuously and\n appropriately published] on\n each copy an appropriate\n copyright notice and\n disclaimer of warranty"];
+            MEL1a_41 -> MEL1a[label="satisfies"];
+            MEL1a_42 [shape=box, label="or", style=filled, fillcolor=grey];
+            MEL1a_42 -> MEL1a[label="activates"];
+            MEL1a_43 [shape=box, label="[you intend to copy and\n distribute verbatim copies\n of the original Program's\n source code]"];
+            MEL1a_43 -> MEL1a_42;
+            MEL1a_44 [shape=box, label="[you intend to modify the\n Program, and copy and\n distribute such modifications]"];
+            MEL1a_44 -> MEL1a_42;
+            }
+        }
+    `,
+    `digraph G_Duty {
+        rankdir=BT
+        overlap=false
+        compound=true
+        ranksep=0.5
+        subgraph clusterSS_MEL1b {
+            label = "SS_MEL1b"
+            MEL1b [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="MEL1b", tooltip="[you must] keep intact all the notices that refer to this License and to the absence of any warranty"];
+            MEL1b_45 [shape=box, label="[you kept intact] all the\n notices that refer to this\n License and to the absence\n of any warranty"];
+            MEL1b_45 -> MEL1b[label="satisfies"];
+            MEL1b_46 [shape=box, label="or", style=filled, fillcolor=grey];
+            MEL1b_46 -> MEL1b[label="activates"];
+            MEL1b_47 [shape=box, label="[you intend to copy and\n distribute verbatim copies\n of the original Program's\n source code]"];
+            MEL1b_47 -> MEL1b_46;
+            MEL1b_48 [shape=box, label="[you intend to modify the\n Program, and copy and\n distribute such modifications]"];
+            MEL1b_48 -> MEL1b_46;
+            }
+        }
+    `,
+    
+    `digraph G_Duty {
+        rankdir=BT
+        overlap=false
+        compound=true
+        ranksep=0.5
+        subgraph clusterSS_MEL1c {
+            label = "SS_MEL1c"
+            MEL1c [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="MEL1c", tooltip="[you must] give any other recipients of the Program a copy of this License along with the Program"];
+            MEL1c_49 [shape=box, label="[you gave] any other\n recipients of the Program a\n copy of this License along\n with the Program"];
+            MEL1c_49 -> MEL1c[label="satisfies"];
+            MEL1c_50 [shape=box, label="or", style=filled, fillcolor=grey];
+            MEL1c_50 -> MEL1c[label="activates"];
+            MEL1c_51 [shape=box, label="[you intend to copy and\n distribute verbatim copies\n of the original Program's\n source code]"];
+            MEL1c_51 -> MEL1c_50;
+            MEL1c_52 [shape=box, label="[you intend to modify the\n Program, and copy and\n distribute such modifications]"];
+            MEL1c_52 -> MEL1c_50;
             }
         }
     `,
@@ -127,119 +96,21 @@ var apache2 = [
         overlap=false
         compound=true
         ranksep=0.5
-        subgraph clusterSS_Apache4 {
-            label = "SS_Apache4"
-            Apache4 [shape=triangle, orientation=270, style=filled, fillcolor=lightblue, label="Apache4", tooltip="4. Redistribution. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:"];
-            Apache4_1 [shape=box, label="[You reproduced and\n distributed] copies of the\n Work or Derivative Works\n thereof in any medium, with\n or without modifications,\n and in Source or Object form"];
-            Apache4_1 -> Apache4[label="satisfies"];
-            Apache4_2 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache4_2 -> Apache4[label="activates"];
-            Apache4_3 [shape=box, label="SS_Apache4a", style=filled, fillcolor=white];
-            Apache4_3 -> Apache4_2;
-            Apache4_4 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache4_4 -> Apache4_2;
-            Apache4_5 [shape=box, label="SS_Apache4b", style=filled, fillcolor=white];
-            Apache4_5 -> Apache4_4;
-            Apache4_6 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache4_6 -> Apache4_4;
-            Apache4_7 [shape=box, label="SS_Apache4c", style=filled, fillcolor=white];
-            Apache4_7 -> Apache4_6;
-            Apache4_8 [shape=box, label="SS_Apache4d", style=filled, fillcolor=white];
-            Apache4_8 -> Apache4_6;
-            }
-        }
-    `,
-    `digraph G_Duty {
-        rankdir=BT
-        overlap=false
-        compound=true
-        ranksep=0.5
-        subgraph clusterSS_Apache4a {
-            label = "SS_Apache4a"
-            Apache4a [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="Apache4a", tooltip="4(a) You must give any other recipients of the Work or Derivative Works a copy of this License;"];
-            Apache4a_9 [shape=box, label="[You gave] other recipients of\n the Work or Derivative\n Works a copy of this License"];
-            Apache4a_9 -> Apache4a[label="satisfies"];
-            Apache4a_10 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
-            Apache4a_10 -> Apache4a[label="activates"];
-            }
-        }
-    `,
-    `digraph G_Duty {
-        rankdir=BT
-        overlap=false
-        compound=true
-        ranksep=0.5
-        subgraph clusterSS_Apache4b {
-            label = "SS_Apache4b"
-            Apache4b [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="Apache4b", tooltip="4(b) You must cause any modified files to carry prominent notices stating that You changed the files;"];
-            Apache4b_11 [shape=box, label="[You caused] any modified\n files to carry prominent\n notices stating that You\n changed the files"];
-            Apache4b_11 -> Apache4b[label="satisfies"];
-            Apache4b_12 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
-            Apache4b_12 -> Apache4b[label="activates"];
-            }
-        }
-    `,
-    `digraph G_Duty {
-        rankdir=BT
-        overlap=false
-        compound=true
-        ranksep=0.5
-        subgraph clusterSS_Apache4c {
-            label = "SS_Apache4c"
-            Apache4c [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="Apache4c", tooltip="4(c) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works;"];
-            Apache4c_13 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache4c_13 -> Apache4c[label="satisfies"];
-            Apache4c_14 [shape=box, label="[You retained], in the Source\n form of any Derivative\n Works that You distribute,\n all copyright, patent,\n trademark, and attribution\n notices from the Source\n form of the Work"];
-            Apache4c_14 -> Apache4c_13;
-            Apache4c_15 [shape=box, label="not", style=filled, fillcolor=grey];
-            Apache4c_15 -> Apache4c_13;
-            Apache4c_16 [shape=box, label="[You retained] those notices\n that do not pertain to any\n part of the Derivative Works"];
-            Apache4c_16 -> Apache4c_15;
-            Apache4c_17 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
-            Apache4c_17 -> Apache4c[label="activates"];
-            }
-        }
-    `,
-    `digraph G_Duty {
-        rankdir=BT
-        overlap=false
-        compound=true
-        ranksep=0.5
-        subgraph clusterSS_Apache4d {
-            label = "SS_Apache4d"
-            Apache4d [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="Apache4d", tooltip="4(d) If the Work includes a 'NOTICE' text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License."];
-            Apache4d_18 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache4d_18 -> Apache4d[label="satisfies"];
-            Apache4d_19 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache4d_19 -> Apache4d_18;
-            Apache4d_20 [shape=box, label="[You included] a readable copy\n of the attribution notices\n contained within such\n NOTICE file"];
-            Apache4d_20 -> Apache4d_19;
-            Apache4d_21 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache4d_21 -> Apache4d_19;
-            Apache4d_22 [shape=box, label="[(in notice file) You included\n the attribution notices]\n within a NOTICE text file\n distributed as part of the\n Derivative Works"];
-            Apache4d_22 -> Apache4d_21;
-            Apache4d_23 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache4d_23 -> Apache4d_21;
-            Apache4d_24 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache4d_24 -> Apache4d_23;
-            Apache4d_25 [shape=box, label="[(in source) in You included\n the attribution notices]\n within the Source form or\n documentation"];
-            Apache4d_25 -> Apache4d_24;
-            Apache4d_26 [shape=box, label="source [is] provided along\n with the Derivative Works"];
-            Apache4d_26 -> Apache4d_24;
-            Apache4d_27 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache4d_27 -> Apache4d_23;
-            Apache4d_28 [shape=box, label="[(in display) You included the\n attribution notices] within\n a display generated by the\n Derivative Works ...\n wherever such third-party\n notices normally appear"];
-            Apache4d_28 -> Apache4d_27;
-            Apache4d_29 [shape=box, label="third-party [attribution]\n notices normally appear [in\n display]"];
-            Apache4d_29 -> Apache4d_27;
-            Apache4d_30 [shape=box, label="[You excluded] those notices\n that do not pertain to any\n part of the Derivative Works"];
-            Apache4d_30 -> Apache4d_18;
-            Apache4d_31 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache4d_31 -> Apache4d[label="activates"];
-            Apache4d_32 [shape=box, label="[You intend to reproduce and\n distribute copies of the\n Work or Derivative Works]"];
-            Apache4d_32 -> Apache4d_31;
-            Apache4d_33 [shape=box, label="the Work includes a 'NOTICE'\n text file as part of its\n distribution"];
-            Apache4d_33 -> Apache4d_31;
+        subgraph clusterSS_MEL1d {
+            label = "SS_MEL1d"
+            MEL1d [shape=triangle, orientation=270, style=filled, fillcolor=lightblue, label="MEL1d", tooltip="You may charge a fee for the physical act of transferring a copy, and you may at your option offer warranty protection in exchange for a fee."];
+            MEL1d_53 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL1d_53 -> MEL1d[label="satisfies"];
+            MEL1d_54 [shape=box, label="[You charged] a fee for the\n physical act of\n transferring a copy"];
+            MEL1d_54 -> MEL1d_53;
+            MEL1d_55 [shape=box, label="[You offered] at your option\n warranty protection in\n exchange of a fee"];
+            MEL1d_55 -> MEL1d_53;
+            MEL1d_56 [shape=box, label="or", style=filled, fillcolor=grey];
+            MEL1d_56 -> MEL1d[label="activates"];
+            MEL1d_57 [shape=box, label="[you intend to copy and\n distribute verbatim copies\n of the original Program's\n source code]"];
+            MEL1d_57 -> MEL1d_56;
+            MEL1d_58 [shape=box, label="[you intend to modify the\n Program, and copy and\n distribute such modifications]"];
+            MEL1d_58 -> MEL1d_56;
             }
         }
     `,
@@ -248,59 +119,37 @@ var apache2 = [
         overlap=false
         compound=true
         ranksep=0.5
-        subgraph clusterSS_Apache4dAddAttrib {
-            label = "SS_Apache4dAddAttrib"
-            Apache4dAddAttrib [shape=triangle, orientation=270, style=filled, fillcolor=lightblue, label="Apache4dAddAttrib", tooltip="You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License."];
-            Apache4dAddAttrib_34 [shape=box, label="[You added] Your own\n attribution notices within\n Derivative Works that You\n distribute, alongside or as\n an addendum to the NOTICE\n text from the Work"];
-            Apache4dAddAttrib_34 -> Apache4dAddAttrib[label="satisfies"];
-            Apache4dAddAttrib_35 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache4dAddAttrib_35 -> Apache4dAddAttrib[label="activates"];
-            Apache4dAddAttrib_36 [shape=box, label="SS_Apache4d", style=filled, fillcolor=white];
-            Apache4dAddAttrib_36 -> Apache4dAddAttrib_35;
-            Apache4dAddAttrib_37 [shape=box, label="[Your own] additional\n attribution notices cannot\n be construed as modifying\n the License"];
-            Apache4dAddAttrib_37 -> Apache4dAddAttrib_35;
-            }
-        }
-    `,
-    `digraph G_Right {
-        rankdir=BT
-        overlap=false
-        compound=true
-        ranksep=0.5
-        subgraph clusterSS_Apache4dAddCopyright {
-            label = "SS_Apache4dAddCopyright"
-            Apache4dAddCopyright [shape=triangle, orientation=270, style=filled, fillcolor=lightblue, label="Apache4dAddCopyright", tooltip="You may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License."];
-            Apache4dAddCopyright_38 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache4dAddCopyright_38 -> Apache4dAddCopyright[label="satisfies"];
-            Apache4dAddCopyright_39 [shape=box, label="[You added] Your own copyright\n statement to Your\n modifications"];
-            Apache4dAddCopyright_39 -> Apache4dAddCopyright_38;
-            Apache4dAddCopyright_40 [shape=box, label="[You provided] additional or\n different license terms and\n conditions for use,\n reproduction, or\n distribution of Your\n modifications, or for any\n such Derivative Works as a whole"];
-            Apache4dAddCopyright_40 -> Apache4dAddCopyright_38;
-            Apache4dAddCopyright_41 [shape=box, label="SS_Apache4", style=filled, fillcolor=white];
-            Apache4dAddCopyright_41 -> Apache4dAddCopyright[label="activates"];
-            }
-        }
-    `,
-    `digraph G_Duty {
-        rankdir=BT
-        overlap=false
-        compound=true
-        ranksep=0.5
-        subgraph clusterSS_Apache5 {
-            label = "SS_Apache5"
-            Apache5 [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="Apache5", tooltip="Submission of Contributions. Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions."];
-            Apache5_87 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache5_87 -> Apache5[label="satisfies"];
-            Apache5_88 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache5_88 -> Apache5_87;
-            Apache5_89 [shape=box, label="[Any Contribution\n intentionally submitted for\n inclusion in the Work by\n You to the Licensor is]\n under the terms and\n conditions of this License,\n without any additional\n terms or conditions"];
-            Apache5_89 -> Apache5_88;
-            Apache5_90 [shape=box, label="[You explicitly stated] terms\n and conditions"];
-            Apache5_90 -> Apache5_88;
-            Apache5_91 [shape=box, label="[Nothing herein supersede ]or\n modify the terms of any\n separate license agreement\n you may have executed with\n Licensor regarding such\n Contributions."];
-            Apache5_91 -> Apache5_87;
-            Apache5_92 [shape=box, label="[You intend to submit] a Work for\n Contribution"];
-            Apache5_92 -> Apache5[label="activates"];
+        subgraph clusterSS_MEL2 {
+            label = "SS_MEL2"
+            MEL2 [shape=triangle, orientation=270, style=filled, fillcolor=lightblue, label="MEL2", tooltip="2. You may modify your copy or copies of the Program or any portion of it, thus forming a work based on the Program, and copy and distribute such modifications or work under the terms of Section 1 above, provided that you also meet all of these conditions."];
+            MEL2_1 [shape=box, label="[you modified] your copy or\n copies of the Program or\n any portion of it, ... and\n [copied and distributed]\n such modifications or work"];
+            MEL2_1 -> MEL2[label="satisfies"];
+            MEL2_2 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL2_2 -> MEL2[label="activates"];
+            MEL2_3 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL2_3 -> MEL2_2;
+            MEL2_4 [shape=box, label="SS_MEL1a", style=filled, fillcolor=orange];
+            MEL2_4 -> MEL2_3;
+            MEL2_5 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL2_5 -> MEL2_3;
+            MEL2_6 [shape=box, label="SS_MEL1b", style=filled, fillcolor=orange];
+            MEL2_6 -> MEL2_5;
+            MEL2_7 [shape=box, label="SS_MEL1c", style=filled, fillcolor=orange];
+            MEL2_7 -> MEL2_5;
+            MEL2_8 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL2_8 -> MEL2_2;
+            MEL2_9 [shape=box, label="SS_MEL2a", style=filled, fillcolor=orange];
+            MEL2_9 -> MEL2_8;
+            MEL2_10 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL2_10 -> MEL2_8;
+            MEL2_11 [shape=box, label="SS_MEL2b", style=filled, fillcolor=orange];
+            MEL2_11 -> MEL2_10;
+            MEL2_12 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL2_12 -> MEL2_10;
+            MEL2_13 [shape=box, label="SS_MEL2c", style=filled, fillcolor=orange];
+            MEL2_13 -> MEL2_12;
+            MEL2_14 [shape=box, label="SS_MEL2d", style=filled, fillcolor=orange];
+            MEL2_14 -> MEL2_12;
             }
         }
     `,
@@ -309,19 +158,13 @@ var apache2 = [
         overlap=false
         compound=true
         ranksep=0.5
-        subgraph clusterSS_Apache6 {
-            label = "SS_Apache6"
-            Apache6 [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="Apache6", tooltip="Trademarks. This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file"];
-            Apache6_93 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache6_93 -> Apache6[label="satisfies"];
-            Apache6_94 [shape=box, label="not", style=filled, fillcolor=grey];
-            Apache6_94 -> Apache6_93;
-            Apache6_95 [shape=box, label="[You used trade names,\n trademarks, service marks,\n or product names of the\n Licensor]"];
-            Apache6_95 -> Apache6_94;
-            Apache6_96 [shape=box, label="[As required ]for reasonable\n and customary use in\n describing the origin of\n the Work and reproducing\n the content of the NOTICE\n file [You used] trade\n names, trademarks, service\n marks, or product names of the Licensor"];
-            Apache6_96 -> Apache6_93;
-            Apache6_97 [shape=box, label="You intend to exercice permissions\n granted by this License"];
-            Apache6_97 -> Apache6[label="activates"];
+        subgraph clusterSS_MEL2a {
+            label = "SS_MEL2a"
+            MEL2a [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="MEL2a", tooltip="2.a) You must cause the modified files to carry prominent notices stating that you changed the files and the date of any change."];
+            MEL2a_15 [shape=box, label="[you caused] the modified\n files to carry prominent\n notices stating that you\n changed the files and the\n date of any change"];
+            MEL2a_15 -> MEL2a[label="satisfies"];
+            MEL2a_16 [shape=box, label="[you intend to modify the\n Program, and copy and\n distribute such modifications]"];
+            MEL2a_16 -> MEL2a[label="activates"];
             }
         }
     `,
@@ -330,21 +173,13 @@ var apache2 = [
         overlap=false
         compound=true
         ranksep=0.5
-        subgraph clusterSS_Apache7 {
-            label = "SS_Apache7"
-            Apache7 [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="Apache7", tooltip="Disclaimer of Warranty. Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License."];
-            Apache7_98 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache7_98 -> Apache7[label="satisfies"];
-            Apache7_99 [shape=box, label="[Required by applicable law or\n agreed to in writing],\n Licensor did not provides\n the Work (and each\n Contributor did not provide\n its Contributions) on an\n 'AS IS' basis, WITHOUTH\n WARRANTIES OR CONDITIONS OF\n ANY KIND,either express or\n implied, including, without\n limitation, any warranties\n or conditions of TITLE,\n NON-INFRINGEMENT,\n MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE"];
-            Apache7_99 -> Apache7_98;
-            Apache7_100 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache7_100 -> Apache7_98;
-            Apache7_101 [shape=box, label="[You determined\n appropriateness of using or\n redistributing the Work"];
-            Apache7_101 -> Apache7_100;
-            Apache7_102 [shape=box, label="[You assumed] any risks\n associated with Your\n exercice of permissions\n under this license"];
-            Apache7_102 -> Apache7_100;
-            Apache7_103 [shape=box, label="You intend to exercice permissions\n granted by this License"];
-            Apache7_103 -> Apache7[label="activates"];
+        subgraph clusterSS_MEL2b {
+            label = "SS_MEL2b"
+            MEL2b [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="MEL2b", tooltip="2.b) You must cause any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License."];
+            MEL2b_17 [shape=box, label="[you caused] any work that you\n distribute or publish, that\n in whole or in part\n contains or is derived from\n the Program or any part\n thereof, to be licensed as\n a whole at no charge to all\n third parties under the\n terms of this License"];
+            MEL2b_17 -> MEL2b[label="satisfies"];
+            MEL2b_18 [shape=box, label="[you intend to modify the\n Program, and copy and\n distribute such modifications]"];
+            MEL2b_18 -> MEL2b[label="activates"];
             }
         }
     `,
@@ -353,63 +188,70 @@ var apache2 = [
         overlap=false
         compound=true
         ranksep=0.5
-        subgraph clusterSS_Apache8 {
-            label = "SS_Apache8"
-            Apache8 [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="Apache8", tooltip="Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages."];
-            Apache8_104 [shape=box, label="or", style=filled, fillcolor=grey];
-            Apache8_104 -> Apache8[label="satisfies"];
-            Apache8_105 [shape=box, label="[Required by applicable law\n (such as deliberate and\n grossly negligent acts) or\n agreed to in writing, [You\n holded] Contributor liable\n to You for damages,\n including any direct,\n indirect, special,\n incidental, or\n consequential damages of\n any character arising as a\n result of this License or\n out of the use or inability\n to use the Work (including\n but not limited to damages\n for loss of goodwill, work\n stoppage, computer failure\n or malfunction, or any and\n all other commercial damages or losses)]"];
-            Apache8_105 -> Apache8_104;
-            Apache8_106 [shape=box, label="not", style=filled, fillcolor=grey];
-            Apache8_106 -> Apache8_104;
-            Apache8_107 [shape=box, label="[You holded] Contributor\n liable to You for damages,\n including any direct,\n indirect, special,\n incidental, or\n consequential damages of\n any character arising as a\n result of this License or\n out of the use or inability\n to use the Work (including\n but not limited to damages\n for loss of goodwill, work\n stoppage, computer failure\n or malfunction, or any and\n all other commercial damages or losses)"];
-            Apache8_107 -> Apache8_106;
-            Apache8_108 [shape=box, label="You intend to exercice permissions\n granted by this License"];
-            Apache8_108 -> Apache8[label="activates"];
+        subgraph clusterSS_MEL2c {
+            label = "SS_MEL2c"
+            MEL2c [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="MEL2c", tooltip="2.c) If the modified program normally reads commands interactively when run, you must cause it, when started running for such interactive use in the most ordinary way, to print or display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty) and that users may redistribute the program under these conditions, and telling the user how to view a copy of this License. (Exception: if the Program itself is interactive but does not normally print such an announcement, your work based on the Program is not required to print an announcement.)"];
+            MEL2c_19 [shape=box, label="[you caused the modified\n program] ... to print or\n display an announcement\n including an appropriate\n copyright notice and a\n notice that there is no\n warranty (or else, saying\n that you provide a\n warranty) and that users\n may redistribute the\n program under these\n conditions, and telling the\n user how to view a copy of this License"];
+            MEL2c_19 -> MEL2c[label="satisfies"];
+            MEL2c_20 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL2c_20 -> MEL2c[label="activates"];
+            MEL2c_21 [shape=box, label="[you intend to modify the\n Program, and copy and\n distribute such modifications]"];
+            MEL2c_21 -> MEL2c_20;
+            MEL2c_22 [shape=box, label="or", style=filled, fillcolor=grey];
+            MEL2c_22 -> MEL2c_20;
+            MEL2c_23 [shape=box, label="the modified program normally\n reads commands\n interactively when run"];
+            MEL2c_23 -> MEL2c_22;
+            MEL2c_24 [shape=box, label="not", style=filled, fillcolor=grey];
+            MEL2c_24 -> MEL2c_22;
+            MEL2c_25 [shape=box, label="[original] Program itself is\n interactive but does not\n normally print such an\n announcement"];
+            MEL2c_25 -> MEL2c_24;
             }
         }
     `,
-    `digraph G_Right {
+    `digraph G_Duty {
         rankdir=BT
         overlap=false
         compound=true
         ranksep=0.5
-        subgraph clusterSS_Apache9 {
-            label = "SS_Apache9"
-            Apache9 [shape=triangle, orientation=270, style=filled, fillcolor=lightblue, label="Apache9", tooltip="Accepting Warranty or Additional Liability. While redistributing the Work or Derivative Works thereof, You may choose to offer,and charge a fee for, acceptance of support, warranty, indemnity,or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability."];
-            Apache9_109 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache9_109 -> Apache9[label="satisfies"];
-            Apache9_110 [shape=box, label="and", style=filled, fillcolor=grey];
-            Apache9_110 -> Apache9_109;
-            Apache9_111 [shape=box, label="[You offered, and charge] a\n fee for, acceptance of\n support, warranty,\n indemnity, or other\n liability obligations\n and/or rights consistent\n with this License"];
-            Apache9_111 -> Apache9_110;
-            Apache9_112 [shape=box, label="[You acted] only on Your own\n behalf and on Your sole\n responsibility, not on\n behalf of any other Contributor"];
-            Apache9_112 -> Apache9_110;
-            Apache9_113 [shape=box, label="[You agreed] to indemnify,\n defend, and hold each\n Contributor harmless for\n any liability incurred by,\n or claims asserted against,\n such Contributor by reason\n of your accepting any such\n warranty or additional liability"];
-            Apache9_113 -> Apache9_109;
-            Apache9_114 [shape=box, label="SS_Apache4", style=filled, fillcolor=white];
-            Apache9_114 -> Apache9[label="activates"];
+        subgraph clusterSS_MEL2d {
+            label = "SS_MEL2d"
+            MEL2d [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="MEL2d", tooltip="2.d) If the Program as you received it is intended to interact with users through a computer network and if, in the version you received, any user interacting with the Program was given the opportunity to request transmission to that user of the Program's complete source code, you must not remove that facility from your modified version of the Program or work based on the Program, and must offer an equivalent opportunity for all users interacting with your Program through a computer network to request immediate transmission by HTTP of the complete source code of your modified version or other derivative work."];
+            MEL2d_26 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL2d_26 -> MEL2d[label="satisfies"];
+            MEL2d_27 [shape=box, label="not", style=filled, fillcolor=grey];
+            MEL2d_27 -> MEL2d_26;
+            MEL2d_28 [shape=box, label="[you removed] that facility\n [to request transmission of\n source code] from your\n modified version of the\n Program or work based on\n the Program"];
+            MEL2d_28 -> MEL2d_27;
+            MEL2d_29 [shape=box, label="[you offered] an equivalent\n opportunity for all users\n interacting with your\n Program through a computer\n network to request\n immediate transmission by\n HTTP of the complete source\n code of your modified\n version or other derivative work"];
+            MEL2d_29 -> MEL2d_26;
+            MEL2d_30 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL2d_30 -> MEL2d[label="activates"];
+            MEL2d_31 [shape=box, label="[you intend to modify the\n Program, and copy and\n distribute such modifications]"];
+            MEL2d_31 -> MEL2d_30;
+            MEL2d_32 [shape=box, label="and", style=filled, fillcolor=grey];
+            MEL2d_32 -> MEL2d_30;
+            MEL2d_33 [shape=box, label="the [original] Program as you\n received it is intended to\n interact with users through\n a computer network"];
+            MEL2d_33 -> MEL2d_32;
+            MEL2d_34 [shape=box, label="in the version you received,\n any user interacting with\n the [original] Program was\n given the opportunity to\n request transmission to\n that user of the Program's\n complete source code"];
+            MEL2d_34 -> MEL2d_32;
             }
         }
     `
+    
 ]
 
-//manual mapping of statement name to dot index in apache2 array
+//manual mapping of statement name to dot index in mel array
 var mapping = {
-  "Apache2":0,
-  "Apache3":1,
-  "Apache4":2,
-  "Apache4a":3,
-  "Apache4b":4,
-  "Apache4c":5,
-  "Apache4d":6,
-  "Apache4dAddAttrib":7,
-  "Apache4dAddCopyright":8,
-  "Apache5":9,
-  "Apache6":10,
-  "Apache7":11,
-  "Apache8":12,
-  "Apache9":13
+  "MEL1":0,
+  "MEL1a":1,
+  "MEL1b":2,
+  "MEL1c":3,
+  "MEL1d":4,
+  "MEL2":5,
+  "MEL2a":6,
+  "MEL2b":7,
+  "MEL2c":8,
+  "MEL2d":9
   
 };
 
@@ -417,9 +259,35 @@ var jsonInput = [];
 var jsonState = [];
 var polygon_top = null;
 var jsonInput_text = [];
-var apache2_id = [
-    { "id": "Apache4_1", "text": "[You reproduced and" }, { "id": "Apache4a_9", "text": "[You gave] other recipients of" }, { "id": "Apache4a_10", "text": "[You intend to reproduce and" }, { "id": "Apache4b_11", "text": "[You caused] any modified" }, { "id": "Apache4b_12", "text": "[You intend to reproduce and" }, { "id": "Apache4c_14", "text": "[You retained], in the Source" }, { "id": "Apache4c_16", "text": "[You retained] those notices" }, { "id": "Apache4c_17", "text": "[You intend to reproduce and" }, { "id": "Apache4d_20", "text": "[You included] a readable copy" }, { "id": "Apache4d_22", "text": "[(in notice file) You included" }, { "id": "Apache4d_25", "text": "[(in source) in You included" }, { "id": "Apache4d_26", "text": "source [is] provided along" }, { "id": "Apache4d_28", "text": "[(in display) You included the" }, { "id": "Apache4d_29", "text": "third-party [attribution]" }, { "id": "Apache4d_30", "text": "[You excluded] those notices" }, { "id": "Apache4d_32", "text": "[You intend to reproduce and" }, { "id": "Apache4d_33", "text": "the Work includes a 'NOTICE'" }, { "id": "Apache4dAddAttrib_34", "text": "[You added] Your own" }, { "id": "Apache4dAddAttrib_37", "text": "[Your own] additional" }, { "id": "Apache4dAddCopyright_39", "text": "[You added] Your own copyright" }, { "id": "Apache4dAddCopyright_40", "text": "[You provided] additional or" }, { "id": "Apache2_47", "text": "[You reproduced] the Work and" }, { "id": "Apache2_48", "text": "[You prepared Derivative Works" }, { "id": "Apache2_49", "text": "[You publicly displayed] the" }, { "id": "Apache2_50", "text": "[You publicly performed] the" }, { "id": "Apache2_51", "text": "[You sublicenced] the Work and" }, { "id": "Apache2_52", "text": "[You distributed] the Work and" }, { "id": "Apache3_69", "text": "[You made , have made] the" }, { "id": "Apache3_70", "text": "[You used] the Work" }, { "id": "Apache3_71", "text": "[You offered to sell, sold]" }, { "id": "Apache3_72", "text": "[You imported] the Work" }, { "id": "Apache3_73", "text": "[You transfered] the Work" }, { "id": "Apache3_75", "text": "[You instituted] patent" }, { "id": "Apache5_89", "text": "[Any Contribution" }, { "id": "Apache5_90", "text": "[You explicitly stated] terms" }, { "id": "Apache5_91", "text": "[Nothing herein supersede ]or" }, { "id": "Apache5_92", "text": "[You submitted] a Work for" }, { "id": "Apache6_95", "text": "[You used trade names," }, { "id": "Apache6_96", "text": "[As required ]for reasonable" }, { "id": "Apache6_97", "text": "[You intend to exercice permissions" }, { "id": "Apache7_99", "text": "[Required by applicable law or" }, { "id": "Apache7_101", "text": "[You determined" }, { "id": "Apache7_102", "text": "[You assumed] any risks" }, { "id": "Apache7_103", "text": "You intend to exercice permissions" }, { "id": "Apache8_105", "text": "[Required by applicable law" }, { "id": "Apache8_107", "text": "[You holded] Contributor" }, { "id": "Apache8_108", "text": "You intend to exercice permissions" }, { "id": "Apache9_111", "text": "[You offered, and charge] a" }, { "id": "Apache9_112", "text": "[You acted] only on Your own" }, { "id": "Apache9_113", "text": "[You agreed] to indemnify," }
-]
+var mel_id = [
+    {"id": "MEL2_1", "text": "[you modified] your copy or" }, { "id": "MEL2a_15", "text": "[you caused] the modified" }, 
+     { "id": "MEL2a_16", "text": "[you intend to modify the" }, 
+     { "id": "MEL2b_17", "text": "[you caused] any work that you" }, 
+     {"id": "MEL2b_18", "text": "[you intend to modify the" }, 
+     { "id": "MEL2c_19", "text": "[you caused the modified" }, 
+     { "id": "MEL2c_21", "text": "[you intend to modify the" }, 
+     { "id": "MEL2c_23", "text": "the modified program normally" }, 
+     { "id": "MEL2c_25", "text": "[original] Program itself is" }, 
+     { "id": "MEL2d_28", "text": "[you removed] that facility" }, 
+     {"id": "MEL2d_29", "text": "[you offered] an equivalent" }, 
+     { "id": "MEL2d_31", "text": "[you intend to modify the" }, 
+     { "id": "MEL2d_33", "text": "the [original] Program as you" }, 
+     { "id": "MEL2d_34", "text": "in the version you received," }, 
+     { "id": "MEL1_35", "text": "[you copied and distributed]" }, 
+     { "id": "MEL1a_41", "text": "[you conspicuously and" }, 
+     { "id": "MEL1a_43", "text": "[you intend to copy and" }, 
+     { "id": "MEL1a_44", "text": "[you intend to modify the" }, 
+     { "id": "MEL1b_45", "text": "[you kept intact] all the" }, 
+     { "id": "MEL1b_47", "text": "[you intend to copy and" }, 
+     { "id": "MEL1b_48", "text": "[you intend to modify the" }, 
+     { "id": "MEL1c_49", "text": "[you gave] any other" }, 
+     { "id": "MEL1c_51", "text": "[you intend to copy and" }, 
+     { "id": "MEL1c_52", "text": "[you intend to modify the" }, 
+     { "id": "MEL1d_54", "text": "[You charged] a fee for the" }, 
+     { "id": "MEL1d_55", "text": "[You offered] at your option" }, 
+     { "id": "MEL1d_57", "text": "[you intend to copy and" }, 
+     { "id": "MEL1d_58", "text": "[you intend to modify the" }
+    ]
 
 /**
   * Create JSON object to use for tree view 
@@ -429,176 +297,84 @@ var apache2_id = [
 //Build json object from DOM element here
 var myJSONArray= [
 
-    {
-        "id":"Preamble",
-        "text":"Preamble",
-        "icon":"/static/document.png"
-    },
+   
 
     {
-        "id":"Apache2",   
-        "text": "Apache2",
+        "id":"MEL1",   
+        "text": "MEL1",
         "icon":"/static/icon/right_blue.ico",
+        "state":
+        {
+            "opened": true,
+            
+        },
+        "children":[
+            {
+                "id":"MEL1a",   
+                "text": "MEL1a",
+                "icon":"/static/icon/duty_blue.ico",
+        
+            },
+            {
+                "id":"MEL1b",
+                "text": "MEL1b",
+                "icon":"/static/icon/duty_blue.ico",
+            },
+            {
+                "id":"MEL1c",
+                "text": "MEL1c",
+                "icon":"/static/icon/duty_blue.ico",
+            },
+            {
+                "id":"MEL1d",
+                "text": "MEL1d",
+                "icon":"/static/icon/right_blue.ico",
+            }
+        ]
         
        
     },
     {
-        "id":"Apache3",   
-        "text": "Apache3",
+        "id":"MEL2",   
+        "text": "MEL2",
         "icon":"/static/icon/right_blue.ico",
-        
-
         "state":
         {
             "opened": true,
             
         },
-
-        
-    },
-    {
-        "id":"Apache4",
-        "text": "Apache4",
-        "icon":"/static/icon/right_blue.ico",
-        
-        
-
-        "state":
-        {
-            "opened": true,
-            
-        },
-
-        "children": [
+        "children":[
             {
-                "text":"Apache4a",
-                "id":"Apache4a",
+                "id":"MEL2a",   
+                "text": "MEL2a",
                 "icon":"/static/icon/duty_blue.ico",
-               
+        
             },
             {
-                "text":"Apache4b",
-                "id":"Apache4b",
+                "id":"MEL2b",
+                "text": "MEL2b",
                 "icon":"/static/icon/duty_blue.ico",
-                
             },
             {
-                "text":"Apache4c",
-                "id":"Apache4c",
+                "id":"MEL2c",
+                "text": "MEL2c",
                 "icon":"/static/icon/duty_blue.ico",
-               
             },
             {
-                "text":"Apache4d",
-                "id":"Apache4d",
+                "id":"MEL2d",
+                "text": "MEL2d",
                 "icon":"/static/icon/duty_blue.ico",
-                "state":{
-                    "opened":true,
-                    
-                },
-                "children":[
-                    {
-                    
-                        "text":"Apache4dAddAttrib",
-                        "id":"Apache4dAddAttrib",
-                        "icon":"/static/icon/right_blue.ico",
-                        
-                    },
-                    {
-                        "text":"Apache4dAddCopyright",
-                        "id":"Apache4dAddCopyright",
-                        "icon":"/static/icon/right_blue.ico",
-                    }
-                ]
-            }    
+            }
         ]
-    },
-    {
-        "id":"Apache5", 
-        "text": "Apache5",
-        "icon":"/static/icon/duty_blue.ico",
-
-    
-    },
-    {
-        "id":"Apache6",   
-        "text": "Apache6",
-        "icon":"/static/icon/duty_blue.ico",
-    
-    },
-    {
-        "id":"Apache7",
-        "text":"Apache7",
-        "icon":"/static/icon/duty_blue.ico",
-    },
-    {
-        "id":"Apache8",
-        "text":"Apache8",
-        "icon":"/static/icon/duty_blue.ico",
-    },
-    {
-        "id":"Apache9",
-        "text":"Apache9",
-        "icon":"/static/icon/duty_blue.ico",
-    },
-    {
-        "id":"Appendix",
-        "text":"Appendix",
-        "icon":"/static/document.png"
+        
+       
     }
+   
+    
 
 ];
 
-  
-  // Builds the JSON data object JSONInput
-//   function updateJSON(id, status) {
 
-//     //check if norm
-//     var delimited = id.split('_');
-//     var isNorm = false;
-//     if (delimited[1] == null) {
-//         isNorm = true; // Is a norm
-//     } else {
-//         isNorm = false; // not a norm
-//     }
-
-//     if (!isNorm) {
-//         var exist = false;
-//         $.each(jsonInput, function(key, val) {
-//             if (val.id == id) {
-//                 val.satisfied = status;
-//                 exist = true;
-//             }
-//         });
-//         if (exist == false) {
-//             item = {};
-//             item["id"] = id;
-//             item["satisfied"] = status;
-//             jsonInput.push(item);
-            
-            
-//         }
-
-//     } else { // this is a norm
-//         var exist = false;
-//         $.each(jsonInput, function(key, val) {
-//             if (val.id == id) {
-//                 val.compliance = status;
-//                 exist = true;
-//             }
-//         });
-//         if (exist == false) {
-//             item = {};
-//             item["id"] = id;
-//             item["compliance"] = status;
-//             jsonInput.push(item);
-//         }
-//     }
-
-//   // console.log(JSON.stringify(jsonInput));
-//   console.log(JSON.stringify(jsonInput_text));
-
-// }
 
 function updateJSON(id, status,_text) {
 
@@ -626,7 +402,7 @@ function updateJSON(id, status,_text) {
             jsonInput.push(item);
             item["text_first_line"] = _text;
             jsonInput_text.push(item);
-            $.each(apache2_id,function(_id,_obj_) {
+            $.each(mel_id,function(_id,_obj_) {
                
                 if(_text == _obj_.text && id != _obj_.id){
                     
@@ -1025,7 +801,7 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
     }
 
    graphviz
-        .dot(apache2[dot_index])
+        .dot(mel[dot_index])
         .zoom(false)
         .render(function () {
             graph = $("svg")
@@ -1154,7 +930,7 @@ $(document).ready(function(){
             console.log("FROM ME:"+JSON.stringify(jsonInput_text))
 
             // //query normserver
-            accessURL = "http://localhost:4567/assert/7/1"
+            accessURL = "http://localhost:4567/assert/8/1"
             $.ajax(accessURL, {
                 method: 'POST',
                 data: JSON.stringify(jsonInput_text),
@@ -1194,7 +970,7 @@ $(document).ready(function(){
         
        
 
-        if ($('#data').jstree('get_selected',true)[0].id.startsWith('Apache')) {
+        if ($('#data').jstree('get_selected',true)[0].id.startsWith('MEL')) {
             
             genGraph($('#data').jstree('get_selected',true)[0].id)
         }else{
