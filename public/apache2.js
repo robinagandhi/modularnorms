@@ -1201,11 +1201,36 @@ $(document).ready(function(){
             //console.log("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase())
             $(".statement,.preamble,.appendix").css('background-color','unset')
             
-            $("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase()).css('background-color','#add8e6').focus()
+            $("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase()).css('background-color','#add8e6')
+            $("."+$('#data').jstree('get_selected',true)[0].id.toLowerCase()).focus()
            
         }
 
       });
+
+      $('#data').bind("hover_node.jstree",function(e,data){
+
+
+       
+        $("."+(data.node.id)).css('border','1px solid').css('border-color','#c5e1eb')
+        $("."+(data.node.id)).focus()
+        
+        
+
+      });
+
+      $('#data').bind("dehover_node.jstree",function(e,data){
+
+        
+        $("."+(data.node.id)).css('border','none').hover(function(){
+            $(this).css('border','1px solid').css('border-color','#c5e1eb')
+        }).mouseout(function(){
+            $(this).css('border','none')
+        })
+        
+
+      });
+
 
    
     

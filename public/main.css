@@ -108,10 +108,8 @@ body {
 
 
 
-a.statement:hover {
-    border:1px solid;
-    border-color: blueviolet;
-    text-decoration: none;
+a.statement:focus {
+   outline: none
     
 }
 a:link {

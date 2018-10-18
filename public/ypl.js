@@ -722,6 +722,29 @@ $(document).ready(function(){
 
       });
 
+      $('#data').bind("hover_node.jstree",function(e,data){
+
+       
+        $("."+(data.node.id)).css('border','1px solid').css('border-color','#c5e1eb')
+        $("."+(data.node.id)).focus()
+        
+
+      });
+
+      $('#data').bind("dehover_node.jstree",function(e,data){
+
+        
+        $("."+(data.node.id)).css('border','none').hover(function(){
+            $(this).css('border','1px solid').css('border-color','#c5e1eb')
+        }).mouseout(function(){
+            $(this).css('border','none')
+        })
+        
+
+      });
+
+
+
     //   $('#buttontest').click(function(){
     //     $('#data').jstree(true).select_node('YPL4a');
     //   })
