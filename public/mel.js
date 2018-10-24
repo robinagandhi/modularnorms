@@ -22,13 +22,13 @@ var mel = [
             MEL1_35 -> MEL1[label="satisfies"];
             MEL1_36 [shape=box, label="and", style=filled, fillcolor=grey];
             MEL1_36 -> MEL1[label="activates"];
-            MEL1_37 [shape=box, label="SS_MEL1a", style=filled, fillcolor=orange];
+            MEL1_37 [shape=box, label="SS_MEL1a", style=filled, fillcolor=white];
             MEL1_37 -> MEL1_36;
             MEL1_38 [shape=box, label="and", style=filled, fillcolor=grey];
             MEL1_38 -> MEL1_36;
-            MEL1_39 [shape=box, label="SS_MEL1b", style=filled, fillcolor=orange];
+            MEL1_39 [shape=box, label="SS_MEL1b", style=filled, fillcolor=white];
             MEL1_39 -> MEL1_38;
-            MEL1_40 [shape=box, label="SS_MEL1c", style=filled, fillcolor=orange];
+            MEL1_40 [shape=box, label="SS_MEL1c", style=filled, fillcolor=white];
             MEL1_40 -> MEL1_38;
             }
         }
@@ -128,27 +128,27 @@ var mel = [
             MEL2_2 -> MEL2[label="activates"];
             MEL2_3 [shape=box, label="and", style=filled, fillcolor=grey];
             MEL2_3 -> MEL2_2;
-            MEL2_4 [shape=box, label="SS_MEL1a", style=filled, fillcolor=orange];
+            MEL2_4 [shape=box, label="SS_MEL1a", style=filled, fillcolor=white];
             MEL2_4 -> MEL2_3;
             MEL2_5 [shape=box, label="and", style=filled, fillcolor=grey];
             MEL2_5 -> MEL2_3;
-            MEL2_6 [shape=box, label="SS_MEL1b", style=filled, fillcolor=orange];
+            MEL2_6 [shape=box, label="SS_MEL1b", style=filled, fillcolor=white];
             MEL2_6 -> MEL2_5;
-            MEL2_7 [shape=box, label="SS_MEL1c", style=filled, fillcolor=orange];
+            MEL2_7 [shape=box, label="SS_MEL1c", style=filled, fillcolor=white];
             MEL2_7 -> MEL2_5;
             MEL2_8 [shape=box, label="and", style=filled, fillcolor=grey];
             MEL2_8 -> MEL2_2;
-            MEL2_9 [shape=box, label="SS_MEL2a", style=filled, fillcolor=orange];
+            MEL2_9 [shape=box, label="SS_MEL2a", style=filled, fillcolor=white];
             MEL2_9 -> MEL2_8;
             MEL2_10 [shape=box, label="and", style=filled, fillcolor=grey];
             MEL2_10 -> MEL2_8;
-            MEL2_11 [shape=box, label="SS_MEL2b", style=filled, fillcolor=orange];
+            MEL2_11 [shape=box, label="SS_MEL2b", style=filled, fillcolor=white];
             MEL2_11 -> MEL2_10;
             MEL2_12 [shape=box, label="and", style=filled, fillcolor=grey];
             MEL2_12 -> MEL2_10;
-            MEL2_13 [shape=box, label="SS_MEL2c", style=filled, fillcolor=orange];
+            MEL2_13 [shape=box, label="SS_MEL2c", style=filled, fillcolor=white];
             MEL2_13 -> MEL2_12;
-            MEL2_14 [shape=box, label="SS_MEL2d", style=filled, fillcolor=orange];
+            MEL2_14 [shape=box, label="SS_MEL2d", style=filled, fillcolor=white];
             MEL2_14 -> MEL2_12;
             }
         }
