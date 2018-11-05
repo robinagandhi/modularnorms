@@ -1,0 +1,210 @@
+body {
+    font-family: Arial;
+    color: black;
+    
+    height: 100%;
+    width: 100%;
+    position: absolute;
+   
+
+}
+
+.display {
+    height: 100%;
+
+}
+
+.row {
+    display: flex;
+    height: 98%;
+    padding: 0 4px;
+}
+
+.column-0 {
+    align-self: stretch;
+    justify-content: left;
+    font-size: small;
+    width: 200px;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.box-0 {
+    background-color: whitesmoke;
+    border: 1px solid;
+    overflow: scroll;
+    text-align: inherit;
+    height: 60%;
+
+}
+
+.box-1 {
+    text-align: inherit;
+    height: 38%;
+    margin-top: 10px;
+    border: 1px solid;
+    background-color: whitesmoke;
+    overflow: scroll;
+}
+
+.column-1 {
+    align-items: stretch;
+    justify-content: center;
+    font-size: small;
+    /* flex-direction: column; */
+    width:50%;
+    height: 100%;
+    /* margin: auto; */
+    /* position: absolute; */
+    
+}
+.box-2 {
+    background-color: whitesmoke;
+    border: 1px solid;
+    overflow: scroll;
+    text-align: inherit;
+    height: 100%;
+
+}
+
+.column-2 {
+    width: 50%;
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 4px;
+    
+}
+
+
+#box-3 {
+    background-color: white;
+    /* border: 2px solid;  */
+    /* border-width: 2px; */
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+}
+
+
+
+.box-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+    border: 1px solid;
+    margin-top: 5px;
+    text-align: inherit;
+    text-align: center;
+    height: 20%;
+    margin-left: 4px;
+    margin-right: 4px;
+    overflow:scroll
+}
+
+
+
+
+
+
+a.statement:focus {
+   outline: none
+    
+}
+a:link {
+    text-decoration: none;
+}
+
+a.appendix:focus {
+    background-color: cornflowerblue;
+}
+
+/* a.supersit:hover {
+    background-color: cornflowerblue;
+} */
+
+
+ /* .node {
+    transition: transform .2s;
+}
+
+.node:hover {
+    -ms-transform: scale(1.5); 
+    -webkit-transform: scale(1.5);  
+    transform: scale(1.5);
+}   */
+
+
+
+
+/* #nextButton {
+    position: relative;
+    top: 90px;
+    left: 260px;
+    cursor: pointer; 
+} */
+
+/* .node:{
+
+} */
+
+
+
+/* Popup container - can be anything you want */
+/* .node {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+} */
+
+/* The actual popup */
+/*.node .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+} */
+
+/* Popup arrow */
+/* .node .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+} */
+
+/* Toggle this class - hide and show the popup */
+/* .node .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+} */
+
+/* Add animation (fade in the popup) */
+/* @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+} */
+
