@@ -499,6 +499,11 @@ function genGraph(stat){
 
 
    $('#data').jstree().deselect_all()
+   
+    
+    if($('#graph svg').length){
+        $('#graph svg').remove();
+    }
 
     $('#data').jstree(true).select_node(stat);
 
@@ -549,20 +554,12 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
 
    graphviz
         .dot(ypl[dot_index])
-        // .zoom(false)
+        .zoom(false)
         .render(function () {
-            graph = $("svg")
+            graph = $("#graph svg")
+          
             SVG_Interaction()
-               
-            // var panZoomGraph = svgPanZoom("svg",{
 
-            //     zoomEnabled: true,
-            //     controlIconsEnabled: true,
-            //     fit: true,
-            //     center: true,
-                
-            //     });
-            
             for (let index = 1; index < graph.children().children('.node').children('text').length; index++) {
                 // const element = graph.children().children('.node').children('text')[index];
                 // console.log(element)
@@ -626,13 +623,31 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
                 }
             }
         }
+
+         
             //color graph using jsonState
              console.log("currentState: "+JSON.stringify(jsonState));
     
 
             updateSVG(jsonState);
+
+            /*
+            *Add zoom
+            */
+
+
+           panZoomGraph = svgPanZoom('#graph svg',{
+            zoomEnabled: true,
+            controlIconsEnabled: true,
+            fit: true,
+            center: true,
+            dblClickZoomEnabled: false
+        });
+
             
         })
+
+       
 /**
 * Highlight the statement corresponding to generated graph
 */
