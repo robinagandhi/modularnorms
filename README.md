@@ -9,6 +9,8 @@ Complying with legal regulatory requirements in privacy and security is necessar
 
 For additional examples using legal statements "in the wild" explore the following: [AGPL](https://robinagandhi.github.io/modularnorms/examples/agpl-test.html), [Apache](https://robinagandhi.github.io/modularnorms/examples/apache-test.html) and [HIPAA](https://robinagandhi.github.io/modularnorms/examples/hipaalite-test.html) Models.
 
+To better vizualise and provide context to the models, they have been integrated  with their corresponding legal text using a  multiview interface. The previous Your Public License 1.0 toy example is represented using the [new interface](https://robinagandhi.github.io/modularnorms/public/ypl.html).   
+
 These models have been generated from corresponding JSON objects in the examples directory as shown below.   
 
 # Usage
@@ -37,7 +39,11 @@ dot -Tsvg -o agpl.svg agpl.dot
 ```
 The result is an html file that calls an online reasoning service. For instructions on running your own server see instructions in the [normserver](https://github.com/robinagandhi/modularnorms/tree/master/normserver) directory
 
+
+
+
 # Project Team
 [Dr. Robin Gandhi](http://faculty.ist.unomaha.edu/rgandhi/)  
 [Dr. Harvey Siy](http://cs2.ist.unomaha.edu/~hsiy/)  
 [Sayonnha Mandal](https://www.unomaha.edu/college-of-information-science-and-technology/phd-it/directory/phd-students/sayonnha-mandal.php)  
+[Olivier Avande]
