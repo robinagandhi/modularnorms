@@ -12,6 +12,7 @@
                 <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/themes/default/style.min.css" />
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/jstree.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
 
                 <style>
 
@@ -201,152 +202,156 @@ outline: 0px;
                         <div class="display">
                                 <div class="row">
 
-                                        <!--  This column contain a hierarchical view of the license in a tree view fashion-->
-                                        <div class="column_0 col-sm-2 panel panel-default" style="padding: unset;">
-
-                                                <div class="panel-heading">
-                                                                <div style="float:left" class="dropdown">
-                                                                                <button class="btn btn-default dropdown-toggle btn-xs" type="button" data-toggle="dropdown"><span>
-                                                                                <span class="glyphicon glyphicon-th-list"></span></button>
-                                                                                <ul class="dropdown-menu">
-                                                                                  <li><a href="/ypl.html">YPLv1.0</a></li>
-                                                                                  <li><a href="/lel.html">LELv1.0</a></li>
-                                                                                  
-                                                                                </ul>
-                                                                              </div>
-
-                                                                              <p>MELv1.0</p>
+                                        <div class="col-sm-6" style="height:100%">
+                                            <div class="row">
+                                                <!--  This column contain a hierarchical view of the license in a tree view fashion-->
+                                                <div class="column_0 col-sm-3 panel panel-default" style="padding: unset;">
+        
+                                                        <div class="panel-heading">
+                                                                        <div style="float:left" class="dropdown">
+                                                                                        <button class="btn btn-default dropdown-toggle btn-xs" type="button" data-toggle="dropdown"><span>
+                                                                                        <span class="glyphicon glyphicon-th-list"></span></button>
+                                                                                        <ul class="dropdown-menu">
+                                                                                          <li><a href="/ypl.html">YPLv1.0</a></li>
+                                                                                          <li><a href="/lel.html">LELv1.0</a></li>
+                                                                                          
+                                                                                        </ul>
+                                                                                      </div>
+        
+                                                                                      <p>MELv1.0</p>
+                                                        </div>
+        
+                                                        <div class="panel-body" id="data">
+        
+        
+        
+                                                        </div>
+        
+        
+        
                                                 </div>
-
-                                                <div class="panel-body" id="data">
-
-
-
-                                                </div>
-
-
-
-                                        </div>
-
-                                        
-                                        <div class="column_1 col-sm-5 panel panel-default" style="padding: unset;">
-
-                                                <div class="panel-heading">License Text</div>
-                        
-                                                <div class="box-2 panel-body" style="overflow: scroll;">
-                        
-                        
-                                                    <div class="optional-license-text">
-                                                        <p>MEDIUM EXAMPLE LICENSE
-                                                            <br /> Version 1, Septempber 2018 </p>
-                                                        
-                                                    </div>
-                        
-                                                    <ul style="list-style:none">
-                                                       
-                                                        <li>
-                        
-                                                            <var class="replacable-license-text">1.</var>
-                                                            <a href="#" class="statement MEL1">You may copy and distribute verbatim copies of the Program's source code as you receive it, in
-                                                                any medium, provided that</a>
-
+        
+                                                
+                                                <div class="column_1 col-sm-9 panel panel-default" style="padding: unset;">
+        
+                                                        <div class="panel-heading">License Text</div>
+                                
+                                                        <div class="box-2 panel-body" style="overflow: scroll;">
+                                
+                                
+                                                            <div class="optional-license-text">
+                                                                <p>MEDIUM EXAMPLE LICENSE
+                                                                    <br /> Version 1, Septempber 2018 </p>
+                                                                
+                                                            </div>
+                                
+                                                            <ul style="list-style:none">
                                                                
-                                                            <ul style="list-style:none">
-                                                                    <li>
-                                                                                <var class="replacable-license-text">a)</var>
-                                                                            <a href="#" class="statement MEL1a">
-                                                                                you conspicuously and appropriately publish on each copy an appropriate copyright notice and
-                                                                                disclaimer of warranty
-                                                                            </a>; 
-                                                                    </li>
-                                                                    <li>
-                                                                                <var class="replacable-license-text">b)</var>
-                                                                            <a href="#" class="statement MEL1b">
-                                                                                keep intact all the notices that refer to this License and to the absence
-                                                                                of any warranty;
-                                                                            </a>
-                                                                    </li> and 
-                                                                    <li>
-                                                                                <var class="replacable-license-text">c)</var>
-                                                                            <a href="#" class="statement MEL1c">
-                                                                                give any other recipients of the Program a copy of this License along with
-                                                                                the Program.
-                                                                            </a>
-                                                                    </li>
-                                                                    <li>
-                                                                                <var class="replacable-license-text">d)</var>
-                                                                            <a href="#" class="statement MEL1d">
-                                                                                    You may charge a fee for the physical act of transferring a copy, and you may at your option
-                                                                                        offer warranty protection in exchange for a fee.
-                                                                            </a>
-                                                                    </li>
-
-
-                                                            </ul>
-                        
-                                                        </li>
-                                                        <li>
-                        
-                                                            <var class="replacable-license-text">2.</var>
-                                                            <a href="#" class="statement MEL2">
-                                                                You may modify your copy or copies of the Program or any portion of it, thus forming a work based on the Program, and copy
-                                                                and distribute such modifications or work under the terms of Section 1 above, provided that you
-                                                                also meet all of these conditions:
-                                                            </a>
-                        
-                                                            <ul style="list-style:none">
                                                                 <li>
-                        
-                                                                    <var class="replacable-license-text">a)</var>
-                                                                    <a href="#" class="statement MEL2a">You must cause the modified files to carry prominent notices stating that you changed
-                                                                        the files and the date of any change.</a>
+                                
+                                                                    <var class="replacable-license-text">1.</var>
+                                                                    <a href="#" class="statement MEL1">You may copy and distribute verbatim copies of the Program's source code as you receive it, in
+                                                                        any medium, provided that</a>
+        
+                                                                       
+                                                                    <ul style="list-style:none">
+                                                                            <li>
+                                                                                        <var class="replacable-license-text">a)</var>
+                                                                                    <a href="#" class="statement MEL1a">
+                                                                                        you conspicuously and appropriately publish on each copy an appropriate copyright notice and
+                                                                                        disclaimer of warranty
+                                                                                    </a>; 
+                                                                            </li>
+                                                                            <li>
+                                                                                        <var class="replacable-license-text">b)</var>
+                                                                                    <a href="#" class="statement MEL1b">
+                                                                                        keep intact all the notices that refer to this License and to the absence
+                                                                                        of any warranty;
+                                                                                    </a>
+                                                                            </li> and 
+                                                                            <li>
+                                                                                        <var class="replacable-license-text">c)</var>
+                                                                                    <a href="#" class="statement MEL1c">
+                                                                                        give any other recipients of the Program a copy of this License along with
+                                                                                        the Program.
+                                                                                    </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                        <var class="replacable-license-text">d)</var>
+                                                                                    <a href="#" class="statement MEL1d">
+                                                                                            You may charge a fee for the physical act of transferring a copy, and you may at your option
+                                                                                                offer warranty protection in exchange for a fee.
+                                                                                    </a>
+                                                                            </li>
+        
+        
+                                                                    </ul>
+                                
                                                                 </li>
                                                                 <li>
-                        
-                                                                    <var class="replacable-license-text">b)</var>
-                                                                    <a href="#" class="statement MEL2b">
-                                                                        You must cause any work that you distribute or publish, that in whole or in part contains or is derived from the Program
-                                                                        or any part thereof, to be licensed as a whole at no charge to all third parties under
-                                                                        the terms of this License.
+                                
+                                                                    <var class="replacable-license-text">2.</var>
+                                                                    <a href="#" class="statement MEL2">
+                                                                        You may modify your copy or copies of the Program or any portion of it, thus forming a work based on the Program, and copy
+                                                                        and distribute such modifications or work under the terms of Section 1 above, provided that you
+                                                                        also meet all of these conditions:
                                                                     </a>
-                                                                </li>
-                                                                <li>
-                        
-                                                                    <var class="replacable-license-text">c)</var>
-                                                                    <a href="#" class="statement MEL2c">
-                                                                        If the modified program normally reads commands interactively when run, you must cause it, when started running for such
-                                                                        interactive use in the most ordinary way, to print or display an announcement including
-                                                                        an appropriate copyright notice and a notice that there is no warranty (or else, saying
-                                                                        that you provide a warranty) and that users may redistribute the program under these
-                                                                        conditions, and telling the user how to view a copy of this License. (Exception: if the
-                                                                        Program itself is interactive but does not normally print such an announcement, your
-                                                                        work based on the Program is not required to print an announcement.)
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                        
-                                                                    <var class="replacable-license-text">d)</var>
-                                                                    <a href="#" class="statement MEL2d">
-                                                                        If the Program as you received it is intended to interact with users through a computer network and if, in the version
-                                                                        you
-                                                                        received, any user interacting with the Program was given the opportunity to request
-                                                                        transmission to that user of the Program's complete source code, you must not remove
-                                                                        that facility from your modified version of the Program or work based on the Program,
-                                                                        and must offer an equivalent opportunity for all users interacting with your Program
-                                                                        through a computer network to request immediate transmission by HTTP of the complete
-                                                                        source code of your modified version or other derivative work.
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                </div>
-                        
+                                
+                                                                    <ul style="list-style:none">
+                                                                        <li>
+                                
+                                                                            <var class="replacable-license-text">a)</var>
+                                                                            <a href="#" class="statement MEL2a">You must cause the modified files to carry prominent notices stating that you changed
+                                                                                the files and the date of any change.</a>
+                                                                        </li>
+                                                                        <li>
+                                
+                                                                            <var class="replacable-license-text">b)</var>
+                                                                            <a href="#" class="statement MEL2b">
+                                                                                You must cause any work that you distribute or publish, that in whole or in part contains or is derived from the Program
+                                                                                or any part thereof, to be licensed as a whole at no charge to all third parties under
+                                                                                the terms of this License.
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                
+                                                                            <var class="replacable-license-text">c)</var>
+                                                                            <a href="#" class="statement MEL2c">
+                                                                                If the modified program normally reads commands interactively when run, you must cause it, when started running for such
+                                                                                interactive use in the most ordinary way, to print or display an announcement including
+                                                                                an appropriate copyright notice and a notice that there is no warranty (or else, saying
+                                                                                that you provide a warranty) and that users may redistribute the program under these
+                                                                                conditions, and telling the user how to view a copy of this License. (Exception: if the
+                                                                                Program itself is interactive but does not normally print such an announcement, your
+                                                                                work based on the Program is not required to print an announcement.)
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                
+                                                                            <var class="replacable-license-text">d)</var>
+                                                                            <a href="#" class="statement MEL2d">
+                                                                                If the Program as you received it is intended to interact with users through a computer network and if, in the version
+                                                                                you
+                                                                                received, any user interacting with the Program was given the opportunity to request
+                                                                                transmission to that user of the Program's complete source code, you must not remove
+                                                                                that facility from your modified version of the Program or work based on the Program,
+                                                                                and must offer an equivalent opportunity for all users interacting with your Program
+                                                                                through a computer network to request immediate transmission by HTTP of the complete
+                                                                                source code of your modified version or other derivative work.
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                        </div>
+                                
+                                                    </div>
+                                            </div>
                                             </div>
 
                                         <div id="loader"></div>
 
                                         <!-- Second column containing genarated graph -->
 
-                                        <div class="column_2 col-sm-5 panel panel-default" id="box-3" style="padding: unset;">
+                                        <div class="column_2 col-sm-6 panel panel-default" id="box-3" style="padding: unset;">
 
                                                         <div class="panel-heading">
                                                                         <p>Model <button id="play" type="button" class="btn btn-default btn-xs" style="float:right">
