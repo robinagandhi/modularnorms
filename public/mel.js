@@ -254,7 +254,7 @@ var mapping = {
   "MEL2d":9
   
 };
-
+var panZoomGraph = null;
 var jsonInput = [];
 var jsonState = [];
 var polygon_top = null;
@@ -758,7 +758,9 @@ function genGraph(stat){
 
         
     })
-
+    if($('#graph svg').length){
+        $('#graph svg').remove();
+    }
 
     
 /**
@@ -805,6 +807,19 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
         .zoom(false)
         .render(function () {
             graph = $("svg")
+
+            /*
+            *Add zoom
+            */
+
+
+           panZoomGraph = svgPanZoom('#graph svg',{
+            zoomEnabled: true,
+            controlIconsEnabled: true,
+            fit: true,
+            center: true,
+            dblClickZoomEnabled: false
+        });
             SVG_Interaction()
             
             for (let index = 1; index < graph.children().children('.node').children('text').length; index++) {

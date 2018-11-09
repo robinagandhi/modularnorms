@@ -30,11 +30,11 @@ var lel = [
             LEL2_46 -> LEL2_45;
             LEL2_47 [shape=box, label="[You reproduced] the Work and\n such Derivative Works in\n Source or Object form"];
             LEL2_47 -> LEL2_46;
-            LEL2_48 [shape=box, label="[You prepared Derivative Works\n of] the Work and such\n Derivative Works in Source\n or Object form" ];
+            LEL2_48 [shape=box, label="[You prepared Derivative Works\n of] the Work and such\n Derivative Works in Source\n or Object form"];
             LEL2_48 -> LEL2_46;
-            LEL2_49 [shape=box, label="[You publicly displayed] the\n Work and such Derivative\n Works in Source or Object form" ];
+            LEL2_49 [shape=box, label="[You publicly displayed] the\n Work and such Derivative\n Works in Source or Object form"];
             LEL2_49 -> LEL2_45;
-            LEL2_50 [shape=box, label="[You publicly performed] the\n Work and such Derivative\n Works in Source or Object form" ];
+            LEL2_50 [shape=box, label="[You publicly performed] the\n Work and such Derivative\n Works in Source or Object form"];
             LEL2_50 -> LEL2_44;
             LEL2_51 [shape=box, label="[You sublicenced] the Work and\n such Derivative Works in\n Source or Object form"];
             LEL2_51 -> LEL2_43;
@@ -273,18 +273,18 @@ var lel = [
         subgraph clusterSS_LEL5 {
             label = "SS_LEL5"
             LEL5 [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="LEL5", tooltip="Submission of Contributions. Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions."];
-            LEL5_87 [shape=box, label="and", style=filled, fillcolor=grey];
-            LEL5_87 -> LEL5[label="satisfies"];
-            LEL5_88 [shape=box, label="or", style=filled, fillcolor=grey];
-            LEL5_88 -> LEL5_87;
-            LEL5_89 [shape=box, label="[Any Contribution\n intentionally submitted for\n inclusion in the Work by\n You to the Licensor is]\n under the terms and\n conditions of this License,\n without any additional\n terms or conditions"];
-            LEL5_89 -> LEL5_88;
-            LEL5_90 [shape=box, label="[You explicitly stated] terms\n and conditions"];
-            LEL5_90 -> LEL5_88;
-            LEL5_91 [shape=box, label="[Nothing herein supersede ]or\n modify the terms of any\n separate license agreement\n you may have executed with\n Licensor regarding such\n Contributions."];
-            LEL5_91 -> LEL5_87;
-            LEL5_92 [shape=box, label="[You intend to submit] a Work for\n Contribution"];
-            LEL5_92 -> LEL5[label="activates"];
+            LEL5_79 [shape=box, label="and", style=filled, fillcolor=grey];
+            LEL5_79 -> LEL5[label="satisfies"];
+            LEL5_80 [shape=box, label="or", style=filled, fillcolor=grey];
+            LEL5_80 -> LEL5_79;
+            LEL5_81 [shape=box, label="[Any Contribution\n intentionally submitted for\n inclusion in the Work by\n You to the Licensor is]\n under the terms and\n conditions of this License,\n without any additional\n terms or conditions"];
+            LEL5_81 -> LEL5_80;
+            LEL5_82 [shape=box, label="[You explicitly stated] terms\n and conditions"];
+            LEL5_82 -> LEL5_80;
+            LEL5_83 [shape=box, label="[Nothing herein supersede ]or\n modify the terms of any\n separate license agreement\n you may have executed with\n Licensor regarding such\n Contributions."];
+            LEL5_83 -> LEL5_79;
+            LEL5_84 [shape=box, label="[You submitted] a Work for\n Contribution"];
+            LEL5_84 -> LEL5[label="activates"];
             }
         }
     `,
@@ -296,16 +296,16 @@ var lel = [
         subgraph clusterSS_LEL6 {
             label = "SS_LEL6"
             LEL6 [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="LEL6", tooltip="Trademarks. This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file"];
-            LEL6_93 [shape=box, label="or", style=filled, fillcolor=grey];
-            LEL6_93 -> LEL6[label="satisfies"];
-            LEL6_94 [shape=box, label="not", style=filled, fillcolor=grey];
-            LEL6_94 -> LEL6_93;
-            LEL6_95 [shape=box, label="[You used trade names,\n trademarks, service marks,\n or product names of the\n Licensor]"];
-            LEL6_95 -> LEL6_94;
-            LEL6_96 [shape=box, label="[As required ]for reasonable\n and customary use in\n describing the origin of\n the Work and reproducing\n the content of the NOTICE\n file [You used] trade\n names, trademarks, service\n marks, or product names of the Licensor"];
-            LEL6_96 -> LEL6_93;
-            LEL6_97 [shape=box, label="You intend to exercice permissions\n granted by this License"];
-            LEL6_97 -> LEL6[label="activates"];
+            LEL6_85 [shape=box, label="or", style=filled, fillcolor=grey];
+            LEL6_85 -> LEL6[label="satisfies"];
+            LEL6_86 [shape=box, label="not", style=filled, fillcolor=grey];
+            LEL6_86 -> LEL6_85;
+            LEL6_87 [shape=box, label="[You used trade names,\n trademarks, service marks,\n or product names of the\n Licensor]"];
+            LEL6_87 -> LEL6_86;
+            LEL6_88 [shape=box, label="[As required ]for reasonable\n and customary use in\n describing the origin of\n the Work and reproducing\n the content of the NOTICE\n file [You used] trade\n names, trademarks, service\n marks, or product names of the Licensor"];
+            LEL6_88 -> LEL6_85;
+            LEL6_89 [shape=box, label="[You exercice permission\n granted by this License ]"];
+            LEL6_89 -> LEL6[label="activates"];
             }
         }
     `,
@@ -317,18 +317,18 @@ var lel = [
         subgraph clusterSS_LEL7 {
             label = "SS_LEL7"
             LEL7 [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="LEL7", tooltip="Disclaimer of Warranty. Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License."];
-            LEL7_98 [shape=box, label="or", style=filled, fillcolor=grey];
-            LEL7_98 -> LEL7[label="satisfies"];
-            LEL7_99 [shape=box, label="[Required by applicable law or\n agreed to in writing],\n Licensor did not provides\n the Work (and each\n Contributor did not provide\n its Contributions) on an\n 'AS IS' basis, WITHOUTH\n WARRANTIES OR CONDITIONS OF\n ANY KIND,either express or\n implied, including, without\n limitation, any warranties\n or conditions of TITLE,\n NON-INFRINGEMENT,\n MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE"];
-            LEL7_99 -> LEL7_98;
-            LEL7_100 [shape=box, label="and", style=filled, fillcolor=grey];
-            LEL7_100 -> LEL7_98;
-            LEL7_101 [shape=box, label="[You determined\n appropriateness of using or\n redistributing the Work"];
-            LEL7_101 -> LEL7_100;
-            LEL7_102 [shape=box, label="[You assumed] any risks\n associated with Your\n exercice of permissions\n under this license"];
-            LEL7_102 -> LEL7_100;
-            LEL7_103 [shape=box, label="You intend to exercice permissions\n granted by this License"];
-            LEL7_103 -> LEL7[label="activates"];
+            LEL7_90 [shape=box, label="or", style=filled, fillcolor=grey];
+            LEL7_90 -> LEL7[label="satisfies"];
+            LEL7_91 [shape=box, label="[Required by applicable law or\n agreed to in writing],\n Licensor did not provides\n the Work (and each\n Contributor did not provide\n its Contributions) on an\n 'AS IS' basis, WITHOUTH\n WARRANTIES OR CONDITIONS OF\n ANY KIND,either express or\n implied, including, without\n limitation, any warranties\n or conditions of TITLE,\n NON-INFRINGEMENT,\n MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE"];
+            LEL7_91 -> LEL7_90;
+            LEL7_92 [shape=box, label="and", style=filled, fillcolor=grey];
+            LEL7_92 -> LEL7_90;
+            LEL7_93 [shape=box, label="[You determined\n appropriateness of using or\n redistributing the Work"];
+            LEL7_93 -> LEL7_92;
+            LEL7_94 [shape=box, label="[You assumed] any risks\n associated with Your\n exercice of permissions\n under this license"];
+            LEL7_94 -> LEL7_92;
+            LEL7_95 [shape=box, label="You exercice permission\n granted by this License"];
+            LEL7_95 -> LEL7[label="activates"];
             }
         }
     `,
@@ -340,16 +340,16 @@ var lel = [
         subgraph clusterSS_LEL8 {
             label = "SS_LEL8"
             LEL8 [shape=triangle, orientation=0, style=filled, fillcolor=lightblue, label="LEL8", tooltip="Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages."];
-            LEL8_104 [shape=box, label="or", style=filled, fillcolor=grey];
-            LEL8_104 -> LEL8[label="satisfies"];
-            LEL8_105 [shape=box, label="[Required by applicable law\n (such as deliberate and\n grossly negligent acts) or\n agreed to in writing, [You\n holded] Contributor liable\n to You for damages,\n including any direct,\n indirect, special,\n incidental, or\n consequential damages of\n any character arising as a\n result of this License or\n out of the use or inability\n to use the Work (including\n but not limited to damages\n for loss of goodwill, work\n stoppage, computer failure\n or malfunction, or any and\n all other commercial damages or losses)]"];
-            LEL8_105 -> LEL8_104;
-            LEL8_106 [shape=box, label="not", style=filled, fillcolor=grey];
-            LEL8_106 -> LEL8_104;
-            LEL8_107 [shape=box, label="[You holded] Contributor\n liable to You for damages,\n including any direct,\n indirect, special,\n incidental, or\n consequential damages of\n any character arising as a\n result of this License or\n out of the use or inability\n to use the Work (including\n but not limited to damages\n for loss of goodwill, work\n stoppage, computer failure\n or malfunction, or any and\n all other commercial damages or losses)"];
-            LEL8_107 -> LEL8_106;
-            LEL8_108 [shape=box, label="You intend to exercice permissions\n granted by this License"];
-            LEL8_108 -> LEL8[label="activates"];
+            LEL8_96 [shape=box, label="or", style=filled, fillcolor=grey];
+            LEL8_96 -> LEL8[label="satisfies"];
+            LEL8_97 [shape=box, label="[Required by applicable law\n (such as deliberate and\n grossly negligent acts) or\n agreed to in writing, [You\n holded] Contributor liable\n to You for damages,\n including any direct,\n indirect, special,\n incidental, or\n consequential damages of\n any character arising as a\n result of this License or\n out of the use or inability\n to use the Work (including\n but not limited to damages\n for loss of goodwill, work\n stoppage, computer failure\n or malfunction, or any and\n all other commercial damages or losses)]"];
+            LEL8_97 -> LEL8_96;
+            LEL8_98 [shape=box, label="not", style=filled, fillcolor=grey];
+            LEL8_98 -> LEL8_96;
+            LEL8_99 [shape=box, label="[You holded] Contributor\n liable to You for damages,\n including any direct,\n indirect, special,\n incidental, or\n consequential damages of\n any character arising as a\n result of this License or\n out of the use or inability\n to use the Work (including\n but not limited to damages\n for loss of goodwill, work\n stoppage, computer failure\n or malfunction, or any and\n all other commercial damages or losses)"];
+            LEL8_99 -> LEL8_98;
+            LEL8_100 [shape=box, label="You exercice permissions\n granted by this License"];
+            LEL8_100 -> LEL8[label="activates"];
             }
         }
     `,
@@ -361,18 +361,18 @@ var lel = [
         subgraph clusterSS_LEL9 {
             label = "SS_LEL9"
             LEL9 [shape=triangle, orientation=270, style=filled, fillcolor=lightblue, label="LEL9", tooltip="Accepting Warranty or Additional Liability. While redistributing the Work or Derivative Works thereof, You may choose to offer,and charge a fee for, acceptance of support, warranty, indemnity,or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability."];
-            LEL9_109 [shape=box, label="and", style=filled, fillcolor=grey];
-            LEL9_109 -> LEL9[label="satisfies"];
-            LEL9_110 [shape=box, label="and", style=filled, fillcolor=grey];
-            LEL9_110 -> LEL9_109;
-            LEL9_111 [shape=box, label="[You offered, and charge] a\n fee for, acceptance of\n support, warranty,\n indemnity, or other\n liability obligations\n and/or rights consistent\n with this License"];
-            LEL9_111 -> LEL9_110;
-            LEL9_112 [shape=box, label="[You acted] only on Your own\n behalf and on Your sole\n responsibility, not on\n behalf of any other Contributor"];
-            LEL9_112 -> LEL9_110;
-            LEL9_113 [shape=box, label="[You agreed] to indemnify,\n defend, and hold each\n Contributor harmless for\n any liability incurred by,\n or claims asserted against,\n such Contributor by reason\n of your accepting any such\n warranty or additional liability"];
-            LEL9_113 -> LEL9_109;
-            LEL9_114 [shape=box, label="SS_LEL4", style=filled, fillcolor=white];
-            LEL9_114 -> LEL9[label="activates"];
+            LEL9_101 [shape=box, label="and", style=filled, fillcolor=grey];
+            LEL9_101 -> LEL9[label="satisfies"];
+            LEL9_102 [shape=box, label="and", style=filled, fillcolor=grey];
+            LEL9_102 -> LEL9_101;
+            LEL9_103 [shape=box, label="[You offered, and charge] a\n fee for, acceptance of\n support, warranty,\n indemnity, or other\n liability obligations\n and/or rights consistent\n with this License"];
+            LEL9_103 -> LEL9_102;
+            LEL9_104 [shape=box, label="[You acted] only on Your own\n behalf and on Your sole\n responsibility, not on\n behalf of any other Contributor"];
+            LEL9_104 -> LEL9_102;
+            LEL9_105 [shape=box, label="[You agreed] to indemnify,\n defend, and hold each\n Contributor harmless for\n any liability incurred by,\n or claims asserted against,\n such Contributor by reason\n of your accepting any such\n warranty or additional liability"];
+            LEL9_105 -> LEL9_101;
+            LEL9_106 [shape=box, label="SS_LEL4", style=filled, fillcolor=white];
+            LEL9_106 -> LEL9[label="activates"];
             }
         }
     `
@@ -396,14 +396,12 @@ var mapping = {
   "LEL9":13
   
 };
-
+var panZoomGraph = null;
 var jsonInput = [];
 var jsonState = [];
 var polygon_top = null;
 var jsonInput_text = [];
-var lel_id = [
-    { "id": "LEL4_1", "text": "[You reproduced and" }, { "id": "LEL4a_9", "text": "[You gave] other recipients of" }, { "id": "LEL4a_10", "text": "[You intend to reproduce and" }, { "id": "LEL4b_11", "text": "[You caused] any modified" }, { "id": "LEL4b_12", "text": "[You intend to reproduce and" }, { "id": "LEL4c_14", "text": "[You retained], in the Source" }, { "id": "LEL4c_16", "text": "[You retained] those notices" }, { "id": "LEL4c_17", "text": "[You intend to reproduce and" }, { "id": "LEL4d_20", "text": "[You included] a readable copy" }, { "id": "LEL4d_22", "text": "[(in notice file) You included" }, { "id": "LEL4d_25", "text": "[(in source) in You included" }, { "id": "LEL4d_26", "text": "source [is] provided along" }, { "id": "LEL4d_28", "text": "[(in display) You included the" }, { "id": "LEL4d_29", "text": "third-party [attribution]" }, { "id": "LEL4d_30", "text": "[You excluded] those notices" }, { "id": "LEL4d_32", "text": "[You intend to reproduce and" }, { "id": "LEL4d_33", "text": "the Work includes a 'NOTICE'" }, { "id": "LEL4dAddAttrib_34", "text": "[You added] Your own" }, { "id": "LEL4dAddAttrib_37", "text": "[Your own] additional" }, { "id": "LEL4dAddCopyright_39", "text": "[You added] Your own copyright" }, { "id": "LEL4dAddCopyright_40", "text": "[You provided] additional or" }, { "id": "LEL2_47", "text": "[You reproduced] the Work and" }, { "id": "LEL2_48", "text": "[You prepared Derivative Works" }, { "id": "LEL2_49", "text": "[You publicly displayed] the" }, { "id": "LEL2_50", "text": "[You publicly performed] the" }, { "id": "LEL2_51", "text": "[You sublicenced] the Work and" }, { "id": "LEL2_52", "text": "[You distributed] the Work and" }, { "id": "LEL3_69", "text": "[You made , have made] the" }, { "id": "LEL3_70", "text": "[You used] the Work" }, { "id": "LEL3_71", "text": "[You offered to sell, sold]" }, { "id": "LEL3_72", "text": "[You imported] the Work" }, { "id": "LEL3_73", "text": "[You transfered] the Work" }, { "id": "LEL3_75", "text": "[You instituted] patent" }, { "id": "LEL5_89", "text": "[Any Contribution" }, { "id": "LEL5_90", "text": "[You explicitly stated] terms" }, { "id": "LEL5_91", "text": "[Nothing herein supersede ]or" }, { "id": "LEL5_92", "text": "[You submitted] a Work for" }, { "id": "LEL6_95", "text": "[You used trade names," }, { "id": "LEL6_96", "text": "[As required ]for reasonable" }, { "id": "LEL6_97", "text": "[You intend to exercice permissions" }, { "id": "LEL7_99", "text": "[Required by applicable law or" }, { "id": "LEL7_101", "text": "[You determined" }, { "id": "LEL7_102", "text": "[You assumed] any risks" }, { "id": "LEL7_103", "text": "You intend to exercice permissions" }, { "id": "LEL8_105", "text": "[Required by applicable law" }, { "id": "LEL8_107", "text": "[You holded] Contributor" }, { "id": "LEL8_108", "text": "You intend to exercice permissions" }, { "id": "LEL9_111", "text": "[You offered, and charge] a" }, { "id": "LEL9_112", "text": "[You acted] only on Your own" }, { "id": "LEL9_113", "text": "[You agreed] to indemnify," }
-]
+var lel_id = [{"id":"LEL4_1","text":"[You reproduced and"},{"id":"LEL4a_9","text":"[You gave] other recipients of"},{"id":"LEL4a_10","text":"[You intend to reproduce and"},{"id":"LEL4b_11","text":"[You caused] any modified"},{"id":"LEL4b_12","text":"[You intend to reproduce and"},{"id":"LEL4c_14","text":"[You retained], in the Source"},{"id":"LEL4c_16","text":"[You retained] those notices"},{"id":"LEL4c_17","text":"[You intend to reproduce and"},{"id":"LEL4d_20","text":"[You included] a readable copy"},{"id":"LEL4d_22","text":"[(in notice file) You included"},{"id":"LEL4d_25","text":"[(in source) in You included"},{"id":"LEL4d_26","text":"source [is] provided along"},{"id":"LEL4d_28","text":"[(in display) You included the"},{"id":"LEL4d_29","text":"third-party [attribution]"},{"id":"LEL4d_30","text":"[You excluded] those notices"},{"id":"LEL4d_32","text":"[You intend to reproduce and"},{"id":"LEL4d_33","text":"the Work includes a 'NOTICE'"},{"id":"LEL4dAddAttrib_34","text":"[You added] Your own"},{"id":"LEL4dAddAttrib_37","text":"[Your own] additional"},{"id":"LEL4dAddCopyright_39","text":"[You added] Your own copyright"},{"id":"LEL4dAddCopyright_40","text":"[You provided] additional or"},{"id":"LEL2_47","text":"[You reproduced] the Work and"},{"id":"LEL2_48","text":"[You prepared Derivative Works"},{"id":"LEL2_49","text":"[You publicly displayed] the"},{"id":"LEL2_50","text":"[You publicly performed] the"},{"id":"LEL2_51","text":"[You sublicenced] the Work and"},{"id":"LEL2_52","text":"[You distributed] the Work and"},{"id":"LEL3_64","text":"[You made, have made, used,"},{"id":"LEL3_78","text":"[You instituted] patent"},{"id":"LEL5_81","text":"[Any Contribution"},{"id":"LEL5_82","text":"[You explicitly stated] terms"},{"id":"LEL5_83","text":"[Nothing herein supersede ]or"},{"id":"LEL5_84","text":"[You submitted] a Work for"},{"id":"LEL6_87","text":"[You used trade names,"},{"id":"LEL6_88","text":"[As required ]for reasonable"},{"id":"LEL6_89","text":"[You exercice permission"},{"id":"LEL7_91","text":"[Required by applicable law or"},{"id":"LEL7_93","text":"[You determined"},{"id":"LEL7_94","text":"[You assumed] any risks"},{"id":"LEL7_95","text":"You exercice permission"},{"id":"LEL8_97","text":"[Required by applicable law"},{"id":"LEL8_99","text":"[You holded] Contributor"},{"id":"LEL8_100","text":"You exercice permissions"},{"id":"LEL9_103","text":"[You offered, and charge] a"},{"id":"LEL9_104","text":"[You acted] only on Your own"},{"id":"LEL9_105","text":"[You agreed] to indemnify,"}]
 
 /**
   * Create JSON object to use for tree view 
@@ -967,6 +965,10 @@ function genGraph(stat){
         
     })
 
+    if($('#graph svg').length){
+        $('#graph svg').remove();
+    }
+
 
     
 /**
@@ -1013,6 +1015,19 @@ if($("#clust1").children("title").text().slice(10) !== stat ){
         .zoom(false)
         .render(function () {
             graph = $("svg")
+
+            /*
+            *Add zoom
+            */
+
+
+           panZoomGraph = svgPanZoom('#graph svg',{
+            zoomEnabled: true,
+            controlIconsEnabled: true,
+            fit: true,
+            center: true,
+            dblClickZoomEnabled: false
+        });
             SVG_Interaction()
             
             for (let index = 1; index < graph.children().children('.node').children('text').length; index++) {

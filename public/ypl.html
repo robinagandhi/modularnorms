@@ -12,6 +12,7 @@
                 <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/themes/default/style.min.css" />
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/jstree.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
                 <link rel="stylesheet" href="/public/main.css">
 
                 <style>
@@ -212,82 +213,86 @@
                         <div class="display">
                                 <div class="row">
 
-                                        <!--  This column contain a hierarchical view of the license in a tree view fashion-->
-                                        <div class="column_0 col-sm-2 panel panel-default" style="padding: unset;">
-
-                                                <div class="panel-heading">
-                                                        
-                                                                <div style="float:left" class="dropdown">
-                                                                                <button style = "border: 0px" class="btn btn-default dropdown-toggle btn-xs" type="button" data-toggle="dropdown"><span>
-                                                                                <span class="glyphicon glyphicon-th-list"></span></button>
-                                                                                <ul class="dropdown-menu">
-                                                                                  <li><a href="/lel.html">LELv1.0</a></li>
-                                                                                  <li><a href="/mel.html">MELv1.0</a></li>
-                                                                                  
-                                                                                </ul>
-                                                                              </div>
-
-                                                                              <p>YPL</p>
-
-
-
-                                                </div>
-
-                                                <div class="panel-body" id="data">
-
-
-                                                        
-                                                </div>
-
-
-
-                                        </div>
-
-                                        <!-- First colum containing license text and assessement question -->
-                                        <div class="column_1 col-sm-5 panel panel-default" style="padding: unset;">
-
-                                                <div class="panel-heading">License Text</div>
-
-                                                <div class="box-2 panel-body" style="overflow: scroll;">
-
-
-                                                        <div property="spdx:licenseText" class="license-text">
-
-                                                                <li>
-
-                                                                        <var class="replacable-license-text">4.</var>
-                                                                        <a href="#" class="statement YPL4">You may reproduce and distribute copies of
-                                                                                the
-                                                                                Work or Derivative Works thereof in any medium, with or without modifications, and in
-                                                                                Source
-                                                                                or Object form, provided that You meet the following conditions:</a>
-
-
-                                                                        <ul style="list-style:none">
-
-
-                                                                                <var class="replacable-license-text">(a)</var>
-                                                                                <a href="#" class="statement YPL4a"> You must retain, in the Source form of any
-                                                                                        Derivative Works that You distribute, all
-                                                                                        copyright, patent, trademark, and attribution notices from the Source form of the
-                                                                                        Work</a>
-
-                                                                        </ul>
-                                                                </li>
-
-
+                                        <div class="col-sm-6" style="height:100%">
+                                                <div class="row">
+                                                        <!--  This column contain a hierarchical view of the license in a tree view fashion-->
+                                                        <div class="column_0 col-sm-3 panel panel-default" style="padding: unset;">
+                
+                                                                <div class="panel-heading">
+                                                                        
+                                                                                <div style="float:left" class="dropdown">
+                                                                                                <button style = "border: 0px" class="btn btn-default dropdown-toggle btn-xs" type="button" data-toggle="dropdown"><span>
+                                                                                                <span class="glyphicon glyphicon-th-list"></span></button>
+                                                                                                <ul class="dropdown-menu">
+                                                                                                  <li><a href="/lel.html">LELv1.0</a></li>
+                                                                                                  <li><a href="/mel.html">MELv1.0</a></li>
+                                                                                                  
+                                                                                                </ul>
+                                                                                              </div>
+                
+                                                                                              <p>YPL</p>
+                
+                
+                
+                                                                </div>
+                
+                                                                <div class="panel-body" id="data">
+                
+                
+                                                                        
+                                                                </div>
+                
+                
+                
                                                         </div>
-
-                                                      
-
+                
+                                                        <!-- First colum containing license text and assessement question -->
+                                                        <div class="column_1 col-sm-9 panel panel-default" style="padding: unset;">
+                
+                                                                <div class="panel-heading">License Text</div>
+                
+                                                                <div class="box-2 panel-body" style="overflow: scroll;">
+                
+                
+                                                                        <div property="spdx:licenseText" class="license-text">
+                
+                                                                                <li>
+                
+                                                                                        <var class="replacable-license-text">4.</var>
+                                                                                        <a href="#" class="statement YPL4">You may reproduce and distribute copies of
+                                                                                                the
+                                                                                                Work or Derivative Works thereof in any medium, with or without modifications, and in
+                                                                                                Source
+                                                                                                or Object form, provided that You meet the following conditions:</a>
+                
+                
+                                                                                        <ul style="list-style:none">
+                
+                
+                                                                                                <var class="replacable-license-text">(a)</var>
+                                                                                                <a href="#" class="statement YPL4a"> You must retain, in the Source form of any
+                                                                                                        Derivative Works that You distribute, all
+                                                                                                        copyright, patent, trademark, and attribution notices from the Source form of the
+                                                                                                        Work</a>
+                
+                                                                                        </ul>
+                                                                                </li>
+                
+                
+                                                                        </div>
+                
+                                                                      
+                
+                                                                </div>
+                
+                                                        </div>
                                                 </div>
-
                                         </div>
 
                                         <div id="loader"></div>
                                         <!-- Second column containing genarated graph -->
 
-                                        <div class="column_2 col-sm-5 panel panel-default" id="box-3" style="padding: unset;">
+                                        <div class="column_2 col-sm-6 panel panel-default" id="box-3" style="padding: unset;">
 
                                                 <div class="panel-heading">
 
@@ -349,7 +354,25 @@
 
 
                 <script src="./ypl.js"></script>
+                <!-- <script>
+                 window.onload = function() {
+                        // Expose to window namespase for testing purposes
+                        window.zoomGraph = svgPanZoom('#graph svg', {
+                        zoomEnabled: true,
+                        controlIconsEnabled: true,
+                        fit: true,
+                        center: true,
+                        // viewportSelector: document.getElementById('demo-tiger').querySelector('#g4') // this option will make library to misbehave. Viewport should have no transform attribute
+                        });
 
+                        //document.getElementById('enable').addEventListener('click', function() {
+                        //  window.zoomTiger.enableControlIcons();
+                // })
+                // document.getElementById('disable').addEventListener('click', function() {
+                //   window.zoomTiger.disableControlIcons();
+                // })
+                };
+                </script> -->
 
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
                         crossorigin="anonymous"></script>
